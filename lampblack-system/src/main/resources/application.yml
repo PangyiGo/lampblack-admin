@@ -48,3 +48,5 @@ spring:
 logging:
   path: /logging
   config: classpath:log/logback-spring.xml
+  level:
+    web: debug
