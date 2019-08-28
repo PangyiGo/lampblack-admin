@@ -30,3 +30,8 @@ spring:
   output:
     ansi:
       enabled: always
+
+## \u65E5\u5FD7\u7EA7\u522B
+logging:
+  level:
+    com.osen.cloud.model: debug
