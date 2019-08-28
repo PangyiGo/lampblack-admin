@@ -1,0 +1,125 @@
+2019-08-28 17:07:49.352 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 17:07:50.407 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
+2019-08-28 17:07:50.716 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 17:07:50.910 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 17:07:50.966 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 17:07:50.977 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 17:07:52.178 [RMI TCP Connection(5)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2019-08-28 17:07:52.192 [RMI TCP Connection(5)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 17:57:16.965 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 17:57:17.978 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2019-08-28 17:57:18.208 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 17:57:18.396 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 17:57:18.440 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 17:57:18.454 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 17:57:19.450 [RMI TCP Connection(3)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2019-08-28 17:57:19.465 [RMI TCP Connection(3)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 17:57:30.455 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2019-08-28 17:57:30.471 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public java.lang.String com.osen.cloud.system.controller.HelloController.hello()
+2019-08-28 17:57:30.489 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler public org.springframework.http.ResponseEntity com.osen.cloud.common.except.handler.GlobalExceptionHandler.handleException(java.lang.Throwable)
+2019-08-28 17:57:30.753 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.ArithmeticException: / by zero
+2019-08-28 17:57:30.767 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2019-08-28 17:57:30.771 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-28 17:57:30.796 [XNIO-1 task-1] DEBUG o.s.w.servlet.view.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, text/html;q=0.8]
+2019-08-28 17:57:30.822 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2019-08-28 18:00:00.099 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 18:00:01.130 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2019-08-28 18:00:01.467 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 18:00:01.653 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 18:00:01.700 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 18:00:01.715 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 18:00:03.034 [RMI TCP Connection(2)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2019-08-28 18:00:03.048 [RMI TCP Connection(2)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 18:00:18.479 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2019-08-28 18:00:18.494 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public java.lang.String com.osen.cloud.system.controller.HelloController.hello()
+2019-08-28 18:00:18.507 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler public org.springframework.http.ResponseEntity com.osen.cloud.common.except.handler.GlobalExceptionHandler.handleException(java.lang.Exception)
+2019-08-28 18:00:18.629 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.ArithmeticException: / by zero
+2019-08-28 18:00:18.644 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2019-08-28 18:00:18.648 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-28 18:00:18.673 [XNIO-1 task-1] DEBUG o.s.w.servlet.view.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, text/html;q=0.8]
+2019-08-28 18:00:18.698 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2019-08-28 18:00:18.869 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2019-08-28 18:00:18.870 [XNIO-1 task-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-08-28 18:00:18.891 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2019-08-28 18:00:49.455 [XNIO-1 task-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2019-08-28 18:00:49.458 [XNIO-1 task-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public java.lang.String com.osen.cloud.system.controller.HelloController.hello()
+2019-08-28 18:00:49.459 [XNIO-1 task-3] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler public org.springframework.http.ResponseEntity com.osen.cloud.common.except.handler.GlobalExceptionHandler.handleException(java.lang.Exception)
+2019-08-28 18:00:49.461 [XNIO-1 task-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.ArithmeticException: / by zero
+2019-08-28 18:00:49.464 [XNIO-1 task-3] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2019-08-28 18:00:49.468 [XNIO-1 task-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-28 18:00:49.478 [XNIO-1 task-3] DEBUG o.s.w.servlet.view.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, text/html;q=0.8]
+2019-08-28 18:00:49.482 [XNIO-1 task-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2019-08-28 18:00:49.655 [XNIO-1 task-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2019-08-28 18:00:49.655 [XNIO-1 task-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-08-28 18:00:49.662 [XNIO-1 task-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2019-08-28 18:01:10.798 [XNIO-1 task-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2019-08-28 18:01:10.800 [XNIO-1 task-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public java.lang.String com.osen.cloud.system.controller.HelloController.hello()
+2019-08-28 18:01:10.801 [XNIO-1 task-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler public org.springframework.http.ResponseEntity com.osen.cloud.common.except.handler.GlobalExceptionHandler.handleException(java.lang.Exception)
+2019-08-28 18:01:10.803 [XNIO-1 task-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.ArithmeticException: / by zero
+2019-08-28 18:01:10.805 [XNIO-1 task-5] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2019-08-28 18:01:10.807 [XNIO-1 task-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-28 18:01:10.818 [XNIO-1 task-5] DEBUG o.s.w.servlet.view.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, text/html;q=0.8]
+2019-08-28 18:01:10.821 [XNIO-1 task-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2019-08-28 18:01:11.041 [XNIO-1 task-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2019-08-28 18:01:11.041 [XNIO-1 task-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-08-28 18:01:11.046 [XNIO-1 task-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2019-08-28 18:02:46.076 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 18:02:47.181 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2019-08-28 18:02:47.424 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 18:02:47.618 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 18:02:47.660 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 18:02:47.673 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 18:02:48.449 [RMI TCP Connection(2)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2019-08-28 18:02:48.463 [RMI TCP Connection(2)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 18:02:54.471 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2019-08-28 18:02:54.484 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public java.lang.String com.osen.cloud.system.controller.HelloController.hello()
+2019-08-28 18:02:54.498 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler public org.springframework.http.ResponseEntity com.osen.cloud.common.except.handler.GlobalExceptionHandler.handleException(java.lang.Exception)
+2019-08-28 18:02:54.634 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.ArithmeticException: / by zero
+2019-08-28 18:02:54.648 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2019-08-28 18:02:54.653 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-28 18:02:54.681 [XNIO-1 task-1] DEBUG o.s.w.servlet.view.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, text/html;q=0.8]
+2019-08-28 18:02:54.711 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2019-08-28 18:02:54.949 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2019-08-28 18:02:54.950 [XNIO-1 task-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-08-28 18:02:54.973 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2019-08-28 18:09:47.073 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 18:09:47.469 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2019-08-28 18:09:47.628 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 18:09:47.704 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 18:09:47.721 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 18:09:47.732 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 18:10:12.970 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 18:10:14.011 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2019-08-28 18:10:14.243 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 18:10:14.424 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 18:10:14.475 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 18:10:14.489 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 18:10:15.993 [RMI TCP Connection(2)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2019-08-28 18:10:16.010 [RMI TCP Connection(2)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 18:10:20.918 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2019-08-28 18:10:20.932 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public java.lang.String com.osen.cloud.system.controller.HelloController.hello()
+2019-08-28 18:10:20.944 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler public org.springframework.http.ResponseEntity com.osen.cloud.common.except.handler.GlobalExceptionHandler.handleException(java.lang.Exception)
+2019-08-28 18:10:21.070 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.ArithmeticException: / by zero
+2019-08-28 18:10:21.087 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2019-08-28 18:10:21.093 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-28 18:10:21.121 [XNIO-1 task-1] DEBUG o.s.w.servlet.view.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, text/html;q=0.8]
+2019-08-28 18:10:21.147 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2019-08-28 18:10:21.408 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2019-08-28 18:10:21.409 [XNIO-1 task-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-08-28 18:10:21.431 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2019-08-28 18:13:17.117 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 18:13:18.152 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2019-08-28 18:13:18.389 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 18:13:18.574 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 18:13:18.618 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 18:13:18.631 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 18:13:19.835 [RMI TCP Connection(3)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2019-08-28 18:13:19.849 [RMI TCP Connection(3)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 18:13:22.311 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2019-08-28 18:13:22.326 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to public java.lang.String com.osen.cloud.system.controller.HelloController.hello()
+2019-08-28 18:13:22.349 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/webp, image/apng, application/signed-exchange;v=b3, application/xml;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-08-28 18:13:22.350 [XNIO-1 task-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["hehe"]
+2019-08-28 18:13:22.367 [XNIO-1 task-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2019-08-28 18:13:22.532 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2019-08-28 18:13:22.533 [XNIO-1 task-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-08-28 18:13:22.553 [XNIO-1 task-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
