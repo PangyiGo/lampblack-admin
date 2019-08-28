@@ -27,6 +27,8 @@
         <module>lampblack-common</module>
         <!--项目核心模块-->
         <module>lampblack-system</module>
+        <!--数据模块-->
+        <module>lampblack-model</module>
     </modules>
 
     <!--依赖版本控制-->
