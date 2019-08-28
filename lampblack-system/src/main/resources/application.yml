@@ -46,5 +46,5 @@ spring:
 
 ## 日志配置
 logging:
-  path: /log
-  config: classpath:logback-spring.xml
+  path: /logging
+  config: classpath:log/logback-spring.xml
