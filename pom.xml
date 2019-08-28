@@ -14,7 +14,7 @@
     <!--Maven坐标-->
     <groupId>com.osen.cloud</groupId>
     <artifactId>lampblack-admin</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <name>lampblack-admin</name>
 
     <description>Oil Fume Concentration Online Monitoring Platform</description>
@@ -25,6 +25,8 @@
     <modules>
         <!--公共子模块-->
         <module>lampblack-common</module>
+        <!--项目核心模块-->
+        <module>lampblack-system</module>
     </modules>
 
     <!--依赖版本控制-->
@@ -137,6 +139,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.osen.cloud</groupId>
+                <artifactId>lampblack-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.osen.cloud</groupId>
+                <artifactId>lampblack-system</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -145,9 +157,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- 跳过单元测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <!--打包跳过单元测试-->
-                    <skip>true</skip>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>

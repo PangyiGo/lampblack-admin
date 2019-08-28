@@ -6,10 +6,10 @@
     <parent>
         <groupId>com.osen.cloud</groupId>
         <artifactId>lampblack-admin</artifactId>
-        <version>1.0</version>
+        <version>1.0.0</version>
     </parent>
     <artifactId>lampblack-common</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <name>lampblack-common</name>
     <description>公共子模块</description>
 
