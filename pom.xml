@@ -36,6 +36,7 @@
         <guava.version>27.1-jre</guava.version>
         <fastjson.version>1.2.59</fastjson.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>
@@ -110,6 +111,20 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
+
+        <!--Swagger UI接口文档-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
 
     </dependencies>
 
