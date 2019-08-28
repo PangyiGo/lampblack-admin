@@ -1,0 +1,2 @@
+2019-08-28 16:24:55.733 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.osen.cloud.model]' package. Please check your configuration.
+2019-08-28 16:24:59.455 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
