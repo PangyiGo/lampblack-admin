@@ -1,12 +1,13 @@
-package com.osen.cloud.common;
+package com.osen.cloud.common.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -15,25 +16,24 @@ import java.time.LocalDateTime;
 /**
  * User: PangYi
  * Date: 2019-08-28
- * Time: 11:55
- * Description:
+ * Time: 14:27
+ * Description: 角色实体对象
  */
-@TableName("tb_user")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User implements Serializable {
+@TableName("system_role")
+public class Role extends Model<Role> implements Serializable {
 
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private Integer id;
 
     private String name;
 
-    private Integer age;
-
-    private String email;
+    private String remark;
 
     private LocalDateTime createTime;
+
 }

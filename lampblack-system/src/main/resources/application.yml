@@ -31,7 +31,14 @@ spring:
     ansi:
       enabled: always
 
-## 日志级别
+## 日志配置
 logging:
   level:
-    com.osen.cloud.model: debug
+    root: debug
+    com:
+      osen:
+        cloud:
+          model: debug
+    org:
+      springframework:
+        web: debug

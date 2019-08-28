@@ -126,7 +126,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
+                <artifactId>spring-boot-dependencies</artifactId>
                 <version>2.1.7.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -140,6 +140,16 @@
                 <groupId>com.osen.cloud</groupId>
                 <artifactId>lampblack-system</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.osen.cloud</groupId>
+                <artifactId>lampblack-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.osen.cloud</groupId>
+                <artifactId>lampblack-service</artifactId>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

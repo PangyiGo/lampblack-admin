@@ -12,6 +12,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class LampblackSystemApplication {
 
+    /**
+     * 全局唯一入口文件
+     *
+     * @param args 系统参数
+     */
     public static void main(String[] args) {
         SpringApplication.run(LampblackSystemApplication.class, args);
     }
