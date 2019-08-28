@@ -68,12 +68,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!--JDBC数据库连接-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
+        <!--MySQL驱动连接-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
