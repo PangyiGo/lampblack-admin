@@ -34,11 +34,8 @@ spring:
 ## 日志配置
 logging:
   level:
-    root: debug
+    root: trace
     com:
       osen:
         cloud:
           model: debug
-    org:
-      springframework:
-        web: debug
