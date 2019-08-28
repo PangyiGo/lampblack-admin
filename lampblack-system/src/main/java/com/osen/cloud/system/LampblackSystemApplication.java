@@ -4,12 +4,15 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication(scanBasePackages = "com.osen.cloud")
 // 扫描Mapper配置注解
 @MapperScan(basePackages = {"com.osen.cloud.model"})
 // 开启事务处理
 @EnableTransactionManagement
+// 开启接口文档配置
+@EnableSwagger2
 public class LampblackSystemApplication {
 
     /**

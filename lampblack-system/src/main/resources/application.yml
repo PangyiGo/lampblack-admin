@@ -32,10 +32,3 @@ spring:
       enabled: always
 
 ## 日志配置
-logging:
-  level:
-    root: trace
-    com:
-      osen:
-        cloud:
-          model: debug
