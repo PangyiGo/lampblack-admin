@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.osen.cloud</groupId>
-            <artifactId>lampblack-model</artifactId>
+            <artifactId>lampblack-service</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
