@@ -10,6 +10,7 @@ import static com.osen.cloud.common.enums.InfoMessage.Success_OK;
  * Time: 18:43
  * Description: 返回格式工具类
  */
+@SuppressWarnings("all") //取消警告
 public class RestResultUtil {
 
     /**

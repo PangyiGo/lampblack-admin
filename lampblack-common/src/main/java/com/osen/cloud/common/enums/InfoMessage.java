@@ -16,7 +16,12 @@ public enum InfoMessage {
     /**
      * 异常信息体
      */
-    UnknownSystem_Error(40001, "系统未知异常");
+    UnknownSystem_Error(4001, "系统未知异常"),
+
+    /**
+     * 成功信息体
+     */
+    Success_OK(2001, "成功请求");
 
     private Integer code;
 
