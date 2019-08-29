@@ -47,8 +47,7 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
 
         //保存redis
         String jsonString = JSON.toJSONString(jwtUser);
-        stringRedisTemplate.boundValueOps("user:access_token:" + token).set(jsonString, JwtTokenUtil.EXPIRATION,
-                TimeUnit.MILLISECONDS);
+        stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + token).set(jsonString, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
 
         response.setContentType("application/json;charset=utf-8");
 

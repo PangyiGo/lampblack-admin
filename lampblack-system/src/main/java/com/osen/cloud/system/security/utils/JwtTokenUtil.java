@@ -28,6 +28,8 @@ public class JwtTokenUtil {
     // 加密密钥
     private static final String SECRET = "osen";
 
+    public static final String KEYS = "username:access_token:";
+
     // 有效时间，默认3小时
     public static final long EXPIRATION = 60 * 60 * 3 * 1000;
 

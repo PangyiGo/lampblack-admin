@@ -133,13 +133,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(userAuthenticationSuccessHandler)
                 .failureHandler(userAuthenticationFailureHandler)
                 .permitAll()
-
-                .and()
-
-                .logout()
-                .logoutUrl("/**/auth/logout")
-                .logoutSuccessHandler(userLogoutSuccessHandler)
-                .permitAll()
                 .and()
                 // 过滤请求
                 .authorizeRequests()

@@ -53,4 +53,5 @@ public class RestResultUtil {
     public static RestResult authorization(Integer code, String message) {
         return new RestResult(code, message);
     }
+
 }
