@@ -21,7 +21,16 @@ public enum InfoMessage {
     /**
      * 成功信息体
      */
-    Success_OK(2001, "成功请求");
+    Success_OK(2001, "成功请求"),
+
+    /**
+     * 提示信息体
+     */
+    User_Need_Authorization(3001, "用户未登录"),
+    User_Login_Failed(3002,"用户账号或密码错误"),
+    User_Login_Success(3003,"登录成功"),
+    User_NO_Access(3004,"用户无权访问"),
+    User_Logout_Success(3005,"用户退出登录");
 
     private Integer code;
 
