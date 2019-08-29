@@ -46,6 +46,15 @@ spring:
   output:
     ansi:
       enabled: always
+  ## redis配置
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 15
+        max-idle: 5
+        max-wait: -1
 
 
 ## 日志配置
@@ -62,3 +71,8 @@ mybatis-plus:
   type-aliases-package: com.osen.cloud.**.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+## 统一请求地址头
+restful:
+  prefix: /api/osen/cloud

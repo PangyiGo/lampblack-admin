@@ -31,15 +31,6 @@ public class JwtTokenUtil {
     // 有效时间，默认3小时
     private static final long EXPIRATION = 60 * 60 * 3 * 1000;
 
-    // 登录地址
-    public static final String LOGIN = "/auth/login";
-
-    // 令牌刷新地址
-    public static final String REFRESH_TOKEN = "/auth/refresh";
-
-    // 注册
-    public static final String REGISTER = "/auth/register";
-
     /**
      * 从数据声明生成令牌
      *

@@ -129,11 +129,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 表单
                 .formLogin()
+                .loginPage("/**/auth/login")
                 .successHandler(userAuthenticationSuccessHandler)
                 .failureHandler(userAuthenticationFailureHandler)
+                .permitAll()
+
                 .and()
-                .logout().logoutUrl("/**/auth/logout")
+
+                .logout()
+                .logoutUrl("/**/auth/logout")
                 .logoutSuccessHandler(userLogoutSuccessHandler)
+                .permitAll()
                 .and()
                 // 过滤请求
                 .authorizeRequests()
@@ -145,9 +151,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.js"
                 ).anonymous()
 
-                // 授权
-                .antMatchers(HttpMethod.POST,"/**/auth/**").anonymous()
-
                 // swagger start
                 .antMatchers("/swagger-ui.html").anonymous()
                 .antMatchers("/swagger-resources/**").anonymous()
@@ -157,8 +160,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 其他接口认证
                 .anyRequest().authenticated()
+
                 // 防止iframe 造成跨域
-                .and().headers().frameOptions().disable();
+                .and().headers().frameOptions().disable()
+
+                .and().headers().cacheControl();
 
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }

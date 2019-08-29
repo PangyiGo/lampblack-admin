@@ -91,6 +91,12 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <!--Spring Redis数据缓存-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
         <!--Jwt Token令牌-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

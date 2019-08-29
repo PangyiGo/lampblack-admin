@@ -17,6 +17,7 @@ public enum InfoMessage {
      * 异常信息体
      */
     UnknownSystem_Error(4001, "系统未知异常"),
+    NoFound_Error(40004,"页面不存在"),
 
     /**
      * 成功信息体
