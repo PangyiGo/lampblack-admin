@@ -21,4 +21,5 @@ public class AuthorizationServiceImpl extends ServiceImpl<AuthorizationMapper, U
     public User findByUsername(String username) {
         return null;
     }
+
 }

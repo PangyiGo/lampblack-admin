@@ -18,4 +18,5 @@ public interface AuthorizationService extends IService<User> {
      * @return 指定用户
      */
     User findByUsername(String username);
+
 }
