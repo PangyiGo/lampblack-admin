@@ -1,7 +1,8 @@
 package com.osen.cloud.system.security.utils;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,7 +18,10 @@ import java.util.Collection;
  */
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class JwtUser implements UserDetails, Serializable {
+
+    private Integer id;
 
     private String username;
 
@@ -45,7 +49,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
-    @JsonIgnore
+    @JSONField(serialize = false)
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -56,7 +60,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
-    @JsonIgnore
+    @JSONField(serialize = false)
     @Override
     public boolean isAccountNonLocked() {
         return true;
@@ -67,7 +71,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
-    @JsonIgnore
+    @JSONField(serialize = false)
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
@@ -78,7 +82,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
-    @JsonIgnore
+    @JSONField(serialize = false)
     @Override
     public boolean isEnabled() {
         return true;

@@ -3,13 +3,13 @@ package com.osen.cloud.system.security.config;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
+import com.osen.cloud.system.security.utils.JwtUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
@@ -59,11 +59,13 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         }
 
         if (StringUtils.isNotEmpty(username) && SecurityContextHolder.getContext().getAuthentication() == null) {
+
             //            UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 
             // 从 redis 缓存中获取认证主体
             String json = stringRedisTemplate.boundValueOps("username:" + username).get();
-            UserDetails userDetails = JSON.parseObject(json, UserDetails.class);
+
+            JwtUser userDetails = JSON.parseObject(json, JwtUser.class);
 
             if (userDetails != null) {
 

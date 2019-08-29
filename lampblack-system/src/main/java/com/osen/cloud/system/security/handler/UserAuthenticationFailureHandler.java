@@ -29,6 +29,7 @@ public class UserAuthenticationFailureHandler implements AuthenticationFailureHa
         log.info("用户登录失败");
 
         // 登录失败，逻辑处理代码....
+        System.out.println(exception.getMessage());
 
         response.setContentType("application/json;charset=utf-8");
         // 返回信息体

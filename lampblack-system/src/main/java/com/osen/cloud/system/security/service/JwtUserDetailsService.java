@@ -43,8 +43,11 @@ public class JwtUserDetailsService implements UserDetailsService {
         User user = authorizationService.findByUsername(username);
         if (BeanUtil.isEmpty(user) || StringUtils.isEmpty(user.getAccount()))
             throw new UsernameNotFoundException("账号不存在");
+        if (user.getStatus() == 0) {
+            throw new UsernameNotFoundException("账号不可用");
+        }
         // 封装用户对应角色
         List<SimpleGrantedAuthority> authorityList = user.getRoles().stream().map(Role::getName).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-        return new JwtUser(user.getAccount(), user.getPassword(), authorityList);
+        return new JwtUser(user.getId(), user.getAccount(), user.getPassword(), authorityList);
     }
 }

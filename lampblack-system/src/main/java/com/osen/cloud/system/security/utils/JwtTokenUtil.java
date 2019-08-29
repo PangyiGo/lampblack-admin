@@ -38,11 +38,7 @@ public class JwtTokenUtil {
      * @return 令牌
      */
     private String generateToken(Map<String, Object> claims) {
-        return Jwts.builder()
-                .setClaims(claims)
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
-                .signWith(SignatureAlgorithm.HS512, SECRET)
-                .compact();
+        return Jwts.builder().setClaims(claims).setExpiration(new Date(System.currentTimeMillis() + EXPIRATION)).signWith(SignatureAlgorithm.HS512, SECRET).compact();
     }
 
     /**
@@ -128,14 +124,13 @@ public class JwtTokenUtil {
     /**
      * 验证令牌
      *
-     * @param token       令牌
-     * @param userDetails 用户
+     * @param token   令牌
+     * @param jwtUser 用户
      * @return 是否有效
      */
-    public Boolean validateToken(String token, UserDetails userDetails) {
-        JwtUser user = (JwtUser) userDetails;
+    public Boolean validateToken(String token, JwtUser jwtUser) {
         String username = getUsernameFromToken(token);
-        return (username.equals(user.getUsername()) && !isTokenExpired(token));
+        return (username.equals(jwtUser.getUsername()) && !isTokenExpired(token));
     }
 
 }
