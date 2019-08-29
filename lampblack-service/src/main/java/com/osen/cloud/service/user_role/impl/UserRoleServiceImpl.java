@@ -22,7 +22,7 @@ public class UserRoleServiceImpl extends ServiceImpl<UserRoleMapper, UserRole> i
     @Override
     public List<UserRole> findByUserIdToRole(Integer uid) {
         // 查询条件
-        LambdaQueryWrapper<UserRole> queryWrapper = Wrappers.<UserRole>lambdaQuery().eq(UserRole::getId, uid);
+        LambdaQueryWrapper<UserRole> queryWrapper = Wrappers.<UserRole>lambdaQuery().eq(UserRole::getUserId, uid);
         return super.list(queryWrapper);
     }
 }
