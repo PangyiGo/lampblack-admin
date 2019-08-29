@@ -26,9 +26,6 @@ public class AuthorizationController {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
-
     @GetMapping("/auth/refresh")
     public RestResult restResult() {
         System.out.println(SecurityUtils.getUserId());
@@ -44,7 +41,7 @@ public class AuthorizationController {
     @PostMapping("/auth/logout")
     public RestResult logout(@RequestHeader("Authorization") String authorization) {
 
-        log.info("user logout" + authorization);
+        log.info("user logout: " + authorization);
 
         boolean delete = stringRedisTemplate.delete(JwtTokenUtil.KEYS + authorization.substring(7));
         if (delete) {
