@@ -2,6 +2,7 @@ package com.osen.cloud.system.security.controller;
 
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
+import com.osen.cloud.common.utils.SecurityUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +19,8 @@ public class AuthorizationController {
 
     @GetMapping("/auth/refresh")
     public RestResult restResult() {
-        System.out.println("刷新令牌");
+        System.out.println(SecurityUtils.getUserId());
         return RestResultUtil.success();
     }
+
 }

@@ -31,7 +31,8 @@ public enum InfoMessage {
     User_Login_Failed(3002,"用户账号或密码错误"),
     User_Login_Success(3003,"登录成功"),
     User_NO_Access(3004,"用户无权访问"),
-    User_Logout_Success(3005,"用户退出登录");
+    User_Logout_Success(3005,"用户退出登录"),
+    User_Login_Guoqi(3006,"登录状态过期");
 
     private Integer code;
 
