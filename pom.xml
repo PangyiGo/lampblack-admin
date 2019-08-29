@@ -41,7 +41,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <hutool.version>4.6.1</hutool.version>
-        <guava.version>27.1-jre</guava.version>
         <fastjson.version>1.2.59</fastjson.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <swagger.version>2.9.2</swagger.version>
@@ -129,13 +128,6 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
-        </dependency>
-
-        <!--Google开发包-->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
         </dependency>
 
         <!--Mybatis Plus依赖-->
