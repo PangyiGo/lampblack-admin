@@ -1,14 +1,28 @@
-2019-08-28 17:42:13.346 [main] DEBUG o.s.w.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6736fa8d
-2019-08-28 17:42:18.291 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
-2019-08-28 17:42:20.190 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-28 17:42:20.530 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-28 17:42:20.624 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-28 17:42:20.646 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-28 17:42:21.887 [Thread-3] DEBUG o.s.w.context.support.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@6736fa8d, started on Wed Aug 28 17:42:13 CST 2019
-2019-08-28 17:42:52.833 [main] DEBUG o.s.w.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@39d76cb5
-2019-08-28 17:42:58.016 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
-2019-08-28 17:42:59.963 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-28 17:43:00.293 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-28 17:43:00.398 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-28 17:43:00.419 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-28 17:43:01.802 [Thread-3] DEBUG o.s.w.context.support.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@39d76cb5, started on Wed Aug 28 17:42:52 CST 2019
+2019-08-29 11:13:42.242 [main] DEBUG o.s.w.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@37fb0bed
+2019-08-29 11:13:47.329 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
+2019-08-29 11:13:48.892 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-29 11:13:49.186 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-29 11:13:49.308 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-29 11:13:49.340 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-29 11:13:51.806 [Thread-3] DEBUG o.s.w.context.support.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@37fb0bed, started on Thu Aug 29 11:13:42 CST 2019
+2019-08-29 11:14:42.606 [main] DEBUG c.o.cloud.system.LampblackSystemApplicationTests - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-08-29 11:14:42.690 [main] DEBUG o.s.w.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@51c693d
+2019-08-29 11:14:49.142 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
+2019-08-29 11:14:50.706 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-29 11:14:51.001 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-29 11:14:51.122 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-29 11:14:51.156 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-29 11:14:53.671 [main] DEBUG c.o.c.m.a.AuthorizationMapper.selectById - ==>  Preparing: SELECT id,password,address,create_time,phone,update_time,company,email,account,status FROM system_user WHERE id=? 
+2019-08-29 11:14:53.735 [main] DEBUG c.o.c.m.a.AuthorizationMapper.selectById - ==> Parameters: 2(Integer)
+2019-08-29 11:14:53.757 [main] DEBUG c.o.c.m.a.AuthorizationMapper.selectById - <==      Total: 0
+2019-08-29 11:14:53.780 [Thread-3] DEBUG o.s.w.context.support.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@51c693d, started on Thu Aug 29 11:14:42 CST 2019
+2019-08-29 11:16:16.273 [main] DEBUG o.s.w.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@51c693d
+2019-08-29 11:16:20.890 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
+2019-08-29 11:16:22.484 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-29 11:16:22.784 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-29 11:16:22.891 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-29 11:16:22.915 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-29 11:16:25.139 [main] DEBUG c.o.c.m.a.AuthorizationMapper.selectById - ==>  Preparing: SELECT id,password,address,create_time,phone,update_time,company,email,account,status FROM system_user WHERE id=? 
+2019-08-29 11:16:25.169 [main] DEBUG c.o.c.m.a.AuthorizationMapper.selectById - ==> Parameters: 2(Integer)
+2019-08-29 11:16:25.192 [main] DEBUG c.o.c.m.a.AuthorizationMapper.selectById - <==      Total: 0
+2019-08-29 11:16:25.205 [Thread-3] DEBUG o.s.w.context.support.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@51c693d, started on Thu Aug 29 11:16:16 CST 2019

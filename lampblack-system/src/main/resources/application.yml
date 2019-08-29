@@ -13,6 +13,9 @@ server:
     buffer-size: 1024
     ## 是否分配的直接内存(NIO直接分配的堆外内存)
     direct-buffers: true
+  ## 不带项目名访问
+  servlet:
+    context-path: /
 
 
 spring:
@@ -44,9 +47,16 @@ spring:
     ansi:
       enabled: always
 
+
 ## 日志配置
 logging:
   path: /logging
   config: classpath:log/logback-spring.xml
   level:
-    org.springframework.web: debug
+    com.osen.cloud.model: debug
+
+
+## mybatis配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.osen.cloud.**.entity

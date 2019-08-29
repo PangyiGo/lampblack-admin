@@ -21,3 +21,31 @@
 2019-08-29 08:39:11.864 [RMI TCP Connection(1)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2019-08-29 08:39:11.877 [RMI TCP Connection(1)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
 2019-08-29 08:39:12.132 [RMI TCP Connection(2)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Start completed.
+2019-08-29 09:24:23.288 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - Starting LampblackSystemApplication on PC-20190708MDDO with PID 5896 (E:\gitworkspace\lampblack-admin\lampblack-system\target\classes started by Administrator in E:\gitworkspace\lampblack-admin)
+2019-08-29 09:24:23.293 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - No active profile set, falling back to default profiles: default
+2019-08-29 09:24:23.367 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-29 09:24:23.367 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-29 09:24:26.146 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dfdc5e42] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-29 09:24:26.647 [restartedMain] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2019-08-29 09:24:26.648 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3281 ms
+2019-08-29 09:24:27.883 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-29 09:24:28.016 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-29 09:24:28.234 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-29 09:24:28.297 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-08-29 09:24:28.720 [restartedMain] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a6c02f8f-c0e2-44b6-8f0d-cd69a77f6268
+
+2019-08-29 09:24:28.862 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44e9b45, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a6c41de, org.springframework.security.web.header.HeaderWriterFilter@4de42cd, org.springframework.security.web.csrf.CsrfFilter@1487220f, org.springframework.security.web.authentication.logout.LogoutFilter@4cfbd8bf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@66abb153, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@58ac4348, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4fe92ac8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@362b162c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37e5bc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@409487b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d6a8ce0, org.springframework.security.web.session.SessionManagementFilter@36dc4db9, org.springframework.security.web.access.ExceptionTranslationFilter@93b1cb9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f94a8c4]
+2019-08-29 09:24:29.020 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-08-29 09:24:29.038 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-08-29 09:24:29.095 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-08-29 09:24:29.147 [restartedMain] INFO  org.xnio - XNIO version 3.3.8.Final
+2019-08-29 09:24:29.162 [restartedMain] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final
+2019-08-29 09:24:29.242 [restartedMain] INFO  o.s.b.w.embedded.undertow.UndertowServletWebServer - Undertow started on port(s) 8080 (http) with context path ''
+2019-08-29 09:24:29.247 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - Started LampblackSystemApplication in 6.864 seconds (JVM running for 7.839)
+2019-08-29 09:24:29.592 [RMI TCP Connection(3)-192.168.1.54] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-29 09:24:29.592 [RMI TCP Connection(3)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-29 09:24:29.605 [RMI TCP Connection(3)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2019-08-29 09:24:29.749 [RMI TCP Connection(6)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Starting...
+2019-08-29 09:24:30.012 [RMI TCP Connection(6)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Start completed.

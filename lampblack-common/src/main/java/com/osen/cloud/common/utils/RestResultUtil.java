@@ -42,4 +42,15 @@ public class RestResultUtil {
     public static RestResult success(Object data) {
         return new RestResult(Success_OK.getCode(), Success_OK.getMessage(), data);
     }
+
+    /**
+     * 授权状态信息
+     *
+     * @param code    状态码
+     * @param message 返回信息
+     * @return 信息
+     */
+    public static RestResult authorization(Integer code, String message) {
+        return new RestResult(code, message);
+    }
 }

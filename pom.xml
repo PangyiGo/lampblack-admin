@@ -86,6 +86,19 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Spring Security安全框架-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!--Jwt Token令牌-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
         <!--MySQL驱动连接-->
         <dependency>
             <groupId>mysql</groupId>

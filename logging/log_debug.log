@@ -6,3 +6,11 @@
 2019-08-29 08:39:10.670 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
 2019-08-29 08:39:11.864 [RMI TCP Connection(1)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
 2019-08-29 08:39:11.877 [RMI TCP Connection(1)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-29 09:24:26.648 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-29 09:24:27.802 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
+2019-08-29 09:24:28.084 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-29 09:24:28.313 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-29 09:24:28.359 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-29 09:24:28.372 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-29 09:24:29.592 [RMI TCP Connection(3)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2019-08-29 09:24:29.604 [RMI TCP Connection(3)-192.168.1.54] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
