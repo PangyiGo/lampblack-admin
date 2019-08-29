@@ -314,3 +314,23 @@ Using generated security password: 449dcb63-3540-4ced-9a5a-7d603d84085c
 2019-08-29 15:34:31.435 [Thread-3] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2019-08-29 15:34:31.441 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
 2019-08-29 15:34:31.503 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
+2019-08-29 15:41:34.248 [main] INFO  c.o.cloud.system.LampblackSystemApplicationTests - Starting LampblackSystemApplicationTests on PC-20190708MDDO with PID 3572 (started by Administrator in E:\gitworkspace\lampblack-admin\lampblack-system)
+2019-08-29 15:41:34.253 [main] INFO  c.o.cloud.system.LampblackSystemApplicationTests - No active profile set, falling back to default profiles: default
+2019-08-29 15:41:38.271 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9c827fe0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-29 15:41:41.527 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-29 15:41:41.863 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-29 15:41:42.601 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-29 15:41:43.501 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5524f2a5-beeb-43f9-90d8-a686524ab059
+
+2019-08-29 15:41:43.829 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1373e3ee, org.springframework.security.web.context.SecurityContextPersistenceFilter@7994a0d1, org.springframework.security.web.header.HeaderWriterFilter@5d1bdd4a, org.springframework.security.web.csrf.CsrfFilter@2b999ee8, org.springframework.security.web.authentication.logout.LogoutFilter@62f9c790, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@236c098, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5bfc79cb, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@175c5c3a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3f5dfe69, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d87d449, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66e341e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69a5c6be, org.springframework.security.web.session.SessionManagementFilter@3457cc8d, org.springframework.security.web.access.ExceptionTranslationFilter@75e80a97, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@29bbc63c]
+2019-08-29 15:41:44.298 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-08-29 15:41:44.327 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-08-29 15:41:44.382 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-08-29 15:41:44.419 [main] INFO  c.o.cloud.system.LampblackSystemApplicationTests - Started LampblackSystemApplicationTests in 11.158 seconds (JVM running for 12.875)
+2019-08-29 15:41:44.841 [main] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Starting...
+2019-08-29 15:41:45.135 [main] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Start completed.
+2019-08-29 15:41:45.297 [Thread-3] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-29 15:41:45.304 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
+2019-08-29 15:41:45.318 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
