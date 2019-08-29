@@ -1,10 +1,12 @@
 package com.osen.cloud.system.security.config;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,6 +38,9 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
@@ -54,14 +59,20 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         }
 
         if (StringUtils.isNotEmpty(username) && SecurityContextHolder.getContext().getAuthentication() == null) {
-            // 从 redis 缓存中获取认证主体
-            UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+            //            UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 
-            // 验证token是否有效
-            if (jwtTokenUtil.validateToken(authToken, userDetails)) {
-                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+            // 从 redis 缓存中获取认证主体
+            String json = stringRedisTemplate.boundValueOps("username:" + username).get();
+            UserDetails userDetails = JSON.parseObject(json, UserDetails.class);
+
+            if (userDetails != null) {
+
+                // 验证token是否有效
+                if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                    authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                }
             }
         }
 

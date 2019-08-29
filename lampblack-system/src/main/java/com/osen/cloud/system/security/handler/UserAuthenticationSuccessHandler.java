@@ -6,6 +6,7 @@ import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import com.osen.cloud.system.security.utils.JwtUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import static com.osen.cloud.common.enums.InfoMessage.User_Login_Success;
 
@@ -30,12 +32,19 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         log.info("用户登录成功");
 
         // 登录成功，逻辑处理代码....
         JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
+
+        //保存redis
+        String jsonString = JSON.toJSONString(jwtUser);
+        stringRedisTemplate.boundValueOps("username:" + jwtUser.getUsername()).set(jsonString, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
 
         //生成token
         String token = jwtTokenUtil.generateToken(jwtUser);

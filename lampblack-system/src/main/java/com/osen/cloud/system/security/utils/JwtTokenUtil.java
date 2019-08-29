@@ -29,7 +29,7 @@ public class JwtTokenUtil {
     private static final String SECRET = "osen";
 
     // 有效时间，默认3小时
-    private static final long EXPIRATION = 60 * 60 * 3 * 1000;
+    public static final long EXPIRATION = 60 * 60 * 3 * 1000;
 
     /**
      * 从数据声明生成令牌
