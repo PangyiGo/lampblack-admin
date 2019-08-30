@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.osen.cloud.common.enums.InfoMessage.*;
 
 /**
@@ -35,29 +37,35 @@ public class AuthorizationController {
     private JwtTokenUtil jwtTokenUtil;
 
     /**
-     * 请求令牌刷新
+     * 令牌刷新
      *
-     * @return 新令牌
+     * @param authorization token
+     * @return 信息
      */
     @PostMapping("/auth/refresh")
     public RestResult restResult(@RequestHeader("Authorization") String authorization) {
-
         log.info("user refresh token: " + SecurityUtils.getUsername());
-
         String token = authorization.substring(7);
-
         // 获取旧token
         JwtUser jwtUser = JSON.parseObject(stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + token).get(), JwtUser.class);
         if (BeanUtil.isEmpty(jwtUser))
             return RestResultUtil.authorization(User_Login_Guoqi.getCode(), User_Login_Guoqi.getMessage());
-
         // 验证token
         String refresh = null;
+        boolean isOk = false;
         if (jwtTokenUtil.validateToken(token, jwtUser)) {
             refresh = jwtTokenUtil.refreshToken(token);
+            // 清楚旧token
+            isOk = stringRedisTemplate.delete(JwtTokenUtil.KEYS + token);
+        }
+        if (isOk) {
+            // 重新保存
+            stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + refresh).set(refresh, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
+            return RestResultUtil.authorization(Refresh_OK.getCode(), refresh);
+        } else {
+            return RestResultUtil.authorization(User_Login_Guoqi.getCode(), User_Login_Guoqi.getMessage());
         }
 
-        return RestResultUtil.authorization(Refresh_OK.getCode(), refresh);
     }
 
     /**
@@ -68,9 +76,7 @@ public class AuthorizationController {
      */
     @PostMapping("/auth/logout")
     public RestResult logout(@RequestHeader("Authorization") String authorization) {
-
         log.info("user logout: " + authorization);
-
         // 清除redis缓存
         boolean delete = stringRedisTemplate.delete(JwtTokenUtil.KEYS + authorization.substring(7));
         if (delete) {
