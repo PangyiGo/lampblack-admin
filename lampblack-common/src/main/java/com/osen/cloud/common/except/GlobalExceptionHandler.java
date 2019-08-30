@@ -1,6 +1,6 @@
 package com.osen.cloud.common.except;
 
-import com.osen.cloud.common.except.type.BadRequestException;
+import com.osen.cloud.common.except.type.RunRequestException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.ThrowableUtil;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import static com.osen.cloud.common.enums.InfoMessage.NoFound_Error;
 import static com.osen.cloud.common.enums.InfoMessage.UnknownSystem_Error;
-import static com.osen.cloud.common.enums.InfoMessage.User_Login_Guoqi;
 
 /**
  * User: PangYi
@@ -51,13 +50,12 @@ public class GlobalExceptionHandler {
     /**
      * 处理自定义异常
      *
-     * @param bad
-     * @return
+     * @return 信息
      */
-    @ExceptionHandler(value = BadRequestException.class)
-    public RestResult badRequestException(BadRequestException bad) {
+    @ExceptionHandler(value = RunRequestException.class)
+    public RestResult badRequestException(RunRequestException badRequestException) {
         // 打印堆栈信息
-        log.error(ThrowableUtil.getStackTrace(bad));
-        return RestResultUtil.error(User_Login_Guoqi.getCode(), User_Login_Guoqi.getMessage());
+        log.error(ThrowableUtil.getStackTrace(badRequestException));
+        return RestResultUtil.error(badRequestException.getStatus(), badRequestException.getMessage());
     }
 }

@@ -1,16 +1,17 @@
 package com.osen.cloud.common.utils;
 
 import cn.hutool.json.JSONObject;
-import com.osen.cloud.common.except.type.BadRequestException;
-import org.springframework.http.HttpStatus;
+import com.osen.cloud.common.except.type.RunRequestException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import static com.osen.cloud.common.enums.InfoMessage.User_Login_Guoqi;
 
 /**
  * User: PangYi
  * Date: 2019-08-28
  * Time: 18:43
- * Description: 获取系统用户信息
+ * Description: 获取系统
  */
 public class SecurityUtils {
 
@@ -19,7 +20,7 @@ public class SecurityUtils {
         try {
             userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         } catch (Exception e) {
-            throw new BadRequestException(HttpStatus.UNAUTHORIZED, "登录状态过期");
+            throw new RunRequestException(User_Login_Guoqi.getCode(), User_Login_Guoqi.getMessage());
         }
         return userDetails;
     }

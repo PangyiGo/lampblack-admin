@@ -1,12 +1,12 @@
 package com.osen.cloud.system.security.controller;
 
-import cn.hutool.core.bean.BeanUtil;
-import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.osen.cloud.common.except.type.RunRequestException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.SecurityUtils;
+import com.osen.cloud.system.security.service.AuthenticationService;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
-import com.osen.cloud.system.security.utils.JwtUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.concurrent.TimeUnit;
 
 import static com.osen.cloud.common.enums.InfoMessage.*;
 
@@ -34,7 +32,7 @@ public class AuthorizationController {
     private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
-    private JwtTokenUtil jwtTokenUtil;
+    private AuthenticationService authenticationService;
 
     /**
      * 令牌刷新
@@ -45,27 +43,10 @@ public class AuthorizationController {
     @PostMapping("/auth/refresh")
     public RestResult restResult(@RequestHeader("Authorization") String authorization) {
         log.info("user refresh token: " + SecurityUtils.getUsername());
-        String token = authorization.substring(7);
-        // 获取旧token
-        JwtUser jwtUser = JSON.parseObject(stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + token).get(), JwtUser.class);
-        if (BeanUtil.isEmpty(jwtUser))
-            return RestResultUtil.authorization(User_Login_Guoqi.getCode(), User_Login_Guoqi.getMessage());
-        // 验证token
-        String refresh = null;
-        boolean isOk = false;
-        if (jwtTokenUtil.validateToken(token, jwtUser)) {
-            refresh = jwtTokenUtil.refreshToken(token);
-            // 清楚旧token
-            isOk = stringRedisTemplate.delete(JwtTokenUtil.KEYS + token);
-        }
-        if (isOk) {
-            // 重新保存
-            stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + refresh).set(refresh, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
-            return RestResultUtil.authorization(Refresh_OK.getCode(), refresh);
-        } else {
-            return RestResultUtil.authorization(User_Login_Guoqi.getCode(), User_Login_Guoqi.getMessage());
-        }
-
+        String refresh = authenticationService.refreshToken(authorization);
+        if (StringUtils.isEmpty(refresh))
+            throw new RunRequestException(Refresh_Failed.getCode(), Refresh_Failed.getMessage());
+        return RestResultUtil.authorization(Refresh_OK.getCode(), Refresh_OK.getMessage());
     }
 
     /**
@@ -79,11 +60,8 @@ public class AuthorizationController {
         log.info("user logout: " + authorization);
         // 清除redis缓存
         boolean delete = stringRedisTemplate.delete(JwtTokenUtil.KEYS + authorization.substring(7));
-        if (delete) {
-            return RestResultUtil.authorization(User_Logout_Success.getCode(), User_Logout_Success.getMessage());
-        } else {
-            return RestResultUtil.authorization(User_Logout_Failed.getCode(), User_Logout_Failed.getMessage());
-        }
-
+        if (delete)
+            throw new RunRequestException(User_Logout_Success.getCode(), User_Logout_Success.getMessage());
+        return RestResultUtil.authorization(User_Logout_Failed.getCode(), User_Logout_Failed.getMessage());
     }
 }

@@ -145,7 +145,7 @@ java.lang.ClassCastException: com.sun.proxy.$Proxy145 cannot be cast to com.osen
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 2019-08-29 19:59:18.736 [XNIO-1 task-1] ERROR io.undertow.request - UT005023: Exception handling request to /api/osen/cloud/auth/logout
-com.osen.cloud.common.except.type.BadRequestException: 登录状态过期
+com.osen.cloud.common.except.type.RunRequestException: 登录状态过期
 	at com.osen.cloud.common.utils.SecurityUtils.getUserDetails(SecurityUtils.java:21)
 	at com.osen.cloud.common.utils.SecurityUtils.getUserId(SecurityUtils.java:41)
 	at com.osen.cloud.system.security.handler.UserLogoutSuccessHandler.onLogoutSuccess(UserLogoutSuccessHandler.java:34)
@@ -217,7 +217,7 @@ com.osen.cloud.common.except.type.BadRequestException: 登录状态过期
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 2019-08-29 19:59:48.777 [XNIO-1 task-3] ERROR io.undertow.request - UT005023: Exception handling request to /api/osen/cloud/auth/logout
-com.osen.cloud.common.except.type.BadRequestException: 登录状态过期
+com.osen.cloud.common.except.type.RunRequestException: 登录状态过期
 	at com.osen.cloud.common.utils.SecurityUtils.getUserDetails(SecurityUtils.java:21)
 	at com.osen.cloud.common.utils.SecurityUtils.getUserId(SecurityUtils.java:41)
 	at com.osen.cloud.system.security.handler.UserLogoutSuccessHandler.onLogoutSuccess(UserLogoutSuccessHandler.java:34)
@@ -289,7 +289,7 @@ com.osen.cloud.common.except.type.BadRequestException: 登录状态过期
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 2019-08-29 20:00:09.013 [XNIO-1 task-4] ERROR io.undertow.request - UT005023: Exception handling request to /api/osen/cloud/auth/logout
-com.osen.cloud.common.except.type.BadRequestException: 登录状态过期
+com.osen.cloud.common.except.type.RunRequestException: 登录状态过期
 	at com.osen.cloud.common.utils.SecurityUtils.getUserDetails(SecurityUtils.java:21)
 	at com.osen.cloud.common.utils.SecurityUtils.getUserId(SecurityUtils.java:41)
 	at com.osen.cloud.system.security.handler.UserLogoutSuccessHandler.onLogoutSuccess(UserLogoutSuccessHandler.java:34)
