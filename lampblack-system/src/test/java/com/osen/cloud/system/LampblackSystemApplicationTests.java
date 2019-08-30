@@ -28,7 +28,7 @@ public class LampblackSystemApplicationTests {
 
     @Test
     public void test01(){
-        System.out.println(passwordEncoder.encode("123456"));
+        System.out.println(passwordEncoder.encode("12345678"));
     }
 
 }

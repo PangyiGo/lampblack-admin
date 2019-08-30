@@ -13,7 +13,7 @@ import static com.osen.cloud.common.enums.InfoMessage.User_Login_Guoqi;
  * Time: 18:43
  * Description: 获取系统
  */
-public class SecurityUtils {
+public class SecurityUtil {
 
     private static UserDetails getUserDetails() {
         UserDetails userDetails = null;

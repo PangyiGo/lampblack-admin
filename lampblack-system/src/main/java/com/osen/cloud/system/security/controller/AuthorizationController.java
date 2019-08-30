@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.common.except.type.RunRequestException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
-import com.osen.cloud.common.utils.SecurityUtils;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.system.security.service.AuthenticationService;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -42,7 +42,7 @@ public class AuthorizationController {
      */
     @PostMapping("/auth/refresh")
     public RestResult restResult(@RequestHeader("Authorization") String authorization) {
-        log.info("user refresh token: " + SecurityUtils.getUsername());
+        log.info("user refresh token: " + SecurityUtil.getUsername());
         String refresh = authenticationService.refreshToken(authorization);
         if (StringUtils.isEmpty(refresh))
             throw new RunRequestException(Refresh_Failed.getCode(), Refresh_Failed.getMessage());

@@ -6,11 +6,11 @@ import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.ThrowableUtil;
 import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import static com.osen.cloud.common.enums.InfoMessage.NoFound_Error;
-import static com.osen.cloud.common.enums.InfoMessage.UnknownSystem_Error;
+import static com.osen.cloud.common.enums.InfoMessage.*;
 
 /**
  * User: PangYi
@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
      * @param e 异常
      * @return 信息
      */
-    @ExceptionHandler(Throwable.class)
+    @ExceptionHandler(value = Throwable.class)
     public RestResult exceptionHandle(Throwable e) {
         //打印错误日志
         log.error(ThrowableUtil.getStackTrace(e));
@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
      *
      * @return 信息
      */
-    @ExceptionHandler(NotFoundException.class)
+    @ExceptionHandler(value = NotFoundException.class)
     public RestResult notfound(NotFoundException noFound) {
         // 打印错误日志
         log.error(ThrowableUtil.getStackTrace(noFound));
@@ -57,5 +57,18 @@ public class GlobalExceptionHandler {
         // 打印堆栈信息
         log.error(ThrowableUtil.getStackTrace(badRequestException));
         return RestResultUtil.error(badRequestException.getStatus(), badRequestException.getMessage());
+    }
+
+    /**
+     * 无权访问异常处理
+     *
+     * @param accessDeniedException 异常
+     * @return 信息
+     */
+    @ExceptionHandler(value = AccessDeniedException.class)
+    public RestResult noAccessException(AccessDeniedException accessDeniedException) {
+        // 打印堆栈信息
+        log.error(ThrowableUtil.getStackTrace(accessDeniedException));
+        return RestResultUtil.error(User_NO_Access.getCode(), User_NO_Access.getMessage());
     }
 }
