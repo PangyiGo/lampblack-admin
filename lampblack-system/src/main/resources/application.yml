@@ -75,4 +75,4 @@ mybatis-plus:
 
 ## 统一请求地址头
 restful:
-  prefix: /api/osen/cloud
+  prefix: /api/lampblack
