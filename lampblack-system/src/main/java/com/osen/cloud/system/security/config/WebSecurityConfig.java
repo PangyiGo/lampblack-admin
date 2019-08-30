@@ -129,7 +129,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 表单
                 .formLogin()
-                .loginPage("/api/lampbalck/auth/login")
+                .loginPage("/**/auth/login")
                 .successHandler(userAuthenticationSuccessHandler)
                 .failureHandler(userAuthenticationFailureHandler)
                 .permitAll()

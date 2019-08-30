@@ -46,7 +46,7 @@ public class AuthorizationController {
         String refresh = authenticationService.refreshToken(authorization);
         if (StringUtils.isEmpty(refresh))
             throw new RunRequestException(Refresh_Failed.getCode(), Refresh_Failed.getMessage());
-        return RestResultUtil.authorization(Refresh_OK.getCode(), Refresh_OK.getMessage());
+        return RestResultUtil.success(refresh);
     }
 
     /**

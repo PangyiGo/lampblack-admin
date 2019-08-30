@@ -7,6 +7,7 @@ import com.osen.cloud.system.security.utils.JwtUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,6 +32,7 @@ public class AuthenticationService {
      * @param authorization 令牌
      * @return 信息
      */
+    @Transactional(rollbackFor = Exception.class)
     public String refreshToken(String authorization) {
         String token = authorization.substring(7);
         // 获取旧token
@@ -44,7 +46,8 @@ public class AuthenticationService {
             // 清除旧token
             stringRedisTemplate.delete(JwtTokenUtil.KEYS + token);
             // 重新保存
-            stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + refresh).set(refresh, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
+            stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + refresh).set(JSON.toJSONString(jwtUser), JwtTokenUtil.EXPIRATION,
+                    TimeUnit.MILLISECONDS);
         }
         return refresh;
     }
