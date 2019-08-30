@@ -7,13 +7,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * 获取当前登录的用户
- * @author Zheng Jie
- * @date 2019-01-17
+ * User: PangYi
+ * Date: 2019-08-28
+ * Time: 18:43
+ * Description: 获取系统用户信息
  */
 public class SecurityUtils {
 
-    public static UserDetails getUserDetails() {
+    private static UserDetails getUserDetails() {
         UserDetails userDetails = null;
         try {
             userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -25,9 +26,10 @@ public class SecurityUtils {
 
     /**
      * 获取系统用户名称
+     *
      * @return 系统用户名称
      */
-    public static String getUsername(){
+    public static String getUsername() {
         Object obj = getUserDetails();
         JSONObject json = new JSONObject(obj);
         return json.get("username", String.class);
@@ -35,11 +37,12 @@ public class SecurityUtils {
 
     /**
      * 获取系统用户id
+     *
      * @return 系统用户id
      */
-    public static Long getUserId(){
+    public static Integer getUserId() {
         Object obj = getUserDetails();
         JSONObject json = new JSONObject(obj);
-        return json.get("id", Long.class);
+        return json.get("id", Integer.class);
     }
 }

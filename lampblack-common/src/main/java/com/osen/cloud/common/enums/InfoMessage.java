@@ -23,6 +23,7 @@ public enum InfoMessage {
      * 成功信息体
      */
     Success_OK(2001, "成功请求"),
+    Refresh_OK(2002,"令牌刷新成功"),
 
     /**
      * 提示信息体
