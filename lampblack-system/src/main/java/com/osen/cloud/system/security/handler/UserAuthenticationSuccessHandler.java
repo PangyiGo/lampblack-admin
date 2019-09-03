@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import com.osen.cloud.system.security.utils.JwtUser;
+import com.osen.cloud.system.security.utils.TransferUserToJwt;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -45,8 +46,9 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
         //生成token
         String token = jwtTokenUtil.generateToken(jwtUser);
 
+        TransferUserToJwt transferUserToJwt = JwtTokenUtil.toUser(jwtUser);
         //保存redis
-        String jsonString = JSON.toJSONString(jwtUser);
+        String jsonString = JSON.toJSONString(transferUserToJwt);
         stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + token).set(jsonString, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
 
         response.setContentType("application/json;charset=utf-8");

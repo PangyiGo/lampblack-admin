@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import com.osen.cloud.system.security.utils.JwtUser;
+import com.osen.cloud.system.security.utils.TransferUserToJwt;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -60,15 +61,16 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         if (StringUtils.isNotEmpty(username) && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            //             JwtUser userDetails = (JwtUser) this.userDetailsService.loadUserByUsername(username);
+            //            JwtUser userDetails = (JwtUser) this.userDetailsService.loadUserByUsername(username);
 
             // 从 redis 缓存中获取认证主体
             String json = stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + authToken).get();
 
-            JwtUser userDetails = JSON.parseObject(json, JwtUser.class);
+            TransferUserToJwt transferUserToJwt = JSON.parseObject(json, TransferUserToJwt.class);
+
+            JwtUser userDetails = JwtTokenUtil.toJwt(transferUserToJwt);
 
             if (userDetails != null) {
-
                 // 验证token是否有效
                 if (jwtTokenUtil.validateToken(authToken, userDetails)) {
                     UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());

@@ -10,7 +10,6 @@ import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,10 +65,4 @@ public class AuthorizationController {
         return RestResultUtil.authorization(User_Logout_Failed.getCode(), User_Logout_Failed.getMessage());
     }
 
-    @PostMapping("/users")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    public RestResult restResult() {
-        System.out.println("sss");
-        return RestResultUtil.success();
-    }
 }

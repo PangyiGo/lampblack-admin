@@ -1,5 +1,6 @@
 package com.osen.cloud.system.security.utils;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,6 +49,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
+    @JSONField(serialize = false)
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -58,6 +60,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
+    @JSONField(serialize = false)
     @Override
     public boolean isAccountNonLocked() {
         return true;
@@ -68,6 +71,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
+    @JSONField(serialize = false)
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
@@ -78,6 +82,7 @@ public class JwtUser implements UserDetails, Serializable {
      *
      * @return true
      */
+    @JSONField(serialize = false)
     @Override
     public boolean isEnabled() {
         return true;

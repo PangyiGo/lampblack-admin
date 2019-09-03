@@ -3,12 +3,12 @@ package com.osen.cloud.system.security.utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * User: PangYi
@@ -135,4 +135,43 @@ public class JwtTokenUtil {
         return (username.equals(jwtUser.getUsername()) && !isTokenExpired(token));
     }
 
+    /**
+     * 将认证信息转换为序列化
+     *
+     * @param jwtUser 结构体
+     * @return 信息
+     */
+    public static TransferUserToJwt toUser(JwtUser jwtUser) {
+        TransferUserToJwt transferUserToJwt = new TransferUserToJwt();
+        transferUserToJwt.setId(jwtUser.getId());
+        transferUserToJwt.setUsername(jwtUser.getUsername());
+        transferUserToJwt.setPassword(jwtUser.getPassword());
+        List<String> list = new ArrayList<>();
+        for (GrantedAuthority authority : jwtUser.getAuthorities()) {
+            SimpleGrantedAuthority simpleGrantedAuthority = (SimpleGrantedAuthority) authority;
+            list.add(simpleGrantedAuthority.getAuthority());
+        }
+        transferUserToJwt.setAuthority(list);
+        return transferUserToJwt;
+    }
+
+    /**
+     * 将序列化转换为认证信息
+     *
+     * @param transferUserToJwt 序列化
+     * @return 信息
+     */
+    public static JwtUser toJwt(TransferUserToJwt transferUserToJwt) {
+        JwtUser jwtUser = new JwtUser();
+        jwtUser.setId(transferUserToJwt.getId());
+        jwtUser.setUsername(transferUserToJwt.getUsername());
+        jwtUser.setPassword(transferUserToJwt.getPassword());
+        List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
+        for (String auth : transferUserToJwt.getAuthority()) {
+            SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(auth);
+            authorityList.add(simpleGrantedAuthority);
+        }
+        jwtUser.setAuthorities(authorityList);
+        return jwtUser;
+    }
 }
