@@ -25,6 +25,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 添加用户
+     *
+     * @param userVo 请求数据
+     * @return 信息
+     */
     @PostMapping("/users")
     public RestResult create(@RequestBody InsertUserVo userVo) {
         if (!userService.create(userVo.getUser(), userVo.getRoles()))
