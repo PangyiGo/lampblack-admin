@@ -49,6 +49,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public boolean create(User user, List<Integer> roles) {
         if (this.findByUsername(user.getAccount()) != null)
             throw new ServiceException(InsertUser_Error.getCode(), InsertUser_Error.getMessage());
+        //插入角色是否异常
         Collection<Role> listByIds = roleService.listByIds(roles);
         if (listByIds.size() != roles.size())
             return false;

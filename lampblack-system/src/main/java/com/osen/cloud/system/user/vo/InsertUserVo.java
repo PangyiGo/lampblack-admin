@@ -1,4 +1,4 @@
-package com.osen.cloud.common.vo;
+package com.osen.cloud.system.user.vo;
 
 import com.osen.cloud.common.entity.User;
 import lombok.AllArgsConstructor;

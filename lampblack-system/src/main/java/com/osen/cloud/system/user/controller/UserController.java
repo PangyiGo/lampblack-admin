@@ -1,8 +1,8 @@
-package com.osen.cloud.system.user;
+package com.osen.cloud.system.user.controller;
 
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
-import com.osen.cloud.common.vo.InsertUserVo;
+import com.osen.cloud.system.user.vo.InsertUserVo;
 import com.osen.cloud.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
