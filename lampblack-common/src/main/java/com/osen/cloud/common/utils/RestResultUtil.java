@@ -2,6 +2,7 @@ package com.osen.cloud.common.utils;
 
 import com.osen.cloud.common.result.RestResult;
 
+import static com.osen.cloud.common.enums.InfoMessage.Failed_Error;
 import static com.osen.cloud.common.enums.InfoMessage.Success_OK;
 
 /**
@@ -31,6 +32,15 @@ public class RestResultUtil {
      */
     public static RestResult success() {
         return new RestResult(Success_OK.getCode(), Success_OK.getMessage());
+    }
+
+    /**
+     * 失败请求，无数据
+     *
+     * @return 信息
+     */
+    public static RestResult failed() {
+        return new RestResult(Failed_Error.getCode(), Failed_Error.getMessage());
     }
 
     /**

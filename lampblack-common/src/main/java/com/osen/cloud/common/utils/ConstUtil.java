@@ -8,6 +8,6 @@ package com.osen.cloud.common.utils;
  */
 public class ConstUtil {
 
-    // 用户初始密码
+    // 用户初始密码，12345678
     public static final String INIT_PASSWORD = "$2a$10$yNCkJq5IlAVX07aK2eD2kOoxZhxz7ym.FKjaTK7MimhMRASiUvfkS";
 }

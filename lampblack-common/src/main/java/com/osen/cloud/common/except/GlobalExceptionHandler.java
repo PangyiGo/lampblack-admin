@@ -1,6 +1,7 @@
 package com.osen.cloud.common.except;
 
 import com.osen.cloud.common.except.type.RunRequestException;
+import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.ThrowableUtil;
@@ -70,5 +71,18 @@ public class GlobalExceptionHandler {
         // 打印堆栈信息
         log.error(ThrowableUtil.getStackTrace(accessDeniedException));
         return RestResultUtil.error(User_NO_Access.getCode(), User_NO_Access.getMessage());
+    }
+
+    /**
+     * 统一处理Service层异常
+     *
+     * @param service 异常
+     * @return 信息
+     */
+    @ExceptionHandler(value = ServiceException.class)
+    public RestResult handlerServiceException(ServiceException service) {
+        // 打印堆栈信息
+        log.error(ThrowableUtil.getStackTrace(service));
+        return RestResultUtil.error(service.getStatus(), service.getMessage());
     }
 }
