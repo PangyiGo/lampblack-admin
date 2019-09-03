@@ -60,7 +60,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         if (StringUtils.isNotEmpty(username) && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            // UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+            //             JwtUser userDetails = (JwtUser) this.userDetailsService.loadUserByUsername(username);
 
             // 从 redis 缓存中获取认证主体
             String json = stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + authToken).get();

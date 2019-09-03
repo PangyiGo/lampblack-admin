@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -32,7 +31,7 @@ import org.springframework.web.filter.CorsFilter;
 @Slf4j
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Qualifier("jwtUserDetailsService")
@@ -78,7 +77,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * @return 返回
      * @throws Exception 异常
      */
-    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+    @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
@@ -128,27 +127,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().accessDeniedHandler(userAccessDeniedHandler).and()
 
                 // 表单
-                .formLogin()
-                .loginPage("/**/auth/login")
-                .successHandler(userAuthenticationSuccessHandler)
-                .failureHandler(userAuthenticationFailureHandler)
-                .permitAll()
-                .and()
+                .formLogin().loginPage("/**/auth/login").successHandler(userAuthenticationSuccessHandler).failureHandler(userAuthenticationFailureHandler).permitAll().and()
                 // 过滤请求
-                .authorizeRequests()
-                .antMatchers(
-                        HttpMethod.GET,
-                        "/*.html",
-                        "/**/*.html",
-                        "/**/*.css",
-                        "/**/*.js"
-                ).anonymous()
+                .authorizeRequests().antMatchers(HttpMethod.GET, "/*.html", "/**/*.html", "/**/*.css", "/**/*.js").anonymous()
 
                 // swagger start
-                .antMatchers("/swagger-ui.html").anonymous()
-                .antMatchers("/swagger-resources/**").anonymous()
-                .antMatchers("/webjars/**").anonymous()
-                .antMatchers("/*/api-docs").anonymous()
+                .antMatchers("/swagger-ui.html").anonymous().antMatchers("/swagger-resources/**").anonymous().antMatchers("/webjars/**").anonymous().antMatchers("/*/api-docs").anonymous()
                 // swagger end
 
                 // 其他接口认证
