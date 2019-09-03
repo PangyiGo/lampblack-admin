@@ -1,6 +1,8 @@
 package com.osen.cloud.system.user;
 
+import com.osen.cloud.common.entity.Role;
 import com.osen.cloud.common.entity.User;
+import com.osen.cloud.service.role.RoleService;
 import com.osen.cloud.service.user.UserService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -24,6 +28,9 @@ public class UserSimpleTest {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleService roleService;
 
     @Test
     public void test01() {
@@ -47,5 +54,12 @@ public class UserSimpleTest {
         boolean b = userService.create(user, list);
 
         Assert.assertTrue(b);
+    }
+
+    @Test
+    public void test03() {
+        Integer[] integers = {1, 2, 5};
+        Collection<Role> byIds = roleService.listByIds(Arrays.asList(integers));
+        System.out.println(byIds);
     }
 }

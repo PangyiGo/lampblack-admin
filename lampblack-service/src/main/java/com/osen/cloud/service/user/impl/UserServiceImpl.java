@@ -3,11 +3,13 @@ package com.osen.cloud.service.user.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.osen.cloud.common.entity.Role;
 import com.osen.cloud.common.entity.User;
 import com.osen.cloud.common.entity.UserRole;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.user.UserMapper;
+import com.osen.cloud.service.role.RoleService;
 import com.osen.cloud.service.user.UserService;
 import com.osen.cloud.service.user_role.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static com.osen.cloud.common.enums.InfoMessage.InsertUser_Error;
@@ -32,6 +35,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Autowired
     private UserRoleService userRoleService;
 
+    @Autowired
+    private RoleService roleService;
+
     @Override
     public User findByUsername(String username) {
         LambdaQueryWrapper<User> wrapper = Wrappers.<User>lambdaQuery().eq(User::getAccount, username);
@@ -43,6 +49,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public boolean create(User user, List<Integer> roles) {
         if (this.findByUsername(user.getAccount()) != null)
             throw new ServiceException(InsertUser_Error.getCode(), InsertUser_Error.getMessage());
+        Collection<Role> listByIds = roleService.listByIds(roles);
+        if (listByIds.size() != roles.size())
+            return false;
         //初始密码
         user.setPassword(ConstUtil.INIT_PASSWORD);
         user.setCreateTime(LocalDateTime.now());

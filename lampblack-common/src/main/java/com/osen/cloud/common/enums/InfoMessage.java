@@ -29,8 +29,6 @@ public enum InfoMessage {
 
     Failed_Error(2004, "请求失败"),
 
-    Refresh_OK(2002, "令牌刷新成功"),
-
     Refresh_Failed(2003, "令牌刷新异常"),
 
     /**
