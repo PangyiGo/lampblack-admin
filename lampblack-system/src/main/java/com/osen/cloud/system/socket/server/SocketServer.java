@@ -60,7 +60,7 @@ public class SocketServer {
                         }
                     }).option(ChannelOption.SO_BACKLOG, 1024).childOption(ChannelOption.SO_KEEPALIVE, true);
 
-            log.info("socket server starting，port: " + ConstUtil.SERVER_PORT);
+            log.info("socket server starting port: " + ConstUtil.SERVER_PORT);
 
             //绑定端口，接受进来的连接
             ChannelFuture channelFuture = serverBootstrap.bind(ConstUtil.SERVER_PORT).sync();
