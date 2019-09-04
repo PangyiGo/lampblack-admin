@@ -18,6 +18,12 @@
             <artifactId>lampblack-service</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.39.Final</version>
+        </dependency>
     </dependencies>
 
     <build>

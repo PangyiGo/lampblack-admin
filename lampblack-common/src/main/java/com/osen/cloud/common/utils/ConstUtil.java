@@ -10,4 +10,7 @@ public class ConstUtil {
 
     // 用户初始密码，12345678
     public static final String INIT_PASSWORD = "$2a$10$yNCkJq5IlAVX07aK2eD2kOoxZhxz7ym.FKjaTK7MimhMRASiUvfkS";
+
+    // 监听端口
+    public static final Integer SERVER_PORT = 8888;
 }

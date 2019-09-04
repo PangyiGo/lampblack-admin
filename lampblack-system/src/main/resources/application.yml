@@ -67,7 +67,6 @@ logging:
 
 ## mybatis配置
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/**/*.xml
   type-aliases-package: com.osen.cloud.**.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
