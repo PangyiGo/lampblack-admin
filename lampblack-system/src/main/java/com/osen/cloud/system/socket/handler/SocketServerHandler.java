@@ -34,6 +34,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         log.info("reading event start connection ID: " + getConnectionID(ctx));
+        counter = 0;
         System.out.println(msg.toString());
     }
 
