@@ -1,13 +1,10 @@
 package com.osen.cloud.system.socket.handler;
 
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 /**
  * User: PangYi
@@ -15,8 +12,6 @@ import org.springframework.stereotype.Component;
  * Time: 14:54
  * Description: 客户端连接处理
  */
-@Component
-@ChannelHandler.Sharable
 @Slf4j
 public class SocketServerHandler extends ChannelInboundHandlerAdapter {
 
@@ -48,7 +43,6 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
         log.info("client connection   ID: " + getConnectionID(ctx));
-        Channel channel = ctx.channel();
         ctx.fireChannelRegistered();
     }
 
@@ -73,7 +67,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         log.info("reading event complete connection ID: " + getConnectionID(ctx));
-        ctx.fireChannelReadComplete();
+        ctx.flush();
     }
 
     /**
