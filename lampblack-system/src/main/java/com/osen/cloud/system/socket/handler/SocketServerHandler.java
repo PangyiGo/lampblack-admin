@@ -31,6 +31,11 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         log.info("reading event start connection ID: " + getConnectionID(ctx));
         counter = 0;
+
+        /*
+            上传数据处理
+         */
+
         System.out.println(msg.toString());
     }
 
@@ -96,7 +101,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
             IdleStateEvent idleStateEvent = (IdleStateEvent) evt;
             if (idleStateEvent.state().equals(IdleState.READER_IDLE)) {
                 // 空闲30s之后触发 (心跳包丢失)
-                if (counter >= 3) {
+                if (counter >= 2) {
                     // 连续丢失3个心跳包 (超时数据上传)
                     ctx.channel().close().sync();
                     log.error("client connection ID: " + getConnectionID(ctx) + " upload data exception");

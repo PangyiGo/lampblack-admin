@@ -31,8 +31,6 @@
         <module>lampblack-model</module>
         <!--业务模块-->
         <module>lampblack-service</module>
-        <!--测试模块-->
-        <module>lampblack-test</module>
     </modules>
 
     <!--依赖版本控制-->
