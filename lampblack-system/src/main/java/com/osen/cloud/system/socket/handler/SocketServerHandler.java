@@ -101,8 +101,8 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
                     ctx.channel().close().sync();
                     log.error("client connection ID: " + getConnectionID(ctx) + " upload data exception");
                 } else {
-                    log.warn("lost package " + getConnectionID(ctx) + " number: " + counter);
                     counter++;
+                    log.warn("lost package " + getConnectionID(ctx) + " number: " + counter);
                 }
             }
         }
@@ -115,6 +115,6 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      * @return 信息
      */
     private String getConnectionID(ChannelHandlerContext ctx) {
-        return ctx.channel().id().asShortText();
+        return ctx.channel().id().asLongText();
     }
 }
