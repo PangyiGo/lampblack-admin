@@ -1,0 +1,9 @@
+2019-09-04 17:52:13.075 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00002cd0-00000002-c751f37c14d64ca0-d5881434 upload data exception
+2019-09-04 17:53:19.749 [nioEventLoopGroup-5-2] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00002cd0-00000003-e83aa9e28b57d560-1f859c56 upload data exception
+2019-09-04 17:55:37.591 [nioEventLoopGroup-5-4] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00002cd0-00000005-46163023474af267-8d2041d9 upload data exception
+2019-09-04 17:55:38.599 [nioEventLoopGroup-5-5] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00002cd0-00000006-b2a8acb8874af626-48f5c893 upload data exception
+2019-09-04 17:57:18.024 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-04 17:57:18.025 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-04 17:57:28.162 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-04 17:57:28.163 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-04 17:59:03.411 [nioEventLoopGroup-5-2] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001220-00000003-39c130f2ad4ddd75-834ab08b upload data exception

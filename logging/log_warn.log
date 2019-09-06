@@ -1,12 +1,27 @@
-2019-09-04 15:33:31.281 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-04 15:33:37.492 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-09-04 15:50:32.468 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-04 15:50:38.156 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-09-04 15:52:23.049 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-04 15:52:28.790 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-09-04 17:48:10.066 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-04 17:48:16.094 [RMI TCP Connection(7)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-09-04 17:57:16.781 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-04 17:57:26.928 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-04 17:57:50.133 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-04 17:57:55.828 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-05 11:25:45.815 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-05 11:25:52.403 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-05 15:06:40.683 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-05 15:06:46.323 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-05 15:08:36.857 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-05 15:08:43.438 [RMI TCP Connection(6)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-05 15:12:41.632 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-05 15:12:47.276 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-05 15:13:20.923 [nioEventLoopGroup-5-5] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 1
+2019-09-05 15:13:20.923 [nioEventLoopGroup-5-4] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 3
+2019-09-05 15:13:20.923 [nioEventLoopGroup-5-3] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 2
+2019-09-05 15:17:35.684 [nioEventLoopGroup-5-5] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 1
+2019-09-05 15:17:57.685 [nioEventLoopGroup-5-5] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 2
+2019-09-05 15:18:29.010 [nioEventLoopGroup-5-5] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 1
+2019-09-05 15:18:51.011 [nioEventLoopGroup-5-5] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 2
+2019-09-05 15:19:13.011 [nioEventLoopGroup-5-5] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 3
+2019-09-05 17:35:50.595 [DatebookHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=1h47m31s198ms681µs477ns).
+2019-09-05 18:17:02.698 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-05 18:17:08.381 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-05 18:17:44.538 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 1
+2019-09-05 18:18:06.537 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 2
+2019-09-05 18:18:12.016 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package number: 3
+2019-09-05 18:22:06.690 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-05 18:22:15.596 [RMI TCP Connection(7)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-05 18:22:47.363 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 5ca655b1 number: 0
+2019-09-05 18:22:49.665 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package f8e72cb2 number: 1
+2019-09-05 18:23:09.358 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 5ca655b1 number: 2

@@ -1,5 +1,6 @@
 package com.osen.cloud.system.socket.handler;
 
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -47,6 +48,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
         log.info("client connection   ID: " + getConnectionID(ctx));
+        Channel channel = ctx.channel();
         ctx.fireChannelRegistered();
     }
 
@@ -71,7 +73,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         log.info("reading event complete connection ID: " + getConnectionID(ctx));
-        ctx.flush();
+        ctx.fireChannelReadComplete();
     }
 
     /**
@@ -105,6 +107,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
                     ctx.channel().close().sync();
                     log.error("client connection ID: " + getConnectionID(ctx) + " upload data exception");
                 } else {
+                    log.warn("lost package " + getConnectionID(ctx) + " number: " + counter);
                     counter++;
                 }
             }
@@ -118,6 +121,6 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      * @return 信息
      */
     private String getConnectionID(ChannelHandlerContext ctx) {
-        return ctx.channel().id().asLongText();
+        return ctx.channel().id().asShortText();
     }
 }

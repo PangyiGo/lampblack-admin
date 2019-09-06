@@ -58,7 +58,7 @@ public class SocketServer {
                         //服务器端逻辑处理
                         channelPipeline.addLast("SocketServerHandler", socketServerHandler);
                     }
-                }).option(ChannelOption.SO_BACKLOG, 1024).childOption(ChannelOption.SO_KEEPALIVE, true);
+                }).option(ChannelOption.SO_BACKLOG, 512).childOption(ChannelOption.SO_KEEPALIVE, true);
 
             log.info("socket server starting port: " + ConstUtil.SERVER_PORT);
 
@@ -69,6 +69,8 @@ public class SocketServer {
             channelFuture.channel().closeFuture().sync();
 
         } catch (Exception e) {
+            workerGroup.shutdownGracefully();
+            bossGroup.shutdownGracefully();
             log.error(e.getMessage());
             log.error("socket server start error");
         } finally {
