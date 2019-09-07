@@ -13,4 +13,10 @@ public class ConstUtil {
 
     // 监听端口
     public static final Integer SERVER_PORT = 8888;
+
+    // 日期格式化
+    public static String DATE_FORMAT = "yyyyMMddHHmmss";
+
+    // 日期格式化
+    public static String DATETIME_FORMAT = "yy-MM-dd HH:mm:ss.SSS";
 }
