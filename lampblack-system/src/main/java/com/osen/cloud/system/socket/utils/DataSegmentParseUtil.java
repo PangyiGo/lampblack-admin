@@ -102,7 +102,7 @@ public class DataSegmentParseUtil {
     }
 
     public static void main(String[] args) {
-        String data = "##0325QN=20190816173300001;ST=43;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190816173300;a34004-Rtd=26.0,a34004-Flag=N;a34002-Rtd=27.0,a34002-Flag=N;LA-Rtd=0.0,LA-Flag=N;a01007-Rtd=0.0,a01007-Flag=N;a01008-Rtd=0.0,a01008-Flag=N;a01001-Rtd=26.0,a01001-Flag=N;H01-Rtd=52.7,H01-Flag=N;a01006-Rtd=50.0,a01006-Flag=N&&4980";
+        String data = "##0275QN=20190814170100001;ST=22;CN=2011;PW=123456;MN=2019031801100018;Flag=5;CP=&&DataTime=20190814170100;a01007-Rtd=1.7,a01007-Flag=N;a01008-Rtd=199.1,a01008-Flag=N;a01001-Rtd=22.9,a01001-Flag=N;a01002-Rtd=85.8,a01002-Flag=N;a01006-Rtd=98.7,a01006-Flag=N;R01-Rtd=0.0,R01-Flag=N&&9301";
 
         Map<String, Object> stringObjectMap = parseDataTOMap(data);
 
