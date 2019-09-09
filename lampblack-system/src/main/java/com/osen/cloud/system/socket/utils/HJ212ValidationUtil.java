@@ -33,6 +33,7 @@ class HJ212ValidationUtil {
             }
         }
         String toHexString = Integer.toHexString(por).toUpperCase();
+        System.out.println(toHexString);
         return toHexString.equalsIgnoreCase(crc);
     }
 }

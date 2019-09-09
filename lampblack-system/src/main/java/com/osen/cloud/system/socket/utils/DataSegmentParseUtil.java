@@ -5,12 +5,13 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.DateTimeUtil;
+import com.osen.cloud.system.socket.server.DataSegmentService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * User: PangYi
@@ -18,13 +19,12 @@ import java.util.Map;
  * Time: 17:50
  * Description: HJ212协议数据解析工具
  */
+@Slf4j
+@Component
 public class DataSegmentParseUtil {
 
-    // 实时数据格式
-    private String[] realTimeSensorFlag = {"-Rtd", "-Flag"};
-
-    // 分钟，小时，天数据格式
-    private String[] othersSensorFlag = {"-Avg", "-Max", "-Min", "-Flag"};
+    @Autowired
+    private DataSegmentService dataSegmentService;
 
     /**
      * 将数据转换成Map数据类型
@@ -32,29 +32,34 @@ public class DataSegmentParseUtil {
      * @param dataSegment 数据段
      * @return 结果数据
      */
-    public static Map<String, Object> parseDataTOMap(String dataSegment) {
+    public Map<String, Object> parseDataTOMap(String dataSegment) {
 
-        if (StringUtils.isEmpty(dataSegment))
+        String segmnet = null;
+        try {
+            if (StringUtils.isEmpty(dataSegment))
+                return null;
+            // 数据格式包尾
+            dataSegment = dataSegment + "\r\n";
+
+            // 包头校验
+            if (!dataSegment.startsWith("##"))
+                return null;
+
+            //数据长度校验
+            int length = Integer.valueOf(StrUtil.sub(dataSegment, 2, 6));
+            segmnet = StrUtil.sub(dataSegment, 6, -6);
+            if (segmnet.length() != length)
+                return null;
+
+            //CRC校验
+            String crc = StrUtil.sub(dataSegment, -6, -2);
+            if (!HJ212ValidationUtil.validateCRC(segmnet, crc))
+                return null;
+        } catch (Exception e) {
+            log.error(e.getMessage());
             return null;
-        // 数据格式包尾
-        dataSegment = dataSegment + "\r\n";
-
-        // 包头校验
-        if (!dataSegment.startsWith("##"))
-            return null;
-
-        //数据长度校验
-        int length = Integer.valueOf(StrUtil.sub(dataSegment, 2, 6));
-        String segmnet = StrUtil.sub(dataSegment, 6, -6);
-        if (segmnet.length() != length)
-            return null;
-
-        //CRC校验
-        String crc = StrUtil.sub(dataSegment, -6, -2);
-        if (!HJ212ValidationUtil.validateCRC(segmnet, crc))
-            return null;
-
-        return DataSegmentParseUtil.parseDataArea(segmnet);
+        }
+        return this.parseDataArea(segmnet);
     }
 
     /**
@@ -63,7 +68,7 @@ public class DataSegmentParseUtil {
      * @param data 数据段
      * @return 信息
      */
-    private static Map<String, Object> parseDataArea(String data) {
+    private Map<String, Object> parseDataArea(String data) {
         // 保存解析数据
         Map<String, Object> result = new HashMap<>();
         try {
@@ -101,11 +106,40 @@ public class DataSegmentParseUtil {
         return result;
     }
 
-    public static void main(String[] args) {
-        String data = "##0275QN=20190814170100001;ST=22;CN=2011;PW=123456;MN=2019031801100018;Flag=5;CP=&&DataTime=20190814170100;a01007-Rtd=1.7,a01007-Flag=N;a01008-Rtd=199.1,a01008-Flag=N;a01001-Rtd=22.9,a01001-Flag=N;a01002-Rtd=85.8,a01002-Flag=N;a01006-Rtd=98.7,a01006-Flag=N;R01-Rtd=0.0,R01-Flag=N&&9301";
-
-        Map<String, Object> stringObjectMap = parseDataTOMap(data);
-
-        System.out.println(stringObjectMap);
+    /**
+     * 数据封装
+     *
+     * @param parseData map数据
+     */
+    public void chooseHandlerType(Map<String, Object> parseData) {
+        try {
+            Integer CN = Integer.valueOf((String) parseData.get("CN"));
+            switch (CN) {
+                // 实时数据类型
+                case 2011:
+                    log.info("实时数据类型");
+                    dataSegmentService.handleRealTimeData(parseData);
+                    break;
+                // 分钟数据类型
+                case 2051:
+                    log.info("分钟数据类型");
+                    dataSegmentService.handleMinuteData(parseData);
+                    break;
+                // 小时数据类型
+                case 2061:
+                    log.info("小时数据类型");
+                    dataSegmentService.handleHourData(parseData);
+                    break;
+                // 天数据类型
+                case 2031:
+                    log.info("天数据类型");
+                    dataSegmentService.handleDayData(parseData);
+                    break;
+                default:
+                    log.warn("no match type handler");
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
     }
 }
