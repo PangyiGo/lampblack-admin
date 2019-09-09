@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.DataHour;
  * Description: 设备小数上传数据服务接口
  */
 public interface DataHourService extends IService<DataHour> {
+
+    /**
+     * 插入设备小时上传数据
+     *
+     * @param dataHour 数据
+     */
+    void insertHourData(DataHour dataHour);
 }

@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.DataMinute;
 import com.osen.cloud.model.data.DataMinuteMapper;
 import com.osen.cloud.service.data.DataMinuteService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DataMinuteServiceImpl extends ServiceImpl<DataMinuteMapper, DataMinute> implements DataMinuteService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertMinuteData(DataMinute dataMinute) {
+        super.save(dataMinute);
+    }
 }

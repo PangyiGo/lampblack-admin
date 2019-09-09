@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.DataMinute;
  * Description: 设备分钟上传数据服务接口
  */
 public interface DataMinuteService extends IService<DataMinute> {
+
+    /**
+     * 插入设备分钟上传数据
+     *
+     * @param dataMinute 数据
+     */
+    void insertMinuteData(DataMinute dataMinute);
 }

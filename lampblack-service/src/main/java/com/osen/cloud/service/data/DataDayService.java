@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.DataDay;
  * Description: 设备天上传数据服务接口
  */
 public interface DataDayService extends IService<DataDay> {
+
+    /**
+     * 插入设备天上传数据
+     *
+     * @param dataDay 数据
+     */
+    void insertDayData(DataDay dataDay);
 }

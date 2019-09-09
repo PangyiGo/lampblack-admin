@@ -8,6 +8,7 @@ import com.osen.cloud.common.utils.DateTimeUtil;
 import com.osen.cloud.system.socket.server.DataSegmentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -48,6 +49,7 @@ public class DataSegmentParseUtil {
             //数据长度校验
             int length = Integer.valueOf(StrUtil.sub(dataSegment, 2, 6));
             segmnet = StrUtil.sub(dataSegment, 6, -6);
+            System.out.println(segmnet.length());
             if (segmnet.length() != length)
                 return null;
 
@@ -111,6 +113,7 @@ public class DataSegmentParseUtil {
      *
      * @param parseData map数据
      */
+    @Async
     public void chooseHandlerType(Map<String, Object> parseData) {
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));

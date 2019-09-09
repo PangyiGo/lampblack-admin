@@ -1,12 +1,23 @@
 package com.osen.cloud.system.socket.server;
 
+import cn.hutool.core.bean.BeanUtil;
+import com.osen.cloud.common.entity.DataDay;
 import com.osen.cloud.common.entity.DataHistory;
+import com.osen.cloud.common.entity.DataHour;
+import com.osen.cloud.common.entity.DataMinute;
 import com.osen.cloud.common.enums.SensorCode;
+import com.osen.cloud.service.data.DataDayService;
 import com.osen.cloud.service.data.DataHistoryService;
+import com.osen.cloud.service.data.DataHourService;
+import com.osen.cloud.service.data.DataMinuteService;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -29,6 +40,15 @@ public class DataSegmentService {
 
     @Autowired
     private DataHistoryService dataHistoryService;
+
+    @Autowired
+    private DataMinuteService dataMinuteService;
+
+    @Autowired
+    private DataHourService dataHourService;
+
+    @Autowired
+    private DataDayService dataDayService;
 
     /**
      * 处理实时数据
@@ -66,25 +86,25 @@ public class DataSegmentService {
 
         log.info("insert one data to dataHistory");
 
+        // 插入数据
         dataHistoryService.insertRealtimeData(dataHistory);
     }
 
     private void handleDataMapperToRealtime(SensorCode sensorCode, DataHistory dataHistory, Map<String, Object> CPData) {
+        BigDecimal data_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
+        String data_flag = (String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]);
         switch (sensorCode) {
             case PM:
-                BigDecimal pm_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
-                dataHistory.setPm(pm_value);
-                dataHistory.setPmFlag((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]));
+                dataHistory.setPm(data_value);
+                dataHistory.setPmFlag(data_flag);
                 break;
             case NMHC:
-                BigDecimal nmhc_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
-                dataHistory.setNmhc(nmhc_value);
-                dataHistory.setNmhcFlag((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]));
+                dataHistory.setNmhc(data_value);
+                dataHistory.setNmhcFlag(data_flag);
                 break;
             case LAMPBLACK:
-                BigDecimal lampblack_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
-                dataHistory.setLampblack(lampblack_value);
-                dataHistory.setLampblackFlag((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]));
+                dataHistory.setLampblack(data_value);
+                dataHistory.setLampblackFlag(data_flag);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + sensorCode);
@@ -98,6 +118,39 @@ public class DataSegmentService {
      */
     public void handleMinuteData(Map<String, Object> data) {
         System.out.println(data);
+        // 分钟数据实体
+        DataMinute dataMinute = new DataMinute();
+        // 设备号
+        String device_no = (String) data.get("MN");
+        dataMinute.setDeviceNo(device_no);
+        // 设备数据
+        Map<String, Object> CPData = (Map<String, Object>) data.get("CP");
+        // 上传时间
+        LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
+        dataMinute.setDateTime(localDateTime);
+        // 数据封装
+        DataModel dataModel = new DataModel();
+        for (SensorCode sensorCode : SensorCode.values()) {
+            // 参数名称
+            boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
+            if (is_name_exist) {
+                handleMapperToInterval(sensorCode, dataModel, CPData);
+            }
+            // 参数编号
+            boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
+            if (is_code_exist) {
+                handleMapperToInterval(sensorCode, dataModel, CPData);
+            }
+        }
+        BeanUtil.copyProperties(dataModel, dataMinute);
+        // 风机，净化器状态
+        dataMinute.setFanFlag(1);
+        dataMinute.setPurifierFlag(1);
+
+        log.info("insert one data to dataMinute");
+
+        // 插入数据
+        dataMinuteService.insertMinuteData(dataMinute);
     }
 
     /**
@@ -107,6 +160,39 @@ public class DataSegmentService {
      */
     public void handleHourData(Map<String, Object> data) {
         System.out.println(data);
+        // 小时数据实体
+        DataHour dataHour = new DataHour();
+        // 设备号
+        String device_no = (String) data.get("MN");
+        dataHour.setDeviceNo(device_no);
+        // 设备数据
+        Map<String, Object> CPData = (Map<String, Object>) data.get("CP");
+        // 上传时间
+        LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
+        dataHour.setDateTime(localDateTime);
+        // 数据封装
+        DataModel dataModel = new DataModel();
+        for (SensorCode sensorCode : SensorCode.values()) {
+            // 参数名称
+            boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
+            if (is_name_exist) {
+                handleMapperToInterval(sensorCode, dataModel, CPData);
+            }
+            // 参数编号
+            boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
+            if (is_code_exist) {
+                handleMapperToInterval(sensorCode, dataModel, CPData);
+            }
+        }
+        BeanUtil.copyProperties(dataModel, dataHour);
+        // 风机，净化器状态
+        dataHour.setFanFlag(1);
+        dataHour.setPurifierFlag(1);
+
+        log.info("insert one data to dataHour");
+
+        // 插入数据
+        dataHourService.insertHourData(dataHour);
     }
 
     /**
@@ -116,5 +202,104 @@ public class DataSegmentService {
      */
     public void handleDayData(Map<String, Object> data) {
         System.out.println(data);
+        // 天数据实体
+        DataDay dataDay = new DataDay();
+        // 设备号
+        String device_no = (String) data.get("MN");
+        dataDay.setDeviceNo(device_no);
+        // 设备数据
+        Map<String, Object> CPData = (Map<String, Object>) data.get("CP");
+        // 上传时间
+        LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
+        dataDay.setDateTime(localDateTime);
+        // 数据封装
+        DataModel dataModel = new DataModel();
+        for (SensorCode sensorCode : SensorCode.values()) {
+            // 参数名称
+            boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
+            if (is_name_exist) {
+                handleMapperToInterval(sensorCode, dataModel, CPData);
+            }
+            // 参数编号
+            boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
+            if (is_code_exist) {
+                handleMapperToInterval(sensorCode, dataModel, CPData);
+            }
+        }
+        BeanUtil.copyProperties(dataModel, dataDay);
+        // 风机，净化器状态
+        dataDay.setFanFlag(1);
+        dataDay.setPurifierFlag(1);
+
+        log.info("insert one data to dataDay");
+
+        //插入数据
+        dataDayService.insertDayData(dataDay);
     }
+
+    private void handleMapperToInterval(SensorCode sensorCode, DataModel dataModel, Map<String, Object> CPData) {
+        BigDecimal data_avg = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[0]));
+        BigDecimal data_max = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[1]));
+        BigDecimal data_min = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[2]));
+        String data_flag = (String) CPData.get(sensorCode.getName() + othersSensorFlag[3]);
+        switch (sensorCode) {
+            case PM:
+                dataModel.setPm(data_avg);
+                dataModel.setPmMax(data_max);
+                dataModel.setPmMin(data_min);
+                dataModel.setPmFlag(data_flag);
+                break;
+            case NMHC:
+                dataModel.setNmhc(data_avg);
+                dataModel.setNmhcMax(data_max);
+                dataModel.setNmhcMin(data_min);
+                dataModel.setNmhcFlag(data_flag);
+                break;
+            case LAMPBLACK:
+                dataModel.setLampblack(data_avg);
+                dataModel.setLampblackMax(data_max);
+                dataModel.setLampblackMin(data_min);
+                dataModel.setLampblackFlag(data_flag);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + sensorCode);
+        }
+    }
+}
+
+/**
+ * 转换中间件
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+class DataModel implements Serializable {
+
+    private BigDecimal lampblack;
+
+    private BigDecimal lampblackMin;
+
+    private BigDecimal lampblackMax;
+
+    private String lampblackFlag;
+
+    private BigDecimal pm;
+
+    private BigDecimal pmMin;
+
+    private BigDecimal pmMax;
+
+    private String pmFlag;
+
+    private BigDecimal nmhc;
+
+    private BigDecimal nmhcMin;
+
+    private BigDecimal nmhcMax;
+
+    private String nmhcFlag;
+
+    private Integer fanFlag;
+
+    private Integer purifierFlag;
 }

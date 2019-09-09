@@ -2,6 +2,7 @@ package com.osen.cloud.system.socket.server;
 
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.system.socket.handler.SocketServerHandler;
+import com.osen.cloud.system.socket.utils.DataSegmentParseUtil;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
@@ -13,6 +14,7 @@ import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -26,6 +28,9 @@ import java.util.concurrent.TimeUnit;
 @Component
 @Slf4j
 public class SocketServer {
+
+    @Autowired
+    private DataSegmentParseUtil dataSegmentParseUtil;
 
     /**
      * Socket服务器端
@@ -50,9 +55,9 @@ public class SocketServer {
                             //字符串解码和编码
                             channelPipeline.addLast("decoder", new StringDecoder(CharsetUtil.UTF_8));
                             channelPipeline.addLast("encoder", new StringEncoder(CharsetUtil.UTF_8));
-                            channelPipeline.addLast(new IdleStateHandler(20, 0, 0, TimeUnit.SECONDS));
+                            channelPipeline.addLast(new IdleStateHandler(21, 0, 0, TimeUnit.SECONDS));
                             //服务器端逻辑处理
-                            channelPipeline.addLast("SocketServerHandler", new SocketServerHandler());
+                            channelPipeline.addLast("SocketServerHandler", new SocketServerHandler(dataSegmentParseUtil));
                         }
                     }).option(ChannelOption.SO_BACKLOG, 512).childOption(ChannelOption.SO_KEEPALIVE, true);
 

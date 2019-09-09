@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.DataDay;
 import com.osen.cloud.model.data.DataDayMapper;
 import com.osen.cloud.service.data.DataDayService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DataDayServiceImpl extends ServiceImpl<DataDayMapper, DataDay> implements DataDayService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertDayData(DataDay dataDay) {
+        super.save(dataDay);
+    }
 }

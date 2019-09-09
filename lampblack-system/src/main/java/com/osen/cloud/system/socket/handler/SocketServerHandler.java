@@ -1,10 +1,14 @@
 package com.osen.cloud.system.socket.handler;
 
+import cn.hutool.core.map.MapUtil;
+import com.osen.cloud.system.socket.utils.DataSegmentParseUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -14,6 +18,12 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class SocketServerHandler extends ChannelInboundHandlerAdapter {
+
+    private DataSegmentParseUtil dataSegmentParseUtil;
+
+    public SocketServerHandler(DataSegmentParseUtil dataSegmentParseUtil) {
+        this.dataSegmentParseUtil = dataSegmentParseUtil;
+    }
 
     /**
      * 心跳丢失次数
@@ -35,8 +45,10 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         /*
             上传数据处理
          */
+        Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(msg.toString());
 
-        System.out.println(msg.toString());
+        if (MapUtil.isNotEmpty(parseDataTOMap))
+            dataSegmentParseUtil.chooseHandlerType(parseDataTOMap);
     }
 
     /**
@@ -84,6 +96,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        cause.printStackTrace();
         log.error("socket server error: " + cause.getMessage());
         ctx.close();
     }
