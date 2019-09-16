@@ -1,2 +1,0 @@
-2019-08-28 17:42:16.507 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.osen.cloud.model]' package. Please check your configuration.
-2019-08-28 17:42:55.596 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.osen.cloud.model]' package. Please check your configuration.

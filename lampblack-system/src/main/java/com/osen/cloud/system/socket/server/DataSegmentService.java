@@ -1,20 +1,24 @@
 package com.osen.cloud.system.socket.server;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.alibaba.fastjson.JSON;
 import com.osen.cloud.common.entity.DataDay;
 import com.osen.cloud.common.entity.DataHistory;
 import com.osen.cloud.common.entity.DataHour;
 import com.osen.cloud.common.entity.DataMinute;
 import com.osen.cloud.common.enums.SensorCode;
+import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.data.DataDayService;
 import com.osen.cloud.service.data.DataHistoryService;
 import com.osen.cloud.service.data.DataHourService;
 import com.osen.cloud.service.data.DataMinuteService;
+import com.osen.cloud.service.device.DeviceService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -31,6 +35,12 @@ import java.util.Map;
 @Slf4j
 @Service
 public class DataSegmentService {
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private DeviceService deviceService;
 
     // 实时数据格式
     private String[] realTimeSensorFlag = {"-Rtd", "-Flag"};
@@ -53,9 +63,10 @@ public class DataSegmentService {
     /**
      * 处理实时数据
      *
-     * @param data 数据
+     * @param data         数据
+     * @param connectionID 连接ID
      */
-    public void handleRealTimeData(Map<String, Object> data) {
+    public void handleRealTimeData(Map<String, Object> data, String connectionID) {
         System.out.println(data);
         // 实时数据实体
         DataHistory dataHistory = new DataHistory();
@@ -81,13 +92,21 @@ public class DataSegmentService {
             }
         }
         // 风机，净化器状态
-        dataHistory.setFanFlag(1);
-        dataHistory.setPurifierFlag(1);
+        dataHistory.setFanFlag(ConstUtil.OPEN_STATUS);
+        dataHistory.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         log.info("insert one data to dataHistory");
 
         // 插入数据
         dataHistoryService.insertRealtimeData(dataHistory);
+
+        boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).hasKey(connectionID);
+        if (!hasKey) {
+            // 不存在ConnectionID，设置设备在线
+            stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).put(connectionID, dataHistory.getDeviceNo());
+            deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, dataHistory.getDeviceNo());
+        }
+        stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).put(dataHistory.getDeviceNo(), JSON.toJSONString(dataHistory));
     }
 
     private void handleDataMapperToRealtime(SensorCode sensorCode, DataHistory dataHistory, Map<String, Object> CPData) {
@@ -114,9 +133,10 @@ public class DataSegmentService {
     /**
      * 处理分钟数据
      *
-     * @param data 数据
+     * @param data         数据
+     * @param connectionID 连接ID
      */
-    public void handleMinuteData(Map<String, Object> data) {
+    public void handleMinuteData(Map<String, Object> data, String connectionID) {
         System.out.println(data);
         // 分钟数据实体
         DataMinute dataMinute = new DataMinute();
@@ -144,8 +164,8 @@ public class DataSegmentService {
         }
         BeanUtil.copyProperties(dataModel, dataMinute);
         // 风机，净化器状态
-        dataMinute.setFanFlag(1);
-        dataMinute.setPurifierFlag(1);
+        dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
+        dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         log.info("insert one data to dataMinute");
 
@@ -156,9 +176,10 @@ public class DataSegmentService {
     /**
      * 处理小时数据
      *
-     * @param data 数据
+     * @param data         数据
+     * @param connectionID 连接ID
      */
-    public void handleHourData(Map<String, Object> data) {
+    public void handleHourData(Map<String, Object> data, String connectionID) {
         System.out.println(data);
         // 小时数据实体
         DataHour dataHour = new DataHour();
@@ -186,8 +207,8 @@ public class DataSegmentService {
         }
         BeanUtil.copyProperties(dataModel, dataHour);
         // 风机，净化器状态
-        dataHour.setFanFlag(1);
-        dataHour.setPurifierFlag(1);
+        dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
+        dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         log.info("insert one data to dataHour");
 
@@ -198,9 +219,10 @@ public class DataSegmentService {
     /**
      * 处理天数据
      *
-     * @param data 数据
+     * @param data         数据
+     * @param connectionID 连接ID
      */
-    public void handleDayData(Map<String, Object> data) {
+    public void handleDayData(Map<String, Object> data, String connectionID) {
         System.out.println(data);
         // 天数据实体
         DataDay dataDay = new DataDay();
@@ -228,8 +250,8 @@ public class DataSegmentService {
         }
         BeanUtil.copyProperties(dataModel, dataDay);
         // 风机，净化器状态
-        dataDay.setFanFlag(1);
-        dataDay.setPurifierFlag(1);
+        dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
+        dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         log.info("insert one data to dataDay");
 

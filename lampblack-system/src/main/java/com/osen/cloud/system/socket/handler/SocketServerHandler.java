@@ -7,6 +7,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.Map;
 
@@ -21,8 +22,11 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
 
     private DataSegmentParseUtil dataSegmentParseUtil;
 
-    public SocketServerHandler(DataSegmentParseUtil dataSegmentParseUtil) {
+    private StringRedisTemplate stringRedisTemplate;
+
+    public SocketServerHandler(DataSegmentParseUtil dataSegmentParseUtil, StringRedisTemplate stringRedisTemplate) {
         this.dataSegmentParseUtil = dataSegmentParseUtil;
+        this.stringRedisTemplate = stringRedisTemplate;
     }
 
     /**
@@ -48,7 +52,9 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(msg.toString());
 
         if (MapUtil.isNotEmpty(parseDataTOMap))
-            dataSegmentParseUtil.chooseHandlerType(parseDataTOMap);
+            dataSegmentParseUtil.chooseHandlerType(parseDataTOMap, getConnectionID(ctx));
+        else
+            log.error("data upload format error");
     }
 
     /**
@@ -72,6 +78,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
         log.info("client disconnection ID: " + getConnectionID(ctx));
+        dataSegmentParseUtil.disConnectionDevice(getConnectionID(ctx));
         ctx.fireChannelUnregistered();
     }
 

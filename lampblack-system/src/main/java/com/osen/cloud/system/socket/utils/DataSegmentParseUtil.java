@@ -5,9 +5,11 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.DateTimeUtil;
+import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.socket.server.DataSegmentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +28,12 @@ public class DataSegmentParseUtil {
 
     @Autowired
     private DataSegmentService dataSegmentService;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private DeviceService deviceService;
 
     /**
      * 将数据转换成Map数据类型
@@ -114,35 +122,49 @@ public class DataSegmentParseUtil {
      * @param parseData map数据
      */
     @Async
-    public void chooseHandlerType(Map<String, Object> parseData) {
+    public void chooseHandlerType(Map<String, Object> parseData, String connectionID) {
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));
             switch (CN) {
                 // 实时数据类型
                 case 2011:
                     log.info("实时数据类型");
-                    dataSegmentService.handleRealTimeData(parseData);
+                    dataSegmentService.handleRealTimeData(parseData, connectionID);
                     break;
                 // 分钟数据类型
                 case 2051:
                     log.info("分钟数据类型");
-                    dataSegmentService.handleMinuteData(parseData);
+                    dataSegmentService.handleMinuteData(parseData, connectionID);
                     break;
                 // 小时数据类型
                 case 2061:
                     log.info("小时数据类型");
-                    dataSegmentService.handleHourData(parseData);
+                    dataSegmentService.handleHourData(parseData, connectionID);
                     break;
                 // 天数据类型
                 case 2031:
                     log.info("天数据类型");
-                    dataSegmentService.handleDayData(parseData);
+                    dataSegmentService.handleDayData(parseData, connectionID);
                     break;
                 default:
                     log.warn("no match type handler");
             }
         } catch (Exception e) {
             log.error(e.getMessage());
+        }
+    }
+
+    /**
+     * 设备断开连接处理
+     *
+     * @param connectionId 连接ID
+     */
+    @Async
+    public void disConnectionDevice(String connectionId) {
+        String deviceNo = (String) stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).get(connectionId);
+        stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).delete(connectionId);
+        if (StringUtils.isNotEmpty(deviceNo)) {
+            deviceService.updateDeviceStatus(ConstUtil.CLOSE_STATUS, deviceNo);
         }
     }
 }

@@ -24,11 +24,10 @@ public class DataSegmentTest {
 
     @Test
     public void test01() {
-        String data = "##0277QN=20190813155800001;ST=22;CN=2031;PW=123456;MN=2019051703100020;Flag=5;" +
-                "CP=&&DataTime=20190813155800;LAMPBLACK-Avg=6.23,LAMPBLACK-Max=9.66,LAMPBLACK-Min=5.11,LAMPBLACK-Flag=N;PM-Avg=6.23,PM-Max=9.66,PM-Min=5.11,PM-Flag=N;NMHC-Avg=4.23,NMHC-Max=10.66,NMHC-Min=3.11,NMHC-Flag=N&&8BC1";
+        String data = "##0277QN=20190813155800001;ST=22;CN=2031;PW=123456;MN=2019051703100020;Flag=5;" + "CP=&&DataTime=20190813155800;LAMPBLACK-Avg=6.23,LAMPBLACK-Max=9.66,LAMPBLACK-Min=5.11,LAMPBLACK-Flag=N;PM-Avg=6.23,PM-Max=9.66,PM-Min=5.11,PM-Flag=N;NMHC-Avg=4.23,NMHC-Max=10.66,NMHC-Min=3.11,NMHC-Flag=N&&8BC1";
 
         Map<String, Object> stringObjectMap = dataSegmentParseUtil.parseDataTOMap(data);
 
-        dataSegmentParseUtil.chooseHandlerType(stringObjectMap);
+        dataSegmentParseUtil.chooseHandlerType(stringObjectMap, "");
     }
 }

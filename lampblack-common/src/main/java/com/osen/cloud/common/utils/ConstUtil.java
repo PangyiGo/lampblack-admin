@@ -19,4 +19,16 @@ public class ConstUtil {
 
     // 日期格式化
     public static String DATETIME_FORMAT = "yy-MM-dd HH:mm:ss.SSS";
+
+    // 连接主键key
+    public static String DATA_KEY = "Data_RealTime";
+
+    // 设备主键key
+    public static String DEVICE_KEY = "Device_ID";
+
+    // 关闭状态
+    public static Integer CLOSE_STATUS = 1;
+
+    // 开合状态
+    public static Integer OPEN_STATUS = 2;
 }

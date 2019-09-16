@@ -15,6 +15,7 @@ import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -31,6 +32,9 @@ public class SocketServer {
 
     @Autowired
     private DataSegmentParseUtil dataSegmentParseUtil;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     /**
      * Socket服务器端
@@ -57,7 +61,7 @@ public class SocketServer {
                             channelPipeline.addLast("encoder", new StringEncoder(CharsetUtil.UTF_8));
                             channelPipeline.addLast(new IdleStateHandler(21, 0, 0, TimeUnit.SECONDS));
                             //服务器端逻辑处理
-                            channelPipeline.addLast("SocketServerHandler", new SocketServerHandler(dataSegmentParseUtil));
+                            channelPipeline.addLast("SocketServerHandler", new SocketServerHandler(dataSegmentParseUtil, stringRedisTemplate));
                         }
                     }).option(ChannelOption.SO_BACKLOG, 512).childOption(ChannelOption.SO_KEEPALIVE, true);
 

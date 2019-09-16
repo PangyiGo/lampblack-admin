@@ -22,6 +22,8 @@ public enum InfoMessage {
 
     InsertUser_Error(4002, "账号重复添加"),
 
+    InsertDevice_Error(4002, "设备ID重复添加"),
+
     /**
      * 成功信息体
      */
