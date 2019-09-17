@@ -2,16 +2,10 @@ package com.osen.cloud.system.socket.server;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
-import com.osen.cloud.common.entity.DataDay;
-import com.osen.cloud.common.entity.DataHistory;
-import com.osen.cloud.common.entity.DataHour;
-import com.osen.cloud.common.entity.DataMinute;
+import com.osen.cloud.common.entity.*;
 import com.osen.cloud.common.enums.SensorCode;
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.service.data.DataDayService;
-import com.osen.cloud.service.data.DataHistoryService;
-import com.osen.cloud.service.data.DataHourService;
-import com.osen.cloud.service.data.DataMinuteService;
+import com.osen.cloud.service.data.*;
 import com.osen.cloud.service.device.DeviceService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,6 +35,9 @@ public class DataSegmentService {
 
     @Autowired
     private DeviceService deviceService;
+
+    @Autowired
+    private AlarmHistoryService alarmHistoryService;
 
     // 实时数据格式
     private String[] realTimeSensorFlag = {"-Rtd", "-Flag"};
@@ -96,6 +93,19 @@ public class DataSegmentService {
         dataHistory.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         log.info("insert one data to dataHistory");
+
+        // 是否存在数值超标，数据报警处理
+        if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
+            AlarmHistory alarmHistory = new AlarmHistory();
+            BeanUtil.copyProperties(dataHistory, alarmHistory);
+            // 保存报警记录
+            alarmHistoryService.insertAlarmData(alarmHistory);
+            stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).put(alarmHistory.getDeviceNo(), JSON.toJSONString(alarmHistory));
+        } else {
+            Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).hasKey(dataHistory.getDeviceNo());
+            if (hasKey)
+                stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).delete(dataHistory.getDeviceNo());
+        }
 
         // 插入数据
         dataHistoryService.insertRealtimeData(dataHistory);

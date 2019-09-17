@@ -1,0 +1,80 @@
+2019-09-16 09:48:14.263 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-16 09:48:22.175 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-16 09:50:20.099 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-16 09:50:26.514 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-16 09:52:05.333 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-16 09:52:11.453 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-16 09:53:03.399 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000002-4d6d69b12ae5a385-a90f4968 number: 1
+2019-09-16 09:53:24.397 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000002-4d6d69b12ae5a385-a90f4968 number: 2
+2019-09-16 09:54:54.073 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 1
+2019-09-16 09:55:29.938 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 1
+2019-09-16 09:55:50.939 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 2
+2019-09-16 09:56:19.686 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 1
+2019-09-16 09:56:40.687 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 2
+2019-09-16 09:57:19.696 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 1
+2019-09-16 09:57:40.696 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 2
+2019-09-16 09:58:19.709 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 1
+2019-09-16 09:58:40.710 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 2
+2019-09-16 09:59:19.722 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001750-00000003-7f1f903244e7212a-38b9a9ff number: 1
+2019-09-16 12:03:25.553 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-16 12:03:31.857 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-16 12:04:09.308 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-0000264c-00000002-da406753c3eda9b2-7226542b number: 1
+2019-09-16 12:04:30.304 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-0000264c-00000002-da406753c3eda9b2-7226542b number: 2
+2019-09-16 13:55:17.704 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-16 13:55:23.821 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-16 13:55:58.484 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00002bbc-00000002-daec20b3a72c096d-d9d933d1 number: 1
+2019-09-16 16:57:41.564 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-16 16:57:48.219 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-16 16:59:32.767 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001cd8-00000002-9b225064e693f296-e11b2bf8 number: 1
+2019-09-16 16:59:53.764 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001cd8-00000002-9b225064e693f296-e11b2bf8 number: 2
+2019-09-16 17:01:18.296 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001cd8-00000004-b939eaaf5175b28e-2ffac5bc number: 1
+2019-09-16 17:01:39.296 [nioEventLoopGroup-5-2] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001cd8-00000004-b939eaaf5175b28e-2ffac5bc number: 2
+2019-09-16 17:03:03.016 [nioEventLoopGroup-5-3] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001cd8-00000005-f88494a84d774b7e-93253300 number: 1
+2019-09-16 17:03:24.016 [nioEventLoopGroup-5-3] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001cd8-00000005-f88494a84d774b7e-93253300 number: 2
+2019-09-16 17:04:23.104 [nioEventLoopGroup-5-4] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-00001cd8-00000006-d1a2ccbfbb68847f-ab51f1ef number: 1
+2019-09-16 17:09:26.343 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-16 17:09:32.722 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-16 17:10:07.712 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:10:28.709 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:11:07.683 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:11:28.683 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:12:07.696 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:12:28.696 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:13:07.709 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:13:28.710 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:14:07.724 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:14:28.725 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:15:07.737 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:15:28.738 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:16:07.750 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:16:28.750 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:17:07.764 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:17:28.764 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:18:07.777 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:18:28.777 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:19:07.791 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:19:28.791 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:20:07.805 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:20:28.806 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:21:07.821 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:21:28.822 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:22:07.831 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:22:28.832 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:23:07.846 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:23:28.846 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:24:07.858 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:24:28.859 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:25:07.872 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:25:28.872 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:26:07.886 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:26:28.886 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:27:07.900 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:27:28.900 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:28:07.914 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:28:28.914 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:29:07.926 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:29:28.927 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:30:07.940 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:30:28.940 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2
+2019-09-16 17:31:07.953 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 1
+2019-09-16 17:31:28.953 [nioEventLoopGroup-5-1] WARN  c.o.c.system.socket.handler.SocketServerHandler - lost package 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 number: 2

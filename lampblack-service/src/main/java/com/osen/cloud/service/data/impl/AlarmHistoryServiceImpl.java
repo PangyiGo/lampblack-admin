@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.AlarmHistory;
 import com.osen.cloud.model.data.AlarmHistoryMapper;
 import com.osen.cloud.service.data.AlarmHistoryService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AlarmHistoryServiceImpl extends ServiceImpl<AlarmHistoryMapper, AlarmHistory> implements AlarmHistoryService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertAlarmData(AlarmHistory alarmHistory) {
+        super.save(alarmHistory);
+    }
 }

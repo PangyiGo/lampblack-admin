@@ -1,6 +1,146 @@
-2019-09-16 09:50:41.148 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - socket server error: data format error
-2019-09-16 09:53:45.399 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001750-00000002-4d6d69b12ae5a385-a90f4968 upload data exception
-2019-09-16 12:04:51.306 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-0000264c-00000002-da406753c3eda9b2-7226542b upload data exception
-2019-09-16 17:00:14.767 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001cd8-00000002-9b225064e693f296-e11b2bf8 upload data exception
-2019-09-16 17:02:00.296 [nioEventLoopGroup-5-2] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001cd8-00000004-b939eaaf5175b28e-2ffac5bc upload data exception
-2019-09-16 17:03:45.017 [nioEventLoopGroup-5-3] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001cd8-00000005-f88494a84d774b7e-93253300 upload data exception
+2019-09-17 10:19:11.496 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001eac-00000002-bb751529a9613d72-954545ff upload data exception
+2019-09-17 10:22:41.769 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 10:22:41.770 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-17 10:25:35.135 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSegmentService in com.osen.cloud.system.socket.utils.DataSegmentParseUtil required a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' in your configuration.
+
+2019-09-17 10:52:01.412 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 10:52:01.412 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-17 11:18:21.317 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 11:18:21.318 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-17 11:19:28.353 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSegmentService in com.osen.cloud.system.socket.utils.DataSegmentParseUtil required a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' in your configuration.
+
+2019-09-17 13:46:03.200 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSegmentService in com.osen.cloud.system.socket.utils.DataSegmentParseUtil required a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' in your configuration.
+
+2019-09-17 13:49:44.316 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSegmentService in com.osen.cloud.system.socket.utils.DataSegmentParseUtil required a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' in your configuration.
+
+2019-09-17 13:50:11.389 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSegmentService in com.osen.cloud.system.socket.utils.DataSegmentParseUtil required a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' in your configuration.
+
+2019-09-17 13:50:44.312 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSegmentService in com.osen.cloud.system.socket.utils.DataSegmentParseUtil required a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' in your configuration.
+
+2019-09-17 13:50:51.244 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSegmentService in com.osen.cloud.system.socket.utils.DataSegmentParseUtil required a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmentService' in your configuration.
+
+2019-09-17 13:51:03.012 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 13:51:03.013 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-17 13:55:16.249 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - data upload format error
+2019-09-17 13:55:53.919 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - data upload format error
+2019-09-17 13:56:24.462 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - data upload format error
+2019-09-17 13:57:47.038 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00000f08-00000002-7f34d0d5b9820b7e-2fcc1052 upload data exception
+2019-09-17 14:49:42.727 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 14:49:42.728 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-17 14:51:13.023 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - data upload format error
+2019-09-17 14:52:51.381 [nioEventLoopGroup-5-2] ERROR c.o.c.system.socket.handler.SocketServerHandler - data upload format error
+2019-09-17 14:55:34.399 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 14:55:34.400 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-17 15:15:47.608 [nioEventLoopGroup-5-2] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001ed0-00000004-46e2d4bba879e4af-b6ce0360 upload data exception

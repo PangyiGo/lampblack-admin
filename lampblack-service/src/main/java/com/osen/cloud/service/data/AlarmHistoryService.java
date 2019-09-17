@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.AlarmHistory;
  * Description: 设备报警历史记录服务接口
  */
 public interface AlarmHistoryService extends IService<AlarmHistory> {
+
+    /**
+     * 插入报警数据
+     *
+     * @param alarmHistory 数据
+     */
+    void insertAlarmData(AlarmHistory alarmHistory);
 }
