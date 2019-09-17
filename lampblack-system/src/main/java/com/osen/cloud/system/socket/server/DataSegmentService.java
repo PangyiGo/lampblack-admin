@@ -92,7 +92,8 @@ public class DataSegmentService {
         dataHistory.setFanFlag(ConstUtil.OPEN_STATUS);
         dataHistory.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("insert one data to dataHistory");
+        log.info("存储设备上传实时数据到数据库");
+        log.info(dataHistory.toString());
 
         // 是否存在数值超标，数据报警处理
         if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
@@ -101,6 +102,7 @@ public class DataSegmentService {
             // 保存报警记录
             alarmHistoryService.insertAlarmData(alarmHistory);
             stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).put(alarmHistory.getDeviceNo(), JSON.toJSONString(alarmHistory));
+            log.info("设备号：" + alarmHistory.getDeviceNo() + " 数据异常");
         } else {
             Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).hasKey(dataHistory.getDeviceNo());
             if (hasKey)
@@ -110,6 +112,7 @@ public class DataSegmentService {
         // 插入数据
         dataHistoryService.insertRealtimeData(dataHistory);
 
+        // 设备在线状态
         boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).hasKey(connectionID);
         if (!hasKey) {
             // 不存在ConnectionID，设置设备在线
@@ -177,7 +180,8 @@ public class DataSegmentService {
         dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
         dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("insert one data to dataMinute");
+        log.info("存储设备上传分钟数据到数据库");
+        log.info(dataMinute.toString());
 
         // 插入数据
         dataMinuteService.insertMinuteData(dataMinute);
@@ -220,7 +224,8 @@ public class DataSegmentService {
         dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
         dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("insert one data to dataHour");
+        log.info("存储设备上传小时数据到数据库");
+        log.info(dataHour.toString());
 
         // 插入数据
         dataHourService.insertHourData(dataHour);
@@ -263,7 +268,8 @@ public class DataSegmentService {
         dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
         dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("insert one data to dataDay");
+        log.info("存储设备每天数据到数据库");
+        log.info(dataDay.toString());
 
         //插入数据
         dataDayService.insertDayData(dataDay);

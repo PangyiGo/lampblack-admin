@@ -43,8 +43,11 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        log.info("reading event start connection ID: " + getConnectionID(ctx));
+        log.info("服务器接收上传数据-连接设备ID ：" + getConnectionID(ctx));
+
         counter = 0;
+
+        log.info("数据：" + msg.toString());
 
         /*
             上传数据处理
@@ -54,7 +57,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         if (MapUtil.isNotEmpty(parseDataTOMap))
             dataSegmentParseUtil.chooseHandlerType(parseDataTOMap, getConnectionID(ctx));
         else
-            log.error("data upload format error");
+            log.info("设备上传格式错误，不符合HJ212协议");
     }
 
     /**
@@ -65,7 +68,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-        log.info("client connection   ID: " + getConnectionID(ctx));
+        log.info("设备成功连接服务器：" + getConnectionID(ctx));
         ctx.fireChannelRegistered();
     }
 
@@ -77,7 +80,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
-        log.info("client disconnection ID: " + getConnectionID(ctx));
+        log.info("设备与服务器断开连接：" + getConnectionID(ctx));
         dataSegmentParseUtil.disConnectionDevice(getConnectionID(ctx));
         ctx.fireChannelUnregistered();
     }
@@ -90,7 +93,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-        log.info("reading event complete connection ID: " + getConnectionID(ctx));
+        log.info("服务器接收设备上传数据完毕：" + getConnectionID(ctx));
         ctx.flush();
     }
 
@@ -104,7 +107,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         cause.printStackTrace();
-        log.error("socket server error: " + cause.getMessage());
+        log.info("服务端接收数据异常：" + cause.getMessage());
         ctx.close();
     }
 
@@ -124,10 +127,10 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
                 if (counter >= 2) {
                     // 连续丢失3个心跳包 (超时数据上传)
                     ctx.channel().close().sync();
-                    log.error("client connection ID: " + getConnectionID(ctx) + " upload data exception");
+                    log.info("设备数据上传超时：" + getConnectionID(ctx));
                 } else {
                     counter++;
-                    log.warn("lost package " + getConnectionID(ctx) + " number: " + counter);
+                    log.info(getConnectionID(ctx) + " 丢失心跳包 " + counter);
                 }
             }
         }

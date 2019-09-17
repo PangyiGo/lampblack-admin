@@ -57,7 +57,6 @@ public class DataSegmentParseUtil {
             //数据长度校验
             int length = Integer.valueOf(StrUtil.sub(dataSegment, 2, 6));
             segmnet = StrUtil.sub(dataSegment, 6, -6);
-            System.out.println(segmnet.length());
             if (segmnet.length() != length)
                 return null;
 
