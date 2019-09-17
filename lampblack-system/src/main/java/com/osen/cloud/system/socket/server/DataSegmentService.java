@@ -102,7 +102,7 @@ public class DataSegmentService {
             // 保存报警记录
             alarmHistoryService.insertAlarmData(alarmHistory);
             stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).put(alarmHistory.getDeviceNo(), JSON.toJSONString(alarmHistory));
-            log.info("设备号：" + alarmHistory.getDeviceNo() + " 数据异常");
+            log.info("设备号：" + alarmHistory.getDeviceNo() + " 数据异常报警");
         } else {
             Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).hasKey(dataHistory.getDeviceNo());
             if (hasKey)

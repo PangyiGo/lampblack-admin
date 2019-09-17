@@ -144,3 +144,26 @@ Consider defining a bean of type 'com.osen.cloud.system.socket.server.DataSegmen
 2019-09-17 14:55:34.399 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
 2019-09-17 14:55:34.400 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
 2019-09-17 15:15:47.608 [nioEventLoopGroup-5-2] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001ed0-00000004-46e2d4bba879e4af-b6ce0360 upload data exception
+2019-09-17 18:15:04.256 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authorizationService in com.osen.cloud.system.security.service.JwtUserDetailsService required a bean of type 'com.osen.cloud.service.authorization.AuthorizationService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Qualifier(value=jwtUserDetailsService)
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.service.authorization.AuthorizationService' in your configuration.
+
+2019-09-17 18:16:43.033 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 18:16:43.034 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-17 18:16:56.997 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-17 18:16:56.999 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
