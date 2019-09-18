@@ -1,5 +1,7 @@
 package com.osen.cloud.common.utils;
 
+import java.time.LocalDate;
+
 /**
  * User: PangYi
  * Date: 2019-08-30
@@ -34,4 +36,36 @@ public class ConstUtil {
 
     // 开合状态
     public static Integer OPEN_STATUS = 2;
+
+    // 实时数据表
+    public static String REALTIME_TB = "data_history";
+
+    // 分钟数据表
+    public static String MINUTE_TB = "data_minute";
+
+    // 小时数据表
+    public static String HOUR_TB = "data_hour";
+
+    // 每天数据表
+    public static String DAY_TB = "data_day";
+
+    /**
+     * 动态生成表名
+     *
+     * @param tableName 原表名
+     * @return 新表名
+     */
+    public static String createNewTableName(String tableName) {
+        LocalDate now = LocalDate.now();
+        int year = now.getYear();
+        int monthValue = now.getMonthValue();
+        String month = "";
+        if (monthValue < 10)
+            month = "0" + monthValue;
+        // 格式：基本表明_年月
+        String newTable = tableName + "_" + year + month;
+        System.out.println(newTable);
+        return newTable;
+    }
+
 }
