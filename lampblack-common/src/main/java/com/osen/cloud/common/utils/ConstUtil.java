@@ -1,6 +1,6 @@
 package com.osen.cloud.common.utils;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * User: PangYi
@@ -56,16 +56,37 @@ public class ConstUtil {
      * @return 新表名
      */
     public static String createNewTableName(String tableName) {
-        LocalDate now = LocalDate.now();
-        int year = now.getYear();
-        int monthValue = now.getMonthValue();
+        LocalDateTime dateTime = LocalDateTime.now();
+        int year = dateTime.getYear();
+        int monthValue = dateTime.getMonthValue();
         String month = "";
         if (monthValue < 10)
             month = "0" + monthValue;
-        // 格式：基本表明_年月
-        String newTable = tableName + "_" + year + month;
-        System.out.println(newTable);
-        return newTable;
+        else
+            month = "" + monthValue;
+        // 格式：基本表名_年月
+        return tableName + "_" + year + month;
+    }
+
+    /**
+     * 生成下一个月表名
+     *
+     * @param tableName 表名
+     * @return 新表名
+     */
+    public static String createNextTableName(String tableName) {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        // 下一个月
+        localDateTime = localDateTime.plusMonths(1);
+        int year = localDateTime.getYear();
+        int monthValue = localDateTime.getMonthValue();
+        String month = "";
+        if (monthValue < 10)
+            month = "0" + monthValue;
+        else
+            month = "" + monthValue;
+        // 格式：基本表名_年月
+        return tableName + "_" + year + month;
     }
 
 }

@@ -118,7 +118,7 @@ public class DataSegmentService {
         // 设备在线状态
         boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).hasKey(connectionID);
         if (!hasKey) {
-            // 不存在ConnectionID，设置设备在线
+            // 不存在ConnectionID，设置设备在线，并且设置数据在线状态为2
             stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).put(connectionID, dataHistory.getDeviceNo());
             deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, dataHistory.getDeviceNo());
         }

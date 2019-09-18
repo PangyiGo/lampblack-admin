@@ -17,4 +17,11 @@ public interface DataMinuteService extends IService<DataMinute> {
      * @param dataMinute 数据
      */
     void insertMinuteData(DataMinute dataMinute);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }

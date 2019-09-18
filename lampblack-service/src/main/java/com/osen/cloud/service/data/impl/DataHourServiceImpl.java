@@ -21,4 +21,10 @@ public class DataHourServiceImpl extends ServiceImpl<DataHourMapper, DataHour> i
     public void insertHourData(DataHour dataHour) {
         super.save(dataHour);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

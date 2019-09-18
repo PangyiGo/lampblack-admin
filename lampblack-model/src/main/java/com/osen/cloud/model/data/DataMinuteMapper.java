@@ -2,6 +2,7 @@ package com.osen.cloud.model.data;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.osen.cloud.common.entity.DataMinute;
+import io.lettuce.core.dynamic.annotation.Param;
 
 /**
  * User: PangYi
@@ -10,4 +11,6 @@ import com.osen.cloud.common.entity.DataMinute;
  * Description: 设备分钟上传数据模型
  */
 public interface DataMinuteMapper extends BaseMapper<DataMinute> {
+
+    void createNewTable(@Param("tableName") String tableName);
 }

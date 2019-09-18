@@ -21,4 +21,10 @@ public class DataDayServiceImpl extends ServiceImpl<DataDayMapper, DataDay> impl
     public void insertDayData(DataDay dataDay) {
         super.save(dataDay);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

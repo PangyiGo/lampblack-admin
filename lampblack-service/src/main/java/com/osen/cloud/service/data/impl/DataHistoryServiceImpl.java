@@ -21,4 +21,10 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
     public void insertRealtimeData(DataHistory dataHistory) {
         super.save(dataHistory);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

@@ -2,6 +2,7 @@ package com.osen.cloud.model.data;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.osen.cloud.common.entity.DataHour;
+import io.lettuce.core.dynamic.annotation.Param;
 
 /**
  * User: PangYi
@@ -10,4 +11,6 @@ import com.osen.cloud.common.entity.DataHour;
  * Description: 设备小时上传数据模型
  */
 public interface DataHourMapper  extends BaseMapper<DataHour> {
+
+    void createNewTable(@Param("tableName") String tableName);
 }

@@ -2,6 +2,7 @@ package com.osen.cloud.model.data;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.osen.cloud.common.entity.DataDay;
+import io.lettuce.core.dynamic.annotation.Param;
 
 /**
  * User: PangYi
@@ -10,4 +11,7 @@ import com.osen.cloud.common.entity.DataDay;
  * Description: 设备天上传数据模型
  */
 public interface DataDayMapper extends BaseMapper<DataDay> {
+
+    void createNewTable(@Param("tableName") String tableName);
+
 }

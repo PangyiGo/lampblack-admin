@@ -21,4 +21,10 @@ public class DataMinuteServiceImpl extends ServiceImpl<DataMinuteMapper, DataMin
     public void insertMinuteData(DataMinute dataMinute) {
         super.save(dataMinute);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

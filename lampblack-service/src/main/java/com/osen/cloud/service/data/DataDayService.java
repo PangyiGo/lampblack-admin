@@ -17,4 +17,11 @@ public interface DataDayService extends IService<DataDay> {
      * @param dataDay 数据
      */
     void insertDayData(DataDay dataDay);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }
