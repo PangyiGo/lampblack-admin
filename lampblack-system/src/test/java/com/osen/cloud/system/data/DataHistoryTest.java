@@ -1,6 +1,10 @@
 package com.osen.cloud.system.data;
 
+import com.osen.cloud.common.utils.ConstUtil;
+import com.osen.cloud.service.data.DataDayService;
 import com.osen.cloud.service.data.DataHistoryService;
+import com.osen.cloud.service.data.DataHourService;
+import com.osen.cloud.service.data.DataMinuteService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +24,20 @@ public class DataHistoryTest {
     @Autowired
     private DataHistoryService dataHistoryService;
 
+    @Autowired
+    private DataMinuteService dataMinuteService;
+
+    @Autowired
+    private DataHourService dataHourService;
+
+    @Autowired
+    private DataDayService dataDayService;
+
     @Test
     public void test01() {
-        dataHistoryService.createNewTable("gag");
+        dataHistoryService.createNewTable(ConstUtil.createNewTableName(ConstUtil.REALTIME_TB));
+        dataMinuteService.createNewTable(ConstUtil.createNewTableName(ConstUtil.MINUTE_TB));
+        dataHourService.createNewTable(ConstUtil.createNewTableName(ConstUtil.HOUR_TB));
+        dataDayService.createNewTable(ConstUtil.createNewTableName(ConstUtil.DAY_TB));
     }
 }

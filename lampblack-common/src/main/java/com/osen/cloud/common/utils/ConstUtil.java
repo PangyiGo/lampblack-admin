@@ -22,13 +22,13 @@ public class ConstUtil {
     // 日期格式化
     public static String DATETIME_FORMAT = "yy-MM-dd HH:mm:ss.SSS";
 
-    // 连接主键key
+    // 连接主键key，保存最新的实时数据
     public static String DATA_KEY = "DataRealtime_DB";
 
-    // 设备主键key
+    // 设备主键key，设备与连接ID关联
     public static String DEVICE_KEY = "DeviceNo_DB";
 
-    // 报警主键key
+    // 报警主键key，保存最新的报警数据
     public static String ALARM_KEY = "AlarmRealtime_DB";
 
     // 关闭状态
