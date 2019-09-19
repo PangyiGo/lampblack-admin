@@ -7,7 +7,6 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.Map;
 
@@ -22,11 +21,9 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
 
     private DataSegmentParseUtil dataSegmentParseUtil;
 
-    private StringRedisTemplate stringRedisTemplate;
 
-    public SocketServerHandler(DataSegmentParseUtil dataSegmentParseUtil, StringRedisTemplate stringRedisTemplate) {
+    public SocketServerHandler(DataSegmentParseUtil dataSegmentParseUtil) {
         this.dataSegmentParseUtil = dataSegmentParseUtil;
-        this.stringRedisTemplate = stringRedisTemplate;
     }
 
     /**

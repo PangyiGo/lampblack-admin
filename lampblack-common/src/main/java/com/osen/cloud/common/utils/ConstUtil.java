@@ -16,6 +16,9 @@ public class ConstUtil {
     // 监听端口
     public static final Integer SERVER_PORT = 8888;
 
+    // websocket监听的端口
+    public static final Integer WEBSOCKET_PORT = 9527;
+
     // 日期格式化
     public static String DATE_FORMAT = "yyyyMMddHHmmss";
 
