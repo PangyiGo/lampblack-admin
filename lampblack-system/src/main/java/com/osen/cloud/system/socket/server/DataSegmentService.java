@@ -110,7 +110,7 @@ public class DataSegmentService {
                 stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).delete(dataHistory.getDeviceNo());
         }
 
-        // 动态生成表明
+        // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.REALTIME_TB));
         // 插入数据
         dataHistoryService.insertRealtimeData(dataHistory);
@@ -187,7 +187,7 @@ public class DataSegmentService {
         log.info("存储设备上传分钟数据到数据库");
         log.info(dataMinute.toString());
 
-        // 动态生成表明
+        // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.MINUTE_TB));
         // 插入数据
         dataMinuteService.insertMinuteData(dataMinute);
@@ -233,7 +233,7 @@ public class DataSegmentService {
         log.info("存储设备上传小时数据到数据库");
         log.info(dataHour.toString());
 
-        // 动态生成表明
+        // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.HOUR_TB));
         // 插入数据
         dataHourService.insertHourData(dataHour);
@@ -279,7 +279,7 @@ public class DataSegmentService {
         log.info("存储设备每天数据到数据库");
         log.info(dataDay.toString());
 
-        // 动态生成表明
+        // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.DAY_TB));
         //插入数据
         dataDayService.insertDayData(dataDay);
