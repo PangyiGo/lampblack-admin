@@ -117,9 +117,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 禁用csrf
                 .csrf().disable()
 
-                // 开启跨域
-                .cors().and()
-
                 // 不创建会话
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 
@@ -139,7 +136,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // swagger end
 
                 // 忽略地址 start
-                .antMatchers("/**/gs-guide-websocket/**").anonymous()
+                .antMatchers("/**/socket/**").anonymous()
                 // 忽略地址 end
 
                 // 其他接口认证

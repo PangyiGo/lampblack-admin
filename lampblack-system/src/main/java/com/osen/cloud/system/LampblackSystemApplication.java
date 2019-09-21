@@ -21,6 +21,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableScheduling
 public class LampblackSystemApplication {
 
+
     /**
      * 全局唯一入口文件
      *
