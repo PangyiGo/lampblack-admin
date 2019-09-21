@@ -1,4 +1,34 @@
-2019-09-19 09:19:10.921 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-19 09:19:17.975 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-09-19 15:36:30.587 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-09-19 15:36:39.545 [RMI TCP Connection(7)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 15:57:52.926 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 15:58:00.912 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 18:39:46.283 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 18:39:55.468 [RMI TCP Connection(5)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 18:57:59.994 [DatebookHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=1m33s488ms437µs340ns).
+2019-09-20 19:01:11.937 [DatebookHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=2m41s925ms355µs46ns).
+2019-09-20 19:01:11.984 [XNIO-1 task-11] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 账号重复添加]
+2019-09-20 19:29:52.448 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:30:01.120 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 19:32:54.579 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:33:02.720 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 19:42:55.759 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:43:03.876 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 19:47:31.128 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:47:38.188 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 19:49:37.420 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:49:48.314 [RMI TCP Connection(19)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 19:50:24.030 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:51:14.091 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:51:21.312 [RMI TCP Connection(6)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 19:51:31.874 [XNIO-1 task-1] WARN  o.s.w.s.s.transport.handler.DefaultSockJsService - Origin header value 'http://localhost:9527' not allowed.
+2019-09-20 19:53:50.426 [XNIO-1 task-2] WARN  o.s.w.s.s.transport.handler.DefaultSockJsService - Origin header value 'http://localhost:9527' not allowed.
+2019-09-20 19:54:18.525 [XNIO-1 task-3] WARN  o.s.w.s.s.transport.handler.DefaultSockJsService - Origin header value 'http://localhost:9527' not allowed.
+2019-09-20 19:54:46.402 [XNIO-1 task-4] WARN  o.s.w.s.s.transport.handler.DefaultSockJsService - Origin header value 'http://localhost:9527' not allowed.
+2019-09-20 19:55:12.278 [XNIO-1 task-5] WARN  o.s.w.s.s.transport.handler.DefaultSockJsService - Origin header value 'http://localhost:9527' not allowed.
+2019-09-20 19:56:49.166 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 19:56:56.387 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-20 20:00:10.563 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 20:01:53.694 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 20:01:56.705 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'greetingController' defined in file [E:\gitworkspace\lampblack-admin\lampblack-system\target\classes\com\osen\cloud\system\websocket\GreetingController.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'greeting': Only no-arg methods may be annotated with @Scheduled
+2019-09-20 20:03:17.854 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 20:03:20.716 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'greetingController' defined in file [E:\gitworkspace\lampblack-admin\lampblack-system\target\classes\com\osen\cloud\system\websocket\GreetingController.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'greeting': Only no-arg methods may be annotated with @Scheduled
+2019-09-20 20:03:46.190 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-20 20:03:52.824 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
