@@ -136,7 +136,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // swagger end
 
                 // 忽略地址 start
-                .antMatchers("/**/socket/**").anonymous()
+                .antMatchers("/**/proxy/**").anonymous()
                 // 忽略地址 end
 
                 // 其他接口认证
