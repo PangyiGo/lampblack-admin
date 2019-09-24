@@ -16,6 +16,12 @@ public class ConstUtil {
     // 监听端口
     public static final Integer SERVER_PORT = 8888;
 
+    // 请求成功编码
+    public static Integer OK = 2002;
+
+    // 请求失败编码
+    public static Integer UNOK = 2004;
+
     // websocket监听的端口
     public static final Integer WEBSOCKET_PORT = 9527;
 

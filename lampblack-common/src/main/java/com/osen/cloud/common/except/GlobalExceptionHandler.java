@@ -1,5 +1,6 @@
 package com.osen.cloud.common.except;
 
+import com.osen.cloud.common.except.type.ControllerException;
 import com.osen.cloud.common.except.type.RunRequestException;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.result.RestResult;
@@ -84,5 +85,18 @@ public class GlobalExceptionHandler {
         // 打印堆栈信息
         log.error(ThrowableUtil.getStackTrace(service));
         return RestResultUtil.error(service.getStatus(), service.getMessage());
+    }
+
+    /**
+     * 统一处理Controller异常
+     *
+     * @param controller 异常
+     * @return 信息
+     */
+    @ExceptionHandler(value = ControllerException.class)
+    public RestResult handlerControllerException(ControllerException controller) {
+        // 打印堆栈信息
+        log.error(ThrowableUtil.getStackTrace(controller));
+        return RestResultUtil.error(Failed_Error.getCode(), controller.getMessage());
     }
 }

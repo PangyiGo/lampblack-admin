@@ -1,5 +1,6 @@
 package com.osen.cloud.common.enums;
 
+import com.osen.cloud.common.utils.ConstUtil;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -16,39 +17,39 @@ public enum InfoMessage {
     /**
      * 异常信息体
      */
-    UnknownSystem_Error(4001, "系统未知异常"),
+    UnknownSystem_Error(ConstUtil.UNOK, "系统未知异常"),
 
-    NoFound_Error(40004, "页面不存在"),
+    NoFound_Error(ConstUtil.UNOK, "页面不存在"),
 
-    InsertUser_Error(4002, "账号重复添加"),
+    InsertUser_Error(ConstUtil.UNOK, "账号重复添加"),
 
-    InsertDevice_Error(4002, "设备ID重复添加"),
+    InsertDevice_Error(ConstUtil.UNOK, "设备ID重复添加"),
 
     /**
      * 成功信息体
      */
-    Success_OK(2001, "请求成功"),
+    Success_OK(ConstUtil.OK, "请求成功"),
 
-    Failed_Error(2004, "请求失败"),
+    Failed_Error(ConstUtil.UNOK, "请求失败"),
 
-    Refresh_Failed(2003, "令牌刷新异常"),
+    Refresh_Failed(ConstUtil.UNOK, "令牌刷新异常"),
 
     /**
      * 提示信息体
      */
-    User_Need_Authorization(3001, "用户未登录"),
+    User_Need_Authorization(ConstUtil.UNOK, "用户未登录"),
 
-    User_Login_Failed(3002, "账号或密码错误"),
+    User_Login_Failed(ConstUtil.UNOK, "账号或密码错误"),
 
-    User_Login_Success(3001, "登录成功"),
+    User_Login_Success(ConstUtil.OK, "登录成功"),
 
-    User_NO_Access(3004, "用户无权访问"),
+    User_NO_Access(ConstUtil.UNOK, "用户无权访问"),
 
-    User_Logout_Success(3005, "用户已成功退出登录"),
+    User_Logout_Success(ConstUtil.OK, "用户已成功退出登录"),
 
-    User_Logout_Failed(3006, "退出登录异常"),
+    User_Logout_Failed(ConstUtil.UNOK, "退出登录异常"),
 
-    User_Login_Guoqi(3007, "登录状态过期");
+    User_Login_Guoqi(ConstUtil.UNOK, "登录状态过期");
 
     private Integer code;
 

@@ -3,6 +3,8 @@ package com.osen.cloud.service.device;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.Device;
 
+import java.util.Map;
+
 /**
  * User: PangYi
  * Date: 2019-09-16
@@ -36,4 +38,12 @@ public interface DeviceService extends IService<Device> {
      * @return 信息
      */
     boolean updateDeviceStatus(Integer isLive, String deviceNo);
+
+    /**
+     * 分页查询指定用户的设备列表信息
+     *
+     * @param params 参数
+     * @return 信息
+     */
+    Map<String, Object> findDeviceByUserAccount(Map<String, Object> params);
 }

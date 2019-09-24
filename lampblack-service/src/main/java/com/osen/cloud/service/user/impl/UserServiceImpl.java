@@ -9,13 +9,16 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.Role;
 import com.osen.cloud.common.entity.User;
+import com.osen.cloud.common.entity.UserDevice;
 import com.osen.cloud.common.entity.UserRole;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.user.UserMapper;
 import com.osen.cloud.service.role.RoleService;
 import com.osen.cloud.service.user.UserService;
+import com.osen.cloud.service.user_device.UserDeviceService;
 import com.osen.cloud.service.user_role.UserRoleService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +35,7 @@ import static com.osen.cloud.common.enums.InfoMessage.InsertUser_Error;
  * Description: 基本用户服务接口实现类
  */
 @Service
+@Slf4j
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     @Autowired
@@ -39,6 +43,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private UserDeviceService userDeviceService;
 
     @Override
     public User findByUsername(String username) {
@@ -106,11 +113,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public boolean deleteUserByAccount(User account) {
         // 删除指定用户的角色关联
-        boolean b = userRoleService.remove(new QueryWrapper<UserRole>().eq("user_id", account.getId()));
-        if (b) {
-            // 删除用户
-            return super.removeById(account.getId());
-        }
-        return false;
+        userRoleService.remove(new QueryWrapper<UserRole>().eq("user_id", account.getId()));
+        // 删除指定用户设备关联
+        userDeviceService.remove(new QueryWrapper<UserDevice>().eq("user_id", account.getId()));
+        // 删除用户
+        return super.removeById(account.getId());
     }
 }
