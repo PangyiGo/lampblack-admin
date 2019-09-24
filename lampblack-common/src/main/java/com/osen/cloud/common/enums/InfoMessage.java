@@ -40,7 +40,7 @@ public enum InfoMessage {
 
     User_Login_Failed(3002, "账号或密码错误"),
 
-    User_Login_Success(3003, "登录成功"),
+    User_Login_Success(3001, "登录成功"),
 
     User_NO_Access(3004, "用户无权访问"),
 

@@ -52,6 +52,9 @@ public class ConstUtil {
     // 每天数据表
     public static String DAY_TB = "data_day";
 
+    // 分页数
+    public static Integer PAGE_NUMBER = 8;
+
     /**
      * 动态生成表名
      *

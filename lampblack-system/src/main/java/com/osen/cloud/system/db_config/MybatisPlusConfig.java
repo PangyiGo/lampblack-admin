@@ -3,6 +3,7 @@ package com.osen.cloud.system.db_config;
 import com.baomidou.mybatisplus.extension.parsers.DynamicTableNameParser;
 import com.baomidou.mybatisplus.extension.parsers.ITableNameHandler;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
 import com.osen.cloud.common.utils.ConstUtil;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.context.annotation.Bean;
@@ -58,6 +59,8 @@ public class MybatisPlusConfig {
         });
         dynamicTableNameParser.setTableNameHandlerMap(tableNameHandlerMap);
         paginationInterceptor.setSqlParserList(Collections.singletonList(dynamicTableNameParser));
+        // 开启 count 的 join 优化,只针对 left join
+        paginationInterceptor.setCountSqlParser(new JsqlParserCountOptimize(true));
         return paginationInterceptor;
     }
 }

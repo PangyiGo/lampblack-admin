@@ -1,7 +1,11 @@
 package com.osen.cloud.service.user.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.Role;
 import com.osen.cloud.common.entity.User;
@@ -17,9 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import static com.osen.cloud.common.enums.InfoMessage.InsertUser_Error;
 
@@ -68,6 +70,46 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 userRoles.add(userRole);
             }
             return userRoleService.saveBatch(userRoles);
+        }
+        return false;
+    }
+
+    @Override
+    public Map<String, Object> findAllUserToPage(Integer number, String company) {
+        // 公司名称模糊查询
+        LambdaQueryWrapper<User> wrapper = Wrappers.<User>lambdaQuery();
+        if (StringUtils.isNotEmpty(company)) {
+            wrapper.like(User::getCompany, company);
+        }
+        // 时间降序排列
+        wrapper.orderByDesc(User::getCreateTime);
+        // 分页查询
+        Page<User> page = new Page<>(number, ConstUtil.PAGE_NUMBER);
+        IPage<User> resultPage = super.page(page, wrapper);
+        // 总数
+        Long total = resultPage.getTotal();
+        // 总记录
+        List<User> pageRecords = resultPage.getRecords();
+        // 查询每个用的角色名称
+        for (User pageRecord : pageRecords) {
+            List<Role> roleByUserId = roleService.findRoleByUserId(pageRecord.getId());
+            pageRecord.setRoles(roleByUserId);
+        }
+        // 封装
+        Map<String, Object> map = new HashMap<>();
+        map.put("total", total);
+        map.put("users", pageRecords);
+        return map;
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public boolean deleteUserByAccount(User account) {
+        // 删除指定用户的角色关联
+        boolean b = userRoleService.remove(new QueryWrapper<UserRole>().eq("user_id", account.getId()));
+        if (b) {
+            // 删除用户
+            return super.removeById(account.getId());
         }
         return false;
     }

@@ -1,31 +1,154 @@
-2019-09-23 08:46:56.446 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
-2019-09-23 08:46:56.457 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
-2019-09-23 09:39:17.459 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
-2019-09-23 09:39:17.461 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
-2019-09-23 16:33:23.054 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:34:05.787 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:36:02.846 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:38:04.608 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:39:02.786 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:40:03.130 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:41:09.137 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:42:04.335 [task-5] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:43:03.043 [task-6] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:45:05.448 [task-8] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:47:07.322 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:49:05.822 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:50:08.929 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:50:11.970 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:51:04.525 [task-5] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:52:05.839 [task-6] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:53:08.983 [task-7] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 16:54:02.439 [task-8] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:03:26.521 [task-9] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:03:44.186 [task-10] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:03:53.843 [task-11] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:04:49.054 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
-2019-09-23 17:04:49.060 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
-2019-09-23 17:04:53.750 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+2019-09-24 11:52:49.296 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-24 11:52:49.306 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-24 12:29:29.620 [XNIO-1 task-23] ERROR io.undertow.request - UT005023: Exception handling request to /api/lampblack/auth/login
+java.lang.NullPointerException: null
+	at com.osen.cloud.system.security.utils.JwtTokenUtil.toJwt(JwtTokenUtil.java:166)
+	at com.osen.cloud.system.security.config.JwtAuthenticationTokenFilter.doFilterInternal(JwtAuthenticationTokenFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-09-24 12:29:49.123 [XNIO-1 task-24] ERROR io.undertow.request - UT005023: Exception handling request to /api/lampblack/auth/login
+java.lang.NullPointerException: null
+	at com.osen.cloud.system.security.utils.JwtTokenUtil.toJwt(JwtTokenUtil.java:166)
+	at com.osen.cloud.system.security.config.JwtAuthenticationTokenFilter.doFilterInternal(JwtAuthenticationTokenFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-09-24 15:23:47.649 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-24 15:23:47.650 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-24 15:23:48.137 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
 
 ***************************
 APPLICATION FAILED TO START
@@ -33,27 +156,33 @@ APPLICATION FAILED TO START
 
 Description:
 
-Web server failed to start. Port 8080 was already in use.
+Field userService in com.osen.cloud.system.user.controller.UserController required a bean of type 'com.osen.cloud.service.user.UserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
 
 Action:
 
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+Consider defining a bean of type 'com.osen.cloud.service.user.UserService' in your configuration.
 
-2019-09-23 17:06:19.554 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:09:02.934 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:09:10.276 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:11:04.037 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:12:03.001 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:13:06.316 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:16:16.496 [task-6] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:16:16.496 [task-5] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:17:40.284 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:18:43.881 [task-7] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:20:14.226 [task-9] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:20:17.730 [task-8] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:20:17.730 [task-10] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:21:02.765 [task-11] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:22:07.081 [task-12] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:23:08.448 [task-13] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:25:18.148 [task-14] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
-2019-09-23 17:25:18.353 [task-15] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-24 15:25:04.873 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-24 15:25:04.873 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-24 15:25:05.401 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.osen.cloud.system.user.controller.UserController required a bean of type 'com.osen.cloud.service.user.UserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.osen.cloud.service.user.UserService' in your configuration.
+
