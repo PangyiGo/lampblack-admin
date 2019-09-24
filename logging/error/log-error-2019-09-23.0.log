@@ -1,0 +1,59 @@
+2019-09-23 08:46:56.446 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-23 08:46:56.457 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-23 09:39:17.459 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-23 09:39:17.461 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-23 16:33:23.054 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:34:05.787 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:36:02.846 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:38:04.608 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:39:02.786 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:40:03.130 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:41:09.137 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:42:04.335 [task-5] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:43:03.043 [task-6] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:45:05.448 [task-8] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:47:07.322 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:49:05.822 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:50:08.929 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:50:11.970 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:51:04.525 [task-5] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:52:05.839 [task-6] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:53:08.983 [task-7] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 16:54:02.439 [task-8] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:03:26.521 [task-9] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:03:44.186 [task-10] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:03:53.843 [task-11] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:04:49.054 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - Address already in use: bind
+2019-09-23 17:04:49.060 [Socket Server Thread-01] ERROR com.osen.cloud.system.socket.server.SocketServer - socket server start error
+2019-09-23 17:04:53.750 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2019-09-23 17:06:19.554 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:09:02.934 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:09:10.276 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:11:04.037 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:12:03.001 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:13:06.316 [task-3] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:16:16.496 [task-6] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:16:16.496 [task-5] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:17:40.284 [task-4] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:18:43.881 [task-7] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:20:14.226 [task-9] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:20:17.730 [task-8] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:20:17.730 [task-10] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:21:02.765 [task-11] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:22:07.081 [task-12] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:23:08.448 [task-13] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:25:18.148 [task-14] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null
+2019-09-23 17:25:18.353 [task-15] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - null

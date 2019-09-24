@@ -1,0 +1,124 @@
+2019-09-18 13:39:16.990 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve com.osen.cloud.model.data.DataHistoryMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_history_201909  ( date_time, purifier_flag, nmhc_flag, nmhc, pm_flag, lampblack_flag, lampblack, device_no, pm, fan_flag )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+2019-09-18 14:52:42.666 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve com.osen.cloud.model.data.DataHistoryMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_history_20199  ( date_time, purifier_flag, nmhc_flag, nmhc, pm_flag, lampblack_flag, lampblack, device_no, pm, fan_flag )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+2019-09-18 14:56:02.586 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_minute_20199' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataMinuteMapper.java (best guess)
+### The error may involve com.osen.cloud.model.data.DataMinuteMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_minute_20199  ( date_time, lampblack_min, pm_min, nmhc, pm_flag, lampblack_flag, lampblack, device_no, nmhc_min, fan_flag, purifier_flag, nmhc_flag, lampblack_max, pm_max, pm, nmhc_max )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_minute_20199' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_minute_20199' doesn't exist
+2019-09-18 14:56:03.859 [task-2] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve com.osen.cloud.model.data.DataHistoryMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_history_20199  ( date_time, purifier_flag, nmhc_flag, nmhc, pm_flag, lampblack_flag, lampblack, device_no, pm, fan_flag )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+2019-09-18 15:08:30.290 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve com.osen.cloud.model.data.DataHistoryMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_history_20199  ( date_time, purifier_flag, nmhc_flag, nmhc, pm_flag, lampblack_flag, lampblack, device_no, pm, fan_flag )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_20199' doesn't exist
+2019-09-18 15:09:12.615 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve com.osen.cloud.model.data.DataHistoryMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_history_201909  ( date_time, purifier_flag, nmhc_flag, nmhc, pm_flag, lampblack_flag, lampblack, device_no, pm, fan_flag )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+2019-09-18 15:45:13.151 [task-1] ERROR c.o.cloud.system.socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve com.osen.cloud.model.data.DataHistoryMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_history_201909  ( date_time, purifier_flag, nmhc_flag, nmhc, pm_flag, lampblack_flag, lampblack, device_no, pm, fan_flag )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201909' doesn't exist
+2019-09-18 16:33:33.917 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createTableTimer' defined in file [E:\gitworkspace\lampblack-admin\lampblack-system\target\classes\com\osen\cloud\system\db_config\CreateTableTimer.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'taskCreateTable': Cron expression must consist of 6 fields (found 7 in "* * * * * * *")
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:743)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:390)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at com.osen.cloud.system.LampblackSystemApplication.main(LampblackSystemApplication.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled method 'taskCreateTable': Cron expression must consist of 6 fields (found 7 in "* * * * * * *")
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:496)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$null$1(ScheduledAnnotationBeanPostProcessor.java:359)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:359)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	... 20 common frames omitted
+2019-09-18 16:54:40.655 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createTableTimer' defined in file [E:\gitworkspace\lampblack-admin\lampblack-system\target\classes\com\osen\cloud\system\db_config\CreateTableTimer.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'taskCreateTable': For input string: "L"
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:743)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:390)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at com.osen.cloud.system.LampblackSystemApplication.main(LampblackSystemApplication.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled method 'taskCreateTable': For input string: "L"
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:496)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$null$1(ScheduledAnnotationBeanPostProcessor.java:359)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:359)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	... 20 common frames omitted
