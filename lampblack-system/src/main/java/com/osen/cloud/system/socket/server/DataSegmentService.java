@@ -78,15 +78,16 @@ public class DataSegmentService {
         dataHistory.setDateTime(localDateTime);
         // 数据封装
         for (SensorCode sensorCode : SensorCode.values()) {
+            // 1表示通过名字上传数据，2表示通过编号上传数据
             // 参数名称
             boolean is_name_exist = CPData.containsKey(sensorCode.getName() + realTimeSensorFlag[0]);
             if (is_name_exist) {
-                handleDataMapperToRealtime(sensorCode, dataHistory, CPData);
+                handleDataMapperToRealtime(sensorCode, dataHistory, CPData, 1);
             }
             // 参数编号
             boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + realTimeSensorFlag[0]);
             if (is_code_exist) {
-                handleDataMapperToRealtime(sensorCode, dataHistory, CPData);
+                handleDataMapperToRealtime(sensorCode, dataHistory, CPData, 2);
             }
         }
         // 风机，净化器状态
@@ -126,9 +127,16 @@ public class DataSegmentService {
         stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).put(dataHistory.getDeviceNo(), JSON.toJSONString(dataHistory));
     }
 
-    private void handleDataMapperToRealtime(SensorCode sensorCode, DataHistory dataHistory, Map<String, Object> CPData) {
-        BigDecimal data_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
-        String data_flag = (String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]);
+    private void handleDataMapperToRealtime(SensorCode sensorCode, DataHistory dataHistory, Map<String, Object> CPData, int type) {
+        BigDecimal data_value = null;
+        String data_flag = null;
+        if (type == 1) {
+            data_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
+            data_flag = (String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]);
+        } else {
+            data_value = new BigDecimal((String) CPData.get(sensorCode.getCode() + realTimeSensorFlag[0]));
+            data_flag = (String) CPData.get(sensorCode.getCode() + realTimeSensorFlag[1]);
+        }
         switch (sensorCode) {
             case PM:
                 dataHistory.setPm(data_value);
@@ -171,12 +179,12 @@ public class DataSegmentService {
             // 参数名称
             boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData);
+                handleMapperToInterval(sensorCode, dataModel, CPData, 1);
             }
             // 参数编号
             boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData);
+                handleMapperToInterval(sensorCode, dataModel, CPData, 2);
             }
         }
         BeanUtil.copyProperties(dataModel, dataMinute);
@@ -217,12 +225,12 @@ public class DataSegmentService {
             // 参数名称
             boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData);
+                handleMapperToInterval(sensorCode, dataModel, CPData, 1);
             }
             // 参数编号
             boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData);
+                handleMapperToInterval(sensorCode, dataModel, CPData, 2);
             }
         }
         BeanUtil.copyProperties(dataModel, dataHour);
@@ -263,12 +271,12 @@ public class DataSegmentService {
             // 参数名称
             boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData);
+                handleMapperToInterval(sensorCode, dataModel, CPData, 1);
             }
             // 参数编号
             boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData);
+                handleMapperToInterval(sensorCode, dataModel, CPData, 2);
             }
         }
         BeanUtil.copyProperties(dataModel, dataDay);
@@ -285,11 +293,22 @@ public class DataSegmentService {
         dataDayService.insertDayData(dataDay);
     }
 
-    private void handleMapperToInterval(SensorCode sensorCode, DataModel dataModel, Map<String, Object> CPData) {
-        BigDecimal data_avg = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[0]));
-        BigDecimal data_max = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[1]));
-        BigDecimal data_min = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[2]));
-        String data_flag = (String) CPData.get(sensorCode.getName() + othersSensorFlag[3]);
+    private void handleMapperToInterval(SensorCode sensorCode, DataModel dataModel, Map<String, Object> CPData, int type) {
+        BigDecimal data_avg = null;
+        BigDecimal data_max = null;
+        BigDecimal data_min = null;
+        String data_flag = null;
+        if (type == 1) {
+            data_avg = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[0]));
+            data_max = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[1]));
+            data_min = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[2]));
+            data_flag = (String) CPData.get(sensorCode.getName() + othersSensorFlag[3]);
+        } else {
+            data_avg = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[0]));
+            data_max = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[1]));
+            data_min = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[2]));
+            data_flag = (String) CPData.get(sensorCode.getCode() + othersSensorFlag[3]);
+        }
         switch (sensorCode) {
             case PM:
                 dataModel.setPm(data_avg);

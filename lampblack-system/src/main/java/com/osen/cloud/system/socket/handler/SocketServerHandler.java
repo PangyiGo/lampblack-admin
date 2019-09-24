@@ -21,7 +21,6 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
 
     private DataSegmentParseUtil dataSegmentParseUtil;
 
-
     public SocketServerHandler(DataSegmentParseUtil dataSegmentParseUtil) {
         this.dataSegmentParseUtil = dataSegmentParseUtil;
     }
@@ -121,7 +120,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
             IdleStateEvent idleStateEvent = (IdleStateEvent) evt;
             if (idleStateEvent.state().equals(IdleState.READER_IDLE)) {
                 // 空闲30s之后触发 (心跳包丢失)
-                if (counter >= 2) {
+                if (counter > 2) {
                     // 连续丢失3个心跳包 (超时数据上传)
                     ctx.channel().close().sync();
                     log.info("设备数据上传超时：" + getConnectionID(ctx));

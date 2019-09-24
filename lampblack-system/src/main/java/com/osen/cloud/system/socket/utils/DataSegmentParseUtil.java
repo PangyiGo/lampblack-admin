@@ -150,6 +150,7 @@ public class DataSegmentParseUtil {
             }
         } catch (Exception e) {
             log.error(e.getMessage());
+            log.info("数据存储异常，上传格式是否不一致");
         }
     }
 
