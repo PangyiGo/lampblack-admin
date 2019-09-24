@@ -31,15 +31,6 @@ import java.util.Map;
 @Service
 public class DataSegmentService {
 
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Autowired
-    private DeviceService deviceService;
-
-    @Autowired
-    private AlarmHistoryService alarmHistoryService;
-
     // 实时数据格式
     private String[] realTimeSensorFlag = {"-Rtd", "-Flag"};
 
@@ -57,6 +48,15 @@ public class DataSegmentService {
 
     @Autowired
     private DataDayService dataDayService;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private DeviceService deviceService;
+
+    @Autowired
+    private AlarmHistoryService alarmHistoryService;
 
     /**
      * 处理实时数据
@@ -133,9 +133,11 @@ public class DataSegmentService {
         if (type == 1) {
             data_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
             data_flag = (String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]);
-        } else {
+        } else if (type == 2) {
             data_value = new BigDecimal((String) CPData.get(sensorCode.getCode() + realTimeSensorFlag[0]));
             data_flag = (String) CPData.get(sensorCode.getCode() + realTimeSensorFlag[1]);
+        } else {
+            log.info("插入类型错误异常");
         }
         switch (sensorCode) {
             case PM:
@@ -303,11 +305,13 @@ public class DataSegmentService {
             data_max = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[1]));
             data_min = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[2]));
             data_flag = (String) CPData.get(sensorCode.getName() + othersSensorFlag[3]);
-        } else {
+        } else if (type == 2) {
             data_avg = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[0]));
             data_max = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[1]));
             data_min = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[2]));
             data_flag = (String) CPData.get(sensorCode.getCode() + othersSensorFlag[3]);
+        } else {
+            log.info("插入类型错误异常");
         }
         switch (sensorCode) {
             case PM:

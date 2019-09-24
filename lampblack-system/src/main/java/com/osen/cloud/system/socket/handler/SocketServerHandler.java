@@ -126,7 +126,6 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
                     log.info("设备数据上传超时：" + getConnectionID(ctx));
                 } else {
                     counter++;
-                    log.info(getConnectionID(ctx) + " 丢失心跳包 " + counter);
                 }
             }
         }
