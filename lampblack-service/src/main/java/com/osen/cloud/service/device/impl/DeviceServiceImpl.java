@@ -81,28 +81,31 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
             throw new ServiceException(ConstUtil.UNOK, "无法查询指定用户信息");
         // 获取用户设备关联列表
         int pageNumber = (int) params.get("pageNumber");
-        Page<UserDevice> userDevicePage = new Page<>(pageNumber, ConstUtil.PAGE_NUMBER);
         LambdaQueryWrapper<UserDevice> userDeviceLambdaQueryWrapper = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, user.getId());
-        IPage<UserDevice> userDeviceIPage = userDeviceService.page(userDevicePage, userDeviceLambdaQueryWrapper);
+        List<UserDevice> userDevices = userDeviceService.list(userDeviceLambdaQueryWrapper);
         // 总记录数
-        long total = userDeviceIPage.getTotal();
-        if (total > 0) {
+        long total = 0;
+        if (userDevices.size() > 0) {
             LambdaQueryWrapper<Device> deviceLambdaQueryWrapper = Wrappers.<Device>lambdaQuery();
-            // 设备号
-            String deviceNo = (String) params.get("deviceNo");
-            if (StringUtils.isNotEmpty(deviceNo))
-                deviceLambdaQueryWrapper.like(Device::getDeviceNo, deviceNo);
             // 获取指定用户设备列表
             List<Integer> deviceId = new ArrayList<>();
-            for (UserDevice userDevice : userDeviceIPage.getRecords()) {
+            for (UserDevice userDevice : userDevices) {
                 deviceId.add(userDevice.getDeviceId());
             }
             // 查询设备列表
             deviceLambdaQueryWrapper.in(Device::getId, deviceId);
-            devices = super.list(deviceLambdaQueryWrapper);
+            // 设备号
+            String deviceNo = (String) params.get("deviceNo");
+            if (StringUtils.isNotEmpty(deviceNo))
+                deviceLambdaQueryWrapper.like(Device::getDeviceNo, deviceNo);
+            // 分页查询
+            Page<Device> devicePage = new Page<>(pageNumber, ConstUtil.PAGE_NUMBER);
+            IPage<Device> deviceIPage = super.page(devicePage, deviceLambdaQueryWrapper);
+            total = deviceIPage.getTotal();
+            devices = deviceIPage.getRecords();
         }
         // 封装数据
-        resultMap.put("total", devices.size());
+        resultMap.put("total", total);
         resultMap.put("devices", devices);
         return resultMap;
     }
