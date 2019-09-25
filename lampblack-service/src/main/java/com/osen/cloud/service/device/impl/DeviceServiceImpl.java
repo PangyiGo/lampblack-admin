@@ -87,16 +87,22 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         // 总记录数
         long total = userDeviceIPage.getTotal();
         if (total > 0) {
+            LambdaQueryWrapper<Device> deviceLambdaQueryWrapper = Wrappers.<Device>lambdaQuery();
+            // 设备号
+            String deviceNo = (String) params.get("deviceNo");
+            if (StringUtils.isNotEmpty(deviceNo))
+                deviceLambdaQueryWrapper.like(Device::getDeviceNo, deviceNo);
             // 获取指定用户设备列表
             List<Integer> deviceId = new ArrayList<>();
             for (UserDevice userDevice : userDeviceIPage.getRecords()) {
                 deviceId.add(userDevice.getDeviceId());
             }
             // 查询设备列表
-            devices = (List<Device>) super.listByIds(deviceId);
+            deviceLambdaQueryWrapper.in(Device::getId, deviceId);
+            devices = super.list(deviceLambdaQueryWrapper);
         }
         // 封装数据
-        resultMap.put("total", total);
+        resultMap.put("total", devices.size());
         resultMap.put("devices", devices);
         return resultMap;
     }
