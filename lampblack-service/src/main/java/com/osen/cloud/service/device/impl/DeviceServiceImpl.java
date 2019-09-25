@@ -149,7 +149,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
             // 已有用户与该设备关联
             for (UserDevice userDevice : userToDevice) {
                 User user = userService.getById(userDevice.getUserId());
-                stringBuffer.append(user.getAccount()).append(",");
+                stringBuffer.append(user.getAccount()).append(" , ");
             }
             stringBuffer.append(" ]");
             resultMap.put("tips", stringBuffer.toString());
