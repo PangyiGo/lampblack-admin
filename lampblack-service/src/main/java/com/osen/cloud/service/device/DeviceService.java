@@ -46,4 +46,27 @@ public interface DeviceService extends IService<Device> {
      * @return 信息
      */
     Map<String, Object> findDeviceByUserAccount(Map<String, Object> params);
+
+    /**
+     * 分页查询系统所有设备信息列表
+     *
+     * @param params 参数
+     * @return 信息
+     */
+    Map<String, Object> findAllDeviceToSystem(Map<String, Object> params);
+
+    /**
+     * 根据设备号删除指定用户
+     *
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    Map<String, Object> deleteToDeviceNo(String deviceNo);
+
+    /**
+     * 添加设备
+     * @param device
+     * @return
+     */
+    boolean addDevice(Device device);
 }

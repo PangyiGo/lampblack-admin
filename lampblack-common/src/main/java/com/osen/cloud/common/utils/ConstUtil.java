@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class ConstUtil {
 
     // 用户初始密码，12345678
-    public static final String INIT_PASSWORD = "$2a$10$yNCkJq5IlAVX07aK2eD2kOoxZhxz7ym.FKjaTK7MimhMRASiUvfkS";
+    public static final String INIT_PASSWORD = "$2a$10$/v9gg7DcPhaPNJUK3djGU.XTHZodHEkBffJ.8.GAHI1bxmdzW6ufK";
 
     // 监听端口
     public static final Integer SERVER_PORT = 8888;

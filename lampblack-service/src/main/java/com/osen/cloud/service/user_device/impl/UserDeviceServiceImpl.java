@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -59,9 +60,21 @@ public class UserDeviceServiceImpl extends ServiceImpl<UserDeviceMapper, UserDev
         Device serviceDeviceNo = deviceService.findDeviceNo(deviceNo);
         if (serviceDeviceNo == null)
             throw new ServiceException(ConstUtil.UNOK, "无法查询指定设备信息");
+        LambdaQueryWrapper<UserDevice> queryWrapper = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, byUsername.getId()).eq(UserDevice::getDeviceId, serviceDeviceNo.getId());
+        UserDevice device = super.getOne(queryWrapper);
+        if (device != null)
+            throw new ServiceException(ConstUtil.UNOK, "该用户与设备重复关联");
         UserDevice userDevice = new UserDevice();
         userDevice.setUserId(byUsername.getId());
         userDevice.setDeviceId(serviceDeviceNo.getId());
         return super.save(userDevice);
+    }
+
+    @Override
+    public List<UserDevice> findUserToDevice(LambdaQueryWrapper<UserDevice> queryWrapper) {
+        List<UserDevice> selectList = baseMapper.selectList(queryWrapper);
+        if (selectList == null || selectList.size() == 0)
+            return null;
+        return selectList;
     }
 }

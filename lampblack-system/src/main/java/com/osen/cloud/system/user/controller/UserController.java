@@ -36,7 +36,7 @@ public class UserController {
      * @param userVo 请求数据
      * @return 信息
      */
-    @PostMapping("/users")
+    @PostMapping("/user/add")
     public RestResult create(@RequestBody InsertUserVo userVo) {
         if (!userService.create(userVo.getUser(), userVo.getRoles()))
             return RestResultUtil.failed();

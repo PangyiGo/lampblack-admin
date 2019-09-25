@@ -89,7 +89,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             wrapper.like(User::getCompany, company);
         }
         // 时间降序排列
-        wrapper.orderByDesc(User::getCreateTime);
+        wrapper.orderByAsc(User::getCreateTime);
         // 分页查询
         Page<User> page = new Page<>(number, ConstUtil.PAGE_NUMBER);
         IPage<User> resultPage = super.page(page, wrapper);

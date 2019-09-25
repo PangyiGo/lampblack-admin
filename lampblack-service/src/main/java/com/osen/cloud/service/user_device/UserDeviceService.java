@@ -1,8 +1,10 @@
 package com.osen.cloud.service.user_device;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.UserDevice;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,4 +30,12 @@ public interface UserDeviceService extends IService<UserDevice> {
      * @return 信息
      */
     boolean addUserToDevice(Map<String, String> params);
+
+    /**
+     * 查询用户与设备关联
+     *
+     * @param queryWrapper 查询条件
+     * @return 信息
+     */
+    List<UserDevice> findUserToDevice(LambdaQueryWrapper<UserDevice> queryWrapper);
 }
