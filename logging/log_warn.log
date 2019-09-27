@@ -97,3 +97,9 @@ Caused by: java.lang.ClassNotFoundException: com.osen.cloud.system.data.controll
 2019-09-27 15:21:24.330 [XNIO-1 task-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.data.controller.DataHistoryController.queryDataHistoryByDate(java.util.Map<java.lang.String, java.lang.Object>)]
 2019-09-27 15:32:53.568 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
 2019-09-27 15:33:00.769 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 16:33:08.411 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 16:33:15.458 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 16:33:40.801 [XNIO-1 task-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException]
+2019-09-27 16:34:32.380 [XNIO-1 task-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException]
+2019-09-27 16:35:45.272 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 16:35:52.422 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.

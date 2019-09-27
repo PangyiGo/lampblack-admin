@@ -46,6 +46,6 @@ public class DataDayServiceImpl extends ServiceImpl<DataDayMapper, DataDay> impl
         } catch (Exception e) {
             return dataDays;
         }
-        return null;
+        return dataDays;
     }
 }

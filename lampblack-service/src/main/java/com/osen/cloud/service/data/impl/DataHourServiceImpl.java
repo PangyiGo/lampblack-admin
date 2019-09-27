@@ -46,6 +46,6 @@ public class DataHourServiceImpl extends ServiceImpl<DataHourMapper, DataHour> i
         } catch (Exception e) {
             return dataHours;
         }
-        return null;
+        return dataHours;
     }
 }

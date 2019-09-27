@@ -46,6 +46,6 @@ public class DataMinuteServiceImpl extends ServiceImpl<DataMinuteMapper, DataMin
         } catch (Exception e) {
             return dataMinutes;
         }
-        return null;
+        return dataMinutes;
     }
 }
