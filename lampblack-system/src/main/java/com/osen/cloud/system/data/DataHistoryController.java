@@ -6,10 +6,10 @@ import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.service.data.DataHistoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -36,5 +36,19 @@ public class DataHistoryController {
         log.info("实时数据返回");
         DataHistory dataHistory = dataHistoryService.returnRealtimeData(deviceNo);
         return RestResultUtil.success(dataHistory);
+    }
+
+    /**
+     * 批量查询指定设备号列表实时数据
+     *
+     * @param params 设备号列表
+     * @return 信息
+     */
+    @PostMapping("/data/realtime/batchFind")
+    public RestResult batchFindDataToDeviceNo(@RequestBody Map<String, List<String>> params) {
+        List<String> equipmentIDList = params.get("equipmentIDList");
+        List<DataHistory> dataHistoryList = dataHistoryService.batchFindDataToDeviceNo(equipmentIDList);
+        log.info("批量实时数据返回");
+        return RestResultUtil.success(dataHistoryList);
     }
 }

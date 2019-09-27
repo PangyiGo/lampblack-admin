@@ -3,6 +3,7 @@ package com.osen.cloud.service.data.impl;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.DataHistory;
+import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.data.DataHistoryMapper;
 import com.osen.cloud.service.data.DataHistoryService;
@@ -11,6 +12,10 @@ import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: PangYi
@@ -44,6 +49,26 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
             String dataJson = (String) operations.get(deviceNo);
             return JSON.parseObject(dataJson, DataHistory.class);
         }
-        return new DataHistory();
+        DataHistory dataHistory = new DataHistory();
+        dataHistory.setDeviceNo(deviceNo);
+        dataHistory.setLampblack(new BigDecimal(0));
+        dataHistory.setLampblackFlag("N");
+        dataHistory.setPm(new BigDecimal(0));
+        dataHistory.setPmFlag("N");
+        dataHistory.setNmhc(new BigDecimal(0));
+        dataHistory.setPmFlag("N");
+        return dataHistory;
+    }
+
+    @Override
+    public List<DataHistory> batchFindDataToDeviceNo(List<String> equipmentIDList) {
+        List<DataHistory> dataHistoryList = new ArrayList<>(0);
+        if (equipmentIDList.size() == 0)
+            throw new ServiceException(ConstUtil.UNOK, "查询实时数据列表为空");
+        for (String deviceNo : equipmentIDList) {
+            DataHistory dataHistory = this.returnRealtimeData(deviceNo);
+            dataHistoryList.add(dataHistory);
+        }
+        return dataHistoryList;
     }
 }

@@ -3,6 +3,8 @@ package com.osen.cloud.service.data;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.DataHistory;
 
+import java.util.List;
+
 /**
  * User: PangYi
  * Date: 2019-09-09
@@ -32,4 +34,12 @@ public interface DataHistoryService extends IService<DataHistory> {
      * @return 信息
      */
     DataHistory returnRealtimeData(String deviceNo);
+
+    /**
+     * 批量查询设备列表实时数据
+     *
+     * @param equipmentIDList 设备号列表
+     * @return 信息
+     */
+    List<DataHistory> batchFindDataToDeviceNo(List<String> equipmentIDList);
 }
