@@ -74,4 +74,44 @@ public class DeviceController {
         else
             return RestResultUtil.failed();
     }
+
+    /**
+     * 统计查询指定用户设备状态
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    @PostMapping("/device/statusCount/{account}")
+    public RestResult findDeviceStatusToUser(@PathVariable("account") String account) {
+        Map<String, Integer> deviceStatusToUser = deviceService.findDeviceStatusToUser(account);
+        return RestResultUtil.success(deviceStatusToUser);
+    }
+
+    /**
+     * 根据设备号查询指定设备信息
+     *
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    @PostMapping("/device/get/{deviceNo}")
+    public RestResult findDeviceToNo(@PathVariable("deviceNo") String deviceNo) {
+        Device device = deviceService.findDeviceNo(deviceNo);
+        if (device != null)
+            return RestResultUtil.success(device);
+        else
+            return RestResultUtil.failed();
+    }
+
+    /**
+     * 查询指定用户下的所有设备列表信息
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    @PostMapping("/device/getAll/{account}")
+    public RestResult finaAllDeviceToUser(@PathVariable("account") String account) {
+        Map<String, Object> allDeviceToUser = deviceService.finaAllDeviceToUser(account);
+        return RestResultUtil.success(allDeviceToUser);
+    }
+
 }

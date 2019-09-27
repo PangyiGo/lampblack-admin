@@ -24,4 +24,12 @@ public interface DataHistoryService extends IService<DataHistory> {
      * @param tableName 新表名
      */
     void createNewTable(String tableName);
+
+    /**
+     * 根据设备号返回指定设备实时数据
+     *
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    DataHistory returnRealtimeData(String deviceNo);
 }

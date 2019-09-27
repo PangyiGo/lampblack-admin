@@ -65,8 +65,26 @@ public interface DeviceService extends IService<Device> {
 
     /**
      * 添加设备
-     * @param device
-     * @return
+     *
+     * @param device 设备
+     * @return 信息
      */
     boolean addDevice(Device device);
+
+    /**
+     * 统计查询指定用户设备状态
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    Map<String, Integer> findDeviceStatusToUser(String account);
+
+    /**
+     * 查询指定用户下的所有设备列表信息
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    Map<String,Object> finaAllDeviceToUser(String account);
+
 }

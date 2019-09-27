@@ -60,7 +60,7 @@ public class AuthorizationController {
         log.info("user logout: " + authorization);
         // 清除redis缓存
         boolean delete = stringRedisTemplate.delete(JwtTokenUtil.KEYS + authorization.substring(7));
-        if (delete)
+        if (!delete)
             throw new RunRequestException(User_Logout_Success.getCode(), User_Logout_Success.getMessage());
         return RestResultUtil.authorization(User_Logout_Failed.getCode(), User_Logout_Failed.getMessage());
     }

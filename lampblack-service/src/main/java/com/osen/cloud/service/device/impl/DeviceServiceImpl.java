@@ -179,4 +179,64 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         return super.save(device);
     }
 
+    @Override
+    public Map<String, Integer> findDeviceStatusToUser(String account) {
+        // 获取指定用户
+        User user = userService.findByUsername(account);
+        if (user == null)
+            throw new ServiceException(ConstUtil.UNOK, "无法查询指定用户信息");
+        Map<String, Integer> resultMap = new HashMap<>(0);
+        // 查询指定用户设备关联
+        LambdaQueryWrapper<UserDevice> deviceQuery = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, user.getId());
+        List<UserDevice> userToDevice = userDeviceService.findUserToDevice(deviceQuery);
+        List<Integer> deviceIds = new ArrayList<>(0);
+        // 无关联设备
+        if (userToDevice.size() <= 0) {
+            resultMap.put("online", 0);
+            resultMap.put("offline", 0);
+            return resultMap;
+        }
+        for (UserDevice userDevice : userToDevice) {
+            deviceIds.add(userDevice.getDeviceId());
+        }
+        // 查询在线设备
+        LambdaQueryWrapper<Device> onlineQuery = Wrappers.<Device>lambdaQuery();
+        onlineQuery.eq(Device::getIsLive, ConstUtil.OPEN_STATUS).in(Device::getId, deviceIds);
+        int online = super.count(onlineQuery);
+        resultMap.put("online", online);
+        // 查询离线设备
+        LambdaQueryWrapper<Device> offlineQuery = Wrappers.<Device>lambdaQuery();
+        offlineQuery.eq(Device::getIsLive, ConstUtil.CLOSE_STATUS).in(Device::getId, deviceIds);
+        int offline = super.count(offlineQuery);
+        resultMap.put("offline", offline);
+        // 返回
+        return resultMap;
+    }
+
+    @Override
+    public Map<String, Object> finaAllDeviceToUser(String account) {
+        List<Device> devices = new ArrayList<>(0);
+        Map<String, Object> resultMap = new HashMap<>(0);
+        // 获取指定用户
+        User user = userService.findByUsername(account);
+        if (user == null)
+            throw new ServiceException(ConstUtil.UNOK, "无法查询指定用户信息");
+        // 查询指定用户设备关联
+        LambdaQueryWrapper<UserDevice> deviceQuery = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, user.getId());
+        List<UserDevice> userToDevice = userDeviceService.findUserToDevice(deviceQuery);
+        if (userToDevice.size() <= 0) {
+            resultMap.put("total", userToDevice.size());
+            resultMap.put("devices", devices);
+        }
+        List<Integer> deviceIds = new ArrayList<>(0);
+        for (UserDevice userDevice : userToDevice) {
+            deviceIds.add(userDevice.getDeviceId());
+        }
+        devices = (List<Device>) super.listByIds(deviceIds);
+        int total = devices.size();
+        resultMap.put("total", total);
+        resultMap.put("devices", devices);
+        return resultMap;
+    }
+
 }
