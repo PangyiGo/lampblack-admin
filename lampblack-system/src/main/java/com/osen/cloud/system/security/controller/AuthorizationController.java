@@ -5,6 +5,7 @@ import com.osen.cloud.common.except.type.RunRequestException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.SecurityUtil;
+import com.osen.cloud.system.logging.util.OperationLogsUtil;
 import com.osen.cloud.system.security.service.AuthenticationService;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 import static com.osen.cloud.common.enums.InfoMessage.*;
 
@@ -33,6 +36,9 @@ public class AuthorizationController {
 
     @Autowired
     private AuthenticationService authenticationService;
+
+    @Autowired
+    private OperationLogsUtil operationLogsUtil;
 
     /**
      * 令牌刷新
@@ -56,12 +62,14 @@ public class AuthorizationController {
      * @return 信息
      */
     @PostMapping("/auth/logout")
-    public RestResult logout(@RequestHeader("Authorization") String authorization) {
+    public RestResult logout(@RequestHeader("Authorization") String authorization, HttpServletRequest request) {
         log.info("user logout: " + authorization);
         // 清除redis缓存
         boolean delete = stringRedisTemplate.delete(JwtTokenUtil.KEYS + authorization.substring(7));
         if (!delete)
             throw new RunRequestException(User_Logout_Success.getCode(), User_Logout_Success.getMessage());
+        // 记录用户登录注销操作
+        operationLogsUtil.handlerOperation(request, "用户成功注销登录", SecurityUtil.getUsername());
         return RestResultUtil.authorization(User_Logout_Failed.getCode(), User_Logout_Failed.getMessage());
     }
 

@@ -10,4 +10,6 @@ import com.osen.cloud.common.entity.AlarmRealtime;
  * Description: 设备报警实时数据上传服务接口
  */
 public interface AlarmRealtimeService extends IService<AlarmRealtime> {
+
+
 }

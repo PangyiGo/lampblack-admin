@@ -38,7 +38,7 @@ public class AlarmHistoryServiceImpl extends ServiceImpl<AlarmHistoryMapper, Ala
         String deviceNo = (String) params.get("deviceNo");
         String start = (String) params.get("startTime");
         String end = (String) params.get("endTime");
-        long pageNumber = (long) params.get("pageNumber");
+        int pageNumber = (int) params.get("pageNumber");
         // 日期时间格式化
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
         LocalDateTime startTime = LocalDateTime.parse(start, dateTimeFormatter);

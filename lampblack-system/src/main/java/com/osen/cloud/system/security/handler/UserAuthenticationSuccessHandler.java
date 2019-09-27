@@ -2,6 +2,7 @@ package com.osen.cloud.system.security.handler;
 
 import com.alibaba.fastjson.JSON;
 import com.osen.cloud.common.utils.RestResultUtil;
+import com.osen.cloud.system.logging.util.OperationLogsUtil;
 import com.osen.cloud.system.security.utils.JwtTokenUtil;
 import com.osen.cloud.system.security.utils.JwtUser;
 import com.osen.cloud.system.security.utils.TransferUserToJwt;
@@ -36,6 +37,9 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    @Autowired
+    private OperationLogsUtil operationLogsUtil;
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         log.info("用户登录成功");
@@ -47,6 +51,10 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
         String token = jwtTokenUtil.generateToken(jwtUser);
 
         TransferUserToJwt transferUserToJwt = JwtTokenUtil.toUser(jwtUser);
+
+        // 保存用户登录操作信息
+        operationLogsUtil.handlerOperation(request, "用户登录成功", transferUserToJwt.getUsername());
+
         //保存redis
         String jsonString = JSON.toJSONString(transferUserToJwt);
         stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + token).set(jsonString, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
