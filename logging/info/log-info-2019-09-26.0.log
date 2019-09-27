@@ -178,15 +178,15 @@
 2019-09-26 13:34:16.897 [parallel-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
 2019-09-26 13:34:29.966 [XNIO-1 task-1] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
 2019-09-26 13:50:38.520 [XNIO-1 task-27] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
-2019-09-26 13:51:08.480 [XNIO-1 task-36] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:51:18.257 [XNIO-1 task-35] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:51:33.352 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:51:34.142 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:52:03.331 [XNIO-1 task-44] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:51:08.480 [XNIO-1 task-36] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:51:18.257 [XNIO-1 task-35] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:51:33.352 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:51:34.142 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:52:03.331 [XNIO-1 task-44] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 13:53:04.267 [XNIO-1 task-46] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 13:53:08.429 [XNIO-1 task-47] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
-2019-09-26 13:53:18.111 [XNIO-1 task-48] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:54:16.290 [XNIO-1 task-49] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:53:18.111 [XNIO-1 task-48] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:54:16.290 [XNIO-1 task-49] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 13:54:37.188 [Thread-32] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
 2019-09-26 13:54:37.203 [Thread-32] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2019-09-26 13:54:38.346 [Thread-32] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
@@ -228,11 +228,11 @@
 2019-09-26 13:55:40.242 [RMI TCP Connection(3)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Start completed.
 2019-09-26 13:55:40.768 [parallel-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
 2019-09-26 13:55:40.773 [parallel-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
-2019-09-26 13:55:49.112 [XNIO-1 task-1] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:55:49.112 [XNIO-1 task-1] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 13:55:58.624 [XNIO-1 task-2] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
-2019-09-26 13:56:01.215 [XNIO-1 task-7] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:56:06.265 [XNIO-1 task-8] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:56:29.203 [XNIO-1 task-12] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:56:01.215 [XNIO-1 task-7] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:56:06.265 [XNIO-1 task-8] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:56:29.203 [XNIO-1 task-12] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 13:56:58.442 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备成功连接服务器：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 13:56:59.131 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 13:56:59.132 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
@@ -240,7 +240,7 @@
 2019-09-26 13:56:59.164 [task-1] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
 2019-09-26 13:56:59.165 [task-1] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 13:56:59.166 [task-1] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
-2019-09-26 13:56:59.239 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:56:59.239 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 13:56:59.263 [task-1] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
 2019-09-26 13:57:02.509 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 13:57:02.510 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
@@ -249,9 +249,9 @@
 2019-09-26 13:57:02.516 [task-2] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 13:57:02.517 [task-2] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 13:57:02.530 [task-2] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 13:57:11.765 [XNIO-1 task-16] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:57:29.226 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:57:59.222 [XNIO-1 task-22] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:57:11.765 [XNIO-1 task-16] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:57:29.226 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:57:59.222 [XNIO-1 task-22] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 13:58:02.508 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 13:58:02.508 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 13:58:02.510 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -259,8 +259,8 @@
 2019-09-26 13:58:02.512 [task-3] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 13:58:02.513 [task-3] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 13:58:02.526 [task-3] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 13:58:29.224 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:58:59.225 [XNIO-1 task-28] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:58:29.224 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:58:59.225 [XNIO-1 task-28] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 13:59:02.522 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 13:59:02.522 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 13:59:02.524 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -268,8 +268,8 @@
 2019-09-26 13:59:02.526 [task-4] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 13:59:02.526 [task-4] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 13:59:02.543 [task-4] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 13:59:29.227 [XNIO-1 task-31] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 13:59:59.218 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 13:59:29.227 [XNIO-1 task-31] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 13:59:59.218 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:00:02.534 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:00:02.535 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:00:02.537 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -277,8 +277,8 @@
 2019-09-26 14:00:02.538 [task-5] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:00:02.538 [task-5] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:00:02.554 [task-5] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:00:29.224 [XNIO-1 task-37] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:00:59.220 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:00:29.224 [XNIO-1 task-37] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:00:59.220 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:01:02.550 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:01:02.550 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:01:02.552 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -286,8 +286,8 @@
 2019-09-26 14:01:02.553 [task-6] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:01:02.553 [task-6] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:01:02.573 [task-6] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:01:29.217 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:01:59.210 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:01:29.217 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:01:59.210 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:02:02.563 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:02:02.563 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:02:02.565 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -295,8 +295,8 @@
 2019-09-26 14:02:02.566 [task-7] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:02:02.566 [task-7] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:02:02.588 [task-7] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:02:29.213 [XNIO-1 task-49] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:02:59.205 [XNIO-1 task-51] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:02:29.213 [XNIO-1 task-49] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:02:59.205 [XNIO-1 task-51] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:03:02.575 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:03:02.576 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:03:02.577 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -304,8 +304,8 @@
 2019-09-26 14:03:02.579 [task-8] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:03:02.580 [task-8] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:03:02.598 [task-8] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:03:29.217 [XNIO-1 task-55] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:03:59.222 [XNIO-1 task-58] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:03:29.217 [XNIO-1 task-55] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:03:59.222 [XNIO-1 task-58] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:04:02.589 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:04:02.590 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:04:02.592 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -313,8 +313,8 @@
 2019-09-26 14:04:02.593 [task-9] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:04:02.593 [task-9] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:04:02.606 [task-9] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:04:29.218 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:04:59.219 [XNIO-1 task-64] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:04:29.218 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:04:59.219 [XNIO-1 task-64] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:05:02.602 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:05:02.603 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:05:02.605 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -322,8 +322,8 @@
 2019-09-26 14:05:02.606 [task-10] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:05:02.607 [task-10] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:05:02.626 [task-10] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:05:29.215 [XNIO-1 task-3] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:05:44.574 [XNIO-1 task-7] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:05:29.215 [XNIO-1 task-3] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:05:44.574 [XNIO-1 task-7] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:06:02.616 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:06:02.617 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:06:02.619 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -331,10 +331,10 @@
 2019-09-26 14:06:02.621 [task-11] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:06:02.621 [task-11] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:06:02.652 [task-11] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:06:03.419 [XNIO-1 task-9] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:06:31.491 [XNIO-1 task-10] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:06:33.390 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:06:49.033 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:06:03.419 [XNIO-1 task-9] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:06:31.491 [XNIO-1 task-10] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:06:33.390 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:06:49.033 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:07:02.630 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:07:02.631 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:07:02.632 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -342,8 +342,8 @@
 2019-09-26 14:07:02.634 [task-12] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:07:02.639 [task-12] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:07:02.652 [task-12] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:07:03.400 [XNIO-1 task-21] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:07:33.397 [XNIO-1 task-24] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:07:03.400 [XNIO-1 task-21] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:07:33.397 [XNIO-1 task-24] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:08:02.644 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:08:02.645 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:08:02.646 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -351,9 +351,9 @@
 2019-09-26 14:08:02.647 [task-13] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:08:02.647 [task-13] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:08:02.662 [task-13] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:08:03.426 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:08:33.401 [XNIO-1 task-30] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:08:43.901 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:08:03.426 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:08:33.401 [XNIO-1 task-30] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:08:43.901 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:09:02.657 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:09:02.658 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 14:09:02.659 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
@@ -361,14 +361,14 @@
 2019-09-26 14:09:02.663 [task-14] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:09:02.663 [task-14] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:09:02.676 [task-14] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:09:11.080 [XNIO-1 task-35] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:09:41.066 [XNIO-1 task-39] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:10:11.058 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:09:11.080 [XNIO-1 task-35] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:09:41.066 [XNIO-1 task-39] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:10:11.058 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:10:26.664 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备数据上传超时：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
 2019-09-26 14:10:26.665 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备与服务器断开连接：0c9d92fffe787de5-00002bac-00000003-891b6d99166cdd96-b34a6a03
-2019-09-26 14:10:41.069 [XNIO-1 task-45] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:11:11.057 [XNIO-1 task-48] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:11:41.055 [XNIO-1 task-51] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:10:41.069 [XNIO-1 task-45] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:11:11.057 [XNIO-1 task-48] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:11:41.055 [XNIO-1 task-51] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:12:03.679 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备成功连接服务器：0c9d92fffe787de5-00002bac-00000004-829e17c260faadd8-656bbd59
 2019-09-26 14:12:07.293 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002bac-00000004-829e17c260faadd8-656bbd59
 2019-09-26 14:12:07.293 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
@@ -377,33 +377,33 @@
 2019-09-26 14:12:07.297 [task-16] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 14:12:07.297 [task-16] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 14:12:07.312 [task-16] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 14:12:11.061 [XNIO-1 task-55] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:12:41.073 [XNIO-1 task-57] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:12:11.061 [XNIO-1 task-55] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:12:41.073 [XNIO-1 task-57] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:12:48.796 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000004-829e17c260faadd8-656bbd59
 2019-09-26 14:12:48.797 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备与服务器断开连接：0c9d92fffe787de5-00002bac-00000004-829e17c260faadd8-656bbd59
-2019-09-26 14:13:11.068 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:13:41.068 [XNIO-1 task-64] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:14:11.056 [XNIO-1 task-3] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:14:41.070 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:15:11.061 [XNIO-1 task-12] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:15:41.047 [XNIO-1 task-10] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:16:11.075 [XNIO-1 task-13] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:16:41.057 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:17:11.110 [XNIO-1 task-17] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:17:41.074 [XNIO-1 task-20] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:18:11.053 [XNIO-1 task-23] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:18:41.061 [XNIO-1 task-26] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:19:02.314 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:19:22.778 [XNIO-1 task-32] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:19:36.174 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:20:01.974 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:13:11.068 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:13:41.068 [XNIO-1 task-64] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:14:11.056 [XNIO-1 task-3] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:14:41.070 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:15:11.061 [XNIO-1 task-12] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:15:41.047 [XNIO-1 task-10] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:16:11.075 [XNIO-1 task-13] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:16:41.057 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:17:11.110 [XNIO-1 task-17] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:17:41.074 [XNIO-1 task-20] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:18:11.053 [XNIO-1 task-23] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:18:41.061 [XNIO-1 task-26] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:19:02.314 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:19:22.778 [XNIO-1 task-32] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:19:36.174 [XNIO-1 task-43] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:20:01.974 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:20:31.516 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备成功连接服务器：0c9d92fffe787de5-00002bac-00000005-ef475d2189f26d92-5ba3a9e1
-2019-09-26 14:20:31.987 [XNIO-1 task-49] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:21:01.991 [XNIO-1 task-47] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 14:21:31.998 [XNIO-1 task-54] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:20:31.987 [XNIO-1 task-49] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:21:01.991 [XNIO-1 task-47] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 14:21:31.998 [XNIO-1 task-54] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:21:49.456 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002bac-00000005-ef475d2189f26d92-5ba3a9e1
 2019-09-26 14:21:49.456 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备与服务器断开连接：0c9d92fffe787de5-00002bac-00000005-ef475d2189f26d92-5ba3a9e1
-2019-09-26 14:22:01.977 [XNIO-1 task-57] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 14:22:01.977 [XNIO-1 task-57] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 14:22:31.990 [XNIO-1 task-63] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 14:22:31.994 [XNIO-1 task-56] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 14:22:32.000 [XNIO-1 task-64] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
@@ -508,7 +508,7 @@
 2019-09-26 15:07:54.908 [XNIO-1 task-45] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:09:35.077 [XNIO-1 task-46] INFO  c.o.c.s.s.handler.UserAuthenticationFailureHandler - 用户登录失败
 2019-09-26 15:09:45.382 [XNIO-1 task-47] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
-2019-09-26 15:10:15.804 [XNIO-1 task-58] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 15:10:15.804 [XNIO-1 task-58] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 15:10:18.513 [XNIO-1 task-59] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:10:18.518 [XNIO-1 task-60] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:10:18.820 [XNIO-1 task-61] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
@@ -519,7 +519,7 @@
 2019-09-26 15:11:17.905 [XNIO-1 task-2] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:11:17.907 [XNIO-1 task-3] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:12:01.809 [XNIO-1 task-5] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
-2019-09-26 15:12:33.899 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 15:12:33.899 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 15:12:39.706 [XNIO-1 task-14] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:13:09.936 [XNIO-1 task-16] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:13:39.938 [XNIO-1 task-19] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
@@ -527,12 +527,12 @@
 2019-09-26 15:13:54.657 [XNIO-1 task-17] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:13:54.957 [XNIO-1 task-20] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:14:17.903 [XNIO-1 task-21] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
-2019-09-26 15:14:48.504 [XNIO-1 task-31] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 15:14:48.504 [XNIO-1 task-31] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 15:14:55.029 [XNIO-1 task-32] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:15:25.334 [XNIO-1 task-33] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:15:55.330 [XNIO-1 task-34] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:16:00.027 [XNIO-1 task-35] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
-2019-09-26 15:16:30.853 [XNIO-1 task-41] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 15:16:30.853 [XNIO-1 task-41] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 15:16:55.332 [XNIO-1 task-44] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:17:25.340 [XNIO-1 task-43] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 15:17:36.943 [XNIO-1 task-45] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
@@ -712,9 +712,9 @@
 2019-09-26 16:00:40.579 [task-25] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:00:40.579 [task-25] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:00:40.594 [task-25] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:01:25.453 [XNIO-1 task-16] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:01:34.518 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:01:36.691 [XNIO-1 task-21] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:01:25.453 [XNIO-1 task-16] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:01:34.518 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:01:36.691 [XNIO-1 task-21] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:01:40.589 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:01:40.590 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:01:40.591 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -722,9 +722,9 @@
 2019-09-26 16:01:40.595 [task-26] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:01:40.595 [task-26] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:01:40.605 [task-26] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:01:45.562 [XNIO-1 task-24] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:01:51.415 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:01:56.112 [XNIO-1 task-30] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:01:45.562 [XNIO-1 task-24] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:01:51.415 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:01:56.112 [XNIO-1 task-30] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:02:40.604 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:02:40.604 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:02:40.606 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -732,9 +732,9 @@
 2019-09-26 16:02:40.609 [task-27] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:02:40.609 [task-27] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:02:40.622 [task-27] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:02:55.027 [XNIO-1 task-36] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:03:20.238 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:03:39.723 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:02:55.027 [XNIO-1 task-36] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:03:20.238 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:03:39.723 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:03:40.616 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:03:40.616 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:03:40.618 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -742,11 +742,11 @@
 2019-09-26 16:03:40.620 [task-28] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:03:40.621 [task-28] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:03:40.636 [task-28] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:03:41.985 [XNIO-1 task-48] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:03:44.673 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:04:31.664 [XNIO-1 task-53] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:04:32.969 [XNIO-1 task-57] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:04:34.743 [XNIO-1 task-56] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:03:41.985 [XNIO-1 task-48] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:03:44.673 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:04:31.664 [XNIO-1 task-53] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:04:32.969 [XNIO-1 task-57] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:04:34.743 [XNIO-1 task-56] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:04:40.630 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:04:40.631 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:04:40.632 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -768,8 +768,8 @@
 2019-09-26 16:06:40.662 [task-31] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:06:40.662 [task-31] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:06:40.672 [task-31] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:06:46.342 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:06:49.027 [XNIO-1 task-6] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:06:46.342 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:06:49.027 [XNIO-1 task-6] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:07:40.671 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:07:40.672 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:07:40.674 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -812,8 +812,8 @@
 2019-09-26 16:12:40.740 [task-37] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:12:40.740 [task-37] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:12:40.751 [task-37] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:13:21.644 [XNIO-1 task-24] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:13:32.239 [XNIO-1 task-30] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:13:21.644 [XNIO-1 task-24] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:13:32.239 [XNIO-1 task-30] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:13:40.752 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:13:40.752 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:13:40.754 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -933,7 +933,7 @@
 2019-09-26 16:29:40.972 [task-54] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:29:40.972 [task-54] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:29:40.981 [task-54] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:30:27.206 [XNIO-1 task-7] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:30:27.206 [XNIO-1 task-7] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:30:40.983 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:30:40.984 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:30:40.985 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -955,8 +955,8 @@
 2019-09-26 16:32:41.012 [task-57] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:32:41.013 [task-57] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:32:41.021 [task-57] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:32:51.281 [XNIO-1 task-14] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:32:58.880 [XNIO-1 task-19] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:32:51.281 [XNIO-1 task-14] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:32:58.880 [XNIO-1 task-19] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:33:41.023 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:33:41.023 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:33:41.024 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -971,7 +971,7 @@
 2019-09-26 16:34:41.039 [task-59] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:34:41.040 [task-59] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:34:41.047 [task-59] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:34:50.082 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:34:50.082 [XNIO-1 task-25] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:35:41.051 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:35:41.052 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:35:41.053 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -993,11 +993,11 @@
 2019-09-26 16:37:41.081 [task-62] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:37:41.081 [task-62] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:37:41.090 [task-62] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:37:50.850 [XNIO-1 task-35] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:38:01.621 [XNIO-1 task-38] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:38:04.775 [XNIO-1 task-39] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:38:06.490 [XNIO-1 task-41] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:38:10.705 [XNIO-1 task-45] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:37:50.850 [XNIO-1 task-35] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:38:01.621 [XNIO-1 task-38] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:38:04.775 [XNIO-1 task-39] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:38:06.490 [XNIO-1 task-41] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:38:10.705 [XNIO-1 task-45] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:38:41.092 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:38:41.093 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:38:41.094 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1005,10 +1005,10 @@
 2019-09-26 16:38:41.096 [task-63] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:38:41.096 [task-63] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:38:41.105 [task-63] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:38:43.545 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:38:49.473 [XNIO-1 task-52] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:38:50.939 [XNIO-1 task-53] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:39:09.639 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:38:43.545 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:38:49.473 [XNIO-1 task-52] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:38:50.939 [XNIO-1 task-53] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:39:09.639 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:39:41.105 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:39:41.106 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:39:41.138 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1016,7 +1016,7 @@
 2019-09-26 16:39:41.155 [task-64] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:39:41.155 [task-64] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:39:41.161 [task-64] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:39:43.525 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:39:43.525 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:40:41.118 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:40:41.119 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:40:41.120 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1038,7 +1038,7 @@
 2019-09-26 16:42:41.148 [task-67] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:42:41.148 [task-67] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:42:41.156 [task-67] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:43:13.288 [XNIO-1 task-19] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:43:13.288 [XNIO-1 task-19] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:43:23.983 [XNIO-1 task-18] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 16:43:23.983 [XNIO-1 task-17] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 16:43:33.013 [XNIO-1 task-20] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
@@ -1049,7 +1049,7 @@
 2019-09-26 16:43:41.163 [task-68] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:43:41.164 [task-68] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:43:41.171 [task-68] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:44:11.559 [XNIO-1 task-29] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:44:11.559 [XNIO-1 task-29] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:44:33.845 [XNIO-1 task-32] INFO  c.o.c.s.s.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-09-26 16:44:41.173 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:44:41.174 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
@@ -1101,8 +1101,8 @@
 2019-09-26 16:50:41.258 [task-75] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:50:41.258 [task-75] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:50:41.263 [task-75] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:50:47.429 [XNIO-1 task-42] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:51:13.577 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:50:47.429 [XNIO-1 task-42] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:51:13.577 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:51:41.268 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:51:41.269 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:51:41.270 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1110,8 +1110,8 @@
 2019-09-26 16:51:41.272 [task-76] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:51:41.272 [task-76] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:51:41.279 [task-76] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:51:43.571 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:52:13.574 [XNIO-1 task-53] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:51:43.571 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:52:13.574 [XNIO-1 task-53] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:52:41.282 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:52:41.283 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:52:41.284 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1119,8 +1119,8 @@
 2019-09-26 16:52:41.285 [task-77] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:52:41.285 [task-77] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:52:41.294 [task-77] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:52:43.577 [XNIO-1 task-56] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:53:13.567 [XNIO-1 task-62] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:52:43.577 [XNIO-1 task-56] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:53:13.567 [XNIO-1 task-62] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:53:41.295 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:53:41.295 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:53:41.296 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1128,8 +1128,8 @@
 2019-09-26 16:53:41.297 [task-78] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:53:41.297 [task-78] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:53:41.305 [task-78] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:53:43.581 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:54:13.572 [XNIO-1 task-6] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:53:43.581 [XNIO-1 task-5] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:54:13.572 [XNIO-1 task-6] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:54:41.309 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:54:41.310 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:54:41.310 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1137,8 +1137,8 @@
 2019-09-26 16:54:41.311 [task-79] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:54:41.311 [task-79] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:54:41.322 [task-79] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:54:43.570 [XNIO-1 task-11] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:55:13.582 [XNIO-1 task-14] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:54:43.570 [XNIO-1 task-11] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:55:13.582 [XNIO-1 task-14] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:55:41.323 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:55:41.324 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:55:41.325 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1146,8 +1146,8 @@
 2019-09-26 16:55:41.345 [task-80] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:55:41.345 [task-80] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:55:41.353 [task-80] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:55:43.572 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:56:13.570 [XNIO-1 task-23] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:55:43.572 [XNIO-1 task-18] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:56:13.570 [XNIO-1 task-23] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:56:41.336 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:56:41.337 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:56:41.337 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1155,8 +1155,8 @@
 2019-09-26 16:56:41.339 [task-81] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:56:41.339 [task-81] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:56:41.347 [task-81] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:56:43.575 [XNIO-1 task-26] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:57:13.568 [XNIO-1 task-29] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:56:43.575 [XNIO-1 task-26] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:57:13.568 [XNIO-1 task-29] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:57:41.350 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:57:41.351 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:57:41.352 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1164,8 +1164,8 @@
 2019-09-26 16:57:41.352 [task-82] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:57:41.352 [task-82] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:57:41.362 [task-82] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:57:43.594 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:58:13.611 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:57:43.594 [XNIO-1 task-34] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:58:13.611 [XNIO-1 task-40] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:58:41.363 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:58:41.364 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:58:41.364 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1173,8 +1173,8 @@
 2019-09-26 16:58:41.366 [task-83] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:58:41.366 [task-83] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:58:41.374 [task-83] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:58:43.606 [XNIO-1 task-41] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 16:59:13.603 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:58:43.606 [XNIO-1 task-41] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 16:59:13.603 [XNIO-1 task-46] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 16:59:41.377 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 16:59:41.377 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 16:59:41.378 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1182,8 +1182,8 @@
 2019-09-26 16:59:41.379 [task-84] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 16:59:41.379 [task-84] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 16:59:41.386 [task-84] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 16:59:43.632 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 17:00:13.569 [XNIO-1 task-54] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 16:59:43.632 [XNIO-1 task-50] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 17:00:13.569 [XNIO-1 task-54] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 17:00:41.390 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 17:00:41.391 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 17:00:41.391 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1191,8 +1191,8 @@
 2019-09-26 17:00:41.394 [task-85] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 17:00:41.395 [task-85] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 17:00:41.403 [task-85] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 17:00:43.565 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 17:01:13.567 [XNIO-1 task-64] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 17:00:43.565 [XNIO-1 task-61] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 17:01:13.567 [XNIO-1 task-64] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 17:01:41.405 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 17:01:41.406 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 17:01:41.406 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1200,8 +1200,8 @@
 2019-09-26 17:01:41.409 [task-86] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 17:01:41.410 [task-86] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 17:01:41.418 [task-86] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 17:01:43.570 [XNIO-1 task-1] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
-2019-09-26 17:02:13.565 [XNIO-1 task-8] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 17:01:43.570 [XNIO-1 task-1] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
+2019-09-26 17:02:13.565 [XNIO-1 task-8] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 17:02:41.418 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 17:02:41.419 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 17:02:41.420 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1209,7 +1209,7 @@
 2019-09-26 17:02:41.420 [task-87] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 17:02:41.421 [task-87] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 17:02:41.429 [task-87] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 17:02:43.674 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 17:02:43.674 [XNIO-1 task-15] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 17:03:41.431 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 17:03:41.431 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 17:03:41.432 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
@@ -1322,7 +1322,7 @@
 2019-09-26 17:18:41.637 [task-103] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
 2019-09-26 17:18:41.637 [task-103] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019051703100020, dateTime=2019-08-13T15:58, lampblack=20.10, lampblackFlag=T, pm=11.16, pmFlag=N, nmhc=6.1, nmhcFlag=N, fanFlag=2, purifierFlag=2)
 2019-09-26 17:18:41.647 [task-103] INFO  c.o.cloud.system.socket.server.DataSegmentService - 设备号：2019051703100020 数据异常报警
-2019-09-26 17:18:43.902 [XNIO-1 task-19] INFO  com.osen.cloud.system.data.DataHistoryController - 实时数据返回
+2019-09-26 17:18:43.902 [XNIO-1 task-19] INFO  com.osen.cloud.system.data.controller.DataHistoryController - 实时数据返回
 2019-09-26 17:19:41.649 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055
 2019-09-26 17:19:41.649 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0185=20190813155800001;ST=22;CN=2011;PW=123456;MN=2019051703100020;Flag=5;CP=&&DataTime=20190813155800;LAMPBLACK-Rtd=20.10,LAMPBLACK-Flag=T;PM-Rtd=11.16,PM-Flag=N;NMHC-Rtd=6.1,NMHC-Flag=N&&7EC0
 2019-09-26 17:19:41.650 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-0000265c-00000003-31af5ec01f6820ad-44836055

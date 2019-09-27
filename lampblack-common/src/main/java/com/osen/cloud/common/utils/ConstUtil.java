@@ -1,6 +1,8 @@
 package com.osen.cloud.common.utils;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: PangYi
@@ -27,6 +29,9 @@ public class ConstUtil {
 
     // 日期格式化
     public static String DATE_FORMAT = "yyyyMMddHHmmss";
+
+    // 日期格式化
+    public static String QUERY_DATE = "yyyy-MM-dd-HH-mm-ss";
 
     // 日期格式化
     public static String DATETIME_FORMAT = "yy-MM-dd HH:mm:ss.SSS";
@@ -62,7 +67,7 @@ public class ConstUtil {
     public static Integer PAGE_NUMBER = 8;
 
     /**
-     * 动态生成表名
+     * 动态生成当前月份表名
      *
      * @param tableName 原表名
      * @return 新表名
@@ -99,6 +104,50 @@ public class ConstUtil {
             month = "" + monthValue;
         // 格式：基本表名_年月
         return tableName + "_" + year + month;
+    }
+
+    /**
+     * 解析数据表日期查询
+     *
+     * @param startDatetime 开始时间
+     * @param endDatetime   结束时间
+     * @param prefixTable   数据表前缀
+     * @return 信息
+     */
+    public static List<String> queryTableName(LocalDateTime startDatetime, LocalDateTime endDatetime, String prefixTable) {
+        List<String> tables = new ArrayList<>(0);
+        String month = "";
+        // 开始时间
+        int startDateYear = startDatetime.getYear();
+        int startDateMonthValue = startDatetime.getMonthValue();
+        // 结束时间
+        int endDateYear = endDatetime.getYear();
+        int endDateMonthValue = endDatetime.getMonthValue();
+        // 构建数据表
+        if ((startDateYear == endDateYear) && (startDateMonthValue == endDateMonthValue)) {
+            if (startDateMonthValue < 10)
+                month = "0" + startDateMonthValue;
+            else
+                month = "" + startDateMonthValue;
+            String tableName = prefixTable + "_" + startDateYear + month;
+            tables.add(tableName);
+        } else {
+            // 添加时间
+            if (startDateMonthValue < 10)
+                month = "0" + startDateMonthValue;
+            else
+                month = "" + startDateMonthValue;
+            String startTableName = prefixTable + "_" + startDateYear + month;
+            tables.add(startTableName);
+
+            if (endDateMonthValue < 10)
+                month = "0" + endDateMonthValue;
+            else
+                month = "" + endDateMonthValue;
+            String endTableName = prefixTable + "_" + endDateYear + month;
+            tables.add(endTableName);
+        }
+        return tables;
     }
 
 }

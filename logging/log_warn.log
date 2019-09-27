@@ -8,7 +8,7 @@
 2019-09-27 09:24:17.016 [XNIO-1 task-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `java.util.ArrayList` out of START_OBJECT token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.util.ArrayList` out of START_OBJECT token
  at [Source: (PushbackInputStream); line: 1, column: 1]]
 2019-09-27 09:25:56.669 [restartedMain] WARN  org.springframework.boot.SpringApplication - Unable to close ApplicationContext
-org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.osen.cloud.system.data.DataHistoryController] for bean with name 'dataHistoryController' defined in file [E:\gitworkspace\lampblack-admin\lampblack-system\target\classes\com\osen\cloud\system\data\DataHistoryController.class]; nested exception is java.lang.ClassNotFoundException: com.osen.cloud.system.data.DataHistoryController
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.osen.cloud.system.data.controller.DataHistoryController] for bean with name 'dataHistoryController' defined in file [E:\gitworkspace\lampblack-admin\lampblack-system\target\classes\com\osen\cloud\system\data\DataHistoryController.class]; nested exception is java.lang.ClassNotFoundException: com.osen.cloud.system.data.controller.DataHistoryController
 	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1392)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:680)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:647)
@@ -31,7 +31,7 @@ org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find clas
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.ClassNotFoundException: com.osen.cloud.system.data.DataHistoryController
+Caused by: java.lang.ClassNotFoundException: com.osen.cloud.system.data.controller.DataHistoryController
 	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
@@ -57,3 +57,43 @@ Caused by: java.lang.ClassNotFoundException: com.osen.cloud.system.data.DataHist
 2019-09-27 13:31:23.707 [DatebookHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=57m28s831ms304µs606ns).
 2019-09-27 13:31:54.867 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
 2019-09-27 13:32:01.985 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 13:59:39.780 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 13:59:46.652 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 14:15:13.466 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 14:15:21.235 [RMI TCP Connection(5)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 14:20:18.574 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 14:58:30.622 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 14:58:37.695 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 15:03:04.990 [XNIO-1 task-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201908' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,date_time,purifier_flag,nmhc_flag,nmhc,pm_flag,lampblack_flag,lampblack,device_no,pm,fan_flag  FROM data_history_201908     WHERE (device_no = ? AND date_time BETWEEN ? AND ?) ORDER BY date_time ASC
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201908' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201908' doesn't exist]
+2019-09-27 15:03:12.441 [XNIO-1 task-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201908' doesn't exist
+### The error may exist in com/osen/cloud/model/data/DataHistoryMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,date_time,purifier_flag,nmhc_flag,nmhc,pm_flag,lampblack_flag,lampblack,device_no,pm,fan_flag  FROM data_history_201908     WHERE (device_no = ? AND date_time BETWEEN ? AND ?) ORDER BY date_time ASC
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201908' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.data_history_201908' doesn't exist]
+2019-09-27 15:10:05.580 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:10:12.403 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 15:14:40.460 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:14:47.230 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 15:15:22.640 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:15:34.472 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:15:41.356 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 15:17:30.253 [XNIO-1 task-19] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.data.controller.DataHistoryController.queryDataHistoryByDate(java.util.Map<java.lang.String, java.lang.String>)]
+2019-09-27 15:18:08.777 [XNIO-1 task-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.data.controller.DataHistoryController.queryDataHistoryByDate(java.util.Map<java.lang.String, java.lang.String>)]
+2019-09-27 15:18:51.717 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:19:02.712 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:19:06.255 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 15:19:43.033 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:19:49.704 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-09-27 15:21:24.330 [XNIO-1 task-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.data.controller.DataHistoryController.queryDataHistoryByDate(java.util.Map<java.lang.String, java.lang.Object>)]
+2019-09-27 15:32:53.568 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-09-27 15:33:00.769 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.

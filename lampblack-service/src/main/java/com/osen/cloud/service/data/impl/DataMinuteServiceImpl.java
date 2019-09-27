@@ -1,11 +1,17 @@
 package com.osen.cloud.service.data.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.DataMinute;
 import com.osen.cloud.model.data.DataMinuteMapper;
 import com.osen.cloud.service.data.DataMinuteService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: PangYi
@@ -26,5 +32,20 @@ public class DataMinuteServiceImpl extends ServiceImpl<DataMinuteMapper, DataMin
     @Override
     public void createNewTable(String tableName) {
         baseMapper.createNewTable(tableName);
+    }
+
+    @Override
+    public List<DataMinute> queryDataMinuteByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        LambdaQueryWrapper<DataMinute> lambdaQuery = Wrappers.<DataMinute>lambdaQuery();
+        lambdaQuery.eq(DataMinute::getDeviceNo, deviceNo);
+        lambdaQuery.between(DataMinute::getDateTime, start, end);
+        lambdaQuery.orderByAsc(DataMinute::getDateTime);
+        List<DataMinute> dataMinutes = new ArrayList<>(0);
+        try {
+            dataMinutes = super.list(lambdaQuery);
+        } catch (Exception e) {
+            return dataMinutes;
+        }
+        return null;
     }
 }

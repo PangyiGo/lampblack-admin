@@ -1,11 +1,17 @@
 package com.osen.cloud.service.data.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.DataDay;
 import com.osen.cloud.model.data.DataDayMapper;
 import com.osen.cloud.service.data.DataDayService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: PangYi
@@ -26,5 +32,20 @@ public class DataDayServiceImpl extends ServiceImpl<DataDayMapper, DataDay> impl
     @Override
     public void createNewTable(String tableName) {
         baseMapper.createNewTable(tableName);
+    }
+
+    @Override
+    public List<DataDay> queryDataDayByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        LambdaQueryWrapper<DataDay> lambdaQuery = Wrappers.<DataDay>lambdaQuery();
+        lambdaQuery.eq(DataDay::getDeviceNo, deviceNo);
+        lambdaQuery.between(DataDay::getDateTime, start, end);
+        lambdaQuery.orderByAsc(DataDay::getDateTime);
+        List<DataDay> dataDays = new ArrayList<>(0);
+        try {
+            dataDays = super.list(lambdaQuery);
+        } catch (Exception e) {
+            return dataDays;
+        }
+        return null;
     }
 }

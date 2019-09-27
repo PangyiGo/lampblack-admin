@@ -1,6 +1,8 @@
 package com.osen.cloud.service.data.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.DataHistory;
 import com.osen.cloud.common.except.type.ServiceException;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,4 +74,20 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
         }
         return dataHistoryList;
     }
+
+    @Override
+    public List<DataHistory> queryDataHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        LambdaQueryWrapper<DataHistory> lambdaQuery = Wrappers.<DataHistory>lambdaQuery();
+        lambdaQuery.eq(DataHistory::getDeviceNo, deviceNo);
+        lambdaQuery.between(DataHistory::getDateTime, start, end);
+        lambdaQuery.orderByAsc(DataHistory::getDateTime);
+        List<DataHistory> dataHistories = new ArrayList<>(0);
+        try {
+            dataHistories = super.list(lambdaQuery);
+        } catch (Exception e) {
+            return dataHistories;
+        }
+        return dataHistories;
+    }
+
 }
