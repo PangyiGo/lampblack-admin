@@ -3,6 +3,8 @@ package com.osen.cloud.service.data;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.AlarmRealtime;
 
+import java.util.List;
+
 /**
  * User: PangYi
  * Date: 2019-09-09
@@ -11,5 +13,11 @@ import com.osen.cloud.common.entity.AlarmRealtime;
  */
 public interface AlarmRealtimeService extends IService<AlarmRealtime> {
 
-
+    /**
+     * 查询指定用户实时报警记录
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    List<AlarmRealtime> findAlarmTOAccount(String account);
 }

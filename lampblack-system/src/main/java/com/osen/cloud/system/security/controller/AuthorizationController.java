@@ -67,10 +67,10 @@ public class AuthorizationController {
         // 清除redis缓存
         boolean delete = stringRedisTemplate.delete(JwtTokenUtil.KEYS + authorization.substring(7));
         if (!delete)
-            throw new RunRequestException(User_Logout_Success.getCode(), User_Logout_Success.getMessage());
+            throw new RunRequestException(User_Logout_Failed.getCode(), User_Logout_Failed.getMessage());
         // 记录用户登录注销操作
         operationLogsUtil.handlerOperation(request, "用户成功注销登录", SecurityUtil.getUsername());
-        return RestResultUtil.authorization(User_Logout_Failed.getCode(), User_Logout_Failed.getMessage());
+        return RestResultUtil.authorization(User_Logout_Success.getCode(), User_Logout_Success.getMessage());
     }
 
 }
