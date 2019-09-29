@@ -48,7 +48,7 @@ spring:
       enabled: always
   ## redis配置
   redis:
-    host: localhost
+    host: 47.107.224.194
     port: 6379
     jedis:
       pool:
