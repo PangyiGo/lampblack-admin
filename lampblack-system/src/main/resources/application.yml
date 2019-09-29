@@ -23,7 +23,7 @@ spring:
     ## 数据库配置
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/osen-dev?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=true
+    url: jdbc:mysql://47.107.224.194:3306/osen-dev?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=true
     username: root
     password: 1125
     hikari:

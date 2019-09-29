@@ -6,7 +6,6 @@ import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.ThrowableUtil;
-import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,18 +34,6 @@ public class GlobalExceptionHandler {
         //打印错误日志
         log.error(ThrowableUtil.getStackTrace(e));
         return RestResultUtil.error(UnknownSystem_Error.getCode(), UnknownSystem_Error.getMessage());
-    }
-
-    /**
-     * 404异常处理
-     *
-     * @return 信息
-     */
-    @ExceptionHandler(value = NotFoundException.class)
-    public RestResult notfound(NotFoundException noFound) {
-        // 打印错误日志
-        log.error(ThrowableUtil.getStackTrace(noFound));
-        return RestResultUtil.error(NoFound_Error.getCode(), NoFound_Error.getMessage());
     }
 
     /**
