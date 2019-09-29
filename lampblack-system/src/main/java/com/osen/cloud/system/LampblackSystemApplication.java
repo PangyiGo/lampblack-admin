@@ -10,15 +10,12 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication(scanBasePackages = "com.osen.cloud")
 // 扫描Mapper配置注解
 @MapperScan(basePackages = {"com.osen.cloud.model"})
 // 开启事务处理
 @EnableTransactionManagement
-// 开启接口文档配置
-@EnableSwagger2
 // 开启异步处理
 @EnableAsync
 // 开启定时任务
