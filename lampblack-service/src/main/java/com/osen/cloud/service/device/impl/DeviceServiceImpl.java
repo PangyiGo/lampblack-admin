@@ -225,7 +225,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         LambdaQueryWrapper<UserDevice> deviceQuery = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, user.getId());
         List<UserDevice> userToDevice = userDeviceService.findUserToDevice(deviceQuery);
         if (userToDevice == null || userToDevice.size() <= 0) {
-            resultMap.put("total", userToDevice.size());
+            resultMap.put("total", 0);
             resultMap.put("devices", devices);
         }
         List<Integer> deviceIds = new ArrayList<>(0);

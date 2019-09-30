@@ -37,7 +37,7 @@ public class AlarmRealtimeServiceImpl extends ServiceImpl<AlarmRealtimeMapper, A
         // 查询用户关联设备
         Map<String, Object> deviceToUser = deviceService.finaAllDeviceToUser(account);
         List<Device> devices = (List<Device>) deviceToUser.get("devices");
-        if (devices == null && devices.size() == 0)
+        if (devices == null || devices.size() == 0)
             return alarmRealtimes;
         for (Device device : devices) {
             boolean isExist = stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).hasKey(device.getDeviceNo());
