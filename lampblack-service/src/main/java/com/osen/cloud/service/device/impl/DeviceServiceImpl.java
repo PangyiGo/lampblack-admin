@@ -85,7 +85,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         List<UserDevice> userDevices = userDeviceService.list(userDeviceLambdaQueryWrapper);
         // 总记录数
         long total = 0;
-        if (userDevices.size() > 0) {
+        if (userDevices != null && userDevices.size() > 0) {
             LambdaQueryWrapper<Device> deviceLambdaQueryWrapper = Wrappers.<Device>lambdaQuery();
             // 获取指定用户设备列表
             List<Integer> deviceId = new ArrayList<>();
@@ -191,7 +191,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         List<UserDevice> userToDevice = userDeviceService.findUserToDevice(deviceQuery);
         List<Integer> deviceIds = new ArrayList<>(0);
         // 无关联设备
-        if (userToDevice.size() <= 0) {
+        if (userToDevice == null && userToDevice.size() <= 0) {
             resultMap.put("online", 0);
             resultMap.put("offline", 0);
             return resultMap;
@@ -224,7 +224,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         // 查询指定用户设备关联
         LambdaQueryWrapper<UserDevice> deviceQuery = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, user.getId());
         List<UserDevice> userToDevice = userDeviceService.findUserToDevice(deviceQuery);
-        if (userToDevice.size() <= 0) {
+        if (userToDevice == null && userToDevice.size() <= 0) {
             resultMap.put("total", userToDevice.size());
             resultMap.put("devices", devices);
         }
