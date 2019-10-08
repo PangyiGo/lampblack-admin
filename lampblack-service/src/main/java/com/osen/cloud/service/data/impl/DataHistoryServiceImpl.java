@@ -79,7 +79,7 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
     public List<DataHistory> queryDataHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
         LambdaQueryWrapper<DataHistory> lambdaQuery = Wrappers.<DataHistory>lambdaQuery();
         // 查询字段
-        lambdaQuery.select(DataHistory::getDateTime, DataHistory::getLampblack, DataHistory::getPm, DataHistory::getNmhc);
+        lambdaQuery.select(DataHistory::getDateTime, DataHistory::getLampblack, DataHistory::getLampblackFlag, DataHistory::getPm, DataHistory::getPmFlag, DataHistory::getNmhc, DataHistory::getNmhcFlag, DataHistory::getFanFlag, DataHistory::getPurifierFlag);
         lambdaQuery.eq(DataHistory::getDeviceNo, deviceNo);
         lambdaQuery.between(DataHistory::getDateTime, start, end);
         lambdaQuery.orderByAsc(DataHistory::getDateTime);

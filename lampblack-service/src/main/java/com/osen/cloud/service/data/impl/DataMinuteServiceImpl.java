@@ -38,7 +38,7 @@ public class DataMinuteServiceImpl extends ServiceImpl<DataMinuteMapper, DataMin
     public List<DataMinute> queryDataMinuteByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
         LambdaQueryWrapper<DataMinute> lambdaQuery = Wrappers.<DataMinute>lambdaQuery();
         // 查询字段
-        lambdaQuery.select(DataMinute::getDateTime, DataMinute::getLampblack, DataMinute::getPm, DataMinute::getNmhc);
+        lambdaQuery.select(DataMinute::getDateTime, DataMinute::getLampblack, DataMinute::getLampblackFlag, DataMinute::getPm, DataMinute::getPmFlag, DataMinute::getNmhc, DataMinute::getNmhcFlag, DataMinute::getFanFlag, DataMinute::getPurifierFlag);
         lambdaQuery.eq(DataMinute::getDeviceNo, deviceNo);
         lambdaQuery.between(DataMinute::getDateTime, start, end);
         lambdaQuery.orderByAsc(DataMinute::getDateTime);

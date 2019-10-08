@@ -38,7 +38,7 @@ public class DataDayServiceImpl extends ServiceImpl<DataDayMapper, DataDay> impl
     public List<DataDay> queryDataDayByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
         LambdaQueryWrapper<DataDay> lambdaQuery = Wrappers.<DataDay>lambdaQuery();
         // 查询字段
-        lambdaQuery.select(DataDay::getDateTime, DataDay::getLampblack, DataDay::getPm, DataDay::getNmhc);
+        lambdaQuery.select(DataDay::getDateTime, DataDay::getLampblack, DataDay::getLampblackFlag, DataDay::getPm, DataDay::getPmFlag, DataDay::getNmhc, DataDay::getNmhcFlag, DataDay::getFanFlag, DataDay::getPurifierFlag);
         lambdaQuery.eq(DataDay::getDeviceNo, deviceNo);
         lambdaQuery.between(DataDay::getDateTime, start, end);
         lambdaQuery.orderByAsc(DataDay::getDateTime);
