@@ -53,7 +53,7 @@ public class DataDayController {
         // 结束时间
         LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
         // 构建数据表
-        List<String> queryTableName = ConstUtil.queryTableName(startDate, startDate, ConstUtil.DAY_TB);
+        List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.DAY_TB);
         for (String tableName : queryTableName) {
             MybatisPlusConfig.TableName.set(tableName);
             List<DataDay> history = dataDayService.queryDataDayByDate(startDate, endDate, deviceNo);

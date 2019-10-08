@@ -53,7 +53,7 @@ public class DataMinuteController {
         // 结束时间
         LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
         // 构建数据表
-        List<String> queryTableName = ConstUtil.queryTableName(startDate, startDate, ConstUtil.MINUTE_TB);
+        List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.MINUTE_TB);
         for (String tableName : queryTableName) {
             MybatisPlusConfig.TableName.set(tableName);
             List<DataMinute> history = dataMinuteService.queryDataMinuteByDate(startDate, endDate, deviceNo);

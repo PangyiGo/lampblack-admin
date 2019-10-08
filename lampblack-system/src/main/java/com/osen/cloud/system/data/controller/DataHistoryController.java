@@ -77,7 +77,7 @@ public class DataHistoryController {
         // 结束时间
         LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
         // 构建数据表
-        List<String> queryTableName = ConstUtil.queryTableName(startDate, startDate, ConstUtil.REALTIME_TB);
+        List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.REALTIME_TB);
         for (String tableName : queryTableName) {
             MybatisPlusConfig.TableName.set(tableName);
             List<DataHistory> history = dataHistoryService.queryDataHistoryByDate(startDate, endDate, deviceNo);
