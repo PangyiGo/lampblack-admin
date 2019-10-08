@@ -37,6 +37,8 @@ public class DataHourServiceImpl extends ServiceImpl<DataHourMapper, DataHour> i
     @Override
     public List<DataHour> queryDataHourByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
         LambdaQueryWrapper<DataHour> lambdaQuery = Wrappers.<DataHour>lambdaQuery();
+        // 查询字段
+        lambdaQuery.select(DataHour::getDateTime, DataHour::getLampblack, DataHour::getPm, DataHour::getNmhc);
         lambdaQuery.eq(DataHour::getDeviceNo, deviceNo);
         lambdaQuery.between(DataHour::getDateTime, start, end);
         lambdaQuery.orderByAsc(DataHour::getDateTime);

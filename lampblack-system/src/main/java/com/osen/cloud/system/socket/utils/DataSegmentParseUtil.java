@@ -50,6 +50,10 @@ public class DataSegmentParseUtil {
             // 数据格式包尾
             dataSegment = dataSegment + "\r\n";
 
+            // 判断是否00开头
+            if (dataSegment.startsWith("00##"))
+                dataSegment = StrUtil.sub(dataSegment, 2, dataSegment.length());
+
             // 包头校验
             if (!dataSegment.startsWith("##"))
                 return null;
@@ -65,7 +69,7 @@ public class DataSegmentParseUtil {
             if (!HJ212ValidationUtil.validateCRC(segmnet, crc))
                 return null;
         } catch (Exception e) {
-            log.error(e.getMessage());
+            log.info("数据解析异常，返回Null");
             return null;
         }
         return this.parseDataArea(segmnet);
