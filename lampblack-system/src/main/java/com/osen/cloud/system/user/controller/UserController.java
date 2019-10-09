@@ -1,10 +1,12 @@
 package com.osen.cloud.system.user.controller;
 
+import com.osen.cloud.common.entity.Role;
 import com.osen.cloud.common.entity.User;
 import com.osen.cloud.common.except.type.ControllerException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.SecurityUtil;
+import com.osen.cloud.service.role.RoleService;
 import com.osen.cloud.system.user.vo.InsertUserVo;
 import com.osen.cloud.service.user.UserService;
 import com.osen.cloud.system.user.vo.PageUserVo;
@@ -30,6 +32,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RoleService roleService;
+
     /**
      * 添加用户
      *
@@ -52,6 +57,9 @@ public class UserController {
     public RestResult getUserInfo() {
         String username = SecurityUtil.getUsername();
         User user = userService.findByUsername(username);
+        // 查询用户指定角色列表
+        List<Role> roles = roleService.findRoleByUserId(user.getId());
+        user.setRoles(roles);
         return RestResultUtil.success(user);
     }
 
