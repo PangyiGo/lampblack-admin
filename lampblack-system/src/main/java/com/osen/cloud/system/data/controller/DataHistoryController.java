@@ -1,10 +1,12 @@
 package com.osen.cloud.system.data.controller;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.osen.cloud.common.entity.DataHistory;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.service.data.DataHistoryService;
+import com.osen.cloud.system.data.util.DataHistoryRealVO;
 import com.osen.cloud.system.db_config.MybatisPlusConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,5 +86,26 @@ public class DataHistoryController {
             dataHistoryList.addAll(history);
         }
         return RestResultUtil.success(dataHistoryList);
+    }
+
+    /**
+     * 查询当天设备实时数据
+     *
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    @PostMapping("/data/realtime/today/{deviceNo}")
+    public RestResult queryDataToDay(@PathVariable("deviceNo") String deviceNo) {
+        MybatisPlusConfig.TableName.set(ConstUtil.REALTIME_TB);
+        List<DataHistory> dataHistoryList = dataHistoryService.queryDataToDay(deviceNo);
+        if (dataHistoryList.size() <= 0)
+            return RestResultUtil.success(dataHistoryList);
+        List<DataHistoryRealVO> dataHistoryRealVOS = new ArrayList<>(0);
+        for (DataHistory dataHistory : dataHistoryList) {
+            DataHistoryRealVO realVO = new DataHistoryRealVO();
+            BeanUtil.copyProperties(dataHistory, realVO);
+            dataHistoryRealVOS.add(realVO);
+        }
+        return RestResultUtil.success(dataHistoryRealVOS);
     }
 }

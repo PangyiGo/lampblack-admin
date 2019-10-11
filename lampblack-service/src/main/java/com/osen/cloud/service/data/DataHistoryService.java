@@ -53,4 +53,12 @@ public interface DataHistoryService extends IService<DataHistory> {
      * @return 信息
      */
     List<DataHistory> queryDataHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
+
+    /**
+     * 查询当天实时数据记录
+     *
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    List<DataHistory> queryDataToDay(String deviceNo);
 }

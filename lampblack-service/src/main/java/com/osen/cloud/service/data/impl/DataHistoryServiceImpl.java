@@ -92,4 +92,23 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
         return dataHistories;
     }
 
+    @Override
+    public List<DataHistory> queryDataToDay(String deviceNo) {
+        // 当前时间
+        LocalDateTime nowToday = LocalDateTime.now();
+        // 开始时间
+        LocalDateTime start = LocalDateTime.of(nowToday.getYear(), nowToday.getMonthValue(), nowToday.getDayOfMonth(), 0, 0, 0);
+        LambdaQueryWrapper<DataHistory> lambdaQuery = Wrappers.<DataHistory>lambdaQuery();
+        lambdaQuery.select(DataHistory::getLampblack, DataHistory::getPm, DataHistory::getNmhc, DataHistory::getDateTime);
+        lambdaQuery.eq(DataHistory::getDeviceNo, deviceNo).between(DataHistory::getDateTime, start, nowToday);
+        lambdaQuery.orderByAsc(DataHistory::getDateTime);
+        List<DataHistory> dataHistories = new ArrayList<>(0);
+        try {
+            dataHistories = super.list(lambdaQuery);
+        } catch (Exception e) {
+            return dataHistories;
+        }
+        return dataHistories;
+    }
+
 }
