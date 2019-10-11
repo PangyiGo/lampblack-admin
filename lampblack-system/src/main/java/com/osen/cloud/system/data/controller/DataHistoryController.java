@@ -96,7 +96,7 @@ public class DataHistoryController {
      */
     @PostMapping("/data/realtime/today/{deviceNo}")
     public RestResult queryDataToDay(@PathVariable("deviceNo") String deviceNo) {
-        MybatisPlusConfig.TableName.set(ConstUtil.REALTIME_TB);
+        MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.REALTIME_TB));
         List<DataHistory> dataHistoryList = dataHistoryService.queryDataToDay(deviceNo);
         if (dataHistoryList.size() <= 0)
             return RestResultUtil.success(dataHistoryList);
