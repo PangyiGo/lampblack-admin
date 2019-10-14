@@ -1,7 +1,0 @@
-2019-09-16 09:50:41.148 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - socket server error: data format error
-2019-09-16 09:53:45.399 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001750-00000002-4d6d69b12ae5a385-a90f4968 upload data exception
-2019-09-16 12:04:51.306 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-0000264c-00000002-da406753c3eda9b2-7226542b upload data exception
-2019-09-16 17:00:14.767 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001cd8-00000002-9b225064e693f296-e11b2bf8 upload data exception
-2019-09-16 17:02:00.296 [nioEventLoopGroup-5-2] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001cd8-00000004-b939eaaf5175b28e-2ffac5bc upload data exception
-2019-09-16 17:03:45.017 [nioEventLoopGroup-5-3] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-00001cd8-00000005-f88494a84d774b7e-93253300 upload data exception
-2019-09-16 17:31:49.957 [nioEventLoopGroup-5-1] ERROR c.o.c.system.socket.handler.SocketServerHandler - client connection ID: 0c9d92fffe787de5-000027e0-00000002-238f80f2c86dac87-e6521923 upload data exception
