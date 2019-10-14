@@ -1,5 +1,6 @@
 package com.osen.cloud.system.device;
 
+import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.device.DeviceService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,5 +26,12 @@ public class DeviceTest {
         boolean status = deviceService.updateDeviceStatus(2, "2019051703100020");
 
         System.out.println(status);
+    }
+
+    @Test
+    public void test02() {
+        String tableName = "data_history_201909";
+        boolean time = ConstUtil.compareToTime(tableName);
+        System.out.println(time);
     }
 }

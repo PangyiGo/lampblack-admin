@@ -124,7 +124,7 @@ public class DataHourController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.HOUR_TB);
         for (String tableName : queryTableName) {
-            if (tableName.contains(ConstUtil.MIN_TABLE))
+            if (ConstUtil.compareToTime(tableName))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<DataHour> history = dataHourService.queryDataHourByDate(startDate, endDate, deviceNo);

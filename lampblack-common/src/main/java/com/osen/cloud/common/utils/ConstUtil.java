@@ -1,5 +1,8 @@
 package com.osen.cloud.common.utils;
 
+import cn.hutool.core.util.StrUtil;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +67,7 @@ public class ConstUtil {
     public static String DAY_TB = "data_day";
 
     // 最小数据表时间
-    public static String MIN_TABLE = "201909";
+    public static String MIN_TABLE = "201908";
 
     // 分页数
     public static Integer PAGE_NUMBER = 8;
@@ -151,6 +154,20 @@ public class ConstUtil {
             tables.add(endTableName);
         }
         return tables;
+    }
+
+    /**
+     * 时间日前后比较，判断表名是否有效
+     *
+     * @param tableName 表名
+     * @return 信息
+     */
+    public static boolean compareToTime(String tableName) {
+        String sub = StrUtil.sub(tableName, -2, tableName.length());
+        int time = Integer.valueOf(sub);
+        LocalDate one = LocalDate.of(2019, 8, 1);
+        LocalDate two = LocalDate.of(2019, time, 1);
+        return !two.isAfter(one);
     }
 
 }
