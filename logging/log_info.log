@@ -2171,3 +2171,51 @@
 2019-10-14 13:56:25.945 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
 2019-10-14 13:56:25.954 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
 2019-10-14 13:56:25.961 [Thread-25] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-14 14:40:45.858 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - Starting LampblackSystemApplication on PC-20190708MDDO with PID 10544 (E:\gitworkspace\lampblack-admin\lampblack-system\target\classes started by Administrator in E:\gitworkspace\lampblack-admin)
+2019-10-14 14:40:45.864 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - No active profile set, falling back to default profiles: default
+2019-10-14 14:40:45.976 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-14 14:40:45.977 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-14 14:40:48.577 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-14 14:40:48.580 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-14 14:40:48.711 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40ms. Found 0 repository interfaces.
+2019-10-14 14:40:49.440 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$47f3090e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-14 14:40:49.456 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af4540d4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-14 14:40:49.498 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-14 14:40:49.504 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@22aea925' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-14 14:40:49.508 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6cc7abc0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-14 14:40:49.518 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-14 14:40:50.056 [restartedMain] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2019-10-14 14:40:50.057 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4079 ms
+2019-10-14 14:40:53.318 [Socket Server Thread-01] INFO  com.osen.cloud.system.socket.server.SocketServer - socket server starting port: 8999
+2019-10-14 14:40:53.578 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cd55c09, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e027472, org.springframework.security.web.header.HeaderWriterFilter@4fcda83d, org.springframework.security.web.authentication.logout.LogoutFilter@733bba76, com.osen.cloud.system.security.config.JwtAuthenticationTokenFilter@177e66f8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a36d553, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39f3663, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e9c9313, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@636a6a30, org.springframework.security.web.session.SessionManagementFilter@573b3114, org.springframework.security.web.access.ExceptionTranslationFilter@5e80938f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@567432b9]
+2019-10-14 14:40:53.789 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-14 14:40:54.777 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-14 14:40:54.864 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-10-14 14:40:54.980 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-10-14 14:40:55.142 [restartedMain] INFO  org.xnio - XNIO version 3.3.8.Final
+2019-10-14 14:40:55.161 [restartedMain] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final
+2019-10-14 14:40:55.237 [restartedMain] INFO  o.s.b.w.embedded.undertow.UndertowServletWebServer - Undertow started on port(s) 8080 (http) with context path ''
+2019-10-14 14:40:55.242 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - Started LampblackSystemApplication in 10.473 seconds (JVM running for 11.807)
+2019-10-14 14:40:55.851 [RMI TCP Connection(3)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Starting...
+2019-10-14 14:40:55.851 [RMI TCP Connection(2)-192.168.1.54] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-14 14:40:55.852 [RMI TCP Connection(2)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-10-14 14:40:55.870 [RMI TCP Connection(2)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 18 ms
+2019-10-14 14:40:56.715 [RMI TCP Connection(3)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Start completed.
+2019-10-14 14:40:56.936 [parallel-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-10-14 14:40:56.940 [parallel-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-10-14 14:41:51.650 [XNIO-1 task-1] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
+2019-10-14 15:02:56.215 [XNIO-1 task-10] INFO  c.o.c.s.s.controller.AuthorizationController - user logout: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE1NzEwNDYxMTEsInN1YiI6IjIwMTkwOTMwMDAwMSIsImNyZWF0ZWQiOjE1NzEwMzUzMTE2NTB9.10WoHKVrgasTuP572-_oIqPe5kaGcZ-OVwoEdYK6JW_t0YAUY0iCtxQdJk-2xEtoyw9GbCYUqUKKdE4oLxbqbA
+2019-10-14 15:03:51.994 [XNIO-1 task-11] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
+2019-10-14 15:10:31.649 [XNIO-1 task-19] INFO  c.o.c.s.s.controller.AuthorizationController - user logout: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE1NzEwNDc0MzEsInN1YiI6IjIwMTkwOTMwMDAwMSIsImNyZWF0ZWQiOjE1NzEwMzY2MzE5OTV9.1ujlTVDfM9me82a-ypJ-KRtzJfnnMPmQyu5pYo51AnoDC_rxPR4GaIujKCmpCTiqMDF4zVd2oDluth_ZQmfGgw
+2019-10-14 15:15:54.055 [XNIO-1 task-20] INFO  c.o.c.s.s.handler.UserAuthenticationFailureHandler - 用户登录失败
+2019-10-14 15:16:02.024 [XNIO-1 task-21] INFO  c.o.c.s.s.handler.UserAuthenticationFailureHandler - 用户登录失败
+2019-10-14 15:16:11.751 [XNIO-1 task-22] INFO  c.o.c.s.s.handler.UserAuthenticationFailureHandler - 用户登录失败
+2019-10-14 15:16:21.922 [XNIO-1 task-23] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
+2019-10-14 15:16:33.768 [XNIO-1 task-30] INFO  c.o.c.system.data.controller.DataHistoryController - 实时数据返回
+2019-10-14 15:16:53.673 [XNIO-1 task-33] INFO  c.o.c.system.data.controller.DataHistoryController - 实时数据返回
+2019-10-14 15:16:59.057 [XNIO-1 task-36] INFO  c.o.c.system.data.controller.DataHistoryController - 实时数据返回
+2019-10-14 15:18:43.748 [Thread-28] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-10-14 15:18:43.752 [Thread-28] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-14 15:18:44.896 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
+2019-10-14 15:18:44.904 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
+2019-10-14 15:18:44.911 [Thread-28] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'

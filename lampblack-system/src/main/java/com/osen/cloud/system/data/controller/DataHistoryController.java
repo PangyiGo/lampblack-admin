@@ -151,6 +151,8 @@ public class DataHistoryController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.REALTIME_TB);
         for (String tableName : queryTableName) {
+            if (tableName.contains(ConstUtil.MIN_TABLE))
+                continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<DataHistory> history = dataHistoryService.queryDataHistoryByDate(startDate, endDate, deviceNo);
             dataHistoryList.addAll(history);

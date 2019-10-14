@@ -124,6 +124,8 @@ public class DataMinuteController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.MINUTE_TB);
         for (String tableName : queryTableName) {
+            if (tableName.contains(ConstUtil.MIN_TABLE))
+                continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<DataMinute> history = dataMinuteService.queryDataMinuteByDate(startDate, endDate, deviceNo);
             dataMinutes.addAll(history);

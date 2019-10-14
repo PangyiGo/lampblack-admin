@@ -63,6 +63,9 @@ public class ConstUtil {
     // 每天数据表
     public static String DAY_TB = "data_day";
 
+    // 最小数据表时间
+    public static String MIN_TABLE = "201909";
+
     // 分页数
     public static Integer PAGE_NUMBER = 8;
 
