@@ -62,4 +62,17 @@ public class UserSimpleTest {
         Collection<Role> byIds = roleService.listByIds(Arrays.asList(integers));
         System.out.println(byIds);
     }
+
+    @Test
+    public void test04() {
+        User user = new User();
+        user.setAccount("奥斯恩环保");
+        user.setPassword("0000");
+        user.setPhone("15920362472");
+        user.setEmail("1306359812@qq.com");
+        user.setAddress("广东省深圳市宝安区福永街道凤凰工业园");
+
+        boolean b = userService.updateUserToAccount(user);
+        System.out.println(b);
+    }
 }

@@ -47,4 +47,12 @@ public interface UserService extends IService<User> {
      * @return 信息
      */
     boolean deleteUserByAccount(User account);
+
+    /**
+     * 修改用户个人信息
+     *
+     * @param user 用户信息
+     * @return 信息
+     */
+    boolean updateUserToAccount(User user);
 }

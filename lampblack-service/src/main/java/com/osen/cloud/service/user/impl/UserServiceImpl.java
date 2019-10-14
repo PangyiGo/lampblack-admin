@@ -2,6 +2,7 @@ package com.osen.cloud.service.user.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -20,6 +21,7 @@ import com.osen.cloud.service.user_device.UserDeviceService;
 import com.osen.cloud.service.user_role.UserRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,6 +45,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserDeviceService userDeviceService;
@@ -118,5 +123,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         userDeviceService.remove(new QueryWrapper<UserDevice>().eq("user_id", account.getId()));
         // 删除用户
         return super.removeById(account.getId());
+    }
+
+    @Override
+    public boolean updateUserToAccount(User user) {
+        user.setUpdateTime(LocalDateTime.now());
+        if (user.getPassword() != null && !user.getPassword().equals(""))
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+        LambdaUpdateWrapper<User> updateWrapper = Wrappers.<User>lambdaUpdate().eq(User::getAccount, user.getAccount());
+        return this.update(user, updateWrapper);
     }
 }

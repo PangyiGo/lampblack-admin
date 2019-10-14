@@ -47,6 +47,10 @@ public class User extends Model<User> implements Serializable {
 
     private Integer status;
 
+    private String username;
+
+    private String remark;
+
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;

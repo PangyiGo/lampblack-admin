@@ -98,6 +98,21 @@ public class UserController {
         else
             return RestResultUtil.failed();
     }
+
+    /**
+     * 更新用户信息
+     *
+     * @param user 用户
+     * @return 信息
+     */
+    @PostMapping("/user/update")
+    public RestResult updateUserToAccount(@RequestBody User user) {
+        boolean b = userService.updateUserToAccount(user);
+        if (b)
+            return RestResultUtil.success();
+        else
+            return RestResultUtil.failed();
+    }
 }
 
 
