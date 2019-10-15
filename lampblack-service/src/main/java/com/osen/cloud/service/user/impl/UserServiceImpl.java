@@ -133,4 +133,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         LambdaUpdateWrapper<User> updateWrapper = Wrappers.<User>lambdaUpdate().eq(User::getAccount, user.getAccount());
         return this.update(user, updateWrapper);
     }
+
+    @Override
+    public boolean resetPasswordToAccount(String account) {
+        LambdaUpdateWrapper<User> wrapper = Wrappers.<User>lambdaUpdate().set(User::getPassword, ConstUtil.INIT_PASSWORD).set(User::getUpdateTime, LocalDateTime.now()).eq(User::getAccount, account);
+        return this.update(wrapper);
+    }
 }

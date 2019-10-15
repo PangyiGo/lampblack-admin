@@ -4,6 +4,7 @@ import com.osen.cloud.common.entity.Role;
 import com.osen.cloud.common.entity.User;
 import com.osen.cloud.common.except.type.ControllerException;
 import com.osen.cloud.common.result.RestResult;
+import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.service.role.RoleService;
@@ -112,6 +113,21 @@ public class UserController {
             return RestResultUtil.success();
         else
             return RestResultUtil.failed();
+    }
+
+    /**
+     * 重置用户密码
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    @PostMapping("/user/resetPassword/{account}")
+    public RestResult resetPassword(@PathVariable("account") String account) {
+        boolean toAccount = userService.resetPasswordToAccount(account);
+        if (toAccount)
+            return RestResultUtil.success("重置密码成功");
+        else
+            return RestResultUtil.error(ConstUtil.UNOK, "重置密码失败");
     }
 }
 

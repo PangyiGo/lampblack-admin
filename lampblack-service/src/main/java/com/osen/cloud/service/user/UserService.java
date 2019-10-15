@@ -55,4 +55,12 @@ public interface UserService extends IService<User> {
      * @return 信息
      */
     boolean updateUserToAccount(User user);
+
+    /**
+     * 重置密码为默认密码
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    boolean resetPasswordToAccount(String account);
 }
