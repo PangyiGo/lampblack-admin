@@ -3,6 +3,7 @@ package com.osen.cloud.system.device.controller;
 import com.osen.cloud.common.entity.Device;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.service.device.DeviceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +69,7 @@ public class DeviceController {
      */
     @PostMapping("/device/add")
     public RestResult addDevice(@RequestBody Device device) {
-        boolean addDevice = deviceService.addDevice(device);
+        boolean addDevice = deviceService.addDevice(device, SecurityUtil.getUserId());
         if (addDevice)
             return RestResultUtil.success();
         else

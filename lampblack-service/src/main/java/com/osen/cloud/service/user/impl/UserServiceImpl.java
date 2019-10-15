@@ -97,15 +97,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 代理商
         if (role.getName().equals(ConstUtil.PROXY)) {
             wrapper.eq(User::getPid, SecurityUtil.getUserId());
-            wrapper.or().eq(User::getId, SecurityUtil.getUserId());
             if (StringUtils.isNotEmpty(company)) {
                 wrapper.and(query -> query.like(User::getAccount, company).or().like(User::getCompany, company));
             }
-        } else {
+        } else if (role.getName().equals(ConstUtil.ADMIN)) {
             // 用户账号和项目名称模糊查询
             if (StringUtils.isNotEmpty(company)) {
                 wrapper.like(User::getAccount, company).or().like(User::getCompany, company);
             }
+            wrapper.ne(User::getId, SecurityUtil.getUserId());
         }
         // 时间降序排列
         wrapper.orderByAsc(User::getCreateTime);
