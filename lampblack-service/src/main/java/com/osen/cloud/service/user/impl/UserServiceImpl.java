@@ -72,6 +72,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         user.setPassword(ConstUtil.INIT_PASSWORD);
         user.setCreateTime(LocalDateTime.now());
         user.setUpdateTime(LocalDateTime.now());
+        // 设置父级ID
+        user.setPid(SecurityUtil.getUserId());
         //添加用户
         if (super.save(user)) {
             Integer userId = user.getId();
