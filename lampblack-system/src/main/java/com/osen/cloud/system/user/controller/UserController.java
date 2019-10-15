@@ -65,6 +65,18 @@ public class UserController {
     }
 
     /**
+     * 通过用户名获取用户信息
+     * 指定账号
+     *
+     * @return 信息
+     */
+    @PostMapping("/user/get/{account}")
+    public RestResult getUserInfo(@PathVariable("account") String account) {
+        User user = userService.findByUsername(account);
+        return RestResultUtil.success(user);
+    }
+
+    /**
      * 分页查询所用用户信息列表
      * 根据不同用户角色查询相对应用户列表
      *
