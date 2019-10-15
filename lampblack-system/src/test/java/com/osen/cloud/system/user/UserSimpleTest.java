@@ -11,10 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * User: PangYi
@@ -40,20 +38,6 @@ public class UserSimpleTest {
 
     @Test
     public void test02() {
-        User user = new User();
-        user.setAccount("admin2");
-        user.setPhone("15920362472");
-        user.setEmail("1306359812@qq.com");
-        user.setAddress("广东省深圳市宝安区福永街道凤凰工业园");
-        user.setCompany("深圳奥斯恩净化技术有限公司");
-
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(3);
-
-        boolean b = userService.create(user, list);
-
-        Assert.assertTrue(b);
     }
 
     @Test
