@@ -117,7 +117,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         LambdaQueryWrapper<Device> wrapper = Wrappers.<Device>lambdaQuery();
         String name = (String) params.get("deviceName");
         if (StringUtils.isNotEmpty(name))
-            wrapper.like(Device::getName, name);
+            wrapper.like(Device::getName, name).or().like(Device::getDeviceNo, name).or().like(Device::getAddress, name);
         // 时间升序排列
         wrapper.orderByAsc(Device::getCreateTime);
         // 分页查询
