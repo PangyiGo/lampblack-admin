@@ -72,6 +72,12 @@ public class ConstUtil {
     // 分页数
     public static Integer PAGE_NUMBER = 8;
 
+    public static String ADMIN = "ROLE_ADMIN"; // 超级管理员
+
+    public static String SCOTT = "ROLE_SCOTT"; // 终端用户
+
+    public static String PROXY = "ROLE_PROXY"; // 代理商
+
     /**
      * 动态生成当前月份表名
      *

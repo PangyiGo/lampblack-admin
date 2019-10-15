@@ -14,6 +14,7 @@ import com.osen.cloud.common.entity.UserDevice;
 import com.osen.cloud.common.entity.UserRole;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.model.user.UserMapper;
 import com.osen.cloud.service.role.RoleService;
 import com.osen.cloud.service.user.UserService;
@@ -88,10 +89,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public Map<String, Object> findAllUserToPage(Integer number, String company) {
-        // 公司名称模糊查询
         LambdaQueryWrapper<User> wrapper = Wrappers.<User>lambdaQuery();
-        if (StringUtils.isNotEmpty(company)) {
-            wrapper.like(User::getCompany, company);
+        // 获取当前用户ID
+        Role role = roleService.findRoleByUserId(SecurityUtil.getUserId()).get(0);
+        // 代理商
+        if (role.getName().equals(ConstUtil.PROXY)) {
+            wrapper.eq(User::getPid, SecurityUtil.getUserId());
+            wrapper.or().eq(User::getId, SecurityUtil.getUserId());
+            if (StringUtils.isNotEmpty(company)) {
+                wrapper.and(query -> query.like(User::getAccount, company).or().like(User::getCompany, company));
+            }
+        } else {
+            // 用户账号和项目名称模糊查询
+            if (StringUtils.isNotEmpty(company)) {
+                wrapper.like(User::getAccount, company).or().like(User::getCompany, company);
+            }
         }
         // 时间降序排列
         wrapper.orderByAsc(User::getCreateTime);
