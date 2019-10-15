@@ -66,6 +66,7 @@ public class UserController {
 
     /**
      * 分页查询所用用户信息列表
+     * 根据不同用户角色查询相对应用户列表
      *
      * @param pageUserVo 分页参数封装
      * @return 信息
