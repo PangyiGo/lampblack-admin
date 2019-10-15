@@ -1853,3 +1853,224 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2019-10-15 15:10:19.970 [task-16] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 分钟数据类型
 2019-10-15 15:10:19.974 [task-16] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传分钟数据到数据库
 2019-10-15 15:10:19.974 [task-16] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataMinute(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:10, lampblack=0.0, lampblackMin=0.0, lampblackMax=0.1, lampblackFlag=N, pm=null, pmMin=null, pmMax=null, pmFlag=null, nmhc=null, nmhcMin=null, nmhcMax=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:11:23.066 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:11:23.067 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151100001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151100;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&B681
+2019-10-15 15:11:23.068 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:11:23.069 [task-17] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:11:23.070 [task-17] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:11:23.070 [task-17] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:11, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:12:21.566 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:12:21.566 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151200001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151200;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&E541
+2019-10-15 15:12:21.568 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:12:21.568 [task-18] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:12:21.568 [task-18] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:12:21.568 [task-18] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:12, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:13:20.064 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:13:20.064 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151300001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151300;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&D801
+2019-10-15 15:13:20.065 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:13:20.066 [task-19] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:13:20.066 [task-19] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:13:20.066 [task-19] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:13, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:14:23.063 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:14:23.064 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151400001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151400;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&7340
+2019-10-15 15:14:23.065 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:14:23.067 [task-20] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:14:23.070 [task-20] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:14:23.071 [task-20] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:14, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:15:21.561 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:15:21.562 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151500001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151500;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&4E00
+2019-10-15 15:15:21.563 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:15:21.564 [task-21] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:15:21.565 [task-21] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:15:21.565 [task-21] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:15, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:16:20.060 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:16:20.060 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151600001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151600;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&1DC0
+2019-10-15 15:16:20.061 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:16:20.062 [task-22] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:16:20.062 [task-22] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:16:20.062 [task-22] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:16, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:17:23.059 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:17:23.059 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151700001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151700;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&2080
+2019-10-15 15:17:23.061 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:17:23.061 [task-23] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:17:23.061 [task-23] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:17:23.061 [task-23] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:17, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:18:21.558 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:18:21.558 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151800001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151800;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&7EC0
+2019-10-15 15:18:21.559 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:18:21.560 [task-24] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:18:21.560 [task-24] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:18:21.560 [task-24] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:18, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:19:20.057 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:19:20.057 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015151900001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015151900;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&4380
+2019-10-15 15:19:20.059 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:19:20.059 [task-25] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:19:20.060 [task-25] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:19:20.060 [task-25] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:19, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:20:23.055 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:20:23.055 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152000001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152000;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&B681
+2019-10-15 15:20:23.057 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:20:23.058 [task-26] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:20:23.058 [task-26] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:20:23.058 [task-26] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:20, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:20:23.255 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:20:23.255 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0173QN=20191015152000001;ST=22;CN=2051;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152000;LAMPBLACK-Min=0.0,LAMPBLACK-Avg=0.0,LAMPBLACK-Max=0.0,LAMPBLACK-Flag=N&&F6C1
+2019-10-15 15:20:23.257 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:20:23.261 [task-27] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 分钟数据类型
+2019-10-15 15:20:23.262 [task-27] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传分钟数据到数据库
+2019-10-15 15:20:23.262 [task-27] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataMinute(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:20, lampblack=0.0, lampblackMin=0.0, lampblackMax=0.0, lampblackFlag=N, pm=null, pmMin=null, pmMax=null, pmFlag=null, nmhc=null, nmhcMin=null, nmhcMax=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:21:21.555 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:21:21.555 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152100001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152100;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&8BC1
+2019-10-15 15:21:21.556 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:21:21.556 [task-28] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:21:21.556 [task-28] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:21:21.556 [task-28] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:21, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:22:20.053 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:22:20.053 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152200001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152200;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&D801
+2019-10-15 15:22:20.054 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:22:20.055 [task-29] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:22:20.055 [task-29] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:22:20.055 [task-29] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:22, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:23:23.051 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:23:23.051 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152300001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152300;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&E541
+2019-10-15 15:23:23.052 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:23:23.053 [task-30] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:23:23.053 [task-30] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:23:23.053 [task-30] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:23, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:24:21.550 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:24:21.550 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152400001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152400;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&4E00
+2019-10-15 15:24:21.552 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:24:21.552 [task-31] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:24:21.553 [task-31] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:24:21.553 [task-31] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:24, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:25:20.049 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:25:20.050 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152500001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152500;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&7340
+2019-10-15 15:25:20.051 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:25:20.052 [task-32] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:25:20.052 [task-32] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:25:20.052 [task-32] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:25, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:26:23.048 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:26:23.048 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152600001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152600;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&2080
+2019-10-15 15:26:23.050 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:26:23.050 [task-33] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:26:23.051 [task-33] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:26:23.051 [task-33] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:26, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:27:21.547 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:27:21.547 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152700001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152700;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&1DC0
+2019-10-15 15:27:21.548 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:27:21.549 [task-34] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:27:21.550 [task-34] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:27:21.550 [task-34] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:27, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:28:20.045 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:28:20.046 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152800001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152800;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&4380
+2019-10-15 15:28:20.048 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:28:20.049 [task-35] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:28:20.049 [task-35] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:28:20.049 [task-35] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:28, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:29:23.044 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:29:23.044 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015152900001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015152900;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&7EC0
+2019-10-15 15:29:23.046 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:29:23.069 [task-36] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:29:23.069 [task-36] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:29:23.069 [task-36] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:29, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:30:21.543 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:30:21.543 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153000001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153000;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&6740
+2019-10-15 15:30:21.544 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:30:21.545 [task-37] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:30:21.545 [task-37] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:30:21.545 [task-37] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:30, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:30:21.742 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:30:21.743 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0173QN=20191015153000001;ST=22;CN=2051;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153000;LAMPBLACK-Min=0.0,LAMPBLACK-Avg=0.0,LAMPBLACK-Max=0.0,LAMPBLACK-Flag=N&&FB41
+2019-10-15 15:30:21.744 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:30:21.744 [task-38] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 分钟数据类型
+2019-10-15 15:30:21.745 [task-38] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传分钟数据到数据库
+2019-10-15 15:30:21.745 [task-38] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataMinute(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:30, lampblack=0.0, lampblackMin=0.0, lampblackMax=0.0, lampblackFlag=N, pm=null, pmMin=null, pmMax=null, pmFlag=null, nmhc=null, nmhcMin=null, nmhcMax=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:31:20.042 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:31:20.042 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153100001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153100;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&5A00
+2019-10-15 15:31:20.043 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:31:20.044 [task-39] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:31:20.045 [task-39] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:31:20.045 [task-39] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:31, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:32:23.040 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:32:23.040 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153200001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153200;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&09C0
+2019-10-15 15:32:23.041 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备上传格式错误，不符合HJ212协议
+2019-10-15 15:32:23.041 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:33:21.540 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:33:21.540 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153300001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153300;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&3480
+2019-10-15 15:33:21.541 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:33:21.542 [task-40] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:33:21.543 [task-40] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:33:21.543 [task-40] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:33, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:34:20.038 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:34:20.038 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153400001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153400;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&9FC1
+2019-10-15 15:34:20.040 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:34:20.040 [task-41] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:34:20.040 [task-41] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:34:20.040 [task-41] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:34, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:35:23.038 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:35:23.038 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153500001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153500;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&A281
+2019-10-15 15:35:23.039 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:35:23.039 [task-42] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:35:23.041 [task-42] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:35:23.041 [task-42] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:35, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:36:21.536 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:36:21.536 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153600001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153600;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&F141
+2019-10-15 15:36:21.537 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:36:21.538 [task-43] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:36:21.538 [task-43] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:36:21.539 [task-43] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:36, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:37:20.034 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:37:20.035 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153700001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153700;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&CC01
+2019-10-15 15:37:20.036 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:37:20.036 [task-44] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:37:20.036 [task-44] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:37:20.036 [task-44] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:37, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:38:23.033 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:38:23.033 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153800001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153800;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&9241
+2019-10-15 15:38:23.034 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:38:23.035 [task-45] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:38:23.036 [task-45] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:38:23.036 [task-45] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:38, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:39:21.532 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:39:21.532 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015153900001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015153900;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&AF01
+2019-10-15 15:39:21.533 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:39:21.555 [task-46] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:39:21.555 [task-46] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:39:21.555 [task-46] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:39, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:40:20.031 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:40:20.032 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015154000001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015154000;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&D801
+2019-10-15 15:40:20.033 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:40:20.034 [task-47] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:40:20.034 [task-47] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:40:20.034 [task-47] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:40, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:40:20.236 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:40:20.237 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0173QN=20191015154000001;ST=22;CN=2051;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015154000;LAMPBLACK-Min=0.0,LAMPBLACK-Avg=0.0,LAMPBLACK-Max=0.1,LAMPBLACK-Flag=N&&CC01
+2019-10-15 15:40:20.238 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:40:20.243 [task-48] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 分钟数据类型
+2019-10-15 15:40:20.243 [task-48] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传分钟数据到数据库
+2019-10-15 15:40:20.243 [task-48] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataMinute(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:40, lampblack=0.0, lampblackMin=0.0, lampblackMax=0.1, lampblackFlag=N, pm=null, pmMin=null, pmMax=null, pmFlag=null, nmhc=null, nmhcMin=null, nmhcMax=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:41:23.029 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:41:23.030 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015154100001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015154100;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&E541
+2019-10-15 15:41:23.031 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:41:23.039 [task-49] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:41:23.039 [task-49] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:41:23.039 [task-49] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:41, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:42:21.529 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:42:21.529 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015154200001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015154200;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&B681
+2019-10-15 15:42:21.530 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:42:21.531 [task-50] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:42:21.531 [task-50] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:42:21.531 [task-50] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:42, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:43:20.027 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收上传数据-连接设备ID ：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:43:20.027 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 数据：##0137QN=20191015154300001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191015154300;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&8BC1
+2019-10-15 15:43:20.028 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00002af8-00000001-d8f7c945a0906747-118650e6
+2019-10-15 15:43:20.029 [task-51] INFO  c.o.cloud.system.socket.utils.DataSegmentParseUtil - 实时数据类型
+2019-10-15 15:43:20.030 [task-51] INFO  c.o.cloud.system.socket.server.DataSegmentService - 存储设备上传实时数据到数据库
+2019-10-15 15:43:20.030 [task-51] INFO  c.o.cloud.system.socket.server.DataSegmentService - DataHistory(id=null, deviceNo=2019081903100008, dateTime=2019-10-15T15:43, lampblack=0.0, lampblackFlag=N, pm=null, pmFlag=null, nmhc=null, nmhcFlag=null, fanFlag=2, purifierFlag=2)
+2019-10-15 15:43:48.878 [XNIO-1 task-56] INFO  c.o.c.s.s.controller.AuthorizationController - user logout: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE1NzExMzQwMTMsInN1YiI6ImFvc2llbjIwMTkiLCJjcmVhdGVkIjoxNTcxMTIzMjEzMTgwfQ.OmbVsMXLXgLKOKuJ7ibv1DI30JLg65vhNG8zYW8pVzSRIc_T72kNKdc_EUgs_QjqXNTLtOFWosnIdPnq--ovYg
+2019-10-15 15:43:57.312 [XNIO-1 task-57] INFO  c.o.c.s.s.handler.UserAuthenticationSuccessHandler - 用户登录成功
+2019-10-15 15:44:11.830 [Thread-28] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-10-15 15:44:11.833 [Thread-28] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-15 15:44:12.970 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
+2019-10-15 15:44:12.985 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
+2019-10-15 15:44:12.992 [Thread-28] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'

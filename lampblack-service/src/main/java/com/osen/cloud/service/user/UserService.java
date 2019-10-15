@@ -29,7 +29,7 @@ public interface UserService extends IService<User> {
      * @param roles 对应角色ID
      * @return 信息
      */
-    boolean create(User user, List<Integer> roles);
+    boolean create(User user, List<String> roles);
 
     /**
      * 分页查询所有用户列表

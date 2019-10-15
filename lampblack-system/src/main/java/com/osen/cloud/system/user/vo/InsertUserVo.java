@@ -24,5 +24,5 @@ public class InsertUserVo implements Serializable {
     public User user;
 
     @NotNull
-    public List<Integer> roles;
+    public List<String> roles;
 }

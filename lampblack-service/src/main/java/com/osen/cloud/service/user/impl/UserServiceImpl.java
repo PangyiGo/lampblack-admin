@@ -61,12 +61,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public boolean create(User user, List<Integer> roles) {
+    public boolean create(User user, List<String> roles) {
         if (this.findByUsername(user.getAccount()) != null)
             throw new ServiceException(InsertUser_Error.getCode(), InsertUser_Error.getMessage());
         //插入角色是否异常
-        Collection<Role> listByIds = roleService.listByIds(roles);
-        if (listByIds.size() != roles.size())
+        List<Integer> ids = new ArrayList<>(0);
+        for (String role : roles) {
+            ids.add(Integer.valueOf(role));
+        }
+        Collection<Role> listByIds = roleService.listByIds(ids);
+        if (listByIds.size() != ids.size())
             return false;
         //初始密码
         user.setPassword(ConstUtil.INIT_PASSWORD);
@@ -78,7 +82,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if (super.save(user)) {
             Integer userId = user.getId();
             List<UserRole> userRoles = new ArrayList<>();
-            for (Integer role : roles) {
+            for (Integer role : ids) {
                 UserRole userRole = new UserRole();
                 userRole.setUserId(userId);
                 userRole.setRoleId(role);
