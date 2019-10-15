@@ -105,7 +105,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             if (StringUtils.isNotEmpty(company)) {
                 wrapper.like(User::getAccount, company).or().like(User::getCompany, company);
             }
-            wrapper.ne(User::getId, SecurityUtil.getUserId());
         }
         // 时间降序排列
         wrapper.orderByAsc(User::getCreateTime);

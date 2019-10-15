@@ -63,7 +63,7 @@ public class DeviceController {
 
     /**
      * 添加设备
-     *
+     * 超级管理员权限
      * @param device 设备
      * @return 信息
      */

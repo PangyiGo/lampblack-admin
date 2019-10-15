@@ -227,16 +227,18 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         if (userToDevice == null || userToDevice.size() <= 0) {
             resultMap.put("total", 0);
             resultMap.put("devices", devices);
+            return resultMap;
+        } else {
+            List<Integer> deviceIds = new ArrayList<>(0);
+            for (UserDevice userDevice : userToDevice) {
+                deviceIds.add(userDevice.getDeviceId());
+            }
+            devices = (List<Device>) super.listByIds(deviceIds);
+            int total = devices.size();
+            resultMap.put("total", total);
+            resultMap.put("devices", devices);
+            return resultMap;
         }
-        List<Integer> deviceIds = new ArrayList<>(0);
-        for (UserDevice userDevice : userToDevice) {
-            deviceIds.add(userDevice.getDeviceId());
-        }
-        devices = (List<Device>) super.listByIds(deviceIds);
-        int total = devices.size();
-        resultMap.put("total", total);
-        resultMap.put("devices", devices);
-        return resultMap;
     }
 
 }
