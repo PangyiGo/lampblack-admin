@@ -105,7 +105,7 @@ public class DeviceController {
 
     /**
      * 查询指定用户下的所有设备列表信息
-     *
+     * 不分页
      * @param account 账号
      * @return 信息
      */
