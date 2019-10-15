@@ -2,3 +2,5 @@
 2019-10-15 08:55:12.340 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
 2019-10-15 09:15:56.968 [XNIO-1 task-17] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定设备信息]
 2019-10-15 09:18:15.831 [XNIO-1 task-19] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ControllerException: 不能删除当前登录用户]
+2019-10-15 09:41:20.163 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-15 09:41:26.094 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.

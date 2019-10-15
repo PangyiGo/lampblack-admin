@@ -51,6 +51,11 @@ public class User extends Model<User> implements Serializable {
 
     private String remark;
 
+    /**
+     * 父级ID
+     */
+    private Integer pid;
+
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
