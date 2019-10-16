@@ -85,6 +85,14 @@ public interface DeviceService extends IService<Device> {
      * @param account 账号
      * @return 信息
      */
-    Map<String,Object> finaAllDeviceToUser(String account);
+    Map<String, Object> finaAllDeviceToUser(String account);
+
+    /**
+     * 设备信息修改
+     *
+     * @param device 设备
+     * @return 信息
+     */
+    boolean updateDeviceInfo(Device device);
 
 }

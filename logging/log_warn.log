@@ -39,3 +39,19 @@
 2019-10-15 16:23:34.669 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
 2019-10-15 16:23:40.949 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
 2019-10-15 17:01:48.631 [XNIO-1 task-51] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 17:09:58.157 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-15 17:10:04.486 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-15 17:41:06.091 [XNIO-1 task-27] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 17:46:36.693 [XNIO-1 task-36] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 17:50:39.015 [XNIO-1 task-56] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 17:51:42.030 [XNIO-1 task-58] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 17:56:01.850 [XNIO-1 task-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 18:01:51.349 [XNIO-1 task-23] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 18:02:35.301 [XNIO-1 task-26] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 18:25:51.327 [XNIO-1 task-11] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 18:26:15.621 [XNIO-1 task-12] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 18:55:48.468 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-15 18:55:54.399 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-15 19:20:30.012 [XNIO-1 task-26] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 19:20:44.021 [XNIO-1 task-28] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]
+2019-10-15 19:21:07.618 [XNIO-1 task-29] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.osen.cloud.common.except.type.ServiceException: 无法查询指定用户信息]

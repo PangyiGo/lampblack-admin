@@ -241,4 +241,11 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         }
     }
 
+    @Override
+    public boolean updateDeviceInfo(Device device) {
+        device.setUpdateTime(LocalDateTime.now());
+        LambdaUpdateWrapper<Device> wrapper = Wrappers.<Device>lambdaUpdate().eq(Device::getDeviceNo, device.getDeviceNo());
+        return this.update(device, wrapper);
+    }
+
 }

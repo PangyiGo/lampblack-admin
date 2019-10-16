@@ -2,6 +2,7 @@ package com.osen.cloud.system.device.controller;
 
 import com.osen.cloud.common.entity.Device;
 import com.osen.cloud.common.result.RestResult;
+import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.service.device.DeviceService;
@@ -64,6 +65,7 @@ public class DeviceController {
     /**
      * 添加设备
      * 超级管理员权限
+     *
      * @param device 设备
      * @return 信息
      */
@@ -106,6 +108,7 @@ public class DeviceController {
     /**
      * 查询指定用户下的所有设备列表信息
      * 不分页
+     *
      * @param account 账号
      * @return 信息
      */
@@ -115,4 +118,18 @@ public class DeviceController {
         return RestResultUtil.success(allDeviceToUser);
     }
 
+    /**
+     * 修改设备信息
+     *
+     * @param device 设备
+     * @return 信息
+     */
+    @PostMapping("/device/update")
+    public RestResult updateDevice(@RequestBody Device device) {
+        boolean deviceInfo = deviceService.updateDeviceInfo(device);
+        if (deviceInfo)
+            return RestResultUtil.success("修改设备成功");
+        else
+            return RestResultUtil.error(ConstUtil.UNOK, "修改设备失败");
+    }
 }
