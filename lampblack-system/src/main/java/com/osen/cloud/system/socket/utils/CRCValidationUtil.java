@@ -6,7 +6,7 @@ package com.osen.cloud.system.socket.utils;
  * Time: 8:51
  * Description: HJ212协议数据格式校验
  */
-class CRCValidationUtil {
+public class CRCValidationUtil {
 
     /**
      * HJ212污染监测 CRC16校验算法
@@ -15,7 +15,7 @@ class CRCValidationUtil {
      * @param crc         CRC校验码
      * @return 验证CRC校验码是否一致准确
      */
-    static boolean validateCRC(String dataSegment, String crc) {
+    public static boolean validateCRC(String dataSegment, String crc) {
         Integer[] regs = new Integer[dataSegment.length()];
         for (int i = 0; i < dataSegment.length(); i++) {
             regs[i] = (int) dataSegment.charAt(i);
@@ -33,6 +33,11 @@ class CRCValidationUtil {
             }
         }
         String toHexString = Integer.toHexString(por).toUpperCase();
-        return toHexString.equalsIgnoreCase(crc);
+        boolean flag = toHexString.equalsIgnoreCase(crc);
+        if (!flag) {
+            toHexString = "0" + toHexString;
+            flag = toHexString.equalsIgnoreCase(crc);
+        }
+        return flag;
     }
 }

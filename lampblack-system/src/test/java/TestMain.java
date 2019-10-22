@@ -1,4 +1,4 @@
-import com.osen.cloud.common.enums.LampblackSensorCode;
+import com.osen.cloud.system.socket.utils.CRCValidationUtil;
 
 /**
  * User: PangYi
@@ -9,6 +9,7 @@ import com.osen.cloud.common.enums.LampblackSensorCode;
 public class TestMain {
 
     public static void main(String[] args) {
-        System.out.println(LampblackSensorCode.PM.getCode());
+        boolean validateCRC = CRCValidationUtil.validateCRC("QN=20191022171200001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191022171200;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&", "0D80");
+        System.out.println(validateCRC);
     }
 }
