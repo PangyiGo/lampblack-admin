@@ -1,6 +1,5 @@
 package com.osen.cloud.system.socket.config;
 
-import com.osen.cloud.system.socket.server.SocketServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,10 +12,10 @@ import javax.annotation.PostConstruct;
  * Description: 启动配置
  */
 @Configuration
-public class SocketServerConfig {
+public class SocketServerApplication {
 
     @Autowired
-    private SocketServer socketServer;
+    private SocketServerStarter socketServerStarter;
 
     /**
      * 启动Socket Server服务器
@@ -26,7 +25,7 @@ public class SocketServerConfig {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                socketServer.startServerSocket();
+                socketServerStarter.startServerSocket();
             }
         }, "Socket Server Thread-01").start();
     }
