@@ -58,9 +58,9 @@ public class Device extends Model<Device> implements Serializable {
     private String link;
 
     /**
-     * 摄像头序列号
+     * 设备类型
      */
-    private String serial;
+    private String type;
 
     private Integer isLive;
 
