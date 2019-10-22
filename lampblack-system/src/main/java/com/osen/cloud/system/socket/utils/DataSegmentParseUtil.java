@@ -111,6 +111,7 @@ public class DataSegmentParseUtil {
                             area.put(KeyLists.get(0), KeyLists.get(1));
                         }
                     }
+                    // 格式：{ "CP":{ } }
                     result.put(valueSplit.get(0), area);
                 } else {
                     result.put(valueSplit.get(0), valueSplit.get(1));
