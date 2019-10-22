@@ -60,7 +60,7 @@ public class SocketServerStarter {
                             channelPipeline.addLast("SocketServerHandler", new SocketServerHandler(dataSegmentParseUtil));
                         }
                     }).option(ChannelOption.SO_BACKLOG, 512).childOption(ChannelOption.SO_KEEPALIVE, true);
-            log.info("socket server starting port: " + ConstUtil.SERVER_PORT);
+            log.info("socket service starting port: " + ConstUtil.SERVER_PORT);
             //绑定端口，接受进来的连接
             ChannelFuture channelFuture = serverBootstrap.bind(ConstUtil.SERVER_PORT).sync();
             //等待服务器socket关闭
@@ -69,11 +69,11 @@ public class SocketServerStarter {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
             log.error(e.getMessage());
-            log.error("socket server start error");
+            log.error("socket service start error");
         } finally {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
-            log.info("socket server closed");
+            log.info("socket service closed");
         }
     }
 }

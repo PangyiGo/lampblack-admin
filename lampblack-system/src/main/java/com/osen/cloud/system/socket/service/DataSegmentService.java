@@ -1,4 +1,4 @@
-package com.osen.cloud.system.socket.server;
+package com.osen.cloud.system.socket.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
@@ -8,15 +8,12 @@ import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.data.*;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.db_config.MybatisPlusConfig;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.osen.cloud.system.socket.model.DataModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -338,39 +335,3 @@ public class DataSegmentService {
     }
 }
 
-/**
- * 转换中间件
- */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-class DataModel implements Serializable {
-
-    private BigDecimal lampblack;
-
-    private BigDecimal lampblackMin;
-
-    private BigDecimal lampblackMax;
-
-    private String lampblackFlag;
-
-    private BigDecimal pm;
-
-    private BigDecimal pmMin;
-
-    private BigDecimal pmMax;
-
-    private String pmFlag;
-
-    private BigDecimal nmhc;
-
-    private BigDecimal nmhcMin;
-
-    private BigDecimal nmhcMax;
-
-    private String nmhcFlag;
-
-    private Integer fanFlag;
-
-    private Integer purifierFlag;
-}
