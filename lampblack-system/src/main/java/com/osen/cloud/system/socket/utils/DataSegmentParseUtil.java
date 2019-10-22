@@ -114,6 +114,7 @@ public class DataSegmentParseUtil {
                 }
             }
         } catch (Exception e) {
+            log.error("数据段解析异常");
             return null;
         }
         return result;
