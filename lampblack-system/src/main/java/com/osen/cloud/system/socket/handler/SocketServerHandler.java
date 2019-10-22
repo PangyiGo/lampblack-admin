@@ -43,6 +43,7 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         // 心跳监测值
         counter = 0;
 
+        log.info("服务器接收设备上传数据开始：" + getConnectionID(ctx));
         log.info("接收设备数据：" + msg.toString());
 
         /*
@@ -50,10 +51,12 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
          */
         Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(msg.toString());
 
-        if (MapUtil.isNotEmpty(parseDataTOMap))
+        if (MapUtil.isNotEmpty(parseDataTOMap)) {
+            log.info("格式化数据：" + parseDataTOMap);
             dataSegmentParseUtil.chooseHandlerType(parseDataTOMap, getConnectionID(ctx));
-        else
+        } else {
             log.info("设备上传格式错误，不符合HJ212协议");
+        }
     }
 
     /**

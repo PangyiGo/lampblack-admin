@@ -131,7 +131,6 @@ public class DataSegmentParseUtil {
      */
     @Async
     public void chooseHandlerType(Map<String, Object> parseData, String connectionID) {
-        log.info("油烟设备数据处理");
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));
             switch (CN) {

@@ -62,7 +62,6 @@ public class LampblackService {
      * @param connectionID 连接ID
      */
     public void handleRealTimeData(Map<String, Object> data, String connectionID) {
-        System.out.println(data);
         // 实时数据实体
         DataHistory dataHistory = new DataHistory();
         // 设备号
@@ -90,8 +89,6 @@ public class LampblackService {
         // 风机，净化器状态
         dataHistory.setFanFlag(ConstUtil.OPEN_STATUS);
         dataHistory.setPurifierFlag(ConstUtil.OPEN_STATUS);
-
-        log.info("存储油烟设备设备上传实时数据到数据库：" + dataHistory.toString());
 
         // 是否存在数值超标，数据报警处理
         if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
@@ -160,7 +157,6 @@ public class LampblackService {
      * @param connectionID 连接ID
      */
     public void handleMinuteData(Map<String, Object> data, String connectionID) {
-        System.out.println(data);
         // 分钟数据实体
         DataMinute dataMinute = new DataMinute();
         // 设备号
@@ -190,8 +186,6 @@ public class LampblackService {
         dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
         dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("存储油烟设备上传分钟数据到数据库：" + dataMinute.toString());
-
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.MINUTE_TB));
         // 插入数据
@@ -205,7 +199,6 @@ public class LampblackService {
      * @param connectionID 连接ID
      */
     public void handleHourData(Map<String, Object> data, String connectionID) {
-        System.out.println(data);
         // 小时数据实体
         DataHour dataHour = new DataHour();
         // 设备号
@@ -235,8 +228,6 @@ public class LampblackService {
         dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
         dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("存储油烟设备上传小时数据到数据库：" + dataHour.toString());
-
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.HOUR_TB));
         // 插入数据
@@ -250,7 +241,6 @@ public class LampblackService {
      * @param connectionID 连接ID
      */
     public void handleDayData(Map<String, Object> data, String connectionID) {
-        System.out.println(data);
         // 天数据实体
         DataDay dataDay = new DataDay();
         // 设备号
@@ -279,8 +269,6 @@ public class LampblackService {
         // 风机，净化器状态
         dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
         dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
-
-        log.info("存储油烟设备每天数据到数据库：" + dataDay.toString());
 
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.DAY_TB));
