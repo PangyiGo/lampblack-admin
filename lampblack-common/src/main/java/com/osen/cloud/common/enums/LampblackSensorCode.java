@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
  */
 @NoArgsConstructor
 @AllArgsConstructor
-public enum SensorCode {
+public enum LampblackSensorCode {
 
     LAMPBLACK("a00000", "LAMPBLACK", "油烟浓度"),
 

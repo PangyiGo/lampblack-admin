@@ -3,7 +3,7 @@ package com.osen.cloud.system.socket.service;
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
 import com.osen.cloud.common.entity.*;
-import com.osen.cloud.common.enums.SensorCode;
+import com.osen.cloud.common.enums.LampblackSensorCode;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.data.*;
 import com.osen.cloud.service.device.DeviceService;
@@ -74,17 +74,17 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataHistory.setDateTime(localDateTime);
         // 数据封装
-        for (SensorCode sensorCode : SensorCode.values()) {
+        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
             // 1表示通过名字上传数据，2表示通过编号上传数据
             // 参数名称
-            boolean is_name_exist = CPData.containsKey(sensorCode.getName() + realTimeSensorFlag[0]);
+            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + realTimeSensorFlag[0]);
             if (is_name_exist) {
-                handleDataMapperToRealtime(sensorCode, dataHistory, CPData, 1);
+                handleDataMapperToRealtime(lampblackSensorCode, dataHistory, CPData, 1);
             }
             // 参数编号
-            boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + realTimeSensorFlag[0]);
+            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + realTimeSensorFlag[0]);
             if (is_code_exist) {
-                handleDataMapperToRealtime(sensorCode, dataHistory, CPData, 2);
+                handleDataMapperToRealtime(lampblackSensorCode, dataHistory, CPData, 2);
             }
         }
         // 风机，净化器状态
@@ -124,19 +124,19 @@ public class LampblackService {
         stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).put(dataHistory.getDeviceNo(), JSON.toJSONString(dataHistory));
     }
 
-    private void handleDataMapperToRealtime(SensorCode sensorCode, DataHistory dataHistory, Map<String, Object> CPData, int type) {
+    private void handleDataMapperToRealtime(LampblackSensorCode lampblackSensorCode, DataHistory dataHistory, Map<String, Object> CPData, int type) {
         BigDecimal data_value = null;
         String data_flag = null;
         if (type == 1) {
-            data_value = new BigDecimal((String) CPData.get(sensorCode.getName() + realTimeSensorFlag[0]));
-            data_flag = (String) CPData.get(sensorCode.getName() + realTimeSensorFlag[1]);
+            data_value = new BigDecimal((String) CPData.get(lampblackSensorCode.getName() + realTimeSensorFlag[0]));
+            data_flag = (String) CPData.get(lampblackSensorCode.getName() + realTimeSensorFlag[1]);
         } else if (type == 2) {
-            data_value = new BigDecimal((String) CPData.get(sensorCode.getCode() + realTimeSensorFlag[0]));
-            data_flag = (String) CPData.get(sensorCode.getCode() + realTimeSensorFlag[1]);
+            data_value = new BigDecimal((String) CPData.get(lampblackSensorCode.getCode() + realTimeSensorFlag[0]));
+            data_flag = (String) CPData.get(lampblackSensorCode.getCode() + realTimeSensorFlag[1]);
         } else {
             log.info("插入类型错误异常");
         }
-        switch (sensorCode) {
+        switch (lampblackSensorCode) {
             case PM:
                 dataHistory.setPm(data_value);
                 dataHistory.setPmFlag(data_flag);
@@ -150,7 +150,7 @@ public class LampblackService {
                 dataHistory.setLampblackFlag(data_flag);
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + sensorCode);
+                throw new IllegalStateException("Unexpected value: " + lampblackSensorCode);
         }
     }
 
@@ -174,16 +174,16 @@ public class LampblackService {
         dataMinute.setDateTime(localDateTime);
         // 数据封装
         LampblackDataModel lampblackDataModel = new LampblackDataModel();
-        for (SensorCode sensorCode : SensorCode.values()) {
+        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
             // 参数名称
-            boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
+            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 1);
+                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
             }
             // 参数编号
-            boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
+            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 2);
+                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
             }
         }
         BeanUtil.copyProperties(lampblackDataModel, dataMinute);
@@ -220,16 +220,16 @@ public class LampblackService {
         dataHour.setDateTime(localDateTime);
         // 数据封装
         LampblackDataModel lampblackDataModel = new LampblackDataModel();
-        for (SensorCode sensorCode : SensorCode.values()) {
+        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
             // 参数名称
-            boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
+            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 1);
+                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
             }
             // 参数编号
-            boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
+            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 2);
+                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
             }
         }
         BeanUtil.copyProperties(lampblackDataModel, dataHour);
@@ -266,16 +266,16 @@ public class LampblackService {
         dataDay.setDateTime(localDateTime);
         // 数据封装
         LampblackDataModel lampblackDataModel = new LampblackDataModel();
-        for (SensorCode sensorCode : SensorCode.values()) {
+        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
             // 参数名称
-            boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
+            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 1);
+                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
             }
             // 参数编号
-            boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
+            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 2);
+                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
             }
         }
         BeanUtil.copyProperties(lampblackDataModel, dataDay);
@@ -292,25 +292,25 @@ public class LampblackService {
         dataDayService.insertDayData(dataDay);
     }
 
-    private void handleMapperToInterval(SensorCode sensorCode, LampblackDataModel lampblackDataModel, Map<String, Object> CPData, int type) {
+    private void handleMapperToInterval(LampblackSensorCode lampblackSensorCode, LampblackDataModel lampblackDataModel, Map<String, Object> CPData, int type) {
         BigDecimal data_avg = null;
         BigDecimal data_max = null;
         BigDecimal data_min = null;
         String data_flag = null;
         if (type == 1) {
-            data_avg = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[0]));
-            data_max = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[1]));
-            data_min = new BigDecimal((String) CPData.get(sensorCode.getName() + othersSensorFlag[2]));
-            data_flag = (String) CPData.get(sensorCode.getName() + othersSensorFlag[3]);
+            data_avg = new BigDecimal((String) CPData.get(lampblackSensorCode.getName() + othersSensorFlag[0]));
+            data_max = new BigDecimal((String) CPData.get(lampblackSensorCode.getName() + othersSensorFlag[1]));
+            data_min = new BigDecimal((String) CPData.get(lampblackSensorCode.getName() + othersSensorFlag[2]));
+            data_flag = (String) CPData.get(lampblackSensorCode.getName() + othersSensorFlag[3]);
         } else if (type == 2) {
-            data_avg = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[0]));
-            data_max = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[1]));
-            data_min = new BigDecimal((String) CPData.get(sensorCode.getCode() + othersSensorFlag[2]));
-            data_flag = (String) CPData.get(sensorCode.getCode() + othersSensorFlag[3]);
+            data_avg = new BigDecimal((String) CPData.get(lampblackSensorCode.getCode() + othersSensorFlag[0]));
+            data_max = new BigDecimal((String) CPData.get(lampblackSensorCode.getCode() + othersSensorFlag[1]));
+            data_min = new BigDecimal((String) CPData.get(lampblackSensorCode.getCode() + othersSensorFlag[2]));
+            data_flag = (String) CPData.get(lampblackSensorCode.getCode() + othersSensorFlag[3]);
         } else {
             log.info("插入类型错误异常");
         }
-        switch (sensorCode) {
+        switch (lampblackSensorCode) {
             case PM:
                 lampblackDataModel.setPm(data_avg);
                 lampblackDataModel.setPmMax(data_max);
@@ -330,7 +330,7 @@ public class LampblackService {
                 lampblackDataModel.setLampblackFlag(data_flag);
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + sensorCode);
+                throw new IllegalStateException("Unexpected value: " + lampblackSensorCode);
         }
     }
 }
