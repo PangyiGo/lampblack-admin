@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public enum SensorCode {
 
-    LAMPBLACK("a01007", "LAMPBLACK", "油烟浓度"),
+    LAMPBLACK("a00000", "LAMPBLACK", "油烟浓度"),
 
     PM("a34002", "PM", "颗粒物浓度"),
 
-    NMHC("a50001", "NMHC", "非甲烷总烃浓度");
+    NMHC("a34004", "NMHC", "非甲烷总烃浓度");
 
     /**
      * 传感器参数编号
