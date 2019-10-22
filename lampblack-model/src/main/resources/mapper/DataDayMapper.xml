@@ -23,7 +23,7 @@
             `purifier_flag` INT (11) DEFAULT '1' COMMENT '净化器状态值',
             PRIMARY KEY (`id`),
             KEY `device_no` (`device_no`, `date_time`) USING BTREE
-        ) ENGINE = INNODB DEFAULT CHARSET = utf8;
+        ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
     </update>
 
 </mapper>
