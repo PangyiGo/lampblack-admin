@@ -8,7 +8,7 @@ import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.data.*;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.db_config.MybatisPlusConfig;
-import com.osen.cloud.system.socket.model.DataModel;
+import com.osen.cloud.system.socket.model.LampblackDataModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -173,20 +173,20 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataMinute.setDateTime(localDateTime);
         // 数据封装
-        DataModel dataModel = new DataModel();
+        LampblackDataModel lampblackDataModel = new LampblackDataModel();
         for (SensorCode sensorCode : SensorCode.values()) {
             // 参数名称
             boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData, 1);
+                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 1);
             }
             // 参数编号
             boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData, 2);
+                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 2);
             }
         }
-        BeanUtil.copyProperties(dataModel, dataMinute);
+        BeanUtil.copyProperties(lampblackDataModel, dataMinute);
         // 风机，净化器状态
         dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
         dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
@@ -219,20 +219,20 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataHour.setDateTime(localDateTime);
         // 数据封装
-        DataModel dataModel = new DataModel();
+        LampblackDataModel lampblackDataModel = new LampblackDataModel();
         for (SensorCode sensorCode : SensorCode.values()) {
             // 参数名称
             boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData, 1);
+                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 1);
             }
             // 参数编号
             boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData, 2);
+                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 2);
             }
         }
-        BeanUtil.copyProperties(dataModel, dataHour);
+        BeanUtil.copyProperties(lampblackDataModel, dataHour);
         // 风机，净化器状态
         dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
         dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
@@ -265,20 +265,20 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataDay.setDateTime(localDateTime);
         // 数据封装
-        DataModel dataModel = new DataModel();
+        LampblackDataModel lampblackDataModel = new LampblackDataModel();
         for (SensorCode sensorCode : SensorCode.values()) {
             // 参数名称
             boolean is_name_exist = CPData.containsKey(sensorCode.getName() + othersSensorFlag[0]);
             if (is_name_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData, 1);
+                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 1);
             }
             // 参数编号
             boolean is_code_exist = CPData.containsKey(sensorCode.getCode() + othersSensorFlag[0]);
             if (is_code_exist) {
-                handleMapperToInterval(sensorCode, dataModel, CPData, 2);
+                handleMapperToInterval(sensorCode, lampblackDataModel, CPData, 2);
             }
         }
-        BeanUtil.copyProperties(dataModel, dataDay);
+        BeanUtil.copyProperties(lampblackDataModel, dataDay);
         // 风机，净化器状态
         dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
         dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
@@ -292,7 +292,7 @@ public class LampblackService {
         dataDayService.insertDayData(dataDay);
     }
 
-    private void handleMapperToInterval(SensorCode sensorCode, DataModel dataModel, Map<String, Object> CPData, int type) {
+    private void handleMapperToInterval(SensorCode sensorCode, LampblackDataModel lampblackDataModel, Map<String, Object> CPData, int type) {
         BigDecimal data_avg = null;
         BigDecimal data_max = null;
         BigDecimal data_min = null;
@@ -312,22 +312,22 @@ public class LampblackService {
         }
         switch (sensorCode) {
             case PM:
-                dataModel.setPm(data_avg);
-                dataModel.setPmMax(data_max);
-                dataModel.setPmMin(data_min);
-                dataModel.setPmFlag(data_flag);
+                lampblackDataModel.setPm(data_avg);
+                lampblackDataModel.setPmMax(data_max);
+                lampblackDataModel.setPmMin(data_min);
+                lampblackDataModel.setPmFlag(data_flag);
                 break;
             case NMHC:
-                dataModel.setNmhc(data_avg);
-                dataModel.setNmhcMax(data_max);
-                dataModel.setNmhcMin(data_min);
-                dataModel.setNmhcFlag(data_flag);
+                lampblackDataModel.setNmhc(data_avg);
+                lampblackDataModel.setNmhcMax(data_max);
+                lampblackDataModel.setNmhcMin(data_min);
+                lampblackDataModel.setNmhcFlag(data_flag);
                 break;
             case LAMPBLACK:
-                dataModel.setLampblack(data_avg);
-                dataModel.setLampblackMax(data_max);
-                dataModel.setLampblackMin(data_min);
-                dataModel.setLampblackFlag(data_flag);
+                lampblackDataModel.setLampblack(data_avg);
+                lampblackDataModel.setLampblackMax(data_max);
+                lampblackDataModel.setLampblackMin(data_min);
+                lampblackDataModel.setLampblackFlag(data_flag);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + sensorCode);
