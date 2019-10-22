@@ -37,7 +37,6 @@ public class OperationLogsUtil {
      * @param request 请求
      * @param message 提示
      * @param account 操作用户账号
-     * @return 信息
      */
     @Async
     public void handlerOperation(HttpServletRequest request, String message, String account) {
