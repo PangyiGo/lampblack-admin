@@ -66,7 +66,7 @@ public class DataSegmentParseUtil {
 
             //CRC校验
             String crc = StrUtil.sub(dataSegment, -6, -2);
-            if (!HJ212ValidationUtil.validateCRC(segmnet, crc))
+            if (!CRCValidationUtil.validateCRC(segmnet, crc))
                 return null;
         } catch (Exception e) {
             log.info("数据解析异常，返回Null");

@@ -6,7 +6,7 @@ package com.osen.cloud.system.socket.utils;
  * Time: 8:51
  * Description: HJ212协议数据格式校验
  */
-class HJ212ValidationUtil {
+class CRCValidationUtil {
 
     /**
      * HJ212污染监测 CRC16校验算法
