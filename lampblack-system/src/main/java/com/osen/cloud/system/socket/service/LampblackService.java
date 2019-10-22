@@ -91,8 +91,7 @@ public class LampblackService {
         dataHistory.setFanFlag(ConstUtil.OPEN_STATUS);
         dataHistory.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("存储设备上传实时数据到数据库");
-        log.info(dataHistory.toString());
+        log.info("存储油烟设备设备上传实时数据到数据库：" + dataHistory.toString());
 
         // 是否存在数值超标，数据报警处理
         if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
@@ -191,8 +190,7 @@ public class LampblackService {
         dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
         dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("存储设备上传分钟数据到数据库");
-        log.info(dataMinute.toString());
+        log.info("存储油烟设备上传分钟数据到数据库：" + dataMinute.toString());
 
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.MINUTE_TB));
@@ -237,8 +235,7 @@ public class LampblackService {
         dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
         dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("存储设备上传小时数据到数据库");
-        log.info(dataHour.toString());
+        log.info("存储油烟设备上传小时数据到数据库：" + dataHour.toString());
 
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.HOUR_TB));
@@ -283,8 +280,7 @@ public class LampblackService {
         dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
         dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        log.info("存储设备每天数据到数据库");
-        log.info(dataDay.toString());
+        log.info("存储油烟设备每天数据到数据库：" + dataDay.toString());
 
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.DAY_TB));

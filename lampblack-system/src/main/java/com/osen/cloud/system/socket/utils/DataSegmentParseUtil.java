@@ -69,7 +69,7 @@ public class DataSegmentParseUtil {
             if (!CRCValidationUtil.validateCRC(segmnet, crc))
                 return null;
         } catch (Exception e) {
-            log.info("数据解析异常，返回Null");
+            log.error("数据解析异常，返回Null");
             return null;
         }
         return this.parseDataArea(segmnet);
@@ -125,33 +125,30 @@ public class DataSegmentParseUtil {
     }
 
     /**
-     * 数据封装
+     * 油烟设备数据封装
      *
      * @param parseData map数据
      */
     @Async
     public void chooseHandlerType(Map<String, Object> parseData, String connectionID) {
+        log.info("油烟设备数据处理");
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));
             switch (CN) {
                 // 实时数据类型
                 case 2011:
-                    log.info("实时数据类型");
                     lampblackService.handleRealTimeData(parseData, connectionID);
                     break;
                 // 分钟数据类型
                 case 2051:
-                    log.info("分钟数据类型");
                     lampblackService.handleMinuteData(parseData, connectionID);
                     break;
                 // 小时数据类型
                 case 2061:
-                    log.info("小时数据类型");
                     lampblackService.handleHourData(parseData, connectionID);
                     break;
                 // 天数据类型
                 case 2031:
-                    log.info("天数据类型");
                     lampblackService.handleDayData(parseData, connectionID);
                     break;
                 default:

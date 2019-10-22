@@ -39,9 +39,11 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+
+        // 心跳监测值
         counter = 0;
 
-        log.info("数据：" + msg.toString());
+        log.info("接收设备数据：" + msg.toString());
 
         /*
             上传数据处理
