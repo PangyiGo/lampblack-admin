@@ -39,8 +39,6 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        log.info("服务器接收上传数据-连接设备ID ：" + getConnectionID(ctx));
-
         counter = 0;
 
         log.info("数据：" + msg.toString());

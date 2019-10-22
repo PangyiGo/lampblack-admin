@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.DateTimeUtil;
 import com.osen.cloud.service.device.DeviceService;
-import com.osen.cloud.system.socket.service.DataSegmentService;
+import com.osen.cloud.system.socket.service.LampblackService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -27,7 +27,7 @@ import java.util.*;
 public class DataSegmentParseUtil {
 
     @Autowired
-    private DataSegmentService dataSegmentService;
+    private LampblackService lampblackService;
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -132,22 +132,22 @@ public class DataSegmentParseUtil {
                 // 实时数据类型
                 case 2011:
                     log.info("实时数据类型");
-                    dataSegmentService.handleRealTimeData(parseData, connectionID);
+                    lampblackService.handleRealTimeData(parseData, connectionID);
                     break;
                 // 分钟数据类型
                 case 2051:
                     log.info("分钟数据类型");
-                    dataSegmentService.handleMinuteData(parseData, connectionID);
+                    lampblackService.handleMinuteData(parseData, connectionID);
                     break;
                 // 小时数据类型
                 case 2061:
                     log.info("小时数据类型");
-                    dataSegmentService.handleHourData(parseData, connectionID);
+                    lampblackService.handleHourData(parseData, connectionID);
                     break;
                 // 天数据类型
                 case 2031:
                     log.info("天数据类型");
-                    dataSegmentService.handleDayData(parseData, connectionID);
+                    lampblackService.handleDayData(parseData, connectionID);
                     break;
                 default:
                     log.warn("no match type handler");

@@ -26,7 +26,7 @@ import java.util.Map;
  */
 @Slf4j
 @Service
-public class DataSegmentService {
+public class LampblackService {
 
     // 实时数据格式
     private String[] realTimeSensorFlag = {"-Rtd", "-Flag"};
