@@ -85,17 +85,20 @@ public class DataSegmentParseUtil {
         // 保存解析数据
         Map<String, Object> result = new HashMap<>();
         try {
-            // 分割数据段
+            // 分割数据段，默认情况下一般为7
             List<String> dataSplit = StrUtil.split(data, ';', 7);
             for (String sub : dataSplit) {
                 List<String> valueSplit = StrUtil.split(sub, '=', 2);
                 // 数据区解析
                 if (valueSplit.get(0).equals("CP")) {
-                    //数据区信息
+                    // 数据区信息
                     Map<String, Object> area = new HashMap<>();
+                    // 数据区内容
                     String dataArea = valueSplit.get(1);
+                    // 格式化内容
                     dataArea = StrUtil.replace(dataArea, "&&", "");
                     dataArea = StrUtil.replace(dataArea, ",", ";");
+                    // 分割数据区内容
                     String[] split = StrUtil.split(dataArea, ";");
                     for (String value : split) {
                         List<String> KeyLists = StrUtil.split(value, '=', 2);
