@@ -79,22 +79,3 @@ public class OperationLogsUtil {
 
 }
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-class IpVo implements Serializable {
-
-    private String country;
-
-    private String regionName;
-
-    private String city;
-
-    private String query;
-
-    /**
-     * success,fail
-     */
-    private String status;
-
-}
