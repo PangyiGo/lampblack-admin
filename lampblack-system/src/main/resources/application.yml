@@ -76,4 +76,4 @@ mybatis-plus:
 
 ## 统一请求地址头
 restful:
-  prefix: /api/lampblack
+  prefix: /api/dev_lampblack

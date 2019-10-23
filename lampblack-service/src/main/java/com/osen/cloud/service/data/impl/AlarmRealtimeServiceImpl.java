@@ -2,7 +2,7 @@ package com.osen.cloud.service.data.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.osen.cloud.common.entity.lampblack.AlarmRealtime;
+import com.osen.cloud.common.entity.dev_lampblack.AlarmRealtime;
 import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.data.AlarmRealtimeMapper;

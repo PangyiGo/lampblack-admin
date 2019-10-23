@@ -1,4 +1,4 @@
-package com.osen.cloud.common.entity.lampblack;
+package com.osen.cloud.common.entity.dev_lampblack;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

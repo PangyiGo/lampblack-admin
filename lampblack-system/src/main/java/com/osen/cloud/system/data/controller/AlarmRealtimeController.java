@@ -1,6 +1,6 @@
 package com.osen.cloud.system.data.controller;
 
-import com.osen.cloud.common.entity.lampblack.AlarmRealtime;
+import com.osen.cloud.common.entity.dev_lampblack.AlarmRealtime;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.service.data.AlarmRealtimeService;

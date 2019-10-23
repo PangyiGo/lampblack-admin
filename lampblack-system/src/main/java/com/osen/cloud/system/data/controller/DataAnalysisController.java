@@ -2,10 +2,10 @@ package com.osen.cloud.system.data.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.osen.cloud.common.entity.lampblack.DataDay;
-import com.osen.cloud.common.entity.lampblack.DataHistory;
-import com.osen.cloud.common.entity.lampblack.DataHour;
-import com.osen.cloud.common.entity.lampblack.DataMinute;
+import com.osen.cloud.common.entity.dev_lampblack.DataDay;
+import com.osen.cloud.common.entity.dev_lampblack.DataHistory;
+import com.osen.cloud.common.entity.dev_lampblack.DataHour;
+import com.osen.cloud.common.entity.dev_lampblack.DataMinute;
 import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;

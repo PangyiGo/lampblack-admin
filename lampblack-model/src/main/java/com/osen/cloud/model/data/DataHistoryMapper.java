@@ -1,7 +1,7 @@
 package com.osen.cloud.model.data;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.osen.cloud.common.entity.lampblack.DataHistory;
+import com.osen.cloud.common.entity.dev_lampblack.DataHistory;
 import io.lettuce.core.dynamic.annotation.Param;
 
 /**

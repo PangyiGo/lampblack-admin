@@ -1,6 +1,6 @@
 package com.osen.cloud.system.data.controller;
 
-import com.osen.cloud.common.entity.lampblack.DataHour;
+import com.osen.cloud.common.entity.dev_lampblack.DataHour;
 import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;

@@ -1,7 +1,7 @@
 package com.osen.cloud.service.data;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.osen.cloud.common.entity.lampblack.DataDay;
+import com.osen.cloud.common.entity.dev_lampblack.DataDay;
 
 import java.time.LocalDateTime;
 import java.util.List;

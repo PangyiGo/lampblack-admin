@@ -1,4 +1,4 @@
-package com.osen.cloud.common.entity.lampblack;
+package com.osen.cloud.common.entity.dev_lampblack;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -18,15 +18,15 @@ import java.time.LocalDateTime;
  * User: PangYi
  * Date: 2019-08-28
  * Time: 15:22
- * Description: 设备报警实时数据实体对象
+ * Description: 设备数据每分钟记录实体对象
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("alarm_realtime")
-public class AlarmRealtime extends Model<AlarmRealtime> implements Serializable {
+@TableName("data_history")
+public class DataHistory extends Model<DataHistory> implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Integer id;

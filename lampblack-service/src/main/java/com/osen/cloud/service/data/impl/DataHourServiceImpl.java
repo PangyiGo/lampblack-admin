@@ -3,7 +3,7 @@ package com.osen.cloud.service.data.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.osen.cloud.common.entity.lampblack.DataHour;
+import com.osen.cloud.common.entity.dev_lampblack.DataHour;
 import com.osen.cloud.model.data.DataHourMapper;
 import com.osen.cloud.service.data.DataHourService;
 import org.springframework.stereotype.Service;
