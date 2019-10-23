@@ -60,7 +60,7 @@ public class Device extends Model<Device> implements Serializable {
     /**
      * 设备类型
      */
-    private String serial;
+    private String type;
 
     private Integer isLive;
 
