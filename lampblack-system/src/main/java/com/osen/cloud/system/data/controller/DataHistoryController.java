@@ -50,7 +50,6 @@ public class DataHistoryController {
      */
     @PostMapping("/data/realtime/{deviceNo}")
     public RestResult returnRealtimeData(@PathVariable("deviceNo") String deviceNo) {
-        log.info("实时数据返回");
         DataHistory dataHistory = dataHistoryService.returnRealtimeData(deviceNo);
         return RestResultUtil.success(dataHistory);
     }
@@ -65,7 +64,6 @@ public class DataHistoryController {
     public RestResult batchFindDataToDeviceNo(@RequestBody Map<String, List<String>> params) {
         List<String> equipmentIDList = params.get("equipmentIDList");
         List<DataHistory> dataHistoryList = dataHistoryService.batchFindDataToDeviceNo(equipmentIDList);
-        log.info("批量实时数据返回");
         return RestResultUtil.success(dataHistoryList);
     }
 
@@ -126,8 +124,8 @@ public class DataHistoryController {
             os.flush();
             os.close();
         } catch (Exception e) {
-            log.info("导出实时数据Excel表格异常");
-            log.info(e.getMessage());
+            log.error("导出实时数据Excel表格异常");
+            log.error(e.getMessage());
         }
 
     }
