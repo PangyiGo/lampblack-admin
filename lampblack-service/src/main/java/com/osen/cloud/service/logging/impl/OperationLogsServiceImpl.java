@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.osen.cloud.common.entity.logs.OperationLogs;
+import com.osen.cloud.common.entity.system_logs.OperationLogs;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.logging.OperationLogsMapper;
 import com.osen.cloud.service.logging.OperationLogsService;

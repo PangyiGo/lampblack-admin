@@ -1,7 +1,7 @@
 package com.osen.cloud.service.logging;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.osen.cloud.common.entity.logs.OperationLogs;
+import com.osen.cloud.common.entity.system_logs.OperationLogs;
 
 import java.util.Map;
 

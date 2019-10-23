@@ -1,4 +1,4 @@
-package com.osen.cloud.common.entity.logs;
+package com.osen.cloud.common.entity.system_logs;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

@@ -1,7 +1,7 @@
 package com.osen.cloud.model.logging;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.osen.cloud.common.entity.logs.OperationLogs;
+import com.osen.cloud.common.entity.system_logs.OperationLogs;
 
 /**
  * User: PangYi
