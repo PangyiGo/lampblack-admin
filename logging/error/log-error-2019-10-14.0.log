@@ -1,4 +1,4 @@
-2019-10-14 14:44:19.970 [XNIO-1 task-5] ERROR c.osen.cloud.common.except.GlobalExceptionHandler - org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.user.controller.UserController.updateUserToAccount(com.osen.cloud.common.entity.User)
+2019-10-14 14:44:19.970 [XNIO-1 task-5] ERROR c.osen.cloud.common.except.GlobalExceptionHandler - org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.user.controller.UserController.updateUserToAccount(com.osen.cloud.common.entity.system_user.User)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:160)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:130)
 	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:127)
@@ -115,7 +115,7 @@
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 
-2019-10-14 14:44:31.902 [XNIO-1 task-6] ERROR c.osen.cloud.common.except.GlobalExceptionHandler - org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.user.controller.UserController.updateUserToAccount(com.osen.cloud.common.entity.User)
+2019-10-14 14:44:31.902 [XNIO-1 task-6] ERROR c.osen.cloud.common.except.GlobalExceptionHandler - org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.osen.cloud.common.result.RestResult com.osen.cloud.system.user.controller.UserController.updateUserToAccount(com.osen.cloud.common.entity.system_user.User)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:160)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:130)
 	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:127)

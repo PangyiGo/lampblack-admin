@@ -1,4 +1,4 @@
-package com.osen.cloud.common.entity;
+package com.osen.cloud.common.entity.system_user;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -16,35 +16,24 @@ import java.time.LocalDateTime;
 /**
  * User: PangYi
  * Date: 2019-08-28
- * Time: 15:11
- * Description: 权限菜单实体对象
+ * Time: 14:27
+ * Description: 角色实体对象
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("system_menu")
-public class Menu extends Model<Menu> implements Serializable {
+@TableName("system_role")
+public class Role extends Model<Role> implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
 
     private String name;
 
-    private String component;
-
-    private Integer parentId;
-
-    private Integer isFrame;
-
-    private Integer sort;
-
-    private String icon;
-
-    private String path;
-
     private String remark;
 
     private LocalDateTime createTime;
+
 }

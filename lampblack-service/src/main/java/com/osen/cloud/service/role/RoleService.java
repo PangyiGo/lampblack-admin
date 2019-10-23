@@ -1,7 +1,7 @@
 package com.osen.cloud.service.role;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.osen.cloud.common.entity.Role;
+import com.osen.cloud.common.entity.system_user.Role;
 
 import java.util.List;
 

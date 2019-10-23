@@ -1,7 +1,7 @@
 package com.osen.cloud.model.user_role;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.osen.cloud.common.entity.UserRole;
+import com.osen.cloud.common.entity.system_user.UserRole;
 import org.springframework.stereotype.Repository;
 
 /**

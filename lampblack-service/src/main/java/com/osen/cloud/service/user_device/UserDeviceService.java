@@ -2,7 +2,7 @@ package com.osen.cloud.service.user_device;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.osen.cloud.common.entity.UserDevice;
+import com.osen.cloud.common.entity.system_user.UserDevice;
 
 import java.util.List;
 import java.util.Map;

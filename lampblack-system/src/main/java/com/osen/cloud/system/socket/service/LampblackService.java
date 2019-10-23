@@ -2,7 +2,7 @@ package com.osen.cloud.system.socket.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
-import com.osen.cloud.common.entity.*;
+import com.osen.cloud.common.entity.lampblack.*;
 import com.osen.cloud.common.enums.LampblackSensorCode;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.data.*;

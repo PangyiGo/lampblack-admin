@@ -1,7 +1,7 @@
 package com.osen.cloud.system.user.controller;
 
-import com.osen.cloud.common.entity.Role;
-import com.osen.cloud.common.entity.User;
+import com.osen.cloud.common.entity.system_user.Role;
+import com.osen.cloud.common.entity.system_user.User;
 import com.osen.cloud.common.except.type.ControllerException;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;

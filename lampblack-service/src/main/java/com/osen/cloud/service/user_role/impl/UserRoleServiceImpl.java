@@ -3,7 +3,7 @@ package com.osen.cloud.service.user_role.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.osen.cloud.common.entity.UserRole;
+import com.osen.cloud.common.entity.system_user.UserRole;
 import com.osen.cloud.model.user_role.UserRoleMapper;
 import com.osen.cloud.service.user_role.UserRoleService;
 import org.springframework.stereotype.Service;

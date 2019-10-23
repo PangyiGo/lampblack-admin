@@ -1,4 +1,4 @@
-package com.osen.cloud.common.entity;
+package com.osen.cloud.common.entity.logs;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -15,25 +15,28 @@ import java.time.LocalDateTime;
 
 /**
  * User: PangYi
- * Date: 2019-08-28
- * Time: 14:27
- * Description: 角色实体对象
+ * Date: 2019-09-27
+ * Time: 17:41
+ * Description: 系统操作日志登记实体
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("system_role")
-public class Role extends Model<Role> implements Serializable {
+@TableName("operation_logs")
+public class OperationLogs extends Model<OperationLogs> implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
 
-    private String name;
+    private String account;
 
-    private String remark;
+    private String ip;
+
+    private String address;
+
+    private String description;
 
     private LocalDateTime createTime;
-
 }

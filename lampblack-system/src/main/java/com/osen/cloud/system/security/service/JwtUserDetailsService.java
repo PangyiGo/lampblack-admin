@@ -2,8 +2,8 @@ package com.osen.cloud.system.security.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.osen.cloud.common.entity.Role;
-import com.osen.cloud.common.entity.User;
+import com.osen.cloud.common.entity.system_user.Role;
+import com.osen.cloud.common.entity.system_user.User;
 import com.osen.cloud.service.authorization.AuthorizationService;
 import com.osen.cloud.system.security.utils.JwtUser;
 import org.springframework.beans.factory.annotation.Autowired;

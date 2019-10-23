@@ -1,7 +1,7 @@
 package com.osen.cloud.model.data;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.osen.cloud.common.entity.AlarmHistory;
+import com.osen.cloud.common.entity.lampblack.AlarmHistory;
 
 /**
  * User: PangYi

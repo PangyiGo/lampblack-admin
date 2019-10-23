@@ -1,7 +1,7 @@
 package com.osen.cloud.model.role;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.osen.cloud.common.entity.Role;
+import com.osen.cloud.common.entity.system_user.Role;
 
 /**
  * User: PangYi

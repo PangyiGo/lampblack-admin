@@ -1,7 +1,7 @@
 package com.osen.cloud.system.user;
 
-import com.osen.cloud.common.entity.Role;
-import com.osen.cloud.common.entity.User;
+import com.osen.cloud.common.entity.system_user.Role;
+import com.osen.cloud.common.entity.system_user.User;
 import com.osen.cloud.service.role.RoleService;
 import com.osen.cloud.service.user.UserService;
 import org.junit.Assert;

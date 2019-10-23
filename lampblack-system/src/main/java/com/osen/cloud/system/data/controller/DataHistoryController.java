@@ -1,8 +1,8 @@
 package com.osen.cloud.system.data.controller;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.osen.cloud.common.entity.DataHistory;
-import com.osen.cloud.common.entity.Device;
+import com.osen.cloud.common.entity.lampblack.DataHistory;
+import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;

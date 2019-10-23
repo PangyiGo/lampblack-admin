@@ -1,7 +1,7 @@
 package com.osen.cloud.model.authorization;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.osen.cloud.common.entity.User;
+import com.osen.cloud.common.entity.system_user.User;
 import org.springframework.stereotype.Repository;
 
 /**

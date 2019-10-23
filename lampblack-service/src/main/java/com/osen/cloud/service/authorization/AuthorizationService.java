@@ -1,7 +1,7 @@
 package com.osen.cloud.service.authorization;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.osen.cloud.common.entity.User;
+import com.osen.cloud.common.entity.system_user.User;
 
 /**
  * User: PangYi

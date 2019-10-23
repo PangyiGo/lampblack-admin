@@ -1,4 +1,4 @@
-package com.osen.cloud.common.entity;
+package com.osen.cloud.common.entity.system_user;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,44 +11,25 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 /**
  * User: PangYi
  * Date: 2019-08-28
- * Time: 15:22
- * Description: 设备报警记录实体对象
+ * Time: 15:09
+ * Description: 用户角色关联实体对象
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("alarm_history")
-public class AlarmHistory extends Model<AlarmHistory> implements Serializable {
+@TableName("system_user_role")
+public class UserRole extends Model<UserRole> implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
 
-    private String deviceNo;
+    private Integer userId;
 
-    private LocalDateTime dateTime;
-
-    private BigDecimal lampblack;
-
-    private String lampblackFlag;
-
-    private BigDecimal pm;
-
-    private String pmFlag;
-
-    private BigDecimal nmhc;
-
-    private String nmhcFlag;
-
-    private Integer fanFlag;
-
-    private Integer purifierFlag;
+    private Integer roleId;
 }
-

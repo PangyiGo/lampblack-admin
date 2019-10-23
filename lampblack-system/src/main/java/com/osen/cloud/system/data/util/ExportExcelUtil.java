@@ -1,9 +1,9 @@
 package com.osen.cloud.system.data.util;
 
-import com.osen.cloud.common.entity.DataDay;
-import com.osen.cloud.common.entity.DataHistory;
-import com.osen.cloud.common.entity.DataHour;
-import com.osen.cloud.common.entity.DataMinute;
+import com.osen.cloud.common.entity.lampblack.DataDay;
+import com.osen.cloud.common.entity.lampblack.DataHistory;
+import com.osen.cloud.common.entity.lampblack.DataHour;
+import com.osen.cloud.common.entity.lampblack.DataMinute;
 import com.osen.cloud.common.utils.ConstUtil;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.CellType;

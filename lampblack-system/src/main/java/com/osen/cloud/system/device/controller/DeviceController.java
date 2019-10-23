@@ -1,6 +1,6 @@
 package com.osen.cloud.system.device.controller;
 
-import com.osen.cloud.common.entity.Device;
+import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;

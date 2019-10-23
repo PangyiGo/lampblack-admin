@@ -1,7 +1,7 @@
 package com.osen.cloud.model.user_device;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.osen.cloud.common.entity.UserDevice;
+import com.osen.cloud.common.entity.system_user.UserDevice;
 
 /**
  * User: PangYi

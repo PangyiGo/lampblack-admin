@@ -2,8 +2,8 @@ package com.osen.cloud.service.role.impl;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.osen.cloud.common.entity.Role;
-import com.osen.cloud.common.entity.UserRole;
+import com.osen.cloud.common.entity.system_user.Role;
+import com.osen.cloud.common.entity.system_user.UserRole;
 import com.osen.cloud.model.role.RoleMapper;
 import com.osen.cloud.service.role.RoleService;
 import com.osen.cloud.service.user_role.UserRoleService;

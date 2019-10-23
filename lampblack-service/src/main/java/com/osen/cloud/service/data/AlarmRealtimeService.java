@@ -1,7 +1,7 @@
 package com.osen.cloud.service.data;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.osen.cloud.common.entity.AlarmRealtime;
+import com.osen.cloud.common.entity.lampblack.AlarmRealtime;
 
 import java.util.List;
 

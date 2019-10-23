@@ -1,7 +1,7 @@
 package com.osen.cloud.service.device;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.osen.cloud.common.entity.Device;
+import com.osen.cloud.common.entity.system_device.Device;
 
 import java.util.Map;
 

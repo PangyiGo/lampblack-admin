@@ -1,6 +1,6 @@
 package com.osen.cloud.system.user.vo;
 
-import com.osen.cloud.common.entity.User;
+import com.osen.cloud.common.entity.system_user.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

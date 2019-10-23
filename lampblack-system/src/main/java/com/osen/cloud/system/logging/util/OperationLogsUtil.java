@@ -1,7 +1,7 @@
 package com.osen.cloud.system.logging.util;
 
 import com.alibaba.fastjson.JSON;
-import com.osen.cloud.common.entity.OperationLogs;
+import com.osen.cloud.common.entity.logs.OperationLogs;
 import com.osen.cloud.service.logging.OperationLogsService;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.osen.cloud.common.entity;
+package com.osen.cloud.common.entity.system_user;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -15,21 +15,21 @@ import java.io.Serializable;
 /**
  * User: PangYi
  * Date: 2019-08-28
- * Time: 15:21
- * Description: 用户设备关联实体对象
+ * Time: 15:14
+ * Description: 角色菜单关联实体对象
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("user_device")
-public class UserDevice extends Model<UserDevice> implements Serializable {
+@TableName("system_role_menu")
+public class RoleMenu extends Model<RoleMenu> implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
 
-    private Integer userId;
+    private Integer roleId;
 
-    private Integer deviceId;
+    private Integer menuId;
 }
