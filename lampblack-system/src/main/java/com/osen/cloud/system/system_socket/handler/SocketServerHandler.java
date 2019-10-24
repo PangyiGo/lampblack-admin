@@ -43,13 +43,14 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         // 心跳监测值
         counter = 0;
 
+        String data = msg.toString();
         log.info("服务器接收设备上传数据开始：" + getConnectionID(ctx));
-        log.info("接收设备数据：" + msg.toString());
+        log.info("接收设备数据：" + data);
 
         /*
             上传数据处理
          */
-        Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(msg.toString());
+        Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(data);
 
         if (MapUtil.isNotEmpty(parseDataTOMap)) {
             log.info("格式化数据：" + parseDataTOMap);
