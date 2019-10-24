@@ -35,3 +35,5 @@ spring:
         max-active: 15
         max-idle: 5
         max-wait: -1
+server:
+  port: 8081
