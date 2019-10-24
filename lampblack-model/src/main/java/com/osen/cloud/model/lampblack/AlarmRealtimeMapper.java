@@ -1,4 +1,4 @@
-package com.osen.cloud.model.data;
+package com.osen.cloud.model.lampblack;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.osen.cloud.common.entity.dev_lampblack.AlarmRealtime;

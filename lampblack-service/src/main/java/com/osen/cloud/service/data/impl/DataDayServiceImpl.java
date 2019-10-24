@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_lampblack.DataDay;
-import com.osen.cloud.model.data.DataDayMapper;
+import com.osen.cloud.model.lampblack.DataDayMapper;
 import com.osen.cloud.service.data.DataDayService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_lampblack.DataHistory;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.model.data.DataHistoryMapper;
+import com.osen.cloud.model.lampblack.DataHistoryMapper;
 import com.osen.cloud.service.data.DataHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;

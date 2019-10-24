@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_lampblack.AlarmRealtime;
 import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.model.data.AlarmRealtimeMapper;
+import com.osen.cloud.model.lampblack.AlarmRealtimeMapper;
 import com.osen.cloud.service.data.AlarmRealtimeService;
 import com.osen.cloud.service.device.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;

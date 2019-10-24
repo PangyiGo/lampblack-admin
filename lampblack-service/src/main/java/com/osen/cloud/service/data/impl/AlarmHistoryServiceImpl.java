@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_lampblack.AlarmHistory;
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.model.data.AlarmHistoryMapper;
+import com.osen.cloud.model.lampblack.AlarmHistoryMapper;
 import com.osen.cloud.service.data.AlarmHistoryService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
