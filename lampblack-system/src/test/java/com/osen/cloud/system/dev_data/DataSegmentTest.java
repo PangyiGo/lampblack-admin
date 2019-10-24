@@ -1,6 +1,6 @@
 package com.osen.cloud.system.dev_data;
 
-import com.osen.cloud.system.data_socket.utils.DataSegmentParseUtil;
+import com.osen.cloud.system.system_socket.utils.DataSegmentParseUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

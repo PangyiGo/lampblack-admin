@@ -1,8 +1,8 @@
-package com.osen.cloud.system.data_socket.config;
+package com.osen.cloud.system.system_socket.config;
 
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.system.data_socket.handler.SocketServerHandler;
-import com.osen.cloud.system.data_socket.utils.DataSegmentParseUtil;
+import com.osen.cloud.system.system_socket.handler.SocketServerHandler;
+import com.osen.cloud.system.system_socket.utils.DataSegmentParseUtil;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
@@ -60,7 +60,7 @@ public class SocketServerStarter {
                             channelPipeline.addLast("SocketServerHandler", new SocketServerHandler(dataSegmentParseUtil));
                         }
                     }).option(ChannelOption.SO_BACKLOG, 512).childOption(ChannelOption.SO_KEEPALIVE, true);
-            log.info("data_socket service starting port: " + ConstUtil.SERVER_PORT);
+            log.info("system_socket service starting port: " + ConstUtil.SERVER_PORT);
             //绑定端口，接受进来的连接
             ChannelFuture channelFuture = serverBootstrap.bind(ConstUtil.SERVER_PORT).sync();
             //等待服务器socket关闭
@@ -69,11 +69,11 @@ public class SocketServerStarter {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
             log.error(e.getMessage());
-            log.error("data_socket service start error");
+            log.error("system_socket service start error");
         } finally {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
-            log.info("data_socket service closed");
+            log.info("system_socket service closed");
         }
     }
 }

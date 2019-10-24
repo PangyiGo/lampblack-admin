@@ -1,4 +1,4 @@
-package com.osen.cloud.system.data_socket.utils;
+package com.osen.cloud.system.system_socket.utils;
 
 /**
  * User: PangYi

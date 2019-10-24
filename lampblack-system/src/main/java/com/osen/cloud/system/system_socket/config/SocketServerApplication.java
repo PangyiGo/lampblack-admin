@@ -1,4 +1,4 @@
-package com.osen.cloud.system.data_socket.config;
+package com.osen.cloud.system.system_socket.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

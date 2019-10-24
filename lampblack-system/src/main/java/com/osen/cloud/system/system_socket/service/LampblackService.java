@@ -1,4 +1,4 @@
-package com.osen.cloud.system.data_socket.service;
+package com.osen.cloud.system.system_socket.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
@@ -8,7 +8,7 @@ import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.data.lampblack.*;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
-import com.osen.cloud.system.data_socket.model.LampblackDataModel;
+import com.osen.cloud.system.system_socket.model.LampblackDataModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

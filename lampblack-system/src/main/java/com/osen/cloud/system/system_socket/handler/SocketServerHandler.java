@@ -1,7 +1,7 @@
-package com.osen.cloud.system.data_socket.handler;
+package com.osen.cloud.system.system_socket.handler;
 
 import cn.hutool.core.map.MapUtil;
-import com.osen.cloud.system.data_socket.utils.DataSegmentParseUtil;
+import com.osen.cloud.system.system_socket.utils.DataSegmentParseUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;

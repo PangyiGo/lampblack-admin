@@ -1,4 +1,4 @@
-package com.osen.cloud.system.data_socket.model;
+package com.osen.cloud.system.system_socket.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
