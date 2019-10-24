@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("system_device")
+@TableName("device")
 public class Device extends Model<Device> implements Serializable {
 
     @TableId(type = IdType.AUTO)

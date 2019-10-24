@@ -114,3 +114,11 @@ java.sql.SQLException: Access denied for user 'root'@'219.133.250.192' (using pa
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+2019-10-24 16:40:25.352 [task-1] ERROR c.o.c.s.system_socket.utils.DataSegmentParseUtil - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.system_device' doesn't exist
+### The error may exist in com/osen/cloud/model/device/DeviceMapper.java (best guess)
+### The error may involve com.osen.cloud.model.device.DeviceMapper.update-Inline
+### The error occurred while setting parameters
+### SQL: UPDATE system_device  SET is_live=?,update_time=?      WHERE (device_no = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Table 'osen-dev.system_device' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'osen-dev.system_device' doesn't exist
