@@ -1,10 +1,10 @@
 package com.osen.cloud.system.data;
 
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.service.data.DataDayService;
-import com.osen.cloud.service.data.DataHistoryService;
-import com.osen.cloud.service.data.DataHourService;
-import com.osen.cloud.service.data.DataMinuteService;
+import com.osen.cloud.service.data.lampblack.DataDayService;
+import com.osen.cloud.service.data.lampblack.DataHistoryService;
+import com.osen.cloud.service.data.lampblack.DataHourService;
+import com.osen.cloud.service.data.lampblack.DataMinuteService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

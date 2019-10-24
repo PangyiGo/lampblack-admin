@@ -1,11 +1,11 @@
-package com.osen.cloud.service.data.impl;
+package com.osen.cloud.service.data.lampblack.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_lampblack.DataMinute;
 import com.osen.cloud.model.lampblack.DataMinuteMapper;
-import com.osen.cloud.service.data.DataMinuteService;
+import com.osen.cloud.service.data.lampblack.DataMinuteService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

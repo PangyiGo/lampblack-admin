@@ -1,4 +1,4 @@
-package com.osen.cloud.service.data;
+package com.osen.cloud.service.data.lampblack;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.dev_lampblack.DataHour;

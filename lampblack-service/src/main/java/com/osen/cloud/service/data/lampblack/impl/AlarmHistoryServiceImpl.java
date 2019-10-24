@@ -1,4 +1,4 @@
-package com.osen.cloud.service.data.impl;
+package com.osen.cloud.service.data.lampblack.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_lampblack.AlarmHistory;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.lampblack.AlarmHistoryMapper;
-import com.osen.cloud.service.data.AlarmHistoryService;
+import com.osen.cloud.service.data.lampblack.AlarmHistoryService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

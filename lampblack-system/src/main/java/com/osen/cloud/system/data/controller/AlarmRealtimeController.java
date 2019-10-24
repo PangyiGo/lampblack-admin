@@ -3,7 +3,7 @@ package com.osen.cloud.system.data.controller;
 import com.osen.cloud.common.entity.dev_lampblack.AlarmRealtime;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
-import com.osen.cloud.service.data.AlarmRealtimeService;
+import com.osen.cloud.service.data.lampblack.AlarmRealtimeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

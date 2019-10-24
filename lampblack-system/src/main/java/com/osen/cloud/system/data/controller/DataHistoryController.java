@@ -6,7 +6,7 @@ import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
-import com.osen.cloud.service.data.DataHistoryService;
+import com.osen.cloud.service.data.lampblack.DataHistoryService;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.data.util.DataHistoryRealVO;
 import com.osen.cloud.system.data.util.ExportExcelUtil;

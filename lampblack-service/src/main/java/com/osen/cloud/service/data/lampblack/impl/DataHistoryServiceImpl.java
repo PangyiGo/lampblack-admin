@@ -1,4 +1,4 @@
-package com.osen.cloud.service.data.impl;
+package com.osen.cloud.service.data.lampblack.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -8,7 +8,7 @@ import com.osen.cloud.common.entity.dev_lampblack.DataHistory;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.lampblack.DataHistoryMapper;
-import com.osen.cloud.service.data.DataHistoryService;
+import com.osen.cloud.service.data.lampblack.DataHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;

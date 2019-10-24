@@ -2,7 +2,7 @@ package com.osen.cloud.system.data.controller;
 
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.RestResultUtil;
-import com.osen.cloud.service.data.AlarmHistoryService;
+import com.osen.cloud.service.data.lampblack.AlarmHistoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

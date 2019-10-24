@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.osen.cloud.common.entity.dev_lampblack.*;
 import com.osen.cloud.common.enums.LampblackSensorCode;
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.service.data.*;
+import com.osen.cloud.service.data.lampblack.*;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.db_config.MybatisPlusConfig;
 import com.osen.cloud.system.socket.model.LampblackDataModel;

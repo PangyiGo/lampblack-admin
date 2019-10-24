@@ -1,10 +1,10 @@
 package com.osen.cloud.system.db_config;
 
 import com.osen.cloud.common.utils.ConstUtil;
-import com.osen.cloud.service.data.DataDayService;
-import com.osen.cloud.service.data.DataHistoryService;
-import com.osen.cloud.service.data.DataHourService;
-import com.osen.cloud.service.data.DataMinuteService;
+import com.osen.cloud.service.data.lampblack.DataDayService;
+import com.osen.cloud.service.data.lampblack.DataHistoryService;
+import com.osen.cloud.service.data.lampblack.DataHourService;
+import com.osen.cloud.service.data.lampblack.DataMinuteService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

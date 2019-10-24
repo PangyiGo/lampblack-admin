@@ -5,7 +5,7 @@ import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
-import com.osen.cloud.service.data.DataHourService;
+import com.osen.cloud.service.data.lampblack.DataHourService;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.data.util.ExportExcelUtil;
 import com.osen.cloud.system.db_config.MybatisPlusConfig;
