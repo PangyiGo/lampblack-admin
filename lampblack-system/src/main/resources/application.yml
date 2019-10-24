@@ -25,7 +25,7 @@ spring:
 
 ## 日志配置
 logging:
-  path: /logging
+  path: /system_logging
   config: classpath:log/logback-spring.xml
   level:
     com.osen.cloud.model: debug

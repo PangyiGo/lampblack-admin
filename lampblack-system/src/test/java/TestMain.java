@@ -1,4 +1,4 @@
-import com.osen.cloud.system.socket.utils.CRCValidationUtil;
+import com.osen.cloud.system.data_socket.utils.CRCValidationUtil;
 
 /**
  * User: PangYi

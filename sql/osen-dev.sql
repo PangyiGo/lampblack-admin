@@ -172,7 +172,7 @@ CREATE TABLE `data_minute` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for device
+-- Table structure for system_device
 -- ----------------------------
 DROP TABLE IF EXISTS `device`;
 CREATE TABLE `device` (
