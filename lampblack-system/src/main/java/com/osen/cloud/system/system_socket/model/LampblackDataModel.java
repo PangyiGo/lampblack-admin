@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * 转换中间件
+ * 油烟设备转换中间件
  */
 @Data
 @NoArgsConstructor
