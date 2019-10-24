@@ -103,3 +103,59 @@
 2019-10-24 09:33:51.892 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
 2019-10-24 09:33:51.907 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
 2019-10-24 09:33:51.915 [Thread-28] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-24 09:35:10.731 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - Starting LampblackSystemApplication on PC-20190708MDDO with PID 7216 (E:\gitworkspace\lampblack-admin\lampblack-system\target\classes started by Administrator in E:\gitworkspace\lampblack-admin)
+2019-10-24 09:35:10.736 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - The following profiles are active: dev
+2019-10-24 09:35:10.871 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-24 09:35:10.872 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-24 09:35:12.883 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-24 09:35:12.888 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-24 09:35:13.065 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45ms. Found 0 repository interfaces.
+2019-10-24 09:35:13.809 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$4922f331] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 09:35:13.824 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b0752af7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 09:35:13.866 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 09:35:13.870 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4bbef4f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 09:35:13.874 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6df795e3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 09:35:13.886 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 09:35:14.436 [restartedMain] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2019-10-24 09:35:14.436 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3564 ms
+2019-10-24 09:35:17.799 [Socket Server Thread-01] INFO  c.o.cloud.system.socket.config.SocketServerStarter - socket service starting port: 8888
+2019-10-24 09:35:18.066 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@200104ba, org.springframework.security.web.context.SecurityContextPersistenceFilter@21168288, org.springframework.security.web.header.HeaderWriterFilter@6599a278, org.springframework.security.web.authentication.logout.LogoutFilter@24f18fc0, com.osen.cloud.system.security.config.JwtAuthenticationTokenFilter@34b77d87, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@30071379, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ae61e7c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f89c42a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b8fdb64, org.springframework.security.web.session.SessionManagementFilter@5a33a9de, org.springframework.security.web.access.ExceptionTranslationFilter@5b3de88e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b5addb7]
+2019-10-24 09:35:18.276 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 09:35:19.257 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-24 09:35:19.346 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-10-24 09:35:19.460 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-10-24 09:35:19.616 [restartedMain] INFO  org.xnio - XNIO version 3.3.8.Final
+2019-10-24 09:35:19.637 [restartedMain] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final
+2019-10-24 09:35:19.727 [restartedMain] INFO  o.s.b.w.embedded.undertow.UndertowServletWebServer - Undertow started on port(s) 8081 (http) with context path ''
+2019-10-24 09:35:19.732 [restartedMain] INFO  com.osen.cloud.system.LampblackSystemApplication - Started LampblackSystemApplication in 10.462 seconds (JVM running for 11.8)
+2019-10-24 09:35:20.212 [RMI TCP Connection(3)-192.168.1.54] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 09:35:20.213 [RMI TCP Connection(3)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-10-24 09:35:20.230 [RMI TCP Connection(3)-192.168.1.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2019-10-24 09:35:20.431 [RMI TCP Connection(6)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Starting...
+2019-10-24 09:35:21.232 [RMI TCP Connection(6)-192.168.1.54] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Start completed.
+2019-10-24 09:35:21.433 [parallel-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-10-24 09:35:21.437 [parallel-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-10-24 09:36:08.578 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备成功连接服务器：0c9d92fffe787de5-00001c30-00000002-ac71540750a82152-dc0fddb3
+2019-10-24 09:36:13.427 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据开始：0c9d92fffe787de5-00001c30-00000002-ac71540750a82152-dc0fddb3
+2019-10-24 09:36:13.428 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 接收设备数据：http://www.cmsoft.cn
+2019-10-24 09:36:13.439 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备上传格式错误，不符合HJ212协议
+2019-10-24 09:36:13.440 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00001c30-00000002-ac71540750a82152-dc0fddb3
+2019-10-24 09:36:47.784 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00001c30-00000002-ac71540750a82152-dc0fddb3
+2019-10-24 09:36:47.787 [nioEventLoopGroup-5-1] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备与服务器断开连接：0c9d92fffe787de5-00001c30-00000002-ac71540750a82152-dc0fddb3
+2019-10-24 09:37:07.935 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备成功连接服务器：0c9d92fffe787de5-00001c30-00000004-0fb9e1b93ca90958-68d4d939
+2019-10-24 09:37:12.983 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00001c30-00000004-0fb9e1b93ca90958-68d4d939
+2019-10-24 09:37:12.984 [nioEventLoopGroup-5-2] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备与服务器断开连接：0c9d92fffe787de5-00001c30-00000004-0fb9e1b93ca90958-68d4d939
+2019-10-24 09:37:15.119 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备成功连接服务器：0c9d92fffe787de5-00001c30-00000005-e651c586dca92566-d407a4ee
+2019-10-24 09:37:19.416 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据开始：0c9d92fffe787de5-00001c30-00000005-e651c586dca92566-d407a4ee
+2019-10-24 09:37:19.417 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 接收设备数据：http://www.cmsoft.cn
+2019-10-24 09:37:19.417 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备上传格式错误，不符合HJ212协议
+2019-10-24 09:37:19.417 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00001c30-00000005-e651c586dca92566-d407a4ee
+2019-10-24 09:37:20.199 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据开始：0c9d92fffe787de5-00001c30-00000005-e651c586dca92566-d407a4ee
+2019-10-24 09:37:20.200 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 接收设备数据：http://www.cmsoft.cn
+2019-10-24 09:37:20.200 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 设备上传格式错误，不符合HJ212协议
+2019-10-24 09:37:20.200 [nioEventLoopGroup-5-3] INFO  c.o.c.system.socket.handler.SocketServerHandler - 服务器接收设备上传数据完毕：0c9d92fffe787de5-00001c30-00000005-e651c586dca92566-d407a4ee
+2019-10-24 09:37:30.322 [Thread-27] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-10-24 09:37:30.333 [Thread-27] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-24 09:37:31.466 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
+2019-10-24 09:37:31.480 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
+2019-10-24 09:37:31.486 [Thread-27] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
