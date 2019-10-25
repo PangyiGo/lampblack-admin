@@ -35,9 +35,9 @@ public class DataHistoryTest {
 
     @Test
     public void test01() {
-        dataHistoryService.createNewTable(ConstUtil.createNewTableName(ConstUtil.REALTIME_TB));
-        dataMinuteService.createNewTable(ConstUtil.createNewTableName(ConstUtil.MINUTE_TB));
-        dataHourService.createNewTable(ConstUtil.createNewTableName(ConstUtil.HOUR_TB));
-        dataDayService.createNewTable(ConstUtil.createNewTableName(ConstUtil.DAY_TB));
+        dataHistoryService.createNewTable(ConstUtil.currentTableName(ConstUtil.REALTIME_TB));
+        dataMinuteService.createNewTable(ConstUtil.currentTableName(ConstUtil.MINUTE_TB));
+        dataHourService.createNewTable(ConstUtil.currentTableName(ConstUtil.HOUR_TB));
+        dataDayService.createNewTable(ConstUtil.currentTableName(ConstUtil.DAY_TB));
     }
 }

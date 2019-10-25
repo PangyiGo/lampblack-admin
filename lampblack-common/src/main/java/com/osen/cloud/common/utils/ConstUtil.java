@@ -75,7 +75,7 @@ public class ConstUtil {
      * @param tableName 原表名
      * @return 新表名
      */
-    public static String createNewTableName(String tableName) {
+    public static String currentTableName(String tableName) {
         LocalDateTime dateTime = LocalDateTime.now();
         int year = dateTime.getYear();
         int monthValue = dateTime.getMonthValue();

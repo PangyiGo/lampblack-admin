@@ -105,7 +105,7 @@ public class LampblackService {
         }
 
         // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.REALTIME_TB));
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.REALTIME_TB));
         // 插入数据
         dataHistoryService.insertRealtimeData(dataHistory);
 
@@ -187,7 +187,7 @@ public class LampblackService {
         dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.MINUTE_TB));
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.MINUTE_TB));
         // 插入数据
         dataMinuteService.insertMinuteData(dataMinute);
     }
@@ -229,7 +229,7 @@ public class LampblackService {
         dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.HOUR_TB));
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.HOUR_TB));
         // 插入数据
         dataHourService.insertHourData(dataHour);
     }
@@ -271,7 +271,7 @@ public class LampblackService {
         dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
         // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.createNewTableName(ConstUtil.DAY_TB));
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.DAY_TB));
         //插入数据
         dataDayService.insertDayData(dataDay);
     }
