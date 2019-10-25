@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainMinute;
 import com.osen.cloud.model.coldchain.ColdChainMinuteMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainMinuteService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ColdChainMinuteServiceImpl extends ServiceImpl<ColdChainMinuteMapper, ColdChainMinute> implements ColdChainMinuteService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertMinute(ColdChainMinute coldChainMinute) {
+        super.save(coldChainMinute);
+    }
 }

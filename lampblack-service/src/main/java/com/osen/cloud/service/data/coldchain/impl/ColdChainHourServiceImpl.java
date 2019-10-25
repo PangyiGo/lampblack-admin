@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainHour;
 import com.osen.cloud.model.coldchain.ColdChainHourMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainHourService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ColdChainHourServiceImpl extends ServiceImpl<ColdChainHourMapper, ColdChainHour> implements ColdChainHourService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertHour(ColdChainHour coldChainHour) {
+        super.save(coldChainHour);
+    }
 }

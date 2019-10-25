@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainMonitor;
 import com.osen.cloud.model.coldchain.ColdChainMonitorMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ColdChainMonitorServiceImpl extends ServiceImpl<ColdChainMonitorMapper, ColdChainMonitor> implements ColdChainMonitorService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertColdMonitor(ColdChainMonitor coldChainMonitor) {
+        super.save(coldChainMonitor);
+    }
 }

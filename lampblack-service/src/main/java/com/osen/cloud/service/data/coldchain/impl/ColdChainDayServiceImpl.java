@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainDay;
 import com.osen.cloud.model.coldchain.ColdChainDayMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainDayService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ColdChainDayServiceImpl extends ServiceImpl<ColdChainDayMapper, ColdChainDay> implements ColdChainDayService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertDay(ColdChainDay coldChainDay) {
+        super.save(coldChainDay);
+    }
 }

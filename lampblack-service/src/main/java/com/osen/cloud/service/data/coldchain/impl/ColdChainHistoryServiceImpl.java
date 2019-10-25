@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainHistory;
 import com.osen.cloud.model.coldchain.ColdChainHistoryMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainHistoryService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMapper, ColdChainHistory> implements ColdChainHistoryService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertHistory(ColdChainHistory coldChainHistory) {
+        super.save(coldChainHistory);
+    }
 }

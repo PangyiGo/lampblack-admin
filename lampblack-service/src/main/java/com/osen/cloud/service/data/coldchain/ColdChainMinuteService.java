@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainMinute;
  * Description: 冷链实时数据通用服务接口层
  */
 public interface ColdChainMinuteService extends IService<ColdChainMinute> {
+
+    /**
+     * 插入冷链分钟历史数据
+     *
+     * @param coldChainMinute 参数
+     */
+    void insertMinute(ColdChainMinute coldChainMinute);
 }

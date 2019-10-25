@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainAlarm;
 import com.osen.cloud.model.coldchain.ColdChainAlarmMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainAlarmService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ColdChainAlarmServiceImpl extends ServiceImpl<ColdChainAlarmMapper, ColdChainAlarm> implements ColdChainAlarmService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertAlarm(ColdChainAlarm coldChainAlarm) {
+        super.save(coldChainAlarm);
+    }
 }

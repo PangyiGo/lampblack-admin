@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainHistory;
  * Description: 冷链实时数据通用服务接口层
  */
 public interface ColdChainHistoryService extends IService<ColdChainHistory> {
+
+    /**
+     * 插入冷链实时历史数据
+     *
+     * @param coldChainHistory 参数
+     */
+    void insertHistory(ColdChainHistory coldChainHistory);
 }

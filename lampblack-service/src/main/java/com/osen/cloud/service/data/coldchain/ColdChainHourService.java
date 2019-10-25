@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainHour;
  * Description: 冷链实时数据通用服务接口层
  */
 public interface ColdChainHourService extends IService<ColdChainHour> {
+
+    /**
+     * 插入冷链小时历史数据
+     *
+     * @param coldChainHour 参数
+     */
+    void insertHour(ColdChainHour coldChainHour);
 }

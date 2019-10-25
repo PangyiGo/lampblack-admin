@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_coldchain.ColdChainMonitor;
  * Description: 冷链实时数据通用服务接口层
  */
 public interface ColdChainMonitorService extends IService<ColdChainMonitor> {
+
+    /**
+     * 插入冷链监控点
+     *
+     * @param coldChainMonitor 参数
+     */
+    void insertColdMonitor(ColdChainMonitor coldChainMonitor);
 }
