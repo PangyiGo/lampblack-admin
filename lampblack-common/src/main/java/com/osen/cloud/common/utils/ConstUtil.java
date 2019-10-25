@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ConstUtil {
 
-    // 用户初始密码，12345678
+    // 用户初始密码，123456
     public static final String INIT_PASSWORD = "$2a$10$/v9gg7DcPhaPNJUK3djGU.XTHZodHEkBffJ.8.GAHI1bxmdzW6ufK";
 
     // 监听端口
@@ -27,17 +27,11 @@ public class ConstUtil {
     // 请求失败编码
     public static Integer UNOK = 2004;
 
-    // websocket监听的端口
-    public static final Integer WEBSOCKET_PORT = 9527;
-
     // 日期格式化
     public static String DATE_FORMAT = "yyyyMMddHHmmss";
 
     // 日期格式化
     public static String QUERY_DATE = "yyyy-MM-dd-HH-mm-ss";
-
-    // 日期格式化
-    public static String DATETIME_FORMAT = "yy-MM-dd HH:mm:ss.SSS";
 
     // 连接主键key，保存最新的实时数据
     public static String DATA_KEY = "DataRealtime_DB";
@@ -65,9 +59,6 @@ public class ConstUtil {
 
     // 每天数据表
     public static String DAY_TB = "data_day";
-
-    // 最小数据表时间
-    public static String MIN_TABLE = "201908";
 
     // 分页数
     public static Integer PAGE_NUMBER = 8;
