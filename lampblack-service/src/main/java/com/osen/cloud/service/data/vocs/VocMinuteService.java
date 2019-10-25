@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_vocs.VocMinute;
  * Description: VOC设备实时数据通用接口层
  */
 public interface VocMinuteService extends IService<VocMinute> {
+
+    /**
+     * 插入VOC分钟历史数据
+     *
+     * @param vocMinute 参数
+     */
+    void insertMinute(VocMinute vocMinute);
 }

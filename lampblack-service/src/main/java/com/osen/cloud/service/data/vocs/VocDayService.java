@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_vocs.VocDay;
  * Description: VOC设备实时数据通用接口层
  */
 public interface VocDayService extends IService<VocDay> {
+
+    /**
+     * 插入天数历史数据
+     *
+     * @param vocDay 参数
+     */
+    void insertDay(VocDay vocDay);
 }

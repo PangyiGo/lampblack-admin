@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_vocs.VocAlarm;
  * Description: VOC设备实时数据通用接口层
  */
 public interface VocAlarmService extends IService<VocAlarm> {
+
+    /**
+     * 插入VOC报警历史数据
+     *
+     * @param vocAlarm 参数
+     */
+    void insertAlarm(VocAlarm vocAlarm);
 }

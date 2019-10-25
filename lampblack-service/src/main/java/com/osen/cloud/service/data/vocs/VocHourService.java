@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_vocs.VocHour;
  * Description: VOC设备实时数据通用接口层
  */
 public interface VocHourService extends IService<VocHour> {
+
+    /**
+     * 插入VOC小时历史数据
+     *
+     * @param vocHour 参数
+     */
+    void insertHour(VocHour vocHour);
 }

@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_vocs.VocAlarm;
 import com.osen.cloud.model.vos.VocAlarmMapper;
 import com.osen.cloud.service.data.vocs.VocAlarmService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class VocAlarmServiceImpl extends ServiceImpl<VocAlarmMapper, VocAlarm> implements VocAlarmService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertAlarm(VocAlarm vocAlarm) {
+        super.save(vocAlarm);
+    }
 }

@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_vocs.VocHistory;
 import com.osen.cloud.model.vos.VocHistoryMapper;
 import com.osen.cloud.service.data.vocs.VocHistoryService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHistory> implements VocHistoryService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertHistory(VocHistory vocHistory) {
+        super.save(vocHistory);
+    }
 }

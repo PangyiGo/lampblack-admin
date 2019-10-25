@@ -10,4 +10,11 @@ import com.osen.cloud.common.entity.dev_vocs.VocHistory;
  * Description: VOC设备实时数据通用接口层
  */
 public interface VocHistoryService extends IService<VocHistory> {
+
+    /**
+     * 插入VOC实时历史数据
+     *
+     * @param vocHistory 参数
+     */
+    void insertHistory(VocHistory vocHistory);
 }

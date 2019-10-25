@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_vocs.VocMinute;
 import com.osen.cloud.model.vos.VocMinuteMapper;
 import com.osen.cloud.service.data.vocs.VocMinuteService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: PangYi
@@ -14,4 +15,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class VocMinuteServiceImpl extends ServiceImpl<VocMinuteMapper, VocMinute> implements VocMinuteService {
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertMinute(VocMinute vocMinute) {
+        super.save(vocMinute);
+    }
 }
