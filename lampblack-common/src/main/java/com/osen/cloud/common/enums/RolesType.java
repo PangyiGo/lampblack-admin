@@ -36,7 +36,7 @@ public enum RolesType {
     /*
     VOC设备代理商
      */
-    VocAgent("ROLE_VocProxy"),
+    VocAgent("ROLE_VocAgent"),
 
     /*
     冷链设备终端用户
@@ -46,7 +46,7 @@ public enum RolesType {
     /*
     冷链设备代理商
      */
-    ColdChainAgent("ROLE_ColdChainProxy");
+    ColdChainAgent("ROLE_ColdChainAgent");
 
     private String name;
 
