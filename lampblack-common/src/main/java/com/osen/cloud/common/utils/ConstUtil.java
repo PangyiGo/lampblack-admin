@@ -33,13 +33,13 @@ public class ConstUtil {
     // 日期格式化
     public static String QUERY_DATE = "yyyy-MM-dd-HH-mm-ss";
 
-    // 连接主键key，保存最新的实时数据
+    // 油烟设备连接主键key，保存最新的实时数据
     public static String DATA_KEY = "lampblack_realtime_db";
 
-    // 设备主键key，设备与连接ID关联
+    // 油烟设备设备主键key，设备与连接ID关联
     public static String DEVICE_KEY = "lampblack_connection_db";
 
-    // 报警主键key，保存最新的报警数据
+    // 油烟设备报警主键key，保存最新的报警数据
     public static String ALARM_KEY = "lampblack_alarm_db";
 
     // 关闭状态
