@@ -102,7 +102,7 @@ public class UserController {
     public RestResult deleteUserByAccount(@PathVariable("account") String account) {
         // 查询指定用户
         if (account.equals(SecurityUtil.getUsername()))
-            throw new ControllerException("不能删除当前登录用户");
+            throw new ControllerException("禁止删除当前登录用户");
         User user = userService.findByUsername(account);
         if (user == null)
             throw new ControllerException("查询不到删除指定用户");
