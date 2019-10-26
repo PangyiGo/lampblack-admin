@@ -63,7 +63,7 @@ public class UserDeviceServiceImpl extends ServiceImpl<UserDeviceMapper, UserDev
         LambdaQueryWrapper<UserDevice> queryWrapper = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, byUsername.getId()).eq(UserDevice::getDeviceId, serviceDeviceNo.getId());
         UserDevice device = super.getOne(queryWrapper);
         if (device != null)
-            throw new ServiceException(ConstUtil.UNOK, "该用户与设备重复关联");
+            throw new ServiceException(ConstUtil.UNOK, "该用户与设备已重复关联");
         UserDevice userDevice = new UserDevice();
         userDevice.setUserId(byUsername.getId());
         userDevice.setDeviceId(serviceDeviceNo.getId());
