@@ -85,9 +85,9 @@ public class DataAnalysisController {
         List<String> dayTb = ConstUtil.queryTableName(start, end, ConstUtil.DAY_TB); //天数据表
         // 计算时间
         Duration duration = Duration.between(start, end);
-        long reals = duration.toMinutes();
+        long reals = duration.toMinutes() + 1;
         long minutes = reals / 10;
-        long hours = duration.toHours();
+        long hours = duration.toHours() + 1;
         long days = duration.toDays() + 1;
         // 获取指定用户设备列表
         String account = SecurityUtil.getUsername();
