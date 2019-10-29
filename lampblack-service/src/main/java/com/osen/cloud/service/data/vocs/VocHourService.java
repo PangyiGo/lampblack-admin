@@ -17,4 +17,11 @@ public interface VocHourService extends IService<VocHour> {
      * @param vocHour 参数
      */
     void insertHour(VocHour vocHour);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }

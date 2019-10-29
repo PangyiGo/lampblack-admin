@@ -21,4 +21,10 @@ public class ColdChainMinuteServiceImpl extends ServiceImpl<ColdChainMinuteMappe
     public void insertMinute(ColdChainMinute coldChainMinute) {
         super.save(coldChainMinute);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

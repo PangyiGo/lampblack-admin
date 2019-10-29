@@ -17,4 +17,11 @@ public interface ColdChainDayService extends IService<ColdChainDay> {
      * @param coldChainDay 参数
      */
     void insertDay(ColdChainDay coldChainDay);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }

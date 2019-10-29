@@ -17,4 +17,11 @@ public interface ColdChainMinuteService extends IService<ColdChainMinute> {
      * @param coldChainMinute 参数
      */
     void insertMinute(ColdChainMinute coldChainMinute);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }

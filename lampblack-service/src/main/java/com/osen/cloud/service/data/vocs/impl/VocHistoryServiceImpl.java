@@ -21,4 +21,10 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
     public void insertHistory(VocHistory vocHistory) {
         super.save(vocHistory);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

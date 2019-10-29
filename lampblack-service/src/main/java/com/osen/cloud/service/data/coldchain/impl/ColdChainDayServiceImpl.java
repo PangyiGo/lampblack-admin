@@ -21,4 +21,10 @@ public class ColdChainDayServiceImpl extends ServiceImpl<ColdChainDayMapper, Col
     public void insertDay(ColdChainDay coldChainDay) {
         super.save(coldChainDay);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

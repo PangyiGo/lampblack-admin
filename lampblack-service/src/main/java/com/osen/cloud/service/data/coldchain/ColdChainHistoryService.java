@@ -17,4 +17,11 @@ public interface ColdChainHistoryService extends IService<ColdChainHistory> {
      * @param coldChainHistory 参数
      */
     void insertHistory(ColdChainHistory coldChainHistory);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }

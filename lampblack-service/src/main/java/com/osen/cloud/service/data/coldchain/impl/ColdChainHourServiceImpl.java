@@ -21,4 +21,10 @@ public class ColdChainHourServiceImpl extends ServiceImpl<ColdChainHourMapper, C
     public void insertHour(ColdChainHour coldChainHour) {
         super.save(coldChainHour);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

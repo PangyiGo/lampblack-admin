@@ -21,4 +21,10 @@ public class VocDayServiceImpl extends ServiceImpl<VocDayMapper, VocDay> impleme
     public void insertDay(VocDay vocDay) {
         super.save(vocDay);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

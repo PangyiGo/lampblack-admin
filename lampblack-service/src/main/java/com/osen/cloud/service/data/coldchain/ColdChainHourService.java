@@ -17,4 +17,11 @@ public interface ColdChainHourService extends IService<ColdChainHour> {
      * @param coldChainHour 参数
      */
     void insertHour(ColdChainHour coldChainHour);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }

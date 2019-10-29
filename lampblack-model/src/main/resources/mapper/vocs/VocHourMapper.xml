@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.osen.cloud.model.vos.VocHourMapper">
+
+    <update id="createNewTable" parameterType="string">
+        CREATE TABLE ${tableName} (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `device_no` varchar(50) DEFAULT NULL COMMENT '设备号',
+          `date_time` datetime DEFAULT NULL COMMENT '接受日期',
+          `voc` decimal(6,2) DEFAULT '0.00' COMMENT '非甲烷总烃浓度值',
+          `voc_max` decimal(6,2) DEFAULT '0.00',
+          `voc_min` decimal(6,2) DEFAULT '0.00',
+          `voc_flag` varchar(5) DEFAULT 'N',
+          `flow` decimal(6,2) DEFAULT '0.00' COMMENT '流量',
+          `flow_max` decimal(6,2) DEFAULT '0.00',
+          `flow_min` decimal(6,2) DEFAULT '0.00',
+          `flow_flag` varchar(5) DEFAULT 'N',
+          `speed` decimal(6,2) DEFAULT '0.00' COMMENT '流速',
+          `speed_max` decimal(6,2) DEFAULT '0.00',
+          `speed_min` decimal(6,2) DEFAULT '0.00',
+          `speed_flag` varchar(5) DEFAULT 'N',
+          `pressure` decimal(6,2) DEFAULT '0.00' COMMENT '压力',
+          `pressure_max` decimal(6,2) DEFAULT '0.00',
+          `pressure_min` decimal(6,2) DEFAULT '0.00',
+          `pressure_flag` varchar(5) DEFAULT 'N',
+          `temp` decimal(6,2) DEFAULT '0.00' COMMENT '温度',
+          `temp_max` decimal(6,2) DEFAULT '0.00',
+          `temp_min` decimal(6,2) DEFAULT '0.00',
+          `temp_flag` varchar(5) DEFAULT 'N',
+          PRIMARY KEY (`id`),
+          KEY `device_no` (`device_no`,`date_time`) USING BTREE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    </update>
+
+</mapper>

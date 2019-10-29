@@ -17,4 +17,11 @@ public interface VocHistoryService extends IService<VocHistory> {
      * @param vocHistory 参数
      */
     void insertHistory(VocHistory vocHistory);
+
+    /**
+     * 创建新表
+     *
+     * @param tableName 新表名
+     */
+    void createNewTable(String tableName);
 }

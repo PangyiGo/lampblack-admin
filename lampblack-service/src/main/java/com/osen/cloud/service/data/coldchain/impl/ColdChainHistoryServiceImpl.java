@@ -21,4 +21,10 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
     public void insertHistory(ColdChainHistory coldChainHistory) {
         super.save(coldChainHistory);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

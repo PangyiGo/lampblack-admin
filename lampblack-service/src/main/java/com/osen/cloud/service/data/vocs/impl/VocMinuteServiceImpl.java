@@ -21,4 +21,10 @@ public class VocMinuteServiceImpl extends ServiceImpl<VocMinuteMapper, VocMinute
     public void insertMinute(VocMinute vocMinute) {
         super.save(vocMinute);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

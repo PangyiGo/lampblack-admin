@@ -21,4 +21,10 @@ public class VocHourServiceImpl extends ServiceImpl<VocHourMapper, VocHour> impl
     public void insertHour(VocHour vocHour) {
         super.save(vocHour);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void createNewTable(String tableName) {
+        baseMapper.createNewTable(tableName);
+    }
 }

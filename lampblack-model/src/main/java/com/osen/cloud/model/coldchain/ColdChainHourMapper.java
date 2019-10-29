@@ -2,6 +2,7 @@ package com.osen.cloud.model.coldchain;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainHour;
+import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,4 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ColdChainHourMapper extends BaseMapper<ColdChainHour> {
+
+    void createNewTable(@Param("tableName") String tableName);
 }

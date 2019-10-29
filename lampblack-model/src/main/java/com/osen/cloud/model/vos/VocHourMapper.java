@@ -2,6 +2,7 @@ package com.osen.cloud.model.vos;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.osen.cloud.common.entity.dev_vocs.VocHour;
+import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,4 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface VocHourMapper extends BaseMapper<VocHour> {
+
+    void createNewTable(@Param("tableName") String tableName);
 }
