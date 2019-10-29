@@ -45,9 +45,6 @@ public class CreateTableTimer {
     private DataDayService dataDayService;
 
     @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Autowired
     private VocHistoryService vocHistoryService;
 
     @Autowired
@@ -70,6 +67,9 @@ public class CreateTableTimer {
 
     @Autowired
     private ColdChainDayService coldChainDayService;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     /**
      * 每月1号的零点10秒执行
@@ -125,5 +125,7 @@ public class CreateTableTimer {
     @Scheduled(cron = "0 0 0 1/1 * ?")
     public void deleteDeviceNo() {
         stringRedisTemplate.delete(ConstUtil.DEVICE_KEY);
+        stringRedisTemplate.delete(TableUtil.Voc_Conn);
+        stringRedisTemplate.delete(TableUtil.Cold_Conn);
     }
 }
