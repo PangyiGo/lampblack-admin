@@ -132,6 +132,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             // 除了超级管理员之外的角色用户
             wrapper.eq(User::getPid, SecurityUtil.getUserId());
         }
+        // 查询条件是否为空
         if (StringUtils.isNotEmpty(company)) {
             wrapper.and(query -> query.like(User::getAccount, company).or().like(User::getCompany, company).or().like(User::getEmail, company).or().like(User::getAddress, company).or().like(User::getPhone, company));
         }
