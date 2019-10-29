@@ -157,7 +157,7 @@ public class ConstUtil {
      * 时间日前后比较，判断表名是否有效
      *
      * @param tableName 表名
-     * @return 信息
+     * @return 信息,true为表名无效，false表名有效
      */
     public static boolean compareToTime(String tableName) {
         String sub = StrUtil.sub(tableName, -2, tableName.length());
