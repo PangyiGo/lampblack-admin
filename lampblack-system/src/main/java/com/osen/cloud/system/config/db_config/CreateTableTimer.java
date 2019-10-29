@@ -120,9 +120,9 @@ public class CreateTableTimer {
     }
 
     /**
-     * 定时每天凌晨删除一次无效的connectionID
+     * 定时每月1号的零点5秒执行删除一次无效的connectionID
      */
-    @Scheduled(cron = "0 0 0 1/1 * ?")
+    @Scheduled(cron = "5 0 0 1 * ? ")
     public void deleteDeviceNo() {
         stringRedisTemplate.delete(ConstUtil.DEVICE_KEY);
         stringRedisTemplate.delete(TableUtil.Voc_Conn);
