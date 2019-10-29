@@ -10,9 +10,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.entity.system_user.User;
 import com.osen.cloud.common.entity.system_user.UserDevice;
+import com.osen.cloud.common.enums.DeviceType;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.model.device.DeviceMapper;
+import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.service.user.UserService;
 import com.osen.cloud.service.user_device.UserDeviceService;
@@ -21,7 +23,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static com.osen.cloud.common.enums.InfoMessage.InsertDevice_Error;
 
@@ -40,6 +45,9 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ColdChainMonitorService coldChainMonitorService;
+
     @Transactional(rollbackFor = Exception.class)
     @Override
     public boolean addDevice(Device device, Integer userId) {
@@ -48,6 +56,10 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         device.setCreateTime(LocalDateTime.now());
         device.setUpdateTime(LocalDateTime.now());
         if (super.save(device)) {
+            // 判断设备类型，冷链设备添加监控点
+            if (device.getType().equals(DeviceType.ColdChain.getName())) {
+                coldChainMonitorService.insertDefaultMonitor(device.getDeviceNo());
+            }
             Integer deviceID = device.getId();
             UserDevice userDevice = new UserDevice();
             userDevice.setDeviceId(deviceID);

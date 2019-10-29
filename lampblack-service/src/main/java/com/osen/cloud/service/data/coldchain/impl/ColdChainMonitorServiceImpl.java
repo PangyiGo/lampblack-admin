@@ -7,6 +7,8 @@ import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+
 /**
  * User: PangYi
  * Date: 2019-10-24
@@ -19,6 +21,20 @@ public class ColdChainMonitorServiceImpl extends ServiceImpl<ColdChainMonitorMap
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void insertColdMonitor(ColdChainMonitor coldChainMonitor) {
+        super.save(coldChainMonitor);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void insertDefaultMonitor(String deviceNo) {
+        ColdChainMonitor coldChainMonitor = new ColdChainMonitor();
+        coldChainMonitor.setDeviceNo(deviceNo);
+        coldChainMonitor.setM01("监控点#1");
+        coldChainMonitor.setM02("监控点#2");
+        coldChainMonitor.setM03("监控点#3");
+        coldChainMonitor.setM04("监控点#4");
+        coldChainMonitor.setCreateTime(LocalDateTime.now());
+        coldChainMonitor.setUpdateTime(LocalDateTime.now());
         super.save(coldChainMonitor);
     }
 }

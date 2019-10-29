@@ -36,9 +36,10 @@ public interface UserService extends IService<User> {
      *
      * @param number  当前页数
      * @param company 查询条件
+     * @param type    用户角色类型，voc,lampbalck,coldchain
      * @return 信息
      */
-    Map<String, Object> findAllUserToPage(Integer number, String company);
+    Map<String, Object> findAllUserToPage(Integer number, String company, String type);
 
     /**
      * 通过用户账号删除指定用户

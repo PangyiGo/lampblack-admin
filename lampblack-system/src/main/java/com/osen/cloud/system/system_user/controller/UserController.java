@@ -51,6 +51,7 @@ public class UserController {
 
     /**
      * 通过用户名获取用户信息
+     * 获取当前登录用户的个人信息
      *
      * @return 信息
      */
@@ -83,12 +84,17 @@ public class UserController {
      * @param pageUserVo 分页参数封装
      * @return 信息
      */
-    @PostMapping("/user/get/all")
-    public RestResult getAllUserToPage(@RequestBody PageUserVo pageUserVo) {
-        Map<String, Object> allUserToPage = userService.findAllUserToPage(pageUserVo.getPageNumber(), pageUserVo.getCompany());
+    @PostMapping("/user/get/all/{type}")
+    public RestResult getAllUserToPage(@RequestBody PageUserVo pageUserVo, @PathVariable("type") String type) {
+        Map<String, Object> allUserToPage = userService.findAllUserToPage(pageUserVo.getPageNumber(), pageUserVo.getCompany(), type);
         ReturnPageVo returnPageVo = new ReturnPageVo();
-        returnPageVo.setTotalNumber((Long) allUserToPage.get("total"));
-        returnPageVo.setUsers((List<User>) allUserToPage.get("users"));
+        if (allUserToPage != null) {
+            returnPageVo.setTotalNumber((Long) allUserToPage.get("total"));
+            returnPageVo.setUsers((List<User>) allUserToPage.get("users"));
+        } else {
+            returnPageVo.setTotalNumber(0L);
+            returnPageVo.setUsers(null);
+        }
         return RestResultUtil.success(returnPageVo);
     }
 

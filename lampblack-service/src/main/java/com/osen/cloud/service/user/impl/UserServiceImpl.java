@@ -12,6 +12,8 @@ import com.osen.cloud.common.entity.system_user.Role;
 import com.osen.cloud.common.entity.system_user.User;
 import com.osen.cloud.common.entity.system_user.UserDevice;
 import com.osen.cloud.common.entity.system_user.UserRole;
+import com.osen.cloud.common.enums.DeviceType;
+import com.osen.cloud.common.enums.RolesType;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.SecurityUtil;
@@ -94,21 +96,44 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public Map<String, Object> findAllUserToPage(Integer number, String company) {
+    public Map<String, Object> findAllUserToPage(Integer number, String company, String type) {
+        // 封装
+        Map<String, Object> map = new HashMap<>();
         LambdaQueryWrapper<User> wrapper = Wrappers.<User>lambdaQuery();
         // 获取当前用户ID
         Role role = roleService.findRoleByUserId(SecurityUtil.getUserId()).get(0);
-        // 代理商
-        if (role.getName().equals(ConstUtil.PROXY)) {
+        // 角色判断
+        if (role.getName().equals(RolesType.Admin.getName())) {
+            // 用户ID集合
+            List<Integer> userIds = new ArrayList<>(0);
+            LambdaQueryWrapper<UserRole> query = Wrappers.<UserRole>lambdaQuery();
+            if (DeviceType.Lampblack.getName().equals(type)) {
+                // 油烟
+                query.eq(UserRole::getRoleId, 2).or().eq(UserRole::getRoleId, 3);
+            } else if (DeviceType.Voc.getName().equals(type)) {
+                // VOC
+                query.eq(UserRole::getRoleId, 4).or().eq(UserRole::getRoleId, 5);
+            } else if (DeviceType.ColdChain.getName().equals(type)) {
+                // 冷链
+                query.eq(UserRole::getRoleId, 6).or().eq(UserRole::getRoleId, 7);
+            }
+            // 查询
+            List<UserRole> userRoles = userRoleService.list(query);
+            for (UserRole userRole : userRoles) {
+                userIds.add(userRole.getUserId());
+            }
+            // 该设备类型是否存在用户
+            if (userIds.size() != 0) {
+                wrapper.in(User::getId, userIds);
+            } else {
+                return null;
+            }
+        } else {
+            // 除了超级管理员之外的角色用户
             wrapper.eq(User::getPid, SecurityUtil.getUserId());
-            if (StringUtils.isNotEmpty(company)) {
-                wrapper.and(query -> query.like(User::getAccount, company).or().like(User::getCompany, company));
-            }
-        } else if (role.getName().equals(ConstUtil.ADMIN)) {
-            // 用户账号和项目名称模糊查询
-            if (StringUtils.isNotEmpty(company)) {
-                wrapper.like(User::getAccount, company).or().like(User::getCompany, company);
-            }
+        }
+        if (StringUtils.isNotEmpty(company)) {
+            wrapper.and(query -> query.like(User::getAccount, company).or().like(User::getCompany, company).or().like(User::getEmail, company).or().like(User::getAddress, company).or().like(User::getPhone, company));
         }
         // 时间降序排列
         wrapper.orderByAsc(User::getCreateTime);
@@ -124,8 +149,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             List<Role> roleByUserId = roleService.findRoleByUserId(pageRecord.getId());
             pageRecord.setRoles(roleByUserId);
         }
-        // 封装
-        Map<String, Object> map = new HashMap<>();
         map.put("total", total);
         map.put("users", pageRecords);
         return map;
