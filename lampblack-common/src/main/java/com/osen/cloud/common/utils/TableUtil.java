@@ -29,4 +29,22 @@ public class TableUtil {
     public static String ColdHour = "coldchain_hour";
 
     public static String ColdDay = "coldchain_day";
+
+    /**
+     * VOC数据缓存键名称
+     */
+    public static String Voc_RealTime = "voc_realtime_db";
+
+    public static String Voc_Conn = "voc_connection_db";
+
+    public static String Voc_Alarm = "voc_alarm_db";
+
+    /**
+     * 冷链数据缓存键名称
+     */
+    public static String Cold_RealTime = "coldchain_realtime_db";
+
+    public static String Cold_Conn = "coldchain_connection_db";
+
+    public static String Cold_Alarm = "coldchain_alarm_db";
 }
