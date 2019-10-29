@@ -60,7 +60,7 @@ public class DataHistoryTest {
 
     @Test
     public void test02() {
-        vocHistoryService.createNewTable(ConstUtil.currentTableName(TableUtil.VocHsitory));
+        vocHistoryService.createNewTable(ConstUtil.currentTableName(TableUtil.VocHistory));
         vocMinuteService.createNewTable(ConstUtil.currentTableName(TableUtil.VocMinute));
         vocHourService.createNewTable(ConstUtil.currentTableName(TableUtil.VocHour));
         vocDayService.createNewTable(ConstUtil.currentTableName(TableUtil.VocDay));

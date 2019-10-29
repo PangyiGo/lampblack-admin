@@ -11,7 +11,7 @@ public class TableUtil {
     /*
      * VOC设备数据表名称
      */
-    public static String VocHsitory = "voc_history";
+    public static String VocHistory = "voc_history";
 
     public static String VocMinute = "voc_minute";
 
