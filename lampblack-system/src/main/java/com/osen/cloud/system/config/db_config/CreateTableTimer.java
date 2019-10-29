@@ -2,6 +2,10 @@ package com.osen.cloud.system.config.db_config;
 
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.TableUtil;
+import com.osen.cloud.service.data.coldchain.ColdChainDayService;
+import com.osen.cloud.service.data.coldchain.ColdChainHistoryService;
+import com.osen.cloud.service.data.coldchain.ColdChainHourService;
+import com.osen.cloud.service.data.coldchain.ColdChainMinuteService;
 import com.osen.cloud.service.data.lampblack.DataDayService;
 import com.osen.cloud.service.data.lampblack.DataHistoryService;
 import com.osen.cloud.service.data.lampblack.DataHourService;
@@ -55,6 +59,18 @@ public class CreateTableTimer {
     @Autowired
     private VocDayService vocDayService;
 
+    @Autowired
+    private ColdChainHistoryService coldChainHistoryService;
+
+    @Autowired
+    private ColdChainMinuteService coldChainMinuteService;
+
+    @Autowired
+    private ColdChainHourService coldChainHourService;
+
+    @Autowired
+    private ColdChainDayService coldChainDayService;
+
     /**
      * 每月1号的零点10秒执行
      */
@@ -72,7 +88,7 @@ public class CreateTableTimer {
     }
 
     /**
-     * 每月1号的零点10秒执行
+     * 每月1号的零点15秒执行
      */
     @Scheduled(cron = "15 0 0 1 * ? ")
     public void vocTask() {
@@ -85,6 +101,22 @@ public class CreateTableTimer {
         vocHourService.createNewTable(ConstUtil.createNextTableName(TableUtil.VocHour));
 
         vocDayService.createNewTable(ConstUtil.createNextTableName(TableUtil.VocDay));
+    }
+
+    /**
+     * 每月1号的零点20秒执行
+     */
+    @Scheduled(cron = "20 0 0 1 * ? ")
+    public void coldChainTask() {
+        log.info("当前时间：" + LocalDateTime.now() + ": 定时创建冷链设备当前下一月份数据表");
+
+        coldChainHistoryService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdHistory));
+
+        coldChainMinuteService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdMinute));
+
+        coldChainHourService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdHour));
+
+        coldChainDayService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdDay));
     }
 
     /**
