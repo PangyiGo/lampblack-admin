@@ -162,11 +162,21 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         // 查询用户与设备关联列表
         LambdaQueryWrapper<UserDevice> deviceLambdaQueryWrapper = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getDeviceId, selectOne.getId());
         List<UserDevice> userToDevice = userDeviceService.findUserToDevice(deviceLambdaQueryWrapper);
-        if (userToDevice == null) {
-            // 无指定用户关联，执行删除设备
+        if ((userToDevice == null)) {
+            // 除了超级管理员，无其他用户关联，执行删除设备
             super.removeById(selectOne.getId());
             resultMap.put("tips", "成功删除 " + selectOne.getDeviceNo() + " 设备");
             resultMap.put("code", ConstUtil.OK);
+        } else if (userToDevice.size() == 1 && SecurityUtil.getUserId().equals(userToDevice.get(0).getUserId())) {
+            // 解除超级管理员与设备绑定
+            Map<String, String> map = new HashMap<>();
+            map.put("account", SecurityUtil.getUsername());
+            map.put("deviceNo", deviceNo);
+            if (userDeviceService.channelUserToDevice(map)) {
+                super.removeById(selectOne.getId());
+                resultMap.put("tips", "成功删除 " + selectOne.getDeviceNo() + " 设备");
+                resultMap.put("code", ConstUtil.OK);
+            }
         } else {
             StringBuilder stringBuffer = new StringBuilder();
             stringBuffer.append("设备：").append(selectOne.getDeviceNo()).append(" 与以下账号已关联");
