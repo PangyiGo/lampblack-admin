@@ -76,9 +76,10 @@ public interface DeviceService extends IService<Device> {
      * 统计查询指定用户设备状态
      *
      * @param account 账号
+     * @param type    设备类型
      * @return 信息
      */
-    Map<String, Integer> findDeviceStatusToUser(String account);
+    Map<String, Integer> findDeviceStatusToUser(String account, String type);
 
     /**
      * 查询指定用户下的所有设备列表信息

@@ -206,7 +206,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
     }
 
     @Override
-    public Map<String, Integer> findDeviceStatusToUser(String account) {
+    public Map<String, Integer> findDeviceStatusToUser(String account, String type) {
         // 获取指定用户
         User user = userService.findByUsername(account);
         if (user == null)
@@ -227,12 +227,12 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         }
         // 查询在线设备
         LambdaQueryWrapper<Device> onlineQuery = Wrappers.<Device>lambdaQuery();
-        onlineQuery.eq(Device::getIsLive, ConstUtil.OPEN_STATUS).in(Device::getId, deviceIds);
+        onlineQuery.eq(Device::getType, type).eq(Device::getIsLive, ConstUtil.OPEN_STATUS).in(Device::getId, deviceIds);
         int online = super.count(onlineQuery);
         resultMap.put("online", online);
         // 查询离线设备
         LambdaQueryWrapper<Device> offlineQuery = Wrappers.<Device>lambdaQuery();
-        offlineQuery.eq(Device::getIsLive, ConstUtil.CLOSE_STATUS).in(Device::getId, deviceIds);
+        offlineQuery.eq(Device::getType, type).eq(Device::getIsLive, ConstUtil.CLOSE_STATUS).in(Device::getId, deviceIds);
         int offline = super.count(offlineQuery);
         resultMap.put("offline", offline);
         // 返回

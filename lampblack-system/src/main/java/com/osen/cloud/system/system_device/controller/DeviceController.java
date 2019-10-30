@@ -84,9 +84,9 @@ public class DeviceController {
      * @param account 账号
      * @return 信息
      */
-    @PostMapping("/device/statusCount/{account}")
-    public RestResult findDeviceStatusToUser(@PathVariable("account") String account) {
-        Map<String, Integer> deviceStatusToUser = deviceService.findDeviceStatusToUser(account);
+    @PostMapping("/device/status/{type}/{account}")
+    public RestResult findDeviceStatusToUser(@PathVariable("account") String account,@PathVariable("type")String type) {
+        Map<String, Integer> deviceStatusToUser = deviceService.findDeviceStatusToUser(account,type);
         return RestResultUtil.success(deviceStatusToUser);
     }
 
