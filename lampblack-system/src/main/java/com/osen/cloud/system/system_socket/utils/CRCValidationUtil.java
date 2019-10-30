@@ -33,9 +33,16 @@ public class CRCValidationUtil {
             }
         }
         String toHexString = Integer.toHexString(por).toUpperCase();
+
         boolean flag = toHexString.equalsIgnoreCase(crc);
         if (!flag) {
-            toHexString = "0" + toHexString;
+            if (toHexString.length() == 3) {
+                toHexString = "0" + toHexString;
+            } else if (toHexString.length() == 2) {
+                toHexString = "00" + toHexString;
+            } else if (toHexString.length() == 1) {
+                toHexString = "000" + toHexString;
+            }
             flag = toHexString.equalsIgnoreCase(crc);
         }
         return flag;
