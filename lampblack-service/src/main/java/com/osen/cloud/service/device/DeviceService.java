@@ -43,9 +43,10 @@ public interface DeviceService extends IService<Device> {
      * 分页查询指定用户的设备列表信息
      *
      * @param params 参数
+     * @param type   设备类型
      * @return 信息
      */
-    Map<String, Object> findDeviceByUserAccount(Map<String, Object> params);
+    Map<String, Object> findDeviceByUserAccount(Map<String, Object> params, String type);
 
     /**
      * 分页查询系统所有设备信息列表

@@ -13,6 +13,7 @@ import com.osen.cloud.common.entity.system_user.UserDevice;
 import com.osen.cloud.common.enums.DeviceType;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.model.device.DeviceMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import com.osen.cloud.service.device.DeviceService;
@@ -83,10 +84,11 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
     }
 
     @Override
-    public Map<String, Object> findDeviceByUserAccount(Map<String, Object> params) {
+    public Map<String, Object> findDeviceByUserAccount(Map<String, Object> params, String type) {
         Map<String, Object> resultMap = new HashMap<>(0);
         List<Device> devices = new ArrayList<>(0);
-        String username = (String) params.get("account");
+        // 当前登录用户账号
+        String username = SecurityUtil.getUsername();
         // 获取指定用户
         User user = userService.findByUsername(username);
         if (user == null)
@@ -99,6 +101,8 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         long total = 0;
         if (userDevices != null && userDevices.size() > 0) {
             LambdaQueryWrapper<Device> deviceLambdaQueryWrapper = Wrappers.<Device>lambdaQuery();
+            // 查询设备类型
+            deviceLambdaQueryWrapper.eq(Device::getType, type);
             // 获取指定用户设备列表
             List<Integer> deviceId = new ArrayList<>();
             for (UserDevice userDevice : userDevices) {
@@ -109,7 +113,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
             // 设备号
             String deviceNo = (String) params.get("deviceNo");
             if (StringUtils.isNotEmpty(deviceNo))
-                deviceLambdaQueryWrapper.like(Device::getDeviceNo, deviceNo);
+                deviceLambdaQueryWrapper.and(query -> query.like(Device::getDeviceNo, deviceNo).or().like(Device::getName, deviceNo).or().like(Device::getProvince, deviceNo).or().like(Device::getCity, deviceNo).or().like(Device::getArea, deviceNo).or().like(Device::getAddress, deviceNo));
             // 分页查询
             Page<Device> devicePage = new Page<>(pageNumber, ConstUtil.PAGE_NUMBER);
             IPage<Device> deviceIPage = super.page(devicePage, deviceLambdaQueryWrapper);

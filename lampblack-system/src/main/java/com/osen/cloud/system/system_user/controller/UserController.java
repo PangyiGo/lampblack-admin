@@ -112,6 +112,8 @@ public class UserController {
         User user = userService.findByUsername(account);
         if (user == null)
             throw new ControllerException("查询不到删除指定用户");
+        if (!SecurityUtil.getUserId().equals(user.getPid()))
+            throw new ControllerException("无法删除其他账号的用户");
         boolean userByAccount = userService.deleteUserByAccount(user);
         if (userByAccount)
             return RestResultUtil.success();

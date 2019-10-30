@@ -32,9 +32,9 @@ public class DeviceController {
      * @param params 参数
      * @return 信息
      */
-    @PostMapping("/device/toUserAccount")
-    public RestResult findDeviceByUserAccount(@RequestBody Map<String, Object> params) {
-        Map<String, Object> deviceByUserAccount = deviceService.findDeviceByUserAccount(params);
+    @PostMapping("/device/toUserAccount/{type}")
+    public RestResult findDeviceByUserAccount(@RequestBody Map<String, Object> params, @PathVariable("type") String type) {
+        Map<String, Object> deviceByUserAccount = deviceService.findDeviceByUserAccount(params,type);
         return RestResultUtil.success(deviceByUserAccount);
     }
 
