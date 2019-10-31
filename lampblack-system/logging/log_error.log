@@ -1,2 +1,6 @@
 2019-10-31 09:44:02.543 [Socket Server Thread-01] ERROR c.o.c.s.system_socket.config.SocketServerStarter - Address already in use: bind
 2019-10-31 09:44:02.547 [Socket Server Thread-01] ERROR c.o.c.s.system_socket.config.SocketServerStarter - system_socket service start error
+2019-10-31 10:31:00.080 [Socket Server Thread-01] ERROR c.o.c.s.system_socket.config.SocketServerStarter - Address already in use: bind
+2019-10-31 10:31:00.081 [Socket Server Thread-01] ERROR c.o.c.s.system_socket.config.SocketServerStarter - system_socket service start error
+2019-10-31 10:31:30.149 [Socket Server Thread-01] ERROR c.o.c.s.system_socket.config.SocketServerStarter - Address already in use: bind
+2019-10-31 10:31:30.155 [Socket Server Thread-01] ERROR c.o.c.s.system_socket.config.SocketServerStarter - system_socket service start error

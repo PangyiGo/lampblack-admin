@@ -1,5 +1,6 @@
 package com.osen.cloud.system.system_device;
 
+import com.osen.cloud.common.enums.MonthCode;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.service.device.DeviceService;
 import org.junit.Test;
@@ -30,8 +31,8 @@ public class DeviceTest {
 
     @Test
     public void test02() {
-        String tableName = "data_history_201909";
-        boolean time = ConstUtil.compareToTime(tableName);
+        String tableName = "data_history_201908";
+        boolean time = ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth());
         System.out.println(time);
     }
 }
