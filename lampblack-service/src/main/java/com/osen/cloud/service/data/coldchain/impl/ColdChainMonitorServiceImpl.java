@@ -1,5 +1,7 @@
 package com.osen.cloud.service.data.coldchain.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainMonitor;
 import com.osen.cloud.model.coldchain.ColdChainMonitorMapper;
@@ -36,5 +38,15 @@ public class ColdChainMonitorServiceImpl extends ServiceImpl<ColdChainMonitorMap
         coldChainMonitor.setCreateTime(LocalDateTime.now());
         coldChainMonitor.setUpdateTime(LocalDateTime.now());
         super.save(coldChainMonitor);
+    }
+
+    @Override
+    public ColdChainMonitor getMonitorToDeviceNo(String deviceNo) {
+        LambdaQueryWrapper<ColdChainMonitor> wrapper = Wrappers.<ColdChainMonitor>lambdaQuery().eq(ColdChainMonitor::getDeviceNo, deviceNo);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

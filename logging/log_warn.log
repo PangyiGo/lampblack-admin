@@ -130,3 +130,29 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 2019-10-31 09:44:55.706 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
 2019-10-31 09:45:01.547 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
 2019-10-31 09:45:02.457 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 10:41:12.363 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 10:41:18.554 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 12:04:34.574 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 12:04:40.861 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 12:06:30.310 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 12:06:36.781 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 12:36:53.243 [XNIO-1 task-61] WARN  com.zaxxer.hikari.pool.PoolBase - DatebookHikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@42fdb760 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-10-31 12:48:01.767 [XNIO-1 task-14] WARN  com.zaxxer.hikari.pool.PoolBase - DatebookHikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2d48b502 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-10-31 12:48:01.775 [XNIO-1 task-23] WARN  com.zaxxer.hikari.pool.PoolBase - DatebookHikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@159329d2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-10-31 12:48:06.774 [XNIO-1 task-14] WARN  com.zaxxer.hikari.pool.PoolBase - DatebookHikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2c947c9d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-10-31 12:48:06.782 [XNIO-1 task-23] WARN  com.zaxxer.hikari.pool.PoolBase - DatebookHikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@12915167 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-10-31 12:48:11.779 [XNIO-1 task-14] WARN  com.zaxxer.hikari.pool.PoolBase - DatebookHikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3b8c5619 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-10-31 13:45:35.116 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 13:45:41.660 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 13:47:23.834 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 13:47:30.572 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 14:14:33.759 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 14:14:40.053 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 14:25:27.115 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 14:25:33.610 [RMI TCP Connection(1)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 14:32:02.578 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 14:32:09.061 [RMI TCP Connection(3)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 14:41:35.923 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-31 14:41:42.074 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-10-31 14:57:07.094 [XNIO-1 task-1] WARN  com.zaxxer.hikari.pool.PoolBase - DatebookHikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@218ddbbb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-10-31 15:10:49.983 [XNIO-1 task-24] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException]

@@ -2,6 +2,10 @@ package com.osen.cloud.system.dev_data;
 
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.TableUtil;
+import com.osen.cloud.service.data.coldchain.ColdChainDayService;
+import com.osen.cloud.service.data.coldchain.ColdChainHistoryService;
+import com.osen.cloud.service.data.coldchain.ColdChainHourService;
+import com.osen.cloud.service.data.coldchain.ColdChainMinuteService;
 import com.osen.cloud.service.data.lampblack.DataDayService;
 import com.osen.cloud.service.data.lampblack.DataHistoryService;
 import com.osen.cloud.service.data.lampblack.DataHourService;
@@ -50,6 +54,18 @@ public class DataHistoryTest {
     @Autowired
     private VocDayService vocDayService;
 
+    @Autowired
+    private ColdChainHistoryService coldChainHistoryService;
+
+    @Autowired
+    private ColdChainMinuteService coldChainMinuteService;
+
+    @Autowired
+    private ColdChainHourService coldChainHourService;
+
+    @Autowired
+    private ColdChainDayService coldChainDayService;
+
     @Test
     public void test01() {
         dataHistoryService.createNewTable(ConstUtil.currentTableName(ConstUtil.REALTIME_TB));
@@ -64,5 +80,13 @@ public class DataHistoryTest {
         vocMinuteService.createNewTable(ConstUtil.currentTableName(TableUtil.VocMinute));
         vocHourService.createNewTable(ConstUtil.currentTableName(TableUtil.VocHour));
         vocDayService.createNewTable(ConstUtil.currentTableName(TableUtil.VocDay));
+    }
+
+    @Test
+    public void test03() {
+        coldChainHistoryService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdHistory));
+        coldChainMinuteService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdMinute));
+        coldChainHourService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdHour));
+        coldChainDayService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdDay));
     }
 }

@@ -24,4 +24,12 @@ public interface ColdChainMonitorService extends IService<ColdChainMonitor> {
      * @param deviceNo 设备号
      */
     void insertDefaultMonitor(String deviceNo);
+
+    /**
+     * 根据设备号获取对应的监控点名称
+     *
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    ColdChainMonitor getMonitorToDeviceNo(String deviceNo);
 }
