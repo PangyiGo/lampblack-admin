@@ -431,3 +431,8 @@
 2019-10-31 15:10:02.040 [XNIO-1 task-16] INFO  c.o.c.s.w.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-10-31 15:10:27.216 [XNIO-1 task-15] INFO  c.o.c.s.w.handler.UserAuthenticationEntryPoint - 用户未登录
 2019-10-31 15:10:44.021 [XNIO-1 task-19] INFO  c.o.c.s.w.handler.UserAuthenticationSuccessHandler - 用户登录成功
+2019-10-31 15:15:18.609 [Thread-27] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-10-31 15:15:18.612 [Thread-27] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-31 15:15:19.748 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown initiated...
+2019-10-31 15:15:19.767 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - DatebookHikariCP - Shutdown completed.
+2019-10-31 15:15:19.777 [Thread-27] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'

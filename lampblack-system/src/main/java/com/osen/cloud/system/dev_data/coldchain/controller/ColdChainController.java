@@ -82,21 +82,16 @@ public class ColdChainController {
         }
         List<Object> data = new ArrayList<>(0);
         ColdChainMonitor monitor = coldChainMonitorService.getMonitorToDeviceNo(deviceNo);
-        if (monitor != null) {
-            data.add(monitor.getM01());
-            data.add(monitor.getM02());
-            data.add(monitor.getM03());
-            data.add(monitor.getM04());
-        } else {
+        if (monitor == null) {
             monitor.setM01("未定义监控点#1");
             monitor.setM02("未定义监控点#2");
             monitor.setM03("未定义监控点#3");
             monitor.setM03("未定义监控点#4");
-            data.add(monitor.getM01());
-            data.add(monitor.getM02());
-            data.add(monitor.getM03());
-            data.add(monitor.getM04());
         }
+        data.add(monitor.getM01());
+        data.add(monitor.getM02());
+        data.add(monitor.getM03());
+        data.add(monitor.getM04());
         // 历史数据
         data.add(todayVOS);
         return RestResultUtil.success(data);
