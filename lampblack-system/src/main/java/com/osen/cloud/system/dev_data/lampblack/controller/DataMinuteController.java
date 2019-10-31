@@ -2,13 +2,14 @@ package com.osen.cloud.system.dev_data.lampblack.controller;
 
 import com.osen.cloud.common.entity.dev_lampblack.DataMinute;
 import com.osen.cloud.common.entity.system_device.Device;
+import com.osen.cloud.common.enums.MonthCode;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.service.data.lampblack.DataMinuteService;
 import com.osen.cloud.service.device.DeviceService;
-import com.osen.cloud.system.dev_data.lampblack.util.ExportExcelUtil;
 import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
+import com.osen.cloud.system.dev_data.lampblack.util.ExportExcelUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,7 +125,7 @@ public class DataMinuteController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.MINUTE_TB);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName))
+            if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<DataMinute> history = dataMinuteService.queryDataMinuteByDate(startDate, endDate, deviceNo);

@@ -3,6 +3,7 @@ package com.osen.cloud.system.dev_data.lampblack.controller;
 import cn.hutool.core.bean.BeanUtil;
 import com.osen.cloud.common.entity.dev_lampblack.DataHistory;
 import com.osen.cloud.common.entity.system_device.Device;
+import com.osen.cloud.common.enums.MonthCode;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
@@ -149,7 +150,7 @@ public class DataHistoryController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.REALTIME_TB);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName))
+            if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<DataHistory> history = dataHistoryService.queryDataHistoryByDate(startDate, endDate, deviceNo);

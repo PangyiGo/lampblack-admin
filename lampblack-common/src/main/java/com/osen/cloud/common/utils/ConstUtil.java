@@ -156,13 +156,14 @@ public class ConstUtil {
     /**
      * 时间日前后比较，判断表名是否有效
      *
-     * @param tableName 表名
-     * @return 信息,true为表名无效，false表名有效
+     * @param tableName  表名
+     * @param afterMonth 最早数据表的前一个月份
+     * @return 信息, true为表名无效，false表名有效
      */
-    public static boolean compareToTime(String tableName) {
+    public static boolean compareToTime(String tableName, int afterMonth) {
         String sub = StrUtil.sub(tableName, -2, tableName.length());
         int time = Integer.valueOf(sub);
-        LocalDate one = LocalDate.of(2019, 8, 1);
+        LocalDate one = LocalDate.of(2019, afterMonth, 1);
         LocalDate two = LocalDate.of(2019, time, 1);
         return !two.isAfter(one);
     }
