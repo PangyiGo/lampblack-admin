@@ -3,6 +3,8 @@ package com.osen.cloud.service.data.vocs;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.dev_vocs.VocAlarm;
 
+import java.util.List;
+
 /**
  * User: PangYi
  * Date: 2019-10-24
@@ -17,4 +19,12 @@ public interface VocAlarmService extends IService<VocAlarm> {
      * @param vocAlarm 参数
      */
     void insertAlarm(VocAlarm vocAlarm);
+
+    /**
+     * 根据账号获取用户设备报警实时数据
+     *
+     * @param account 账号
+     * @return 信息
+     */
+    List<VocAlarm> getRealtimeAlarm(String account);
 }
