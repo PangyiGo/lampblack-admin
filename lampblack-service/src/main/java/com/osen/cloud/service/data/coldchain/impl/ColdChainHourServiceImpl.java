@@ -1,11 +1,17 @@
 package com.osen.cloud.service.data.coldchain.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainHour;
 import com.osen.cloud.model.coldchain.ColdChainHourMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainHourService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: PangYi
@@ -26,5 +32,20 @@ public class ColdChainHourServiceImpl extends ServiceImpl<ColdChainHourMapper, C
     @Override
     public void createNewTable(String tableName) {
         baseMapper.createNewTable(tableName);
+    }
+
+    @Override
+    public List<ColdChainHour> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        List<ColdChainHour> coldChainHours = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<ColdChainHour> query = Wrappers.<ColdChainHour>lambdaQuery();
+        query.eq(ColdChainHour::getDeviceNo, deviceNo);
+        query.between(ColdChainHour::getDateTime, start, end).orderByAsc(ColdChainHour::getDateTime);
+        try {
+            coldChainHours = super.list(query);
+        } catch (Exception e) {
+            return coldChainHours;
+        }
+        return coldChainHours;
     }
 }

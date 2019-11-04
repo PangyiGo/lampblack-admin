@@ -27,7 +27,7 @@ import java.util.List;
 @RestController
 @RequestMapping("${restful.prefix}")
 @Slf4j
-public class VocController {
+public class VocHistoryController {
 
     @Autowired
     private VocHistoryService vocHistoryService;

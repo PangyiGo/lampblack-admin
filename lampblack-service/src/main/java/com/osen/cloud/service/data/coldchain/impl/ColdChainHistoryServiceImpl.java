@@ -71,4 +71,19 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
         }
         return chainHistories;
     }
+
+    @Override
+    public List<ColdChainHistory> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        List<ColdChainHistory> chainHistories = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<ColdChainHistory> query = Wrappers.<ColdChainHistory>lambdaQuery();
+        query.eq(ColdChainHistory::getDeviceNo, deviceNo);
+        query.between(ColdChainHistory::getDateTime, start, end).orderByAsc(ColdChainHistory::getDateTime);
+        try {
+            chainHistories = super.list(query);
+        } catch (Exception e) {
+            return chainHistories;
+        }
+        return chainHistories;
+    }
 }
