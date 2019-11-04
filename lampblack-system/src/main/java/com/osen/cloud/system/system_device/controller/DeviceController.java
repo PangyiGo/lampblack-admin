@@ -28,7 +28,7 @@ public class DeviceController {
 
     /**
      * 分页查询指定用户设备列表信息
-     *
+     * type 设备类型
      * @param params 参数
      * @return 信息
      */
