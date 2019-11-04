@@ -3,6 +3,9 @@ package com.osen.cloud.service.data.vocs;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.dev_vocs.VocMinute;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 /**
  * User: PangYi
  * Date: 2019-10-24
@@ -24,4 +27,14 @@ public interface VocMinuteService extends IService<VocMinute> {
      * @param tableName 新表名
      */
     void createNewTable(String tableName);
+
+    /**
+     * 根据设备号查询设备时间的历史数据记录
+     *
+     * @param start    开始时间
+     * @param end      结束时间
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    List<VocMinute> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
 }

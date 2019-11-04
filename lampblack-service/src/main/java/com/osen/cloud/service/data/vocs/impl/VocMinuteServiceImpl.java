@@ -1,11 +1,17 @@
 package com.osen.cloud.service.data.vocs.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_vocs.VocMinute;
 import com.osen.cloud.model.vos.VocMinuteMapper;
 import com.osen.cloud.service.data.vocs.VocMinuteService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: PangYi
@@ -26,5 +32,20 @@ public class VocMinuteServiceImpl extends ServiceImpl<VocMinuteMapper, VocMinute
     @Override
     public void createNewTable(String tableName) {
         baseMapper.createNewTable(tableName);
+    }
+
+    @Override
+    public List<VocMinute> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        List<VocMinute> vocMinutes = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<VocMinute> query = Wrappers.<VocMinute>lambdaQuery();
+        query.eq(VocMinute::getDeviceNo, deviceNo);
+        query.between(VocMinute::getDateTime, start, end).orderByAsc(VocMinute::getDateTime);
+        try {
+            vocMinutes = super.list(query);
+        } catch (Exception e) {
+            return vocMinutes;
+        }
+        return vocMinutes;
     }
 }

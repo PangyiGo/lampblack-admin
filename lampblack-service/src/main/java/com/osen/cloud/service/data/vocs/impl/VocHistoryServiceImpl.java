@@ -63,23 +63,38 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
         LambdaQueryWrapper<VocHistory> query = Wrappers.<VocHistory>lambdaQuery();
         switch (args) {
             case "voc":
-                query.select(VocHistory::getVoc,VocHistory::getDateTime);
+                query.select(VocHistory::getVoc, VocHistory::getDateTime);
                 break;
             case "flow":
-                query.select(VocHistory::getFlow,VocHistory::getDateTime);
+                query.select(VocHistory::getFlow, VocHistory::getDateTime);
                 break;
             case "speed":
-                query.select(VocHistory::getSpeed,VocHistory::getDateTime);
+                query.select(VocHistory::getSpeed, VocHistory::getDateTime);
                 break;
             case "pressure":
-                query.select(VocHistory::getPressure,VocHistory::getDateTime);
+                query.select(VocHistory::getPressure, VocHistory::getDateTime);
                 break;
             case "temp":
-                query.select(VocHistory::getTemp,VocHistory::getDateTime);
+                query.select(VocHistory::getTemp, VocHistory::getDateTime);
                 break;
         }
         query.eq(VocHistory::getDeviceNo, deviceNo);
         query.between(VocHistory::getDateTime, start, nowToday).orderByAsc(VocHistory::getDateTime);
+        try {
+            vocHistories = super.list(query);
+        } catch (Exception e) {
+            return vocHistories;
+        }
+        return vocHistories;
+    }
+
+    @Override
+    public List<VocHistory> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        List<VocHistory> vocHistories = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<VocHistory> query = Wrappers.<VocHistory>lambdaQuery();
+        query.eq(VocHistory::getDeviceNo, deviceNo);
+        query.between(VocHistory::getDateTime, start, end).orderByAsc(VocHistory::getDateTime);
         try {
             vocHistories = super.list(query);
         } catch (Exception e) {

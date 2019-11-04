@@ -3,6 +3,7 @@ package com.osen.cloud.service.data.vocs;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.dev_vocs.VocHistory;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -43,4 +44,14 @@ public interface VocHistoryService extends IService<VocHistory> {
      * @return 信息
      */
     List<VocHistory> getDataToday(String args, String deviceNo);
+
+    /**
+     * 根据设备号查询设备时间的历史数据记录
+     *
+     * @param start    开始时间
+     * @param end      结束时间
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    List<VocHistory> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
 }
