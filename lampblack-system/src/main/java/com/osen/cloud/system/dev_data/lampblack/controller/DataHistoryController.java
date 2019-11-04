@@ -61,10 +61,9 @@ public class DataHistoryController {
      * @param params 设备号列表
      * @return 信息
      */
-    @PostMapping("/data/realtime/batchFind")
-    public RestResult batchFindDataToDeviceNo(@RequestBody Map<String, List<String>> params) {
-        List<String> equipmentIDList = params.get("equipmentIDList");
-        List<DataHistory> dataHistoryList = dataHistoryService.batchFindDataToDeviceNo(equipmentIDList);
+    @PostMapping("/data/realtime/batch")
+    public RestResult batchFindDataToDeviceNo() {
+        List<DataHistory> dataHistoryList = dataHistoryService.batchFindDataToDeviceNo();
         return RestResultUtil.success(dataHistoryList);
     }
 

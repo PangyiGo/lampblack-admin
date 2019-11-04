@@ -39,10 +39,9 @@ public interface DataHistoryService extends IService<DataHistory> {
     /**
      * 批量查询设备列表实时数据
      *
-     * @param equipmentIDList 设备号列表
      * @return 信息
      */
-    List<DataHistory> batchFindDataToDeviceNo(List<String> equipmentIDList);
+    List<DataHistory> batchFindDataToDeviceNo();
 
     /**
      * 查询实时数据历史记录

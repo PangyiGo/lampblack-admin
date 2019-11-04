@@ -5,10 +5,12 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_lampblack.DataHistory;
-import com.osen.cloud.common.except.type.ServiceException;
+import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.utils.ConstUtil;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.model.lampblack.DataHistoryMapper;
 import com.osen.cloud.service.data.lampblack.DataHistoryService;
+import com.osen.cloud.service.device.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -19,6 +21,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -31,6 +34,9 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private DeviceService deviceService;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -64,12 +70,13 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
     }
 
     @Override
-    public List<DataHistory> batchFindDataToDeviceNo(List<String> equipmentIDList) {
+    public List<DataHistory> batchFindDataToDeviceNo() {
         List<DataHistory> dataHistoryList = new ArrayList<>(0);
-        if (equipmentIDList.size() == 0)
-            throw new ServiceException(ConstUtil.UNOK, "查询实时数据列表为空");
-        for (String deviceNo : equipmentIDList) {
-            DataHistory dataHistory = this.returnRealtimeData(deviceNo);
+        String username = SecurityUtil.getUsername();
+        Map<String, Object> device = deviceService.finaAllDeviceToUser(username);
+        List<Device> deviceList = (List<Device>) device.get("devices");
+        for (Device dev : deviceList) {
+            DataHistory dataHistory = this.returnRealtimeData(dev.getDeviceNo());
             dataHistoryList.add(dataHistory);
         }
         return dataHistoryList;
