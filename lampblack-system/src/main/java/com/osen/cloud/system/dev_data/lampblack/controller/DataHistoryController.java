@@ -58,7 +58,6 @@ public class DataHistoryController {
     /**
      * 批量查询指定设备号列表实时数据
      *
-     * @param params 设备号列表
      * @return 信息
      */
     @PostMapping("/data/realtime/batch")

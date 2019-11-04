@@ -53,4 +53,11 @@ public interface ColdChainHistoryService extends IService<ColdChainHistory> {
      * @return 信息
      */
     List<ColdChainHistory> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
+
+    /**
+     * 批量查询当前用户的实时数据
+     *
+     * @return 信息
+     */
+    List<ColdChainHistory> getRealtimeToUser();
 }

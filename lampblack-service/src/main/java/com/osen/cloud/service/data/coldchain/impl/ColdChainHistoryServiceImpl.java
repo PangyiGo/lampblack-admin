@@ -5,9 +5,12 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainHistory;
+import com.osen.cloud.common.entity.system_device.Device;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.common.utils.TableUtil;
 import com.osen.cloud.model.coldchain.ColdChainHistoryMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainHistoryService;
+import com.osen.cloud.service.device.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -17,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -29,6 +33,9 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private DeviceService deviceService;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -83,6 +90,19 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
             chainHistories = super.list(query);
         } catch (Exception e) {
             return chainHistories;
+        }
+        return chainHistories;
+    }
+
+    @Override
+    public List<ColdChainHistory> getRealtimeToUser() {
+        String username = SecurityUtil.getUsername();
+        Map<String, Object> map = deviceService.finaAllDeviceToUser(username);
+        List<Device> deviceList = (List<Device>) map.get("devices");
+        List<ColdChainHistory> chainHistories = new ArrayList<>(0);
+        for (Device device : deviceList) {
+            ColdChainHistory realtime = this.getRealtime(device.getDeviceNo());
+            chainHistories.add(realtime);
         }
         return chainHistories;
     }

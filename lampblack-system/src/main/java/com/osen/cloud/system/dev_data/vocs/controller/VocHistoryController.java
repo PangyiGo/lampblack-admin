@@ -187,4 +187,15 @@ public class VocHistoryController {
             log.error(e.getMessage());
         }
     }
+
+    /**
+     * 查新当前用户的设备实时数据
+     *
+     * @return 信息
+     */
+    @PostMapping("/voc/realtime/batch")
+    public RestResult getBatchRealtime() {
+        List<VocHistory> realtimeToUser = vocHistoryService.getRealtimeToUser();
+        return RestResultUtil.success(realtimeToUser);
+    }
 }

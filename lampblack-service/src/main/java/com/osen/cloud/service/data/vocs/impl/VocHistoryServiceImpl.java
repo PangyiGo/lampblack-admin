@@ -5,9 +5,12 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_vocs.VocHistory;
+import com.osen.cloud.common.entity.system_device.Device;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.common.utils.TableUtil;
 import com.osen.cloud.model.vos.VocHistoryMapper;
 import com.osen.cloud.service.data.vocs.VocHistoryService;
+import com.osen.cloud.service.device.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -17,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -29,6 +33,9 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private DeviceService deviceService;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -99,6 +106,19 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
             vocHistories = super.list(query);
         } catch (Exception e) {
             return vocHistories;
+        }
+        return vocHistories;
+    }
+
+    @Override
+    public List<VocHistory> getRealtimeToUser() {
+        List<VocHistory> vocHistories = new ArrayList<>(0);
+        String username = SecurityUtil.getUsername();
+        Map<String, Object> map = deviceService.finaAllDeviceToUser(username);
+        List<Device> deviceList = (List<Device>) map.get("devices");
+        for (Device device : deviceList) {
+            VocHistory realtime = this.getRealtime(device.getDeviceNo());
+            vocHistories.add(realtime);
         }
         return vocHistories;
     }

@@ -206,4 +206,15 @@ public class ColdChainHistoryController {
         }
     }
 
+    /**
+     * 查新当前用户的设备实时数据
+     *
+     * @return 信息
+     */
+    @PostMapping("/coldchain/realtime/batch")
+    public RestResult getBatchRealtime() {
+        List<ColdChainHistory> realtimeToUser = coldChainHistoryService.getRealtimeToUser();
+        return RestResultUtil.success(realtimeToUser);
+    }
+
 }
