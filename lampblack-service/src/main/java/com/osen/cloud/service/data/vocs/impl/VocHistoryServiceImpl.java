@@ -63,19 +63,19 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
         LambdaQueryWrapper<VocHistory> query = Wrappers.<VocHistory>lambdaQuery();
         switch (args) {
             case "voc":
-                query.select(VocHistory::getVoc);
+                query.select(VocHistory::getVoc,VocHistory::getDateTime);
                 break;
             case "flow":
-                query.select(VocHistory::getFlow);
+                query.select(VocHistory::getFlow,VocHistory::getDateTime);
                 break;
             case "speed":
-                query.select(VocHistory::getSpeed);
+                query.select(VocHistory::getSpeed,VocHistory::getDateTime);
                 break;
             case "pressure":
-                query.select(VocHistory::getPressure);
+                query.select(VocHistory::getPressure,VocHistory::getDateTime);
                 break;
             case "temp":
-                query.select(VocHistory::getTemp);
+                query.select(VocHistory::getTemp,VocHistory::getDateTime);
                 break;
         }
         query.eq(VocHistory::getDeviceNo, deviceNo);

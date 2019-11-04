@@ -2,8 +2,12 @@ package com.osen.cloud.system.dev_data.vocs.controller;
 
 import com.osen.cloud.common.entity.dev_vocs.VocHistory;
 import com.osen.cloud.common.result.RestResult;
+import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
+import com.osen.cloud.common.utils.TableUtil;
 import com.osen.cloud.service.data.vocs.VocHistoryService;
+import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
+import com.osen.cloud.system.dev_data.vocs.util.TodayVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,7 +55,32 @@ public class VocController {
      */
     @PostMapping("/voc/today/{args}/{deviceNo}")
     public RestResult getDataToday(@PathVariable("args") String args, @PathVariable("deviceNo") String deviceNo) {
+        // 设置表名
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.VocHistory));
         List<VocHistory> histories = vocHistoryService.getDataToday(args, deviceNo);
-        return RestResultUtil.success(histories);
+        List<TodayVO> todayVOS = new ArrayList<>(0);
+        for (VocHistory vocHistory : histories) {
+            TodayVO todayVO = new TodayVO();
+            switch (args) {
+                case "voc":
+                    todayVO.setData(vocHistory.getVoc());
+                    break;
+                case "flow":
+                    todayVO.setData(vocHistory.getFlow());
+                    break;
+                case "speed":
+                    todayVO.setData(vocHistory.getSpeed());
+                    break;
+                case "pressure":
+                    todayVO.setData(vocHistory.getPressure());
+                    break;
+                case "temp":
+                    todayVO.setData(vocHistory.getTemp());
+                    break;
+            }
+            todayVO.setDateTime(vocHistory.getDateTime());
+            todayVOS.add(todayVO);
+        }
+        return RestResultUtil.success(todayVOS);
     }
 }
