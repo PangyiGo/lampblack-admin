@@ -55,4 +55,34 @@ public class ColdChainTest {
 
         stringRedisTemplate.boundHashOps(TableUtil.Cold_RealTime).put(coldChainHistory.getDeviceNo(), JSON.toJSONString(coldChainHistory));
     }
+
+    @Test
+    public void test02() {
+        ColdChainHistory coldChainHistory = new ColdChainHistory();
+        coldChainHistory.setId(1);
+        coldChainHistory.setDeviceNo("2019102900001");
+        coldChainHistory.setDateTime(LocalDateTime.now());
+
+        coldChainHistory.setT01(new BigDecimal(20));
+        coldChainHistory.setH01(new BigDecimal(30));
+        coldChainHistory.setT01Flag("N");
+        coldChainHistory.setH01Flag("T");
+
+        coldChainHistory.setT02(new BigDecimal(26));
+        coldChainHistory.setH02(new BigDecimal(22));
+        coldChainHistory.setT02Flag("N");
+        coldChainHistory.setH02Flag("N");
+
+        coldChainHistory.setT03(new BigDecimal(10));
+        coldChainHistory.setH03(new BigDecimal(30));
+        coldChainHistory.setT03Flag("T");
+        coldChainHistory.setH03Flag("N");
+
+        coldChainHistory.setT04(new BigDecimal(40));
+        coldChainHistory.setH04(new BigDecimal(20));
+        coldChainHistory.setT04Flag("N");
+        coldChainHistory.setH04Flag("N");
+
+        stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).put(coldChainHistory.getDeviceNo(), JSON.toJSONString(coldChainHistory));
+    }
 }

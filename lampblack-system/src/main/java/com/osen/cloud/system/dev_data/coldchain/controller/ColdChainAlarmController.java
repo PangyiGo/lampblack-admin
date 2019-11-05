@@ -56,6 +56,7 @@ public class ColdChainAlarmController {
             }
             BeanUtil.copyProperties(coldChainAlarm, realTimeVO);
             BeanUtil.copyProperties(monitor, realTimeVO);
+            realTimeVOS.add(realTimeVO);
         }
         return RestResultUtil.success(realTimeVOS);
     }

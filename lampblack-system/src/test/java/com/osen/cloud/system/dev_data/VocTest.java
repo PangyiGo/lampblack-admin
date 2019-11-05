@@ -48,4 +48,26 @@ public class VocTest {
 
         stringRedisTemplate.boundHashOps(TableUtil.Voc_RealTime).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
     }
+
+    @Test
+    public void test02(){
+        VocHistory vocHistory = new VocHistory();
+
+        vocHistory.setDeviceNo("2019103000001");
+        vocHistory.setDateTime(LocalDateTime.now());
+
+        vocHistory.setVoc(new BigDecimal(5.6));
+        vocHistory.setFlow(new BigDecimal(60));
+        vocHistory.setSpeed(new BigDecimal(8));
+        vocHistory.setPressure(new BigDecimal(900));
+        vocHistory.setTemp(new BigDecimal(29));
+
+        vocHistory.setVocFlag("N");
+        vocHistory.setFlowFlag("T");
+        vocHistory.setSpeedFlag("N");
+        vocHistory.setPressureFlag("T");
+        vocHistory.setTempFlag("N");
+
+        stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
+    }
 }
