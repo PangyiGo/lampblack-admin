@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.dev_vocs.VocAlarm;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -27,4 +28,13 @@ public interface VocAlarmService extends IService<VocAlarm> {
      * @return 信息
      */
     List<VocAlarm> getRealtimeAlarm(String account);
+
+    /**
+     * 获取指定设备报警记录
+     * 分页
+     *
+     * @param params 参数
+     * @return 信息
+     */
+    Map<String, Object> getAlarmHistory(Map<String, Object> params);
 }

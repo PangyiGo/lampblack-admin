@@ -10,13 +10,12 @@ import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import com.osen.cloud.system.dev_data.coldchain.util.RealTimeVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -59,5 +58,43 @@ public class ColdChainAlarmController {
             realTimeVOS.add(realTimeVO);
         }
         return RestResultUtil.success(realTimeVOS);
+    }
+
+    /**
+     * 分页查询指定设备的报警记录
+     *
+     * @param params 参数
+     * @return 信息
+     */
+    @PostMapping("/coldchain/alarm/history")
+    public RestResult getAlarmHistory(@RequestBody Map<String, Object> params) {
+        // 数据表
+        List<RealTimeVO> realTimeVOS = new ArrayList<>(0);
+        Map<String, Object> alarmHistory = coldChainAlarmService.getAlarmHistory(params);
+        List<ColdChainAlarm> coldChainAlarms = (List<ColdChainAlarm>) alarmHistory.get("alarmHistory");
+        long total = (long) alarmHistory.get("total");
+        // 结果
+        Map<String, Object> map = new HashMap<>(0);
+        if (coldChainAlarms == null) {
+            map.put("alarmHistory", realTimeVOS);
+            map.put("total", 0);
+            return RestResultUtil.success(map);
+        }
+        for (ColdChainAlarm coldChainAlarm : coldChainAlarms) {
+            RealTimeVO realTimeVO = new RealTimeVO();
+            ColdChainMonitor monitor = coldChainMonitorService.getMonitorToDeviceNo(coldChainAlarm.getDeviceNo());
+            if (monitor == null) {
+                realTimeVO.setM01("未定义#1");
+                realTimeVO.setM02("未定义#2");
+                realTimeVO.setM03("未定义#3");
+                realTimeVO.setM03("未定义#4");
+            }
+            BeanUtil.copyProperties(coldChainAlarm, realTimeVO);
+            BeanUtil.copyProperties(monitor, realTimeVO);
+            realTimeVOS.add(realTimeVO);
+        }
+        map.put("alarmHistory", realTimeVOS);
+        map.put("total", total);
+        return RestResultUtil.success(map);
     }
 }

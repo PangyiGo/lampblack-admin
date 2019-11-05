@@ -6,12 +6,10 @@ import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.service.data.vocs.VocAlarmService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -38,4 +36,17 @@ public class VocAlarmController {
         List<VocAlarm> realtimeAlarm = vocAlarmService.getRealtimeAlarm(account);
         return RestResultUtil.success(realtimeAlarm);
     }
+
+    /**
+     * 查询指定设备报警历史记录
+     *
+     * @param params 参数
+     * @return 信息
+     */
+    @PostMapping("/voc/alarm/history")
+    public RestResult getAlarmHistory(@RequestBody Map<String, Object> params) {
+        Map<String, Object> historyByAccount = vocAlarmService.getAlarmHistory(params);
+        return RestResultUtil.success(historyByAccount);
+    }
+
 }

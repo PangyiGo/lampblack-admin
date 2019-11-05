@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainAlarm;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -27,4 +28,13 @@ public interface ColdChainAlarmService extends IService<ColdChainAlarm> {
      * @return 信息
      */
     List<ColdChainAlarm> getRealtimeAlarm(String account);
+
+    /**
+     * 获取指定设备报警记录
+     * 分页
+     *
+     * @param params 参数
+     * @return 信息
+     */
+    Map<String, Object> getAlarmHistory(Map<String, Object> params);
 }

@@ -1,9 +1,14 @@
 package com.osen.cloud.service.data.coldchain.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainAlarm;
 import com.osen.cloud.common.entity.system_device.Device;
+import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.TableUtil;
 import com.osen.cloud.model.coldchain.ColdChainAlarmMapper;
 import com.osen.cloud.service.data.coldchain.ColdChainAlarmService;
@@ -14,7 +19,10 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -58,5 +66,37 @@ public class ColdChainAlarmServiceImpl extends ServiceImpl<ColdChainAlarmMapper,
             }
         }
         return coldChainAlarms;
+    }
+
+    @Override
+    public Map<String, Object> getAlarmHistory(Map<String, Object> params) {
+        // 参数
+        String deviceNo = (String) params.get("deviceNo");
+        String start = (String) params.get("startTime");
+        String end = (String) params.get("endTime");
+        int pageNumber = (int) params.get("pageNumber");
+        // 日期时间格式化
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
+        LocalDateTime startTime = LocalDateTime.parse(start, dateTimeFormatter);
+        LocalDateTime endTime = LocalDateTime.parse(end, dateTimeFormatter);
+        // 分页
+        Page<ColdChainAlarm> coldChainAlarmPage = new Page<>(pageNumber, ConstUtil.PAGE_NUMBER);
+        // 条件封装
+        LambdaQueryWrapper<ColdChainAlarm> queryWrapper = Wrappers.<ColdChainAlarm>lambdaQuery();
+        queryWrapper.eq(ColdChainAlarm::getDeviceNo, deviceNo);
+        queryWrapper.between(ColdChainAlarm::getDateTime, startTime, endTime);
+        queryWrapper.orderByAsc(ColdChainAlarm::getDateTime);
+        // 查询
+        IPage<ColdChainAlarm> coldChainAlarmIPage = super.page(coldChainAlarmPage, queryWrapper);
+        // 结果封装
+        Map<String, Object> resultMap = new HashMap<>(0);
+        if (coldChainAlarmIPage.getTotal() <= 0) {
+            resultMap.put("total", 0);
+            resultMap.put("alarmHistory", null);
+        } else {
+            resultMap.put("total", coldChainAlarmIPage.getTotal());
+            resultMap.put("alarmHistory", coldChainAlarmIPage.getRecords());
+        }
+        return resultMap;
     }
 }
