@@ -12,14 +12,12 @@ import com.osen.cloud.service.data.coldchain.ColdChainDayService;
 import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
+import com.osen.cloud.system.dev_data.coldchain.util.DataVO;
 import com.osen.cloud.system.dev_data.coldchain.util.ExportExcelUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
@@ -85,15 +83,57 @@ public class ColdChainDayController {
      * @param params 参数
      * @return 信息
      */
-    @PostMapping("/coldchain/day/query")
-    public RestResult queryHistoryByDate(@RequestBody Map<String, Object> params) {
+    @PostMapping("/coldchain/day/query/{monitor}")
+    public RestResult queryHistoryByDate(@RequestBody Map<String, Object> params, @PathVariable("monitor") String monitor) {
         // 参数
         String deviceNo = (String) params.get("deviceNo");
         String startTime = (String) params.get("startTime");
         String endTime = (String) params.get("endTime");
         // 数据获取
-        List<ColdChainDay> coldChainDays = this.wrapperDataQuery(startTime, endTime, deviceNo);
-        return RestResultUtil.success(coldChainDays);
+        List<ColdChainDay> coldChainDays = new ArrayList<>(0);
+        // 时间日期格式化
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
+        // 开始时间
+        LocalDateTime startDate = LocalDateTime.parse(startTime, dateTimeFormatter);
+        // 结束时间
+        LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
+        // 构建数据表
+        List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdDay);
+        for (String tableName : queryTableName) {
+            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+                continue;
+            MybatisPlusConfig.TableName.set(tableName);
+            List<ColdChainDay> chainDays = coldChainDayService.queryHistoryByDate(startDate, endDate, deviceNo, monitor);
+            coldChainDays.addAll(chainDays);
+        }
+        List<DataVO> dataVOS = new ArrayList<>(0);
+        for (ColdChainDay coldChainDay : coldChainDays) {
+            DataVO dataVO = new DataVO();
+            switch (monitor) {
+                case "m01":
+                    dataVO.setTemp(coldChainDay.getT01());
+                    dataVO.setDamp(coldChainDay.getH01());
+                    dataVO.setDateTime(coldChainDay.getDateTime());
+                    break;
+                case "m02":
+                    dataVO.setTemp(coldChainDay.getT02());
+                    dataVO.setDamp(coldChainDay.getH02());
+                    dataVO.setDateTime(coldChainDay.getDateTime());
+                    break;
+                case "m03":
+                    dataVO.setTemp(coldChainDay.getT03());
+                    dataVO.setDamp(coldChainDay.getH03());
+                    dataVO.setDateTime(coldChainDay.getDateTime());
+                    break;
+                case "m04":
+                    dataVO.setTemp(coldChainDay.getT04());
+                    dataVO.setDamp(coldChainDay.getH04());
+                    dataVO.setDateTime(coldChainDay.getDateTime());
+                    break;
+            }
+            dataVOS.add(dataVO);
+        }
+        return RestResultUtil.success(dataVOS);
     }
 
     /**

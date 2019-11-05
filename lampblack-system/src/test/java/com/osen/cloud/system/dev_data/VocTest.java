@@ -68,6 +68,6 @@ public class VocTest {
         vocHistory.setPressureFlag("T");
         vocHistory.setTempFlag("N");
 
-        stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
+        stringRedisTemplate.boundHashOps(TableUtil.Voc_RealTime).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
     }
 }

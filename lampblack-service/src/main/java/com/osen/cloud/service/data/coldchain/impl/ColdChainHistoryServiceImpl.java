@@ -94,6 +94,35 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
     }
 
     @Override
+    public List<ColdChainHistory> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo, String monitor) {
+        List<ColdChainHistory> chainHistories = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<ColdChainHistory> query = Wrappers.<ColdChainHistory>lambdaQuery();
+        switch (monitor) {
+            case "m01":
+                query.select(ColdChainHistory::getT01, ColdChainHistory::getH01, ColdChainHistory::getDateTime);
+                break;
+            case "m02":
+                query.select(ColdChainHistory::getT02, ColdChainHistory::getH02, ColdChainHistory::getDateTime);
+                break;
+            case "m03":
+                query.select(ColdChainHistory::getT03, ColdChainHistory::getH03, ColdChainHistory::getDateTime);
+                break;
+            case "m04":
+                query.select(ColdChainHistory::getT04, ColdChainHistory::getH04, ColdChainHistory::getDateTime);
+                break;
+        }
+        query.eq(ColdChainHistory::getDeviceNo, deviceNo);
+        query.between(ColdChainHistory::getDateTime, start, end).orderByAsc(ColdChainHistory::getDateTime);
+        try {
+            chainHistories = super.list(query);
+        } catch (Exception e) {
+            return chainHistories;
+        }
+        return chainHistories;
+    }
+
+    @Override
     public List<ColdChainHistory> getRealtimeToUser() {
         List<ColdChainHistory> coldChainHistories = new ArrayList<>(0);
         String username = SecurityUtil.getUsername();

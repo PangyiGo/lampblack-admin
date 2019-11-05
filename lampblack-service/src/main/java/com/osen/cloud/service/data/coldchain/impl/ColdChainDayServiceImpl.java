@@ -48,4 +48,33 @@ public class ColdChainDayServiceImpl extends ServiceImpl<ColdChainDayMapper, Col
         }
         return coldChainDays;
     }
+
+    @Override
+    public List<ColdChainDay> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo, String monitor) {
+        List<ColdChainDay> chainDays = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<ColdChainDay> query = Wrappers.<ColdChainDay>lambdaQuery();
+        switch (monitor) {
+            case "m01":
+                query.select(ColdChainDay::getT01, ColdChainDay::getH01, ColdChainDay::getDateTime);
+                break;
+            case "m02":
+                query.select(ColdChainDay::getT02, ColdChainDay::getH02, ColdChainDay::getDateTime);
+                break;
+            case "m03":
+                query.select(ColdChainDay::getT03, ColdChainDay::getH03, ColdChainDay::getDateTime);
+                break;
+            case "m04":
+                query.select(ColdChainDay::getT04, ColdChainDay::getH04, ColdChainDay::getDateTime);
+                break;
+        }
+        query.eq(ColdChainDay::getDeviceNo, deviceNo);
+        query.between(ColdChainDay::getDateTime, start, end).orderByAsc(ColdChainDay::getDateTime);
+        try {
+            chainDays = super.list(query);
+        } catch (Exception e) {
+            return chainDays;
+        }
+        return chainDays;
+    }
 }

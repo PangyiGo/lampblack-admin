@@ -83,6 +83,7 @@ public class ColdChainTest {
         coldChainHistory.setT04Flag("N");
         coldChainHistory.setH04Flag("N");
 
-        stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).put(coldChainHistory.getDeviceNo(), JSON.toJSONString(coldChainHistory));
+        stringRedisTemplate.boundHashOps(TableUtil.Cold_RealTime).put(coldChainHistory.getDeviceNo(),
+                JSON.toJSONString(coldChainHistory));
     }
 }

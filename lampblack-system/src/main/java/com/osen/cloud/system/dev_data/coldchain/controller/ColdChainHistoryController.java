@@ -66,10 +66,10 @@ public class ColdChainHistoryController {
         if (monitor != null) {
             BeanUtil.copyProperties(monitor, realTimeVO);
         } else {
-            realTimeVO.setM01("未定义监控点#1");
-            realTimeVO.setM02("未定义监控点#2");
-            realTimeVO.setM03("未定义监控点#3");
-            realTimeVO.setM03("未定义监控点#4");
+            realTimeVO.setM01("未定义#1");
+            realTimeVO.setM02("未定义#2");
+            realTimeVO.setM03("未定义#3");
+            realTimeVO.setM03("未定义#4");
         }
         return RestResultUtil.success(realTimeVO);
     }
@@ -143,15 +143,30 @@ public class ColdChainHistoryController {
      * @param params 参数
      * @return 信息
      */
-    @PostMapping("/coldchain/realtime/query")
-    public RestResult queryHistoryByDate(@RequestBody Map<String, Object> params) {
+    @PostMapping("/coldchain/realtime/query/{monitor}")
+    public RestResult queryHistoryByDate(@RequestBody Map<String, Object> params, @PathVariable("monitor") String monitor) {
         // 参数
         String deviceNo = (String) params.get("deviceNo");
         String startTime = (String) params.get("startTime");
         String endTime = (String) params.get("endTime");
         // 数据获取
-        List<ColdChainHistory> chainHistories = this.wrapperDataQuery(startTime, endTime, deviceNo);
-        return RestResultUtil.success(chainHistories);
+        List<ColdChainHistory> coldChainHistories = new ArrayList<>(0);
+        // 时间日期格式化
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
+        // 开始时间
+        LocalDateTime startDate = LocalDateTime.parse(startTime, dateTimeFormatter);
+        // 结束时间
+        LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
+        // 构建数据表
+        List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHistory);
+        for (String tableName : queryTableName) {
+            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+                continue;
+            MybatisPlusConfig.TableName.set(tableName);
+            List<ColdChainHistory> chainHistories = coldChainHistoryService.queryHistoryByDate(startDate, endDate, deviceNo, monitor);
+            coldChainHistories.addAll(chainHistories);
+        }
+        return RestResultUtil.success(coldChainHistories);
     }
 
     /**
@@ -213,8 +228,22 @@ public class ColdChainHistoryController {
      */
     @PostMapping("/coldchain/realtime/batch")
     public RestResult getBatchRealtime() {
+        List<RealTimeVO> realTimeVOS = new ArrayList<>(0);
         List<ColdChainHistory> realtimeToUser = coldChainHistoryService.getRealtimeToUser();
-        return RestResultUtil.success(realtimeToUser);
+        for (ColdChainHistory coldChainHistory : realtimeToUser) {
+            RealTimeVO realTimeVO = new RealTimeVO();
+            ColdChainMonitor monitor = coldChainMonitorService.getMonitorToDeviceNo(coldChainHistory.getDeviceNo());
+            if (monitor == null) {
+                realTimeVO.setM01("未定义#1");
+                realTimeVO.setM02("未定义#2");
+                realTimeVO.setM03("未定义#3");
+                realTimeVO.setM03("未定义#4");
+            }
+            BeanUtil.copyProperties(coldChainHistory, realTimeVO);
+            BeanUtil.copyProperties(monitor, realTimeVO);
+            realTimeVOS.add(realTimeVO);
+        }
+        return RestResultUtil.success(realTimeVOS);
     }
 
 }

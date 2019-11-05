@@ -48,4 +48,33 @@ public class ColdChainHourServiceImpl extends ServiceImpl<ColdChainHourMapper, C
         }
         return coldChainHours;
     }
+
+    @Override
+    public List<ColdChainHour> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo, String monitor) {
+        List<ColdChainHour> chainHours = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<ColdChainHour> query = Wrappers.<ColdChainHour>lambdaQuery();
+        switch (monitor) {
+            case "m01":
+                query.select(ColdChainHour::getT01, ColdChainHour::getH01, ColdChainHour::getDateTime);
+                break;
+            case "m02":
+                query.select(ColdChainHour::getT02, ColdChainHour::getH02, ColdChainHour::getDateTime);
+                break;
+            case "m03":
+                query.select(ColdChainHour::getT03, ColdChainHour::getH03, ColdChainHour::getDateTime);
+                break;
+            case "m04":
+                query.select(ColdChainHour::getT04, ColdChainHour::getH04, ColdChainHour::getDateTime);
+                break;
+        }
+        query.eq(ColdChainHour::getDeviceNo, deviceNo);
+        query.between(ColdChainHour::getDateTime, start, end).orderByAsc(ColdChainHour::getDateTime);
+        try {
+            chainHours = super.list(query);
+        } catch (Exception e) {
+            return chainHours;
+        }
+        return chainHours;
+    }
 }
