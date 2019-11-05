@@ -94,10 +94,10 @@ public class ColdChainHistoryController {
         List<Object> data = new ArrayList<>(0);
         ColdChainMonitor monitor = coldChainMonitorService.getMonitorToDeviceNo(deviceNo);
         if (monitor == null) {
-            monitor.setM01("未定义监控点#1");
-            monitor.setM02("未定义监控点#2");
-            monitor.setM03("未定义监控点#3");
-            monitor.setM03("未定义监控点#4");
+            monitor.setM01("未定义#1");
+            monitor.setM02("未定义#2");
+            monitor.setM03("未定义#3");
+            monitor.setM03("未定义#4");
         }
         data.add(monitor.getM01());
         data.add(monitor.getM02());

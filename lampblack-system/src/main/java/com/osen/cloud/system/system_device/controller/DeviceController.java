@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,12 +30,13 @@ public class DeviceController {
     /**
      * 分页查询指定用户设备列表信息
      * type 设备类型
+     *
      * @param params 参数
      * @return 信息
      */
     @PostMapping("/device/toUserAccount/{type}")
     public RestResult findDeviceByUserAccount(@RequestBody Map<String, Object> params, @PathVariable("type") String type) {
-        Map<String, Object> deviceByUserAccount = deviceService.findDeviceByUserAccount(params,type);
+        Map<String, Object> deviceByUserAccount = deviceService.findDeviceByUserAccount(params, type);
         return RestResultUtil.success(deviceByUserAccount);
     }
 
@@ -85,8 +87,8 @@ public class DeviceController {
      * @return 信息
      */
     @PostMapping("/device/status/{type}/{account}")
-    public RestResult findDeviceStatusToUser(@PathVariable("account") String account,@PathVariable("type")String type) {
-        Map<String, Integer> deviceStatusToUser = deviceService.findDeviceStatusToUser(account,type);
+    public RestResult findDeviceStatusToUser(@PathVariable("account") String account, @PathVariable("type") String type) {
+        Map<String, Integer> deviceStatusToUser = deviceService.findDeviceStatusToUser(account, type);
         return RestResultUtil.success(deviceStatusToUser);
     }
 
@@ -131,5 +133,17 @@ public class DeviceController {
             return RestResultUtil.success("修改设备成功");
         else
             return RestResultUtil.error(ConstUtil.UNOK, "修改设备失败");
+    }
+
+    /**
+     * 获取地图的指定类型设备
+     *
+     * @param type 设备类型
+     * @return 信息
+     */
+    @PostMapping("/device/map/{type}")
+    public RestResult getDeviceToMap(@PathVariable("type") String type) {
+        List<Device> allToMap = deviceService.findAllToMap(type);
+        return RestResultUtil.success(allToMap);
     }
 }

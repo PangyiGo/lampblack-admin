@@ -3,6 +3,7 @@ package com.osen.cloud.service.device;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.osen.cloud.common.entity.system_device.Device;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -96,5 +97,13 @@ public interface DeviceService extends IService<Device> {
      * @return 信息
      */
     boolean updateDeviceInfo(Device device);
+
+    /**
+     * 不分页查询指定类型的设备信息
+     *
+     * @param type 设备类型
+     * @return 信息
+     */
+    List<Device> findAllToMap(String type);
 
 }

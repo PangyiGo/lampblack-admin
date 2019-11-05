@@ -274,4 +274,29 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Device> impleme
         return this.update(device, wrapper);
     }
 
+    @Override
+    public List<Device> findAllToMap(String type) {
+        List<Device> deviceList = new ArrayList<>(0);
+        // 当前用户
+        Integer userId = SecurityUtil.getUserId();
+        // 获取设备关联
+        List<UserDevice> userToDevice = userDeviceService.findUserToDevice(Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, userId));
+        if (userToDevice == null || userToDevice.size() == 0)
+            return deviceList;
+        // 设备查询
+        List<Integer> deviceIds = new ArrayList<>(0);
+        for (UserDevice userDevice : userToDevice) {
+            deviceIds.add(userDevice.getDeviceId());
+        }
+        LambdaQueryWrapper<Device> query = Wrappers.<Device>lambdaQuery();
+        query.in(Device::getId, deviceIds);
+        query.eq(Device::getType, type);
+        try {
+            deviceList = super.list(query);
+        } catch (Exception e) {
+            return deviceList;
+        }
+        return deviceList;
+    }
+
 }
