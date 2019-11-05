@@ -76,17 +76,17 @@ public class DataHistoryTest {
 
     @Test
     public void test02() {
-        vocHistoryService.createNewTable(ConstUtil.currentTableName(TableUtil.VocHistory));
-        vocMinuteService.createNewTable(ConstUtil.currentTableName(TableUtil.VocMinute));
-        vocHourService.createNewTable(ConstUtil.currentTableName(TableUtil.VocHour));
-        vocDayService.createNewTable(ConstUtil.currentTableName(TableUtil.VocDay));
+        vocHistoryService.createNewTable(ConstUtil.createNextTableName(TableUtil.VocHistory));
+        vocMinuteService.createNewTable(ConstUtil.createNextTableName(TableUtil.VocMinute));
+        vocHourService.createNewTable(ConstUtil.createNextTableName(TableUtil.VocHour));
+        vocDayService.createNewTable(ConstUtil.createNextTableName(TableUtil.VocDay));
     }
 
     @Test
     public void test03() {
-        coldChainHistoryService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdHistory));
-        coldChainMinuteService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdMinute));
-        coldChainHourService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdHour));
-        coldChainDayService.createNewTable(ConstUtil.currentTableName(TableUtil.ColdDay));
+        coldChainHistoryService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdHistory));
+        coldChainMinuteService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdMinute));
+        coldChainHourService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdHour));
+        coldChainDayService.createNewTable(ConstUtil.createNextTableName(TableUtil.ColdDay));
     }
 }
