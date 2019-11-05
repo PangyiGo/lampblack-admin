@@ -74,9 +74,9 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
         String username = SecurityUtil.getUsername();
         List<Device> devices = (List<Device>) deviceService.finaAllDeviceToUser(username).get("devices");
         for (Device device : devices) {
-            Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.REALTIME_TB).hasKey(device.getDeviceNo());
+            Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).hasKey(device.getDeviceNo());
             if (hasKey) {
-                String json = (String) stringRedisTemplate.boundHashOps(ConstUtil.REALTIME_TB).get(device.getDeviceNo());
+                String json = (String) stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).get(device.getDeviceNo());
                 DataHistory dataHistory = JSON.parseObject(json, DataHistory.class);
                 dataHistoryList.add(dataHistory);
             }
