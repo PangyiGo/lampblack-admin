@@ -20,7 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * User: PangYi
@@ -96,14 +95,17 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
 
     @Override
     public List<ColdChainHistory> getRealtimeToUser() {
+        List<ColdChainHistory> coldChainHistories = new ArrayList<>(0);
         String username = SecurityUtil.getUsername();
-        Map<String, Object> map = deviceService.finaAllDeviceToUser(username);
-        List<Device> deviceList = (List<Device>) map.get("devices");
-        List<ColdChainHistory> chainHistories = new ArrayList<>(0);
-        for (Device device : deviceList) {
-            ColdChainHistory realtime = this.getRealtime(device.getDeviceNo());
-            chainHistories.add(realtime);
+        List<Device> devices = (List<Device>) deviceService.finaAllDeviceToUser(username).get("devices");
+        for (Device device : devices) {
+            Boolean hasKey = stringRedisTemplate.boundHashOps(TableUtil.Cold_RealTime).hasKey(device.getDeviceNo());
+            if (hasKey) {
+                String json = (String) stringRedisTemplate.boundHashOps(TableUtil.Cold_RealTime).get(device.getDeviceNo());
+                ColdChainHistory coldChainHistory = JSON.parseObject(json, ColdChainHistory.class);
+                coldChainHistories.add(coldChainHistory);
+            }
         }
-        return chainHistories;
+        return coldChainHistories;
     }
 }

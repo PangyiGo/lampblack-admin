@@ -20,7 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * User: PangYi
@@ -114,11 +113,14 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
     public List<VocHistory> getRealtimeToUser() {
         List<VocHistory> vocHistories = new ArrayList<>(0);
         String username = SecurityUtil.getUsername();
-        Map<String, Object> map = deviceService.finaAllDeviceToUser(username);
-        List<Device> deviceList = (List<Device>) map.get("devices");
-        for (Device device : deviceList) {
-            VocHistory realtime = this.getRealtime(device.getDeviceNo());
-            vocHistories.add(realtime);
+        List<Device> devices = (List<Device>) deviceService.finaAllDeviceToUser(username).get("devices");
+        for (Device device : devices) {
+            Boolean hasKey = stringRedisTemplate.boundHashOps(TableUtil.Voc_RealTime).hasKey(device.getDeviceNo());
+            if (hasKey) {
+                String json = (String) stringRedisTemplate.boundHashOps(TableUtil.Voc_RealTime).get(device.getDeviceNo());
+                VocHistory vocHistory = JSON.parseObject(json, VocHistory.class);
+                vocHistories.add(vocHistory);
+            }
         }
         return vocHistories;
     }

@@ -21,7 +21,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * User: PangYi
@@ -73,11 +72,14 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
     public List<DataHistory> batchFindDataToDeviceNo() {
         List<DataHistory> dataHistoryList = new ArrayList<>(0);
         String username = SecurityUtil.getUsername();
-        Map<String, Object> device = deviceService.finaAllDeviceToUser(username);
-        List<Device> deviceList = (List<Device>) device.get("devices");
-        for (Device dev : deviceList) {
-            DataHistory dataHistory = this.returnRealtimeData(dev.getDeviceNo());
-            dataHistoryList.add(dataHistory);
+        List<Device> devices = (List<Device>) deviceService.finaAllDeviceToUser(username).get("devices");
+        for (Device device : devices) {
+            Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.REALTIME_TB).hasKey(device.getDeviceNo());
+            if (hasKey) {
+                String json = (String) stringRedisTemplate.boundHashOps(ConstUtil.REALTIME_TB).get(device.getDeviceNo());
+                DataHistory dataHistory = JSON.parseObject(json, DataHistory.class);
+                dataHistoryList.add(dataHistory);
+            }
         }
         return dataHistoryList;
     }
