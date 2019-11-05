@@ -71,4 +71,14 @@ public interface ColdChainHistoryService extends IService<ColdChainHistory> {
      * @return 信息
      */
     List<ColdChainHistory> getRealtimeToUser();
+
+    /**
+     * 根据设备号查询设备轨迹历史数据记录
+     *
+     * @param start    开始时间
+     * @param end      结束时间
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    List<ColdChainHistory> getLocusToUser(LocalDateTime start, LocalDateTime end, String deviceNo);
 }

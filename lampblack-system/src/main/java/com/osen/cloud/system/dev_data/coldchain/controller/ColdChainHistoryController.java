@@ -13,6 +13,7 @@ import com.osen.cloud.service.data.coldchain.ColdChainHistoryService;
 import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
+import com.osen.cloud.system.dev_data.coldchain.util.AddressVO;
 import com.osen.cloud.system.dev_data.coldchain.util.ExportExcelUtil;
 import com.osen.cloud.system.dev_data.coldchain.util.RealTimeVO;
 import com.osen.cloud.system.dev_data.coldchain.util.TodayVO;
@@ -167,6 +168,45 @@ public class ColdChainHistoryController {
             coldChainHistories.addAll(chainHistories);
         }
         return RestResultUtil.success(coldChainHistories);
+    }
+
+    /**
+     * 查询冷链设备历史轨迹
+     *
+     * @param params 参数
+     * @return 信息
+     */
+    @PostMapping("/coldchain/locus")
+    public RestResult getLocus(@RequestBody Map<String, Object> params) {
+        // 参数
+        String deviceNo = (String) params.get("deviceNo");
+        String startTime = (String) params.get("startTime");
+        String endTime = (String) params.get("endTime");
+        // 数据获取
+        List<ColdChainHistory> coldChainHistories = new ArrayList<>(0);
+        // 时间日期格式化
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
+        // 开始时间
+        LocalDateTime startDate = LocalDateTime.parse(startTime, dateTimeFormatter);
+        // 结束时间
+        LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
+        // 构建数据表
+        List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHistory);
+        for (String tableName : queryTableName) {
+            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+                continue;
+            MybatisPlusConfig.TableName.set(tableName);
+            List<ColdChainHistory> locusToUser = coldChainHistoryService.getLocusToUser(startDate, endDate, deviceNo);
+            coldChainHistories.addAll(locusToUser);
+        }
+        // 返回结果
+        List<AddressVO> addressVOS = new ArrayList<>(0);
+        for (ColdChainHistory coldChainHistory : coldChainHistories) {
+            AddressVO addressVO = new AddressVO();
+            BeanUtil.copyProperties(coldChainHistory, addressVO);
+            addressVOS.add(addressVO);
+        }
+        return RestResultUtil.success(addressVOS);
     }
 
     /**

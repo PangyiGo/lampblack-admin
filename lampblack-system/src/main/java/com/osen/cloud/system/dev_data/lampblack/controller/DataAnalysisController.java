@@ -7,6 +7,7 @@ import com.osen.cloud.common.entity.dev_lampblack.DataHistory;
 import com.osen.cloud.common.entity.dev_lampblack.DataHour;
 import com.osen.cloud.common.entity.dev_lampblack.DataMinute;
 import com.osen.cloud.common.entity.system_device.Device;
+import com.osen.cloud.common.enums.DeviceType;
 import com.osen.cloud.common.enums.MonthCode;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
@@ -97,6 +98,9 @@ public class DataAnalysisController {
         if (devices.size() == 0)
             return RestResultUtil.success(returnDataIntegrityVOS);
         for (Device device : devices) {
+            // 油烟设备
+            if (!device.getType().equals(DeviceType.Lampblack.getName()))
+                continue;
             ReturnDataIntegrityVO returnDataIntegrityVO = new ReturnDataIntegrityVO();
             returnDataIntegrityVO.setDeviceNo(device.getDeviceNo());
             returnDataIntegrityVO.setDeviceName(device.getName());
@@ -107,7 +111,7 @@ public class DataAnalysisController {
             int dayCount = 0;
             DecimalFormat df = new DecimalFormat("######0.00");
             for (String tableName : realTb) {
-                if (ConstUtil.compareToTime(tableName,MonthCode.Lampblack.getMonth()))
+                if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
                     continue;
                 MybatisPlusConfig.TableName.set(tableName);
                 LambdaQueryWrapper<DataHistory> wrapper = Wrappers.<DataHistory>lambdaQuery().eq(DataHistory::getDeviceNo, device.getDeviceNo()).between(DataHistory::getDateTime, start, end);
@@ -119,7 +123,7 @@ public class DataAnalysisController {
             returnDataIntegrityVO.setRealPercentage(df.format(((double) realCount / (double) reals) * 100) + " %");
 
             for (String tableName : minuteTb) {
-                if (ConstUtil.compareToTime(tableName,MonthCode.Lampblack.getMonth()))
+                if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
                     continue;
                 MybatisPlusConfig.TableName.set(tableName);
                 LambdaQueryWrapper<DataMinute> wrapper = Wrappers.<DataMinute>lambdaQuery().eq(DataMinute::getDeviceNo, device.getDeviceNo()).between(DataMinute::getDateTime, start, end);
@@ -131,7 +135,7 @@ public class DataAnalysisController {
             returnDataIntegrityVO.setMinutePercentage(df.format(((double) minuteCount / (double) minutes) * 100) + " %");
 
             for (String tableName : hourTb) {
-                if (ConstUtil.compareToTime(tableName,MonthCode.Lampblack.getMonth()))
+                if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
                     continue;
                 MybatisPlusConfig.TableName.set(tableName);
                 LambdaQueryWrapper<DataHour> wrapper = Wrappers.<DataHour>lambdaQuery().eq(DataHour::getDeviceNo, device.getDeviceNo()).between(DataHour::getDateTime, start, end);

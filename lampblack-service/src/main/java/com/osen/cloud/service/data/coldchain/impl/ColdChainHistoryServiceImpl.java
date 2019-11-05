@@ -137,4 +137,20 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
         }
         return coldChainHistories;
     }
+
+    @Override
+    public List<ColdChainHistory> getLocusToUser(LocalDateTime start, LocalDateTime end, String deviceNo) {
+        List<ColdChainHistory> chainHistories = new ArrayList<>(0);
+        // 查询条件
+        LambdaQueryWrapper<ColdChainHistory> query = Wrappers.<ColdChainHistory>lambdaQuery();
+        query.select(ColdChainHistory::getLongitude, ColdChainHistory::getLatitude);
+        query.eq(ColdChainHistory::getDeviceNo, deviceNo);
+        query.between(ColdChainHistory::getDateTime, start, end).orderByAsc(ColdChainHistory::getDateTime);
+        try {
+            chainHistories = super.list(query);
+        } catch (Exception e) {
+            return chainHistories;
+        }
+        return chainHistories;
+    }
 }
