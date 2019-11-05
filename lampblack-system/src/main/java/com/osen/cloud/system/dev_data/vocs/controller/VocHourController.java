@@ -97,7 +97,7 @@ public class VocHourController {
      * @param params   参数
      * @param response 响应
      */
-    @PostMapping("/voc/day/export")
+    @PostMapping("/voc/hour/export")
     public void exportExcel(@RequestBody Map<String, Object> params, HttpServletResponse response) {
         // 参数
         List<String> devices = (List<String>) params.get("devices");
