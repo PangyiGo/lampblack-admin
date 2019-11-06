@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public enum VocSensorCode {
 
-    VOC("a24088", "Voc", "TVOC"),
+    VOC("a24088", "VOC", "TVOC"),
 
     FLOW("a42006", "Flow", "流量"),
 

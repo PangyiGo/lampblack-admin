@@ -28,6 +28,6 @@ public class DataSegmentTest {
 
         Map<String, Object> stringObjectMap = dataSegmentParseUtil.parseDataTOMap(data);
 
-        dataSegmentParseUtil.chooseHandlerType(stringObjectMap, "");
+        dataSegmentParseUtil.lampblackHandle(stringObjectMap, "");
     }
 }

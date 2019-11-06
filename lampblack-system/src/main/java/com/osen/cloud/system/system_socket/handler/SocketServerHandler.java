@@ -1,6 +1,9 @@
 package com.osen.cloud.system.system_socket.handler;
 
 import cn.hutool.core.map.MapUtil;
+import com.osen.cloud.common.enums.ColdChainSensorCode;
+import com.osen.cloud.common.enums.LampblackSensorCode;
+import com.osen.cloud.common.enums.VocSensorCode;
 import com.osen.cloud.system.system_socket.utils.DataSegmentParseUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -48,13 +51,30 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         log.info("接收设备数据：" + data);
 
         /*
-            上传数据处理
+            上传数据处理，转换数据格式为Map
          */
         Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(data);
 
+        // 数据类型判断，判断不同的设备上传格式，对应的设备处理
         if (MapUtil.isNotEmpty(parseDataTOMap)) {
-            log.info("格式化数据：" + parseDataTOMap);
-            dataSegmentParseUtil.chooseHandlerType(parseDataTOMap, getConnectionID(ctx));
+
+            if (data.contains(LampblackSensorCode.LAMPBLACK.getName())) {  // 油烟设备
+                log.info("油烟设备");
+                log.info("格式化数据：" + parseDataTOMap);
+                // 数据保存
+                dataSegmentParseUtil.lampblackHandle(parseDataTOMap, getConnectionID(ctx));
+            } else if (data.contains(VocSensorCode.VOC.getName())) {  // VOC设备
+                log.info("VOC设备");
+                log.info("格式化数据：" + parseDataTOMap);
+                // 数据保存
+                dataSegmentParseUtil.vocHandle(parseDataTOMap, getConnectionID(ctx));
+            } else if (data.contains(ColdChainSensorCode.T02.getName()) && data.contains(ColdChainSensorCode.H02.getName())) {  // 冷链设备
+                log.info("冷链设备");
+                log.info("格式化数据：" + parseDataTOMap);
+                // 数据保存
+                dataSegmentParseUtil.coldchainHandle(parseDataTOMap, getConnectionID(ctx));
+            }
+
         } else {
             log.info("设备上传格式错误，不符合HJ212协议");
         }

@@ -7,6 +7,7 @@ import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.DateTimeUtil;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.system_socket.service.LampblackService;
+import com.osen.cloud.system.system_socket.service.VocService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -37,6 +38,9 @@ public class DataSegmentParseUtil {
 
     @Autowired
     private DeviceService deviceService;
+
+    @Autowired
+    private VocService vocService;
 
     /**
      * 将数据转换成Map数据类型
@@ -194,7 +198,7 @@ public class DataSegmentParseUtil {
      * @param parseData map数据
      */
     @Async
-    public void chooseHandlerType(Map<String, Object> parseData, String connectionID) {
+    public void lampblackHandle(Map<String, Object> parseData, String connectionID) {
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));
             switch (CN) {
@@ -219,7 +223,73 @@ public class DataSegmentParseUtil {
             }
         } catch (Exception e) {
             log.error(e.getMessage());
-            log.info("数据存储异常，上传格式是否不一致");
+            log.info("油烟设备数据存储异常，上传格式是否不一致");
+        }
+    }
+
+    /**
+     * VOC设备数据封装
+     *
+     * @param parseData map数据
+     */
+    @Async
+    public void vocHandle(Map<String, Object> parseData, String connectionID) {
+        try {
+            Integer CN = Integer.valueOf((String) parseData.get("CN"));
+            switch (CN) {
+                // 实时数据类型
+                case 2011:
+                    vocService.handleRealtimeData(parseData, connectionID);
+                    break;
+                // 分钟数据类型
+                case 2051:
+                    vocService.handleMinuteData(parseData, connectionID);
+                    break;
+                // 小时数据类型
+                case 2061:
+                    vocService.handleHourData(parseData, connectionID);
+                    break;
+                // 天数据类型
+                case 2031:
+                    vocService.handleDayData(parseData, connectionID);
+                    break;
+                default:
+                    log.warn("no match type handler");
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            log.info("VOC设备数据存储异常，上传格式是否不一致");
+        }
+    }
+
+    /**
+     * 冷链设备数据封装
+     *
+     * @param parseData map数据
+     */
+    @Async
+    public void coldchainHandle(Map<String, Object> parseData, String connectionID) {
+        try {
+            Integer CN = Integer.valueOf((String) parseData.get("CN"));
+            switch (CN) {
+                // 实时数据类型
+                case 2011:
+                    break;
+                // 分钟数据类型
+                case 2051:
+                    break;
+                // 小时数据类型
+                case 2061:
+                    break;
+                // 天数据类型
+                case 2031:
+                    break;
+                default:
+                    log.warn("no match type handler");
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            log.info("VOC设备数据存储异常，上传格式是否不一致");
         }
     }
 
