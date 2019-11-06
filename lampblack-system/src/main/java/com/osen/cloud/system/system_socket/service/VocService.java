@@ -56,6 +56,12 @@ public class VocService {
     @Autowired
     private VocAlarmService vocAlarmService;
 
+    /**
+     * 处理实时数据
+     *
+     * @param data         数据
+     * @param connectionID 连接ID
+     */
     public void handleRealtimeData(Map<String, Object> data, String connectionID) {
         // voc实时数据实体
         VocHistory vocHistory = new VocHistory();

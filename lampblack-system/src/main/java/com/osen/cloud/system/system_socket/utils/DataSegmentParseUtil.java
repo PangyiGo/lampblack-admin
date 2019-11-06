@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.DateTimeUtil;
 import com.osen.cloud.service.device.DeviceService;
+import com.osen.cloud.system.system_socket.service.ColdchainService;
 import com.osen.cloud.system.system_socket.service.LampblackService;
 import com.osen.cloud.system.system_socket.service.VocService;
 import lombok.extern.slf4j.Slf4j;
@@ -41,6 +42,9 @@ public class DataSegmentParseUtil {
 
     @Autowired
     private VocService vocService;
+
+    @Autowired
+    private ColdchainService coldchainService;
 
     /**
      * 将数据转换成Map数据类型
@@ -274,15 +278,19 @@ public class DataSegmentParseUtil {
             switch (CN) {
                 // 实时数据类型
                 case 2011:
+                    coldchainService.handleRealtimeData(parseData, connectionID);
                     break;
                 // 分钟数据类型
                 case 2051:
+                    coldchainService.handleMinuteData(parseData, connectionID);
                     break;
                 // 小时数据类型
                 case 2061:
+                    coldchainService.handleHourData(parseData, connectionID);
                     break;
                 // 天数据类型
                 case 2031:
+                    coldchainService.handleDayData(parseData, connectionID);
                     break;
                 default:
                     log.warn("no match type handler");
