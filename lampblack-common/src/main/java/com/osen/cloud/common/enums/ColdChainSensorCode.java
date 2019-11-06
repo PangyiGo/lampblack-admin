@@ -27,7 +27,11 @@ public enum ColdChainSensorCode {
 
     T04("a01001", "T04", "监控点温度04"),
 
-    H04("a01002", "H04", "监控点湿度04");
+    H04("a01002", "H04", "监控点湿度04"),
+
+    Longitude("", "lng", "经度"),
+
+    Latitude("", "lat", "纬度");
 
     /**
      * 传感器参数编号
