@@ -14,7 +14,10 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -83,7 +86,7 @@ public class DataSegmentParseUtil {
      * @param data 数据段
      * @return 信息
      */
-    private Map<String, Object> parseDataArea(String data) {
+/*    private Map<String, Object> parseDataArea(String data) {
         // 保存解析数据
         Map<String, Object> result = new HashMap<>();
         try {
@@ -118,6 +121,65 @@ public class DataSegmentParseUtil {
                 } else {
                     result.put(valueSplit.get(0), valueSplit.get(1));
                 }
+            }
+        } catch (Exception e) {
+            log.error("数据段解析异常");
+            return null;
+        }
+        return result;
+    }*/
+
+    /**
+     * 数据段解析
+     *
+     * @param data 数据段
+     * @return 信息
+     */
+    private Map<String, Object> parseDataArea(String data) {
+        // 保存解析数据
+        Map<String, Object> result = new HashMap<>();
+        try {
+            // 数段区长度
+            int dataLength = data.length();
+            // 查询数段位置
+            int index = StrUtil.lastIndexOf(data, "CP", dataLength, false);
+            // 前部分
+            String frontData = StrUtil.sub(data, 0, index - 1);
+            // 后部分
+            String rearData = StrUtil.sub(data, index, dataLength);
+            // 前部分数据分割解析
+            String[] frontSplit = StrUtil.split(frontData, ";");
+            for (String front : frontSplit) {
+                List<String> value = StrUtil.split(front, '=', 2);
+                // 保存
+                result.put(value.get(0), value.get(1));
+            }
+            // 后部分数据分割解析，CP 的数据区
+            if (StrUtil.startWith(rearData, "CP")) {
+                // 数据区内容
+                Map<String, Object> dataAreaMap = new HashMap<>(0);
+                // 分割，CP = &&数据区&&
+                List<String> value = StrUtil.split(rearData, '=', 2);
+                // 数据区内容
+                String dataArea = value.get(1);
+                // 格式化内容
+                dataArea = StrUtil.replace(dataArea, "&&", "");
+                dataArea = StrUtil.replace(dataArea, ",", ";");
+                // 分割数据区内容
+                String[] split = StrUtil.split(dataArea, ";");
+                for (String args : split) {
+                    List<String> KeyLists = StrUtil.split(args, '=', 2);
+                    //格式化日期
+                    if (KeyLists.get(0).equals("DataTime")) {
+                        Date dateTime = DateUtil.parse(KeyLists.get(1), ConstUtil.DATE_FORMAT);
+                        LocalDateTime localDateTime = DateTimeUtil.asLocalDateTime(dateTime);
+                        dataAreaMap.put(KeyLists.get(0), localDateTime);
+                    } else {
+                        dataAreaMap.put(KeyLists.get(0), KeyLists.get(1));
+                    }
+                }
+                // 保存
+                result.put("CP", dataAreaMap);
             }
         } catch (Exception e) {
             log.error("数据段解析异常");

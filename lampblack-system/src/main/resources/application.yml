@@ -20,7 +20,7 @@ server:
 # 系统多环境配置
 spring:
   profiles:
-    active: pro
+    active: dev
 
 
 ## 日志配置

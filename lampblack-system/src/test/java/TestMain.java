@@ -1,4 +1,6 @@
-import com.osen.cloud.system.system_socket.utils.CRCValidationUtil;
+import com.osen.cloud.system.system_socket.utils.DataSegmentParseUtil;
+
+import java.util.Map;
 
 /**
  * User: PangYi
@@ -9,7 +11,11 @@ import com.osen.cloud.system.system_socket.utils.CRCValidationUtil;
 public class TestMain {
 
     public static void main(String[] args) {
-        boolean validateCRC = CRCValidationUtil.validateCRC("QN=20191022052400001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191022052400;LAMPBLACK-Rtd=0.1,LAMPBLACK-Flag=N&&", "03C0");
-        System.out.println(validateCRC);
+        String data = "##0137QN=20191106104800001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191106104800;LAMPBLACK-Rtd=0.1,LAMPBLACK-Flag=N&&F001";
+
+        DataSegmentParseUtil dataSegmentParseUtil = new DataSegmentParseUtil();
+        Map<String, Object> map = dataSegmentParseUtil.parseDataTOMap(data);
+
+        System.out.println(map);
     }
 }
