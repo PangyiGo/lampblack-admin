@@ -34,7 +34,8 @@ public interface DataMinuteService extends IService<DataMinute> {
      * @param start    开始时间
      * @param end      结束时间
      * @param deviceNo 设备号
+     * @param type     1表示历史查询，2表示数据导出
      * @return 信息
      */
-    List<DataMinute> queryDataMinuteByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
+    List<DataMinute> queryDataMinuteByDate(LocalDateTime start, LocalDateTime end, String deviceNo, int type);
 }

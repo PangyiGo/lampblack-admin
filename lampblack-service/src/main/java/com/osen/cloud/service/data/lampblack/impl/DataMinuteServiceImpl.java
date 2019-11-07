@@ -35,10 +35,17 @@ public class DataMinuteServiceImpl extends ServiceImpl<DataMinuteMapper, DataMin
     }
 
     @Override
-    public List<DataMinute> queryDataMinuteByDate(LocalDateTime start, LocalDateTime end, String deviceNo) {
+    public List<DataMinute> queryDataMinuteByDate(LocalDateTime start, LocalDateTime end, String deviceNo, int type) {
         LambdaQueryWrapper<DataMinute> lambdaQuery = Wrappers.<DataMinute>lambdaQuery();
         // 查询字段
-        lambdaQuery.select(DataMinute::getDateTime, DataMinute::getLampblack, DataMinute::getLampblackFlag, DataMinute::getPm, DataMinute::getPmFlag, DataMinute::getNmhc, DataMinute::getNmhcFlag, DataMinute::getFanFlag, DataMinute::getPurifierFlag);
+        switch (type) {
+            case 1:
+                lambdaQuery.select(DataMinute::getDateTime, DataMinute::getLampblack, DataMinute::getLampblackFlag, DataMinute::getPm, DataMinute::getPmFlag, DataMinute::getNmhc, DataMinute::getNmhcFlag, DataMinute::getFanFlag, DataMinute::getPurifierFlag);
+                break;
+            case 2:
+                lambdaQuery.select(DataMinute::getDateTime, DataMinute::getLampblack, DataMinute::getPm, DataMinute::getNmhc, DataMinute::getFanFlag, DataMinute::getPurifierFlag);
+                break;
+        }
         lambdaQuery.eq(DataMinute::getDeviceNo, deviceNo);
         lambdaQuery.between(DataMinute::getDateTime, start, end);
         lambdaQuery.orderByAsc(DataMinute::getDateTime);

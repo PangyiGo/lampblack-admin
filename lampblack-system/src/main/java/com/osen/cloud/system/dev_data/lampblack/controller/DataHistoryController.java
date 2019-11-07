@@ -9,9 +9,9 @@ import com.osen.cloud.common.utils.ConstUtil;
 import com.osen.cloud.common.utils.RestResultUtil;
 import com.osen.cloud.service.data.lampblack.DataHistoryService;
 import com.osen.cloud.service.device.DeviceService;
+import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
 import com.osen.cloud.system.dev_data.lampblack.util.DataHistoryRealVO;
 import com.osen.cloud.system.dev_data.lampblack.util.ExportExcelUtil;
-import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,7 +79,7 @@ public class DataHistoryController {
         String startTime = (String) params.get("startTime");
         String endTime = (String) params.get("endTime");
         // 数据获取
-        List<DataHistory> dataHistoryList = this.wrapperDataQuery(startTime, endTime, deviceNo);
+        List<DataHistory> dataHistoryList = this.wrapperDataQuery(startTime, endTime, deviceNo, ConstUtil.HistoryType);
         return RestResultUtil.success(dataHistoryList);
     }
 
@@ -100,7 +100,7 @@ public class DataHistoryController {
         // 查询设备名称
         List<String> deviceNames = new ArrayList<>(0);
         for (String device : devices) {
-            List<DataHistory> lists = this.wrapperDataQuery(startTime, endTime, device);
+            List<DataHistory> lists = this.wrapperDataQuery(startTime, endTime, device, ConstUtil.ExportType);
             dataHistories.add(lists);
             // 设备名称
             Device dd = deviceService.findDeviceNo(device);
@@ -135,9 +135,10 @@ public class DataHistoryController {
      * @param startTime 开始时间
      * @param endTime   结束时间
      * @param deviceNo  设备号
+     * @param type      1表示历史查询，2表示数据导出
      * @return 信息
      */
-    private List<DataHistory> wrapperDataQuery(String startTime, String endTime, String deviceNo) {
+    private List<DataHistory> wrapperDataQuery(String startTime, String endTime, String deviceNo, int type) {
         List<DataHistory> dataHistoryList = new ArrayList<>(0);
         // 时间日期格式化
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
@@ -151,7 +152,7 @@ public class DataHistoryController {
             if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
-            List<DataHistory> history = dataHistoryService.queryDataHistoryByDate(startDate, endDate, deviceNo);
+            List<DataHistory> history = dataHistoryService.queryDataHistoryByDate(startDate, endDate, deviceNo, type);
             dataHistoryList.addAll(history);
         }
         return dataHistoryList;

@@ -34,7 +34,8 @@ public interface DataHourService extends IService<DataHour> {
      * @param start    开始时间
      * @param end      结束时间
      * @param deviceNo 设备号
+     * @param type 1表示历史查询，2表示数据导出
      * @return 信息
      */
-    List<DataHour> queryDataHourByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
+    List<DataHour> queryDataHourByDate(LocalDateTime start, LocalDateTime end, String deviceNo,int type);
 }

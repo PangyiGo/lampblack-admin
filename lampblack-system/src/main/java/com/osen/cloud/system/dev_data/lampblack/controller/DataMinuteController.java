@@ -57,7 +57,7 @@ public class DataMinuteController {
         String startTime = (String) params.get("startTime");
         String endTime = (String) params.get("endTime");
         // 数据获取
-        List<DataMinute> dataMinutes = this.wrapperDataQuery(startTime, endTime, deviceNo);
+        List<DataMinute> dataMinutes = this.wrapperDataQuery(startTime, endTime, deviceNo, ConstUtil.HistoryType);
         return RestResultUtil.success(dataMinutes);
     }
 
@@ -78,7 +78,7 @@ public class DataMinuteController {
         // 查询设备名称
         List<String> deviceNames = new ArrayList<>(0);
         for (String device : devices) {
-            List<DataMinute> lists = this.wrapperDataQuery(startTime, endTime, device);
+            List<DataMinute> lists = this.wrapperDataQuery(startTime, endTime, device, ConstUtil.ExportType);
             dataMinutes.add(lists);
             // 设备名称
             Device dd = deviceService.findDeviceNo(device);
@@ -112,9 +112,10 @@ public class DataMinuteController {
      * @param startTime 开始时间
      * @param endTime   结束时间
      * @param deviceNo  设备号
+     * @param type      1表示历史查询，2表示数据导出
      * @return 信息
      */
-    private List<DataMinute> wrapperDataQuery(String startTime, String endTime, String deviceNo) {
+    private List<DataMinute> wrapperDataQuery(String startTime, String endTime, String deviceNo, int type) {
         List<DataMinute> dataMinutes = new ArrayList<>(0);
         // 时间日期格式化
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
@@ -128,7 +129,7 @@ public class DataMinuteController {
             if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
-            List<DataMinute> history = dataMinuteService.queryDataMinuteByDate(startDate, endDate, deviceNo);
+            List<DataMinute> history = dataMinuteService.queryDataMinuteByDate(startDate, endDate, deviceNo, type);
             dataMinutes.addAll(history);
         }
         return dataMinutes;

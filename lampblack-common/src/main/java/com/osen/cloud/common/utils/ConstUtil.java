@@ -63,6 +63,9 @@ public class ConstUtil {
     // 分页数
     public static Integer PAGE_NUMBER = 8;
 
+    public static Integer HistoryType = 1;
+
+    public static Integer ExportType = 2;
 
     /**
      * 动态生成当前月份表名
