@@ -37,3 +37,10 @@ spring:
         max-wait: -1
 server:
   port: 8081
+## mybatis配置
+mybatis-plus:
+  type-aliases-package: com.osen.cloud.**.entity
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

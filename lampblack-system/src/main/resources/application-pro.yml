@@ -37,3 +37,8 @@ spring:
         max-wait: -1
 server:
   port: 8080
+
+## mybatis配置
+mybatis-plus:
+  type-aliases-package: com.osen.cloud.**.entity
+  mapper-locations: classpath*:/mapper/**/*.xml
