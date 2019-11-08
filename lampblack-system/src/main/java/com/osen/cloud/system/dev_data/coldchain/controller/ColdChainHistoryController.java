@@ -1,6 +1,7 @@
 package com.osen.cloud.system.dev_data.coldchain.controller;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainHistory;
 import com.osen.cloud.common.entity.dev_coldchain.ColdChainMonitor;
 import com.osen.cloud.common.entity.system_device.Device;
@@ -203,6 +204,9 @@ public class ColdChainHistoryController {
         List<AddressVO> addressVOS = new ArrayList<>(0);
         for (ColdChainHistory coldChainHistory : coldChainHistories) {
             AddressVO addressVO = new AddressVO();
+            // 经纬度为空，跳过
+            if (StringUtils.isEmpty(coldChainHistory.getLongitude()) || StringUtils.isEmpty(coldChainHistory.getLatitude()))
+                continue;
             BeanUtil.copyProperties(coldChainHistory, addressVO);
             addressVOS.add(addressVO);
         }
