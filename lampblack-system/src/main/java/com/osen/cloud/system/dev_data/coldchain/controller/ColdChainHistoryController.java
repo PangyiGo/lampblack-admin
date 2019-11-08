@@ -13,10 +13,7 @@ import com.osen.cloud.service.data.coldchain.ColdChainHistoryService;
 import com.osen.cloud.service.data.coldchain.ColdChainMonitorService;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
-import com.osen.cloud.system.dev_data.coldchain.util.AddressVO;
-import com.osen.cloud.system.dev_data.coldchain.util.ExportExcelUtil;
-import com.osen.cloud.system.dev_data.coldchain.util.RealTimeVO;
-import com.osen.cloud.system.dev_data.coldchain.util.TodayVO;
+import com.osen.cloud.system.dev_data.coldchain.util.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -167,7 +164,34 @@ public class ColdChainHistoryController {
             List<ColdChainHistory> chainHistories = coldChainHistoryService.queryHistoryByDate(startDate, endDate, deviceNo, monitor);
             coldChainHistories.addAll(chainHistories);
         }
-        return RestResultUtil.success(coldChainHistories);
+        List<DataVO> dataVOS = new ArrayList<>(0);
+        for (ColdChainHistory coldChainHistory : coldChainHistories) {
+            DataVO dataVO = new DataVO();
+            switch (monitor) {
+                case "m01":
+                    dataVO.setTemp(coldChainHistory.getT01());
+                    dataVO.setDamp(coldChainHistory.getH01());
+                    dataVO.setDateTime(coldChainHistory.getDateTime());
+                    break;
+                case "m02":
+                    dataVO.setTemp(coldChainHistory.getT02());
+                    dataVO.setDamp(coldChainHistory.getH02());
+                    dataVO.setDateTime(coldChainHistory.getDateTime());
+                    break;
+                case "m03":
+                    dataVO.setTemp(coldChainHistory.getT03());
+                    dataVO.setDamp(coldChainHistory.getH03());
+                    dataVO.setDateTime(coldChainHistory.getDateTime());
+                    break;
+                case "m04":
+                    dataVO.setTemp(coldChainHistory.getT04());
+                    dataVO.setDamp(coldChainHistory.getH04());
+                    dataVO.setDateTime(coldChainHistory.getDateTime());
+                    break;
+            }
+            dataVOS.add(dataVO);
+        }
+        return RestResultUtil.success(dataVOS);
     }
 
     /**

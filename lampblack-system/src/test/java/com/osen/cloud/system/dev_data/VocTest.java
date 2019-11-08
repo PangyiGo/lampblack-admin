@@ -34,7 +34,7 @@ public class VocTest {
         vocHistory.setDeviceNo("2019103000001");
         vocHistory.setDateTime(LocalDateTime.now());
 
-        vocHistory.setVoc(new BigDecimal(5.6));
+        vocHistory.setVoc(new BigDecimal(250));
         vocHistory.setFlow(new BigDecimal(60));
         vocHistory.setSpeed(new BigDecimal(8));
         vocHistory.setPressure(new BigDecimal(900));
@@ -56,7 +56,7 @@ public class VocTest {
         vocHistory.setDeviceNo("2019103000001");
         vocHistory.setDateTime(LocalDateTime.now());
 
-        vocHistory.setVoc(new BigDecimal(5.6));
+        vocHistory.setVoc(new BigDecimal(250));
         vocHistory.setFlow(new BigDecimal(60));
         vocHistory.setSpeed(new BigDecimal(8));
         vocHistory.setPressure(new BigDecimal(900));
@@ -68,6 +68,6 @@ public class VocTest {
         vocHistory.setPressureFlag("T");
         vocHistory.setTempFlag("N");
 
-        stringRedisTemplate.boundHashOps(TableUtil.Voc_RealTime).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
+        stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
     }
 }
