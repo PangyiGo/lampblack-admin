@@ -74,7 +74,7 @@ public class ColdChainAlarmServiceImpl extends ServiceImpl<ColdChainAlarmMapper,
         String deviceNo = (String) params.get("deviceNo");
         String start = (String) params.get("startTime");
         String end = (String) params.get("endTime");
-        long pageNumber = (long) params.get("pageNumber");
+        int pageNumber = (int) params.get("pageNumber");
         // 日期时间格式化
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
         LocalDateTime startTime = LocalDateTime.parse(start, dateTimeFormatter);
@@ -91,7 +91,7 @@ public class ColdChainAlarmServiceImpl extends ServiceImpl<ColdChainAlarmMapper,
         // 结果封装
         Map<String, Object> resultMap = new HashMap<>(0);
         if (coldChainAlarmIPage.getTotal() <= 0) {
-            resultMap.put("total", 0);
+            resultMap.put("total", 0L);
             resultMap.put("alarmHistory", null);
         } else {
             resultMap.put("total", coldChainAlarmIPage.getTotal());

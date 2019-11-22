@@ -61,7 +61,7 @@ public class ConstUtil {
     public static String DAY_TB = "data_day";
 
     // 分页数
-    public static Integer PAGE_NUMBER = 8;
+    public static long PAGE_NUMBER = 8;
 
     public static Integer HistoryType = 1;
 
