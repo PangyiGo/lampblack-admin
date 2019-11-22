@@ -74,7 +74,7 @@ public class ColdChainAlarmServiceImpl extends ServiceImpl<ColdChainAlarmMapper,
         String deviceNo = (String) params.get("deviceNo");
         String start = (String) params.get("startTime");
         String end = (String) params.get("endTime");
-        int pageNumber = (int) params.get("pageNumber");
+        long pageNumber = (long) params.get("pageNumber");
         // 日期时间格式化
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
         LocalDateTime startTime = LocalDateTime.parse(start, dateTimeFormatter);

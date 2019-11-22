@@ -1,4 +1,0 @@
-2019-11-05 18:14:33.659 [main] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-11-05 18:15:02.278 [main] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-11-05 18:16:27.119 [main] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-11-05 18:17:02.763 [main] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
