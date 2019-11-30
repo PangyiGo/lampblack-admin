@@ -1,6 +1,6 @@
-2019-11-07 16:04:47.650 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-11-07 16:04:55.032 [RMI TCP Connection(5)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
-2019-11-07 16:04:56.435 [RMI TCP Connection(5)-192.168.1.54] WARN  o.s.boot.actuate.jdbc.DataSourceHealthIndicator - DataSource health check failed
+2019-11-22 11:52:35.859 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-11-22 11:52:42.717 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-11-22 11:52:43.951 [RMI TCP Connection(2)-192.168.1.54] WARN  o.s.boot.actuate.jdbc.DataSourceHealthIndicator - DataSource health check failed
 org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
 	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:323)
@@ -61,3 +61,10 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
 	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
 	... 39 common frames omitted
+2019-11-22 13:56:39.980 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-11-22 13:56:46.835 [RMI TCP Connection(2)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2019-11-22 14:03:27.446 [XNIO-1 task-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Long]
+2019-11-22 14:05:21.581 [DatebookHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=1m34s88ms478µs874ns).
+2019-11-22 14:05:21.581 [XNIO-1 task-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Long]
+2019-11-22 14:05:53.800 [restartedMain] WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-11-22 14:06:01.652 [RMI TCP Connection(4)-192.168.1.54] WARN  com.zaxxer.hikari.HikariConfig - DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.

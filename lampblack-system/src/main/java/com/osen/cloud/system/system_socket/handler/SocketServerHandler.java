@@ -10,6 +10,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 import java.util.Map;
 
@@ -50,10 +51,13 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         log.info("服务器接收设备上传数据开始：" + getConnectionID(ctx));
         log.info("接收设备数据：" + data);
 
-        /*
+        // 空格处理
+
+        String deleteWhiteSpace = StringUtils.trimAllWhitespace(data);
+      /*
             上传数据处理，转换数据格式为Map
          */
-        Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(data);
+        Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(deleteWhiteSpace);
 
         // 数据类型判断，判断不同的设备上传格式，对应的设备处理
         if (MapUtil.isNotEmpty(parseDataTOMap)) {

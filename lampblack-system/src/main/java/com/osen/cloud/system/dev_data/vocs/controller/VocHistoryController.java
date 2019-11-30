@@ -1,5 +1,6 @@
 package com.osen.cloud.system.dev_data.vocs.controller;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.osen.cloud.common.entity.dev_vocs.VocHistory;
 import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.enums.MonthCode;
@@ -11,6 +12,7 @@ import com.osen.cloud.service.data.vocs.VocHistoryService;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.system.config.db_config.MybatisPlusConfig;
 import com.osen.cloud.system.dev_data.vocs.util.ExportExcelUtil;
+import com.osen.cloud.system.dev_data.vocs.util.HistoryVO;
 import com.osen.cloud.system.dev_data.vocs.util.TodayVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -138,7 +140,13 @@ public class VocHistoryController {
         String endTime = (String) params.get("endTime");
         // 数据获取
         List<VocHistory> vocHistories = this.wrapperDataQuery(startTime, endTime, deviceNo);
-        return RestResultUtil.success(vocHistories);
+        List<HistoryVO> historyVOS = new ArrayList<>(0);
+        for (VocHistory vocHistory : vocHistories) {
+            HistoryVO historyVO = new HistoryVO();
+            BeanUtil.copyProperties(vocHistory, historyVO);
+            historyVOS.add(historyVO);
+        }
+        return RestResultUtil.success(historyVOS);
     }
 
     /**
