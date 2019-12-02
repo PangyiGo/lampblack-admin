@@ -1,6 +1,5 @@
-import com.osen.cloud.system.system_socket.utils.DataSegmentParseUtil;
-
-import java.util.Map;
+import cn.hutool.core.util.StrUtil;
+import org.springframework.util.StringUtils;
 
 /**
  * User: PangYi
@@ -11,11 +10,19 @@ import java.util.Map;
 public class TestMain {
 
     public static void main(String[] args) {
-        String data = "##0395QN=20191106110100001;ST=22;CN=2011;PW=123456;MN=2019110507100002;Flag=5;CP=&&DataTime=20191106110100;a01001-Rtd=27.1,a01001-Flag=N;a01002-Rtd=43.5,a01002-Flag=N;T02-Rtd=27.1,T02-Flag=N;H02-Rtd=44.0,H02-Flag=N;T03-Rtd=27.2,T03-Flag=N;H03-Rtd=43.4,H03-Flag=N;T04-Rtd=27.2,T04-Flag=N;H04-Rtd=43.4,H04-Flag=N;a01002-Rtd=43.5,a01002-Flag=N;lng-Rtd=113.840340,lng-Flag=N;lat-Rtd=22.700447,lat-Flag=N&&6480";
+        String data = "##0297QN=20191122100900943 ;ST=22;CN=2011;PW=123456;MN= 2019061803100005;Flag=5;" +
+                "CP=&&DataTime=20191122100900 ;a34004-Rtd=34.2,a34004-Flag=N ;a34002-Rtd=65.7,a34002-Flag=N;" +
+                "a21026-Rtd=14.8,a21026-Flag=N;a21004- Rtd=20.9,a21004-Flag=N;O3-Rtd=185.1,O3-Flag=N;a21005-Rtd=2.5,a21005-Flag=N;VOC-Rtd=0.5,VOC-Flag=N&&CFC1";
 
-        DataSegmentParseUtil dataSegmentParseUtil = new DataSegmentParseUtil();
-        Map<String, Object> map = dataSegmentParseUtil.parseDataTOMap(data);
+        data = StringUtils.trimAllWhitespace(data);
 
-        System.out.println(map);
+        int index = StrUtil.indexOfIgnoreCase(data, "MN=");
+        System.out.println(index);
+
+        int index1 = StrUtil.indexOf(data, ';', index);
+        System.out.println(index1);
+
+        String sub = StrUtil.sub(data, index + 3, index1);
+        System.out.println(sub);
     }
 }

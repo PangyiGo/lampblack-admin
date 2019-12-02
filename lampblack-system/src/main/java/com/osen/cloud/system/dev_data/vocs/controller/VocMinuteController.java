@@ -60,8 +60,10 @@ public class VocMinuteController {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
         // 开始时间
         LocalDateTime startDate = LocalDateTime.parse(startTime, dateTimeFormatter);
+        startDate = LocalDateTime.of(startDate.getYear(), startDate.getMonthValue(), startDate.getDayOfMonth(), 0, 0, 0);
         // 结束时间
         LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
+        endDate = LocalDateTime.of(endDate.getYear(), endDate.getMonthValue(), endDate.getDayOfMonth(), 23, 59, 59);
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.VocMinute);
         for (String tableName : queryTableName) {
