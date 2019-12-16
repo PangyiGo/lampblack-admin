@@ -109,6 +109,12 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         ctx.fireChannelUnregistered();
     }
 
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        dataSegmentParseUtil.disConnectionDevice(getConnectionID(ctx));
+        ctx.fireChannelInactive();
+    }
+
     /**
      * 读事件完成
      *
