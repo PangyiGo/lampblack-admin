@@ -1,0 +1,59 @@
+2019-12-16 08:54:56.614 log message -> Starting LampblackSystemApplication on PC-20190708MDDO with PID 8640 (E:\gitworkspace\lampblack-admin\lampblack-system\target\classes started by Administrator in E:\gitworkspace\lampblack-admin)
+2019-12-16 08:54:56.623 log message -> The following profiles are active: dev
+2019-12-16 08:54:56.795 log message -> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-16 08:54:56.795 log message -> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-16 08:55:00.376 log message -> Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-16 08:55:00.380 log message -> Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-16 08:55:00.453 log message -> Finished Spring Data repository scanning in 44ms. Found 0 repository interfaces.
+2019-12-16 08:55:01.387 log message -> Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$3dfd5bf8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-16 08:55:01.405 log message -> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a54f93be] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-16 08:55:01.452 log message -> Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-16 08:55:01.456 log message -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5a0b3688' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-16 08:55:01.462 log message -> Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$62d1feaa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-16 08:55:01.472 log message -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-16 08:55:02.067 log message -> Initializing Spring embedded WebApplicationContext
+2019-12-16 08:55:02.067 log message -> Root WebApplicationContext: initialization completed in 5271 ms
+2019-12-16 08:55:07.271 log message -> system_socket service starting port: 8888
+2019-12-16 08:55:07.712 log message -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fb117fc, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c7a464c, org.springframework.security.web.header.HeaderWriterFilter@3023de92, org.springframework.security.web.authentication.logout.LogoutFilter@43716548, com.osen.cloud.system.web_security.config.JwtAuthenticationTokenFilter@2681608e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@36498c51, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25fece6a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@709589e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@181b357b, org.springframework.security.web.session.SessionManagementFilter@7324f800, org.springframework.security.web.access.ExceptionTranslationFilter@48054346, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e09231a]
+2019-12-16 08:55:07.937 log message -> Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-16 08:55:09.589 log message -> Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-16 08:55:09.677 log message -> Initializing ExecutorService 'taskScheduler'
+2019-12-16 08:55:09.807 log message -> LiveReload server is running on port 35729
+2019-12-16 08:55:09.986 log message -> XNIO version 3.3.8.Final
+2019-12-16 08:55:10.005 log message -> XNIO NIO Implementation Version 3.3.8.Final
+2019-12-16 08:55:10.094 log message -> Undertow started on port(s) 8081 (http) with context path ''
+2019-12-16 08:55:10.099 log message -> Started LampblackSystemApplication in 15.735 seconds (JVM running for 17.381)
+2019-12-16 08:55:10.760 log message -> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-16 08:55:10.760 log message -> Initializing Servlet 'dispatcherServlet'
+2019-12-16 08:55:10.767 log message -> DatebookHikariCP - Starting...
+2019-12-16 08:55:10.783 log message -> Completed initialization in 23 ms
+2019-12-16 08:55:11.604 log message -> DatebookHikariCP - Start completed.
+2019-12-16 08:55:11.837 log message -> Starting without optional epoll library
+2019-12-16 08:55:11.840 log message -> Starting without optional kqueue library
+2019-12-16 08:55:34.256 log message -> 设备成功连接服务器：0c9d92fffe787de5-000021c0-00000002-4357cf4ba9b4084d-8559fe05
+2019-12-16 08:56:18.660 log message -> 服务器接收设备上传数据开始：0c9d92fffe787de5-000021c0-00000002-4357cf4ba9b4084d-8559fe05
+2019-12-16 08:56:18.660 log message -> 接收设备数据：##0401QN=20191106105600001;ST=22;CN=2011;PW=123456;MN=2019110507100002;Flag=5;CP=&&DataTime=20191106105600;a01001-Rtd=27.2,a01001-Flag=N;a01002-Rtd=43.5,a01002-Flag=N;T02-Rtd=272.0,T02-Flag=N;H02-Rtd=440.0,H02-Flag=N;T03-Rtd=273.0,T03-Flag=N;H03-Rtd=433.0,H03-Flag=N;T04-Rtd=273.0,T04-Flag=N;H04-Rtd=432.0,H04-Flag=N;a01002-Rtd=43.5,a01002-Flag=N;lng-Rtd=113.840355,lng-Flag=N;lat-Rtd=22.700445,lat-Flag=N&&0440
+2019-12-16 08:56:18.688 log message -> 冷链设备
+2019-12-16 08:56:18.689 log message -> 格式化数据：{ST=22, MN=2019110507100002, PW=123456, CN=2011, QN=20191106105600001, Flag=5, CP={H02-Rtd=440.0, T02-Rtd=272.0, H02-Flag=N, T04-Flag=N, a01001-Flag=N, a01002-Rtd=43.5, DataTime=2019-11-06T10:56, T04-Rtd=273.0, lat-Rtd=22.700445, H03-Flag=N, H03-Rtd=433.0, lng-Rtd=113.840355, T03-Flag=N, lat-Flag=N, T03-Rtd=273.0, T02-Flag=N, a01001-Rtd=27.2, H04-Rtd=432.0, H04-Flag=N, a01002-Flag=N, lng-Flag=N}}
+2019-12-16 08:56:18.695 log message -> 服务器接收设备上传数据完毕：0c9d92fffe787de5-000021c0-00000002-4357cf4ba9b4084d-8559fe05
+2019-12-16 08:56:29.691 log message -> 服务器接收设备上传数据完毕：0c9d92fffe787de5-000021c0-00000002-4357cf4ba9b4084d-8559fe05
+2019-12-16 08:56:29.694 log message -> 设备与服务器断开连接：0c9d92fffe787de5-000021c0-00000002-4357cf4ba9b4084d-8559fe05
+2019-12-16 08:59:04.799 log message -> 设备成功连接服务器：0c9d92fffe787de5-000021c0-00000004-1886f7bb67b73edb-a4efceea
+2019-12-16 08:59:06.131 log message -> 服务器接收设备上传数据开始：0c9d92fffe787de5-000021c0-00000004-1886f7bb67b73edb-a4efceea
+2019-12-16 08:59:06.131 log message -> 接收设备数据：##0137QN=20191011144900001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191011144900;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&0280
+2019-12-16 08:59:06.131 log message -> 油烟设备
+2019-12-16 08:59:06.132 log message -> 格式化数据：{ST=22, MN=2019081903100008, PW=123456, CN=2011, QN=20191011144900001, Flag=5, CP={LAMPBLACK-Rtd=0.0, DataTime=2019-10-11T14:49, LAMPBLACK-Flag=N}}
+2019-12-16 08:59:06.132 log message -> 服务器接收设备上传数据完毕：0c9d92fffe787de5-000021c0-00000004-1886f7bb67b73edb-a4efceea
+2019-12-16 08:59:22.954 log message -> 服务器接收设备上传数据完毕：0c9d92fffe787de5-000021c0-00000004-1886f7bb67b73edb-a4efceea
+2019-12-16 08:59:22.956 log message -> 设备与服务器断开连接：0c9d92fffe787de5-000021c0-00000004-1886f7bb67b73edb-a4efceea
+2019-12-16 08:59:41.462 log message -> 设备成功连接服务器：0c9d92fffe787de5-000021c0-00000005-acaddc4277b7ce13-a0edd000
+2019-12-16 08:59:43.955 log message -> 服务器接收设备上传数据开始：0c9d92fffe787de5-000021c0-00000005-acaddc4277b7ce13-a0edd000
+2019-12-16 08:59:43.955 log message -> 接收设备数据：##0137QN=20191011144900001;ST=22;CN=2011;PW=123456;MN=2019081903100008;Flag=5;CP=&&DataTime=20191011144900;LAMPBLACK-Rtd=0.0,LAMPBLACK-Flag=N&&0280
+2019-12-16 08:59:43.956 log message -> 油烟设备
+2019-12-16 08:59:43.956 log message -> 格式化数据：{ST=22, MN=2019081903100008, PW=123456, CN=2011, QN=20191011144900001, Flag=5, CP={LAMPBLACK-Rtd=0.0, DataTime=2019-10-11T14:49, LAMPBLACK-Flag=N}}
+2019-12-16 08:59:43.957 log message -> 服务器接收设备上传数据完毕：0c9d92fffe787de5-000021c0-00000005-acaddc4277b7ce13-a0edd000
+2019-12-16 08:59:55.262 log message -> Shutting down ExecutorService 'taskScheduler'
+2019-12-16 08:59:55.265 log message -> Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-16 08:59:56.394 log message -> DatebookHikariCP - Shutdown initiated...
+2019-12-16 08:59:56.398 log message -> DatebookHikariCP - Shutdown completed.
+2019-12-16 08:59:56.403 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'
