@@ -30,8 +30,8 @@ public class JwtTokenUtil {
 
     public static final String KEYS = "username:access_token:";
 
-    // 有效时间，默认3小时
-    public static final long EXPIRATION = 60 * 60 * 3 * 1000;
+    // 有效时间，默认6小时
+    public static final long EXPIRATION = 60 * 60 * 6 * 1000;
 
     /**
      * 从数据声明生成令牌
