@@ -105,12 +105,8 @@ public class ColdchainService {
         coldChainHistoryService.insertHistory(coldChainHistory);
 
         // 设备在线状态
-        boolean hasKey = stringRedisTemplate.boundHashOps(TableUtil.Cold_Conn).hasKey(connectionID);
-        if (!hasKey) {
-            // 不存在ConnectionID，设置设备在线，并且设置数据在线状态为2
-            stringRedisTemplate.boundHashOps(TableUtil.Cold_Conn).put(connectionID, coldChainHistory.getDeviceNo());
-            deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, coldChainHistory.getDeviceNo());
-        }
+        stringRedisTemplate.boundHashOps(TableUtil.Cold_Conn).put(connectionID, coldChainHistory.getDeviceNo());
+        deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, coldChainHistory.getDeviceNo());
         // 保存最新实时数据
         stringRedisTemplate.boundHashOps(TableUtil.Cold_RealTime).put(coldChainHistory.getDeviceNo(), JSON.toJSONString(coldChainHistory));
     }

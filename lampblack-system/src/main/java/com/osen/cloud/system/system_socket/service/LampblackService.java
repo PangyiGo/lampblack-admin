@@ -110,12 +110,8 @@ public class LampblackService {
         dataHistoryService.insertRealtimeData(dataHistory);
 
         // 设备在线状态
-        boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).hasKey(connectionID);
-        if (!hasKey) {
-            // 不存在ConnectionID，设置设备在线，并且设置数据在线状态为2
-            stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).put(connectionID, dataHistory.getDeviceNo());
-            deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, dataHistory.getDeviceNo());
-        }
+        stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).put(connectionID, dataHistory.getDeviceNo());
+        deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, dataHistory.getDeviceNo());
         // 保存最新实时数据
         stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).put(dataHistory.getDeviceNo(), JSON.toJSONString(dataHistory));
     }
