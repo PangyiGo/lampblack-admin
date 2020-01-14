@@ -78,7 +78,6 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
                 // 数据保存
                 dataSegmentParseUtil.coldchainHandle(parseDataTOMap, getConnectionID(ctx));
             }
-
         } else {
             log.info("设备上传格式错误，不符合HJ212协议");
         }
