@@ -201,7 +201,6 @@ public class DataSegmentParseUtil {
      *
      * @param parseData map数据
      */
-    @Async
     public void lampblackHandle(Map<String, Object> parseData, String connectionID) {
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));
@@ -236,7 +235,6 @@ public class DataSegmentParseUtil {
      *
      * @param parseData map数据
      */
-    @Async
     public void vocHandle(Map<String, Object> parseData, String connectionID) {
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));
@@ -271,7 +269,6 @@ public class DataSegmentParseUtil {
      *
      * @param parseData map数据
      */
-    @Async
     public void coldchainHandle(Map<String, Object> parseData, String connectionID) {
         try {
             Integer CN = Integer.valueOf((String) parseData.get("CN"));
