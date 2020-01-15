@@ -38,4 +38,13 @@ public interface DataMinuteService extends IService<DataMinute> {
      * @return 信息
      */
     List<DataMinute> queryDataMinuteByDate(LocalDateTime start, LocalDateTime end, String deviceNo, int type);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    DataMinute getOneData(String deviceNo, LocalDateTime dateTime);
 }

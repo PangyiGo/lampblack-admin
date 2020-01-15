@@ -128,4 +128,13 @@ public class DataHistoryServiceImpl extends ServiceImpl<DataHistoryMapper, DataH
         return dataHistories;
     }
 
+    @Override
+    public DataHistory getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<DataHistory> wrapper = Wrappers.<DataHistory>lambdaQuery().select(DataHistory::getDeviceNo).eq(DataHistory::getDeviceNo, deviceNo).eq(DataHistory::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

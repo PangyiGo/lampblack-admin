@@ -38,4 +38,13 @@ public interface DataHourService extends IService<DataHour> {
      * @return 信息
      */
     List<DataHour> queryDataHourByDate(LocalDateTime start, LocalDateTime end, String deviceNo,int type);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    DataHour getOneData(String deviceNo, LocalDateTime dateTime);
 }

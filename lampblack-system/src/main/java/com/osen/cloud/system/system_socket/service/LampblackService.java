@@ -72,42 +72,46 @@ public class LampblackService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataHistory.setDateTime(localDateTime);
-        // 数据封装
-        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleDataMapperToRealtime(lampblackSensorCode, dataHistory, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + realTimeSensorFlag[0]);
-            if (is_code_exist) {
-                handleDataMapperToRealtime(lampblackSensorCode, dataHistory, CPData, 2);
-            }
-        }
-        // 风机，净化器状态
-        dataHistory.setFanFlag(ConstUtil.OPEN_STATUS);
-        dataHistory.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        // 是否存在数值超标，数据报警处理
-        if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
-            AlarmHistory alarmHistory = new AlarmHistory();
-            BeanUtil.copyProperties(dataHistory, alarmHistory);
-            // 保存报警记录
-            alarmHistoryService.insertAlarmData(alarmHistory);
-            stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).put(alarmHistory.getDeviceNo(), JSON.toJSONString(alarmHistory));
-            log.info("设备号：" + alarmHistory.getDeviceNo() + " 数据异常报警");
-        } else {
-            Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).hasKey(dataHistory.getDeviceNo());
-            if (hasKey)
-                stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).delete(dataHistory.getDeviceNo());
-        }
+        // 防止数据重复插入
+        if (dataHistoryService.getOneData(dataHistory.getDeviceNo(), dataHistory.getDateTime()) != null) {
+            // 数据封装
+            for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleDataMapperToRealtime(lampblackSensorCode, dataHistory, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + realTimeSensorFlag[0]);
+                if (is_code_exist) {
+                    handleDataMapperToRealtime(lampblackSensorCode, dataHistory, CPData, 2);
+                }
+            }
+            // 风机，净化器状态
+            dataHistory.setFanFlag(ConstUtil.OPEN_STATUS);
+            dataHistory.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.REALTIME_TB));
-        // 插入数据
-        dataHistoryService.insertRealtimeData(dataHistory);
+            // 是否存在数值超标，数据报警处理
+            if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
+                AlarmHistory alarmHistory = new AlarmHistory();
+                BeanUtil.copyProperties(dataHistory, alarmHistory);
+                // 保存报警记录
+                alarmHistoryService.insertAlarmData(alarmHistory);
+                stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).put(alarmHistory.getDeviceNo(), JSON.toJSONString(alarmHistory));
+                log.info("设备号：" + alarmHistory.getDeviceNo() + " 数据异常报警");
+            } else {
+                Boolean hasKey = stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).hasKey(dataHistory.getDeviceNo());
+                if (hasKey)
+                    stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).delete(dataHistory.getDeviceNo());
+            }
+
+            // 动态生成表名
+            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.REALTIME_TB));
+            // 插入数据
+            dataHistoryService.insertRealtimeData(dataHistory);
+        }
 
         // 设备在线状态
         stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).put(connectionID, dataHistory.getDeviceNo());
@@ -163,29 +167,33 @@ public class LampblackService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataMinute.setDateTime(localDateTime);
-        // 数据封装
-        LampblackDataModel lampblackDataModel = new LampblackDataModel();
-        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
-            if (is_code_exist) {
-                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
-            }
-        }
-        BeanUtil.copyProperties(lampblackDataModel, dataMinute);
-        // 风机，净化器状态
-        dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
-        dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.MINUTE_TB));
-        // 插入数据
-        dataMinuteService.insertMinuteData(dataMinute);
+        // 防止数据重复插入
+        if (dataMinuteService.getOneData(dataMinute.getDeviceNo(), dataMinute.getDateTime()) != null) {
+            // 数据封装
+            LampblackDataModel lampblackDataModel = new LampblackDataModel();
+            for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
+                if (is_code_exist) {
+                    handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
+                }
+            }
+            BeanUtil.copyProperties(lampblackDataModel, dataMinute);
+            // 风机，净化器状态
+            dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
+            dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
+
+            // 动态生成表名
+            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.MINUTE_TB));
+            // 插入数据
+            dataMinuteService.insertMinuteData(dataMinute);
+        }
     }
 
     /**
@@ -205,29 +213,33 @@ public class LampblackService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataHour.setDateTime(localDateTime);
-        // 数据封装
-        LampblackDataModel lampblackDataModel = new LampblackDataModel();
-        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
-            if (is_code_exist) {
-                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
-            }
-        }
-        BeanUtil.copyProperties(lampblackDataModel, dataHour);
-        // 风机，净化器状态
-        dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
-        dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.HOUR_TB));
-        // 插入数据
-        dataHourService.insertHourData(dataHour);
+        // 防止数据重复插入
+        if (dataHourService.getOneData(dataHour.getDeviceNo(), dataHour.getDateTime()) != null) {
+            // 数据封装
+            LampblackDataModel lampblackDataModel = new LampblackDataModel();
+            for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
+                if (is_code_exist) {
+                    handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
+                }
+            }
+            BeanUtil.copyProperties(lampblackDataModel, dataHour);
+            // 风机，净化器状态
+            dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
+            dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
+
+            // 动态生成表名
+            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.HOUR_TB));
+            // 插入数据
+            dataHourService.insertHourData(dataHour);
+        }
     }
 
     /**
@@ -247,29 +259,33 @@ public class LampblackService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataDay.setDateTime(localDateTime);
-        // 数据封装
-        LampblackDataModel lampblackDataModel = new LampblackDataModel();
-        for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
-            if (is_code_exist) {
-                handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
-            }
-        }
-        BeanUtil.copyProperties(lampblackDataModel, dataDay);
-        // 风机，净化器状态
-        dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
-        dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-        // 动态生成表名
-        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.DAY_TB));
-        //插入数据
-        dataDayService.insertDayData(dataDay);
+        // 防止数据重复插入
+        if (dataDayService.getOneData(dataDay.getDeviceNo(), dataDay.getDateTime()) != null) {
+            // 数据封装
+            LampblackDataModel lampblackDataModel = new LampblackDataModel();
+            for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(lampblackSensorCode.getName() + othersSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(lampblackSensorCode.getCode() + othersSensorFlag[0]);
+                if (is_code_exist) {
+                    handleMapperToInterval(lampblackSensorCode, lampblackDataModel, CPData, 2);
+                }
+            }
+            BeanUtil.copyProperties(lampblackDataModel, dataDay);
+            // 风机，净化器状态
+            dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
+            dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
+
+            // 动态生成表名
+            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.DAY_TB));
+            //插入数据
+            dataDayService.insertDayData(dataDay);
+        }
     }
 
     private void handleMapperToInterval(LampblackSensorCode lampblackSensorCode, LampblackDataModel lampblackDataModel, Map<String, Object> CPData, int type) {

@@ -35,15 +35,15 @@ public class DataHourServiceImpl extends ServiceImpl<DataHourMapper, DataHour> i
     }
 
     @Override
-    public List<DataHour> queryDataHourByDate(LocalDateTime start, LocalDateTime end, String deviceNo,int type) {
+    public List<DataHour> queryDataHourByDate(LocalDateTime start, LocalDateTime end, String deviceNo, int type) {
         LambdaQueryWrapper<DataHour> lambdaQuery = Wrappers.<DataHour>lambdaQuery();
         // 查询字段
-        switch (type){
+        switch (type) {
             case 1:
                 lambdaQuery.select(DataHour::getDateTime, DataHour::getLampblack, DataHour::getLampblackFlag, DataHour::getPm, DataHour::getPmFlag, DataHour::getNmhc, DataHour::getNmhcFlag, DataHour::getFanFlag, DataHour::getPurifierFlag);
                 break;
             case 2:
-                lambdaQuery.select(DataHour::getDateTime, DataHour::getLampblack, DataHour::getPm,  DataHour::getNmhc, DataHour::getFanFlag, DataHour::getPurifierFlag);
+                lambdaQuery.select(DataHour::getDateTime, DataHour::getLampblack, DataHour::getPm, DataHour::getNmhc, DataHour::getFanFlag, DataHour::getPurifierFlag);
                 break;
         }
         lambdaQuery.eq(DataHour::getDeviceNo, deviceNo);
@@ -56,5 +56,15 @@ public class DataHourServiceImpl extends ServiceImpl<DataHourMapper, DataHour> i
             return dataHours;
         }
         return dataHours;
+    }
+
+    @Override
+    public DataHour getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<DataHour> wrapper = Wrappers.<DataHour>lambdaQuery().select(DataHour::getDeviceNo).eq(DataHour::getDeviceNo, deviceNo).eq(DataHour::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

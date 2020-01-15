@@ -61,4 +61,13 @@ public interface DataHistoryService extends IService<DataHistory> {
      * @return 信息
      */
     List<DataHistory> queryDataToDay(String deviceNo);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    DataHistory getOneData(String deviceNo, LocalDateTime dateTime);
 }

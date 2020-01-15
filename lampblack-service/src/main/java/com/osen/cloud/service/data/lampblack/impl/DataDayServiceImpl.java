@@ -57,4 +57,14 @@ public class DataDayServiceImpl extends ServiceImpl<DataDayMapper, DataDay> impl
         }
         return dataDays;
     }
+
+    @Override
+    public DataDay getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<DataDay> wrapper = Wrappers.<DataDay>lambdaQuery().select(DataDay::getDeviceNo).eq(DataDay::getDeviceNo, deviceNo).eq(DataDay::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

@@ -38,4 +38,13 @@ public interface DataDayService extends IService<DataDay> {
      * @return 信息
      */
     List<DataDay> queryDataDayByDate(LocalDateTime start, LocalDateTime end, String deviceNo, int type);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    DataDay getOneData(String deviceNo, LocalDateTime dateTime);
 }

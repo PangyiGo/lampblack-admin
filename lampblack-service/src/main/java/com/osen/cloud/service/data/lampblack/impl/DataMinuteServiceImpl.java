@@ -57,4 +57,14 @@ public class DataMinuteServiceImpl extends ServiceImpl<DataMinuteMapper, DataMin
         }
         return dataMinutes;
     }
+
+    @Override
+    public DataMinute getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<DataMinute> wrapper = Wrappers.<DataMinute>lambdaQuery().select(DataMinute::getDeviceNo).eq(DataMinute::getDeviceNo, deviceNo).eq(DataMinute::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
