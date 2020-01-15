@@ -126,7 +126,7 @@ public class ColdChainHistoryController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHistory);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime( MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainHistory> chainHistories = coldChainHistoryService.queryHistoryByDate(startDate, endDate, deviceNo);
@@ -158,7 +158,7 @@ public class ColdChainHistoryController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHistory);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime(MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainHistory> chainHistories = coldChainHistoryService.queryHistoryByDate(startDate, endDate, deviceNo, monitor);
@@ -217,7 +217,7 @@ public class ColdChainHistoryController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHistory);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime( MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainHistory> locusToUser = coldChainHistoryService.getLocusToUser(startDate, endDate, deviceNo);

@@ -414,3 +414,8 @@
 2020-01-15 15:09:18.490 log message -> DatebookHikariCP - Start completed.
 2020-01-15 15:09:18.751 log message -> Starting without optional epoll library
 2020-01-15 15:09:18.755 log message -> Starting without optional kqueue library
+2020-01-15 15:23:21.581 log message -> Shutting down ExecutorService 'taskScheduler'
+2020-01-15 15:23:21.585 log message -> Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-15 15:23:22.723 log message -> DatebookHikariCP - Shutdown initiated...
+2020-01-15 15:23:22.731 log message -> DatebookHikariCP - Shutdown completed.
+2020-01-15 15:23:22.736 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'

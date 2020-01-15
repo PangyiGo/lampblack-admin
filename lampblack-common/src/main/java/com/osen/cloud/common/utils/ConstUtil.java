@@ -1,6 +1,5 @@
 package com.osen.cloud.common.utils;
 
-import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
@@ -156,15 +155,12 @@ public class ConstUtil {
     /**
      * 时间日前后比较，判断表名是否有效
      *
-     * @param tableName  表名
      * @param afterMonth 最早数据表的前一个月份
      * @return 信息, true为表名无效，false表名有效
      */
-    public static boolean compareToTime(String tableName, int afterMonth) {
-        String sub = StrUtil.sub(tableName, -2, tableName.length());
-        int time = Integer.valueOf(sub);
+    public static boolean compareToTime(int afterMonth) {
         LocalDate one = LocalDate.of(2019, afterMonth, 1);
-        LocalDate two = LocalDate.of(2019, time, 1);
+        LocalDate two = LocalDate.now();
         return !two.isAfter(one);
     }
 

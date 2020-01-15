@@ -126,7 +126,7 @@ public class DataDayController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, ConstUtil.DAY_TB);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
+            if (ConstUtil.compareToTime( MonthCode.Lampblack.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<DataDay> history = dataDayService.queryDataDayByDate(startDate, endDate, deviceNo, type);

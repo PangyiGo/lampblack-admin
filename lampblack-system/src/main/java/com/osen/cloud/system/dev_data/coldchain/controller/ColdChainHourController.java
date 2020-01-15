@@ -68,7 +68,7 @@ public class ColdChainHourController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHour);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime( MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainHour> chainHours = coldChainHourService.queryHistoryByDate(startDate, endDate, deviceNo);
@@ -100,7 +100,7 @@ public class ColdChainHourController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHour);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime( MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainHour> chainHours = coldChainHourService.queryHistoryByDate(startDate, endDate, deviceNo, monitor);

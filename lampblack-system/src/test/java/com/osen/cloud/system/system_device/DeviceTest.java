@@ -42,7 +42,7 @@ public class DeviceTest {
     @Test
     public void test02() {
         String tableName = "data_history_201908";
-        boolean time = ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth());
+        boolean time = ConstUtil.compareToTime(MonthCode.Lampblack.getMonth());
         System.out.println(time);
     }
 

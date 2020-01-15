@@ -67,7 +67,7 @@ public class VocDayController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.VocDay);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.Voc.getMonth()))
+            if (ConstUtil.compareToTime( MonthCode.Voc.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<VocDay> vocDayList = vocDayService.queryHistoryByDate(startDate, endDate, deviceNo);

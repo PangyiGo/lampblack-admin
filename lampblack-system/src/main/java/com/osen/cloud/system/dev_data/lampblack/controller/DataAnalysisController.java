@@ -111,7 +111,7 @@ public class DataAnalysisController {
             int dayCount = 0;
             DecimalFormat df = new DecimalFormat("######0.00");
             for (String tableName : realTb) {
-                if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
+                if (ConstUtil.compareToTime(MonthCode.Lampblack.getMonth()))
                     continue;
                 MybatisPlusConfig.TableName.set(tableName);
                 LambdaQueryWrapper<DataHistory> wrapper = Wrappers.<DataHistory>lambdaQuery().eq(DataHistory::getDeviceNo, device.getDeviceNo()).between(DataHistory::getDateTime, start, end);
@@ -123,7 +123,7 @@ public class DataAnalysisController {
             returnDataIntegrityVO.setRealPercentage(df.format(((double) realCount / (double) reals) * 100) + " %");
 
             for (String tableName : minuteTb) {
-                if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
+                if (ConstUtil.compareToTime(MonthCode.Lampblack.getMonth()))
                     continue;
                 MybatisPlusConfig.TableName.set(tableName);
                 LambdaQueryWrapper<DataMinute> wrapper = Wrappers.<DataMinute>lambdaQuery().eq(DataMinute::getDeviceNo, device.getDeviceNo()).between(DataMinute::getDateTime, start, end);
@@ -135,7 +135,7 @@ public class DataAnalysisController {
             returnDataIntegrityVO.setMinutePercentage(df.format(((double) minuteCount / (double) minutes) * 100) + " %");
 
             for (String tableName : hourTb) {
-                if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
+                if (ConstUtil.compareToTime(MonthCode.Lampblack.getMonth()))
                     continue;
                 MybatisPlusConfig.TableName.set(tableName);
                 LambdaQueryWrapper<DataHour> wrapper = Wrappers.<DataHour>lambdaQuery().eq(DataHour::getDeviceNo, device.getDeviceNo()).between(DataHour::getDateTime, start, end);
@@ -147,7 +147,7 @@ public class DataAnalysisController {
             returnDataIntegrityVO.setHourPercentage(df.format(((double) hourCount / (double) hours) * 100) + " %");
 
             for (String tableName : dayTb) {
-                if (ConstUtil.compareToTime(tableName, MonthCode.Lampblack.getMonth()))
+                if (ConstUtil.compareToTime(MonthCode.Lampblack.getMonth()))
                     continue;
                 MybatisPlusConfig.TableName.set(tableName);
                 LambdaQueryWrapper<DataDay> wrapper = Wrappers.<DataDay>lambdaQuery().eq(DataDay::getDeviceNo, device.getDeviceNo()).between(DataDay::getDateTime, start, end);

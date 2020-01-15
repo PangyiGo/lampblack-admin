@@ -68,7 +68,7 @@ public class ColdChainDayController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdDay);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime(MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainDay> chainDays = coldChainDayService.queryHistoryByDate(startDate, endDate, deviceNo);
@@ -100,7 +100,7 @@ public class ColdChainDayController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdDay);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime(tableName, MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime(MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainDay> chainDays = coldChainDayService.queryHistoryByDate(startDate, endDate, deviceNo, monitor);
