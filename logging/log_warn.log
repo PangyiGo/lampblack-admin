@@ -26,3 +26,5 @@
 2020-01-15 15:08:08.621 log message -> DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=1m13s510ms345µs424ns).
 2020-01-15 15:09:11.494 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
 2020-01-15 15:09:18.030 log message -> DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-01-15 15:46:15.698 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-15 15:46:22.378 log message -> DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.

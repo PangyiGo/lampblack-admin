@@ -419,3 +419,40 @@
 2020-01-15 15:23:22.723 log message -> DatebookHikariCP - Shutdown initiated...
 2020-01-15 15:23:22.731 log message -> DatebookHikariCP - Shutdown completed.
 2020-01-15 15:23:22.736 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-01-15 15:46:11.897 log message -> Starting LampblackSystemApplication on PC-20190708MDDO with PID 6432 (E:\gitworkspace\lampblack-admin\lampblack-system\target\classes started by Administrator in E:\gitworkspace\lampblack-admin)
+2020-01-15 15:46:11.915 log message -> The following profiles are active: dev
+2020-01-15 15:46:12.037 log message -> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-01-15 15:46:12.037 log message -> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-01-15 15:46:14.359 log message -> Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-01-15 15:46:14.363 log message -> Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-15 15:46:14.429 log message -> Finished Spring Data repository scanning in 43ms. Found 0 repository interfaces.
+2020-01-15 15:46:15.150 log message -> Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$b2e2e8db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-15 15:46:15.165 log message -> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1a3520a1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-15 15:46:15.204 log message -> Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-15 15:46:15.208 log message -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7d2632a9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-15 15:46:15.210 log message -> Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$d7b78b8d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-15 15:46:15.220 log message -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-15 15:46:15.739 log message -> Initializing Spring embedded WebApplicationContext
+2020-01-15 15:46:15.740 log message -> Root WebApplicationContext: initialization completed in 3702 ms
+2020-01-15 15:46:19.723 log message -> system_socket service starting port: 8888
+2020-01-15 15:46:19.994 log message -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63e631de, org.springframework.security.web.context.SecurityContextPersistenceFilter@48cd695, org.springframework.security.web.header.HeaderWriterFilter@25da71d8, org.springframework.security.web.authentication.logout.LogoutFilter@5fc44961, com.osen.cloud.system.web_security.config.JwtAuthenticationTokenFilter@5a322901, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3d57e27e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@271d8318, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a9682c8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b60b8e3, org.springframework.security.web.session.SessionManagementFilter@5c2cbbc2, org.springframework.security.web.access.ExceptionTranslationFilter@4b566ad2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@458d6464]
+2020-01-15 15:46:20.208 log message -> Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-15 15:46:21.196 log message -> Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-15 15:46:21.287 log message -> Initializing ExecutorService 'taskScheduler'
+2020-01-15 15:46:21.406 log message -> LiveReload server is running on port 35729
+2020-01-15 15:46:21.566 log message -> XNIO version 3.3.8.Final
+2020-01-15 15:46:21.584 log message -> XNIO NIO Implementation Version 3.3.8.Final
+2020-01-15 15:46:21.668 log message -> Undertow started on port(s) 8081 (http) with context path ''
+2020-01-15 15:46:21.672 log message -> Started LampblackSystemApplication in 11.309 seconds (JVM running for 12.546)
+2020-01-15 15:46:22.378 log message -> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-15 15:46:22.379 log message -> Initializing Servlet 'dispatcherServlet'
+2020-01-15 15:46:22.379 log message -> DatebookHikariCP - Starting...
+2020-01-15 15:46:22.400 log message -> Completed initialization in 21 ms
+2020-01-15 15:46:22.830 log message -> DatebookHikariCP - Start completed.
+2020-01-15 15:46:23.025 log message -> Starting without optional epoll library
+2020-01-15 15:46:23.029 log message -> Starting without optional kqueue library
+2020-01-15 15:46:55.920 log message -> Shutting down ExecutorService 'taskScheduler'
+2020-01-15 15:46:55.926 log message -> Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-15 15:46:57.097 log message -> DatebookHikariCP - Shutdown initiated...
+2020-01-15 15:46:57.106 log message -> DatebookHikariCP - Shutdown completed.
+2020-01-15 15:46:57.112 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'
