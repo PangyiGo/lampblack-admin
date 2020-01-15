@@ -5,6 +5,7 @@ import com.osen.cloud.common.entity.dev_vocs.VocAlarm;
 import com.osen.cloud.common.entity.dev_vocs.VocHistory;
 import com.osen.cloud.common.entity.system_device.Device;
 import com.osen.cloud.common.enums.DeviceType;
+import com.osen.cloud.common.enums.MonthCode;
 import com.osen.cloud.common.enums.VocSensorCode;
 import com.osen.cloud.common.result.RestResult;
 import com.osen.cloud.common.utils.ConstUtil;
@@ -192,6 +193,8 @@ public class VocWxController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.VocHistory);
         for (String tableName : queryTableName) {
+            if (ConstUtil.compareToTime(MonthCode.Voc.getMonth()))
+                continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<VocHistory> vocHistoryList = vocHistoryService.queryHistoryByDate(startDate, endDate, deviceNo);
             vocHistories.addAll(vocHistoryList);
