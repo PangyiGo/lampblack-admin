@@ -54,9 +54,9 @@ public class SocketServerHandler extends ChannelInboundHandlerAdapter {
         // 空格处理
 
         String deleteWhiteSpace = StringUtils.trimAllWhitespace(data);
-      /*
-            上传数据处理，转换数据格式为Map
-         */
+        /*
+           上传数据处理，转换数据格式为Map
+        */
         Map<String, Object> parseDataTOMap = dataSegmentParseUtil.parseDataTOMap(deleteWhiteSpace);
 
         // 数据类型判断，判断不同的设备上传格式，对应的设备处理
