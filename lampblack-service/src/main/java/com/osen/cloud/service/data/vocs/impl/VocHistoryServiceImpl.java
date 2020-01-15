@@ -1,5 +1,6 @@
 package com.osen.cloud.service.data.vocs.impl;
 
+import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -54,7 +55,8 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
         Boolean key = operations.hasKey(deviceNo);
         if (key) {
             String dataJson = (String) operations.get(deviceNo);
-            return JSON.parseObject(dataJson, VocHistory.class);
+            if (StrUtil.isNotEmpty(dataJson))
+                return JSON.parseObject(dataJson, VocHistory.class);
         }
         return null;
     }
@@ -121,6 +123,41 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
                 VocHistory vocHistory = JSON.parseObject(json, VocHistory.class);
                 vocHistories.add(vocHistory);
             }
+        }
+        return vocHistories;
+    }
+
+    @Override
+    public List<VocHistory> getVocHistory(String args, String deviceNo) {
+        List<VocHistory> vocHistories = new ArrayList<>(0);
+        // 当前时间
+        LocalDateTime end = LocalDateTime.now();
+        // 开始时间
+        LocalDateTime start = end.minusHours(12);
+        LambdaQueryWrapper<VocHistory> query = Wrappers.<VocHistory>lambdaQuery();
+        switch (args) {
+            case "voc":
+                query.select(VocHistory::getVoc, VocHistory::getDateTime);
+                break;
+            case "flow":
+                query.select(VocHistory::getFlow, VocHistory::getDateTime);
+                break;
+            case "speed":
+                query.select(VocHistory::getSpeed, VocHistory::getDateTime);
+                break;
+            case "pressure":
+                query.select(VocHistory::getPressure, VocHistory::getDateTime);
+                break;
+            case "temp":
+                query.select(VocHistory::getTemp, VocHistory::getDateTime);
+                break;
+        }
+        query.eq(VocHistory::getDeviceNo, deviceNo);
+        query.between(VocHistory::getDateTime, start, end).orderByAsc(VocHistory::getDateTime);
+        try {
+            vocHistories = super.list(query);
+        } catch (Exception e) {
+            return vocHistories;
         }
         return vocHistories;
     }

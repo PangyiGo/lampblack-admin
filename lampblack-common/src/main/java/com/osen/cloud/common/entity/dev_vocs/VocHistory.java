@@ -1,6 +1,5 @@
 package com.osen.cloud.common.entity.dev_vocs;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -34,7 +33,6 @@ public class VocHistory extends Model<VocHistory> implements Serializable {
 
     private String deviceNo;
 
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateTime;
 
     private BigDecimal voc;

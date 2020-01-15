@@ -53,9 +53,10 @@ public class VocHistoryController {
      */
     @PostMapping("/voc/realtime/{deviceNo}")
     public RestResult getRealtime(@PathVariable("deviceNo") String deviceNo) {
-        VocHistory realtime = new VocHistory();
-        if (realtime != null)
-            realtime = vocHistoryService.getRealtime(deviceNo);
+        VocHistory realtime = vocHistoryService.getRealtime(deviceNo);
+        if (realtime == null) {
+            realtime = new VocHistory();
+        }
         return RestResultUtil.success(realtime);
     }
 

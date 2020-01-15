@@ -38,4 +38,11 @@ public interface UserDeviceService extends IService<UserDevice> {
      * @return 信息
      */
     List<UserDevice> findUserToDevice(LambdaQueryWrapper<UserDevice> queryWrapper);
+
+    /**
+     * 根据用户名ID查询设备列表ID
+     *
+     * @return 信息
+     */
+    List<Integer> findDeviceIdsByUsername();
 }

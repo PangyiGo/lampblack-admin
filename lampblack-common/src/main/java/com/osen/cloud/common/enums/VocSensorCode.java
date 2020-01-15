@@ -17,7 +17,7 @@ public enum VocSensorCode {
 
     FLOW("a42006", "Flow", "流量"),
 
-    SPEED("a01011", "S02", "烟气流速"),
+    SPEED("a01011", "S02", "流速"),
 
     PRESSURE("a01006", "P01", "压力"),
 

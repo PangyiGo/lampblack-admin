@@ -8,6 +8,7 @@ import com.osen.cloud.common.entity.system_user.User;
 import com.osen.cloud.common.entity.system_user.UserDevice;
 import com.osen.cloud.common.except.type.ServiceException;
 import com.osen.cloud.common.utils.ConstUtil;
+import com.osen.cloud.common.utils.SecurityUtil;
 import com.osen.cloud.model.user_device.UserDeviceMapper;
 import com.osen.cloud.service.device.DeviceService;
 import com.osen.cloud.service.user.UserService;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -76,5 +78,19 @@ public class UserDeviceServiceImpl extends ServiceImpl<UserDeviceMapper, UserDev
         if (selectList == null || selectList.size() == 0)
             return null;
         return selectList;
+    }
+
+    @Override
+    public List<Integer> findDeviceIdsByUsername() {
+        List<Integer> deviceIds = new ArrayList<>(0);
+        // 用户ID
+        Integer uid = SecurityUtil.getUserId();
+        // 查询
+        LambdaQueryWrapper<UserDevice> wrapper = Wrappers.<UserDevice>lambdaQuery().eq(UserDevice::getUserId, uid);
+        List<UserDevice> userDevices = super.list(wrapper);
+        if (userDevices != null) {
+            userDevices.forEach(userDevice -> deviceIds.add(userDevice.getDeviceId()));
+        }
+        return deviceIds;
     }
 }

@@ -61,4 +61,13 @@ public interface VocHistoryService extends IService<VocHistory> {
      * @return 信息
      */
     List<VocHistory> getRealtimeToUser();
+
+    /**
+     * 获取voc近12小时历史数据
+     *
+     * @param args     参数
+     * @param deviceNo 设备号
+     * @return 信息
+     */
+    List<VocHistory> getVocHistory(String args, String deviceNo);
 }
