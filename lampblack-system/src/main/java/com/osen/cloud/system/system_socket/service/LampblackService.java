@@ -111,13 +111,14 @@ public class LampblackService {
 
             // 插入数据
             dataHistoryService.insertRealtimeData(dataHistory);
+
+            // 保存最新实时数据
+            stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).put(dataHistory.getDeviceNo(), JSON.toJSONString(dataHistory));
         }
 
         // 设备在线状态
         stringRedisTemplate.boundHashOps(ConstUtil.DEVICE_KEY).put(connectionID, dataHistory.getDeviceNo());
         deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, dataHistory.getDeviceNo());
-        // 保存最新实时数据
-        stringRedisTemplate.boundHashOps(ConstUtil.DATA_KEY).put(dataHistory.getDeviceNo(), JSON.toJSONString(dataHistory));
     }
 
     private void handleDataMapperToRealtime(LampblackSensorCode lampblackSensorCode, DataHistory dataHistory, Map<String, Object> CPData, int type) {

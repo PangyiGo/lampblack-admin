@@ -106,13 +106,14 @@ public class ColdchainService {
 
             // 插入数据
             coldChainHistoryService.insertHistory(coldChainHistory);
+
+            // 保存最新实时数据
+            stringRedisTemplate.boundHashOps(TableUtil.Cold_RealTime).put(coldChainHistory.getDeviceNo(), JSON.toJSONString(coldChainHistory));
         }
 
         // 设备在线状态
         stringRedisTemplate.boundHashOps(TableUtil.Cold_Conn).put(connectionID, coldChainHistory.getDeviceNo());
         deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, coldChainHistory.getDeviceNo());
-        // 保存最新实时数据
-        stringRedisTemplate.boundHashOps(TableUtil.Cold_RealTime).put(coldChainHistory.getDeviceNo(), JSON.toJSONString(coldChainHistory));
     }
 
     private void handleDataMapperToRealtime(ColdChainSensorCode coldChainSensorCode, ColdChainHistory coldChainHistory, Map<String, Object> CPData, int type) {

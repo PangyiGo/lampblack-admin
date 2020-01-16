@@ -111,13 +111,14 @@ public class VocService {
 
             // 插入数据
             vocHistoryService.insertHistory(vocHistory);
+
+            // 保存最新实时数据
+            stringRedisTemplate.boundHashOps(TableUtil.Voc_RealTime).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
         }
 
         // 设备在线状态
         stringRedisTemplate.boundHashOps(TableUtil.Voc_Conn).put(connectionID, vocHistory.getDeviceNo());
         deviceService.updateDeviceStatus(ConstUtil.OPEN_STATUS, vocHistory.getDeviceNo());
-        // 保存最新实时数据
-        stringRedisTemplate.boundHashOps(TableUtil.Voc_RealTime).put(vocHistory.getDeviceNo(), JSON.toJSONString(vocHistory));
     }
 
     private void handleDataMapperToRealtime(VocSensorCode vocSensorCode, VocHistory vocHistory, Map<String, Object> CPData, int type) {
