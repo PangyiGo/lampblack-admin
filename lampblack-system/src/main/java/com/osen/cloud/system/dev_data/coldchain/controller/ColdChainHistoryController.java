@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
 import java.net.URLEncoder;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -150,11 +151,13 @@ public class ColdChainHistoryController {
         // 数据获取
         List<ColdChainHistory> coldChainHistories = new ArrayList<>(0);
         // 时间日期格式化
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.DATE);
         // 开始时间
-        LocalDateTime startDate = LocalDateTime.parse(startTime, dateTimeFormatter);
+        LocalDate startDates = LocalDate.parse(startTime, dateTimeFormatter);
+        LocalDateTime startDate = LocalDateTime.of(startDates.getYear(), startDates.getMonthValue(), startDates.getDayOfMonth(), 0, 0, 0);
         // 结束时间
-        LocalDateTime endDate = LocalDateTime.parse(endTime, dateTimeFormatter);
+        LocalDate endDates = LocalDate.parse(endTime, dateTimeFormatter);
+        LocalDateTime endDate = LocalDateTime.of(endDates.getYear(), endDates.getMonthValue(), endDates.getDayOfMonth(), 23, 59, 59);
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHistory);
         for (String tableName : queryTableName) {

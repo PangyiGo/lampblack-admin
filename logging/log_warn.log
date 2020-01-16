@@ -34,3 +34,23 @@
 2020-01-16 14:53:28.956 log message -> DatebookHikariCP - Thread starvation or clock leap detected (housekeeper delta=1m2s818ms49µs696ns).
 2020-01-16 14:57:41.615 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
 2020-01-16 14:57:48.335 log message -> DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-01-16 15:00:58.273 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:01:04.881 log message -> DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-01-16 15:03:24.810 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:10:04.522 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:11:18.939 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:16:06.440 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:17:19.617 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:21:13.246 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:23:25.271 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:29:22.602 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:29:41.387 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:30:51.180 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:36:32.793 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:37:45.823 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:42:17.497 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:47:12.427 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:50:10.834 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:53:36.184 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:54:27.716 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-01-16 15:55:34.286 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
