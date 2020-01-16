@@ -32,6 +32,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * User: PangYi
@@ -267,7 +268,7 @@ public class ColdChainWxController {
         // 构建数据表
         List<String> queryTableName = ConstUtil.queryTableName(startDate, endDate, TableUtil.ColdHistory);
         for (String tableName : queryTableName) {
-            if (ConstUtil.compareToTime( MonthCode.ColdChain.getMonth()))
+            if (ConstUtil.compareToTime(MonthCode.ColdChain.getMonth()))
                 continue;
             MybatisPlusConfig.TableName.set(tableName);
             List<ColdChainHistory> locusToUser = coldChainHistoryService.getLocusToUser(startDate, endDate, deviceNo);
@@ -282,6 +283,8 @@ public class ColdChainWxController {
             BeanUtil.copyProperties(coldChainHistory, addressVO);
             addressVOS.add(addressVO);
         }
+        // 过滤null值
+        addressVOS = addressVOS.stream().filter(addressVO -> addressVO.getLongitude() != null && addressVO.getLatitude() != null).collect(Collectors.toList());
         return RestResultUtil.success(addressVOS);
     }
 }
