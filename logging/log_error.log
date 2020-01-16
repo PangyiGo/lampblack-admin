@@ -1256,3 +1256,36 @@ Consider defining a bean of type 'com.osen.cloud.system.system_socket.service.Vo
 2020-01-16 15:55:37.120 log message -> system_socket service start error
 2020-01-16 15:55:38.546 log message -> Cannot connect, Event executor group is terminated.
 2020-01-16 15:55:44.559 log message -> Cannot connect, Event executor group is terminated.
+2020-01-16 15:57:13.801 log message -> 数据段解析异常
+2020-01-16 15:58:15.955 log message -> 数据段解析异常
+2020-01-16 15:59:11.154 log message -> 数据段解析异常
+2020-01-16 16:00:13.750 log message -> 数据段解析异常
+2020-01-16 16:01:15.951 log message -> 数据段解析异常
+2020-01-16 16:02:11.149 log message -> 数据段解析异常
+2020-01-16 16:03:13.746 log message -> 数据段解析异常
+2020-01-16 16:04:15.944 log message -> 数据段解析异常
+2020-01-16 16:06:13.773 log message -> 数据段解析异常
+2020-01-16 16:07:15.941 log message -> 数据段解析异常
+2020-01-16 16:08:11.140 log message -> 数据段解析异常
+2020-01-16 16:09:10.738 log message -> 数据段解析异常
+2020-01-16 16:10:15.938 log message -> 数据段解析异常
+2020-01-16 16:11:11.135 log message -> 数据段解析异常
+2020-01-16 16:12:13.732 log message -> 数据段解析异常
+2020-01-16 16:13:15.932 log message -> 数据段解析异常
+2020-01-16 16:14:11.131 log message -> 数据段解析异常
+2020-01-16 16:15:13.729 log message -> 数据段解析异常
+2020-01-16 16:16:15.928 log message -> 数据段解析异常
+2020-01-16 16:17:11.126 log message -> 数据段解析异常
+2020-01-16 16:18:13.724 log message -> 数据段解析异常
+2020-01-16 16:19:15.923 log message -> 数据段解析异常
+2020-01-16 16:20:11.122 log message -> 数据段解析异常
+2020-01-16 16:21:13.720 log message -> 数据段解析异常
+2020-01-16 16:22:15.919 log message -> 数据段解析异常
+2020-01-16 16:23:11.118 log message -> 数据段解析异常
+2020-01-16 16:24:13.716 log message -> 数据段解析异常
+2020-01-16 16:25:15.043 log message -> Address already in use: bind
+2020-01-16 16:25:15.044 log message -> system_socket service start error
+2020-01-16 16:25:15.914 log message -> 数据段解析异常
+2020-01-16 16:26:11.113 log message -> 数据段解析异常
+2020-01-16 16:26:19.067 log message -> Address already in use: bind
+2020-01-16 16:26:19.067 log message -> system_socket service start error

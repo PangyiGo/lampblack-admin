@@ -151,7 +151,7 @@ public class ColdChainHistoryController {
         // 数据获取
         List<ColdChainHistory> coldChainHistories = new ArrayList<>(0);
         // 时间日期格式化
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.DATE);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ConstUtil.QUERY_DATE);
         // 开始时间
         LocalDate startDates = LocalDate.parse(startTime, dateTimeFormatter);
         LocalDateTime startDate = LocalDateTime.of(startDates.getYear(), startDates.getMonthValue(), startDates.getDayOfMonth(), 0, 0, 0);
