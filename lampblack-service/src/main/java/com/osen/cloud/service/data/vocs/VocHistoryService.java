@@ -70,4 +70,13 @@ public interface VocHistoryService extends IService<VocHistory> {
      * @return 信息
      */
     List<VocHistory> getVocHistory(String args, String deviceNo);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    VocHistory getOneData(String deviceNo, LocalDateTime dateTime);
 }

@@ -161,4 +161,14 @@ public class VocHistoryServiceImpl extends ServiceImpl<VocHistoryMapper, VocHist
         }
         return vocHistories;
     }
+
+    @Override
+    public VocHistory getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<VocHistory> wrapper = Wrappers.<VocHistory>lambdaQuery().select(VocHistory::getDeviceNo).eq(VocHistory::getDeviceNo, deviceNo).eq(VocHistory::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

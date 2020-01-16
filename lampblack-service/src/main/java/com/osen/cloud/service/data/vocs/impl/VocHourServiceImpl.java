@@ -48,4 +48,14 @@ public class VocHourServiceImpl extends ServiceImpl<VocHourMapper, VocHour> impl
         }
         return vocHours;
     }
+
+    @Override
+    public VocHour getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<VocHour> wrapper = Wrappers.<VocHour>lambdaQuery().select(VocHour::getDeviceNo).eq(VocHour::getDeviceNo, deviceNo).eq(VocHour::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

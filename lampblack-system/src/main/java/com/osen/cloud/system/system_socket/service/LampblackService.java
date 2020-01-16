@@ -73,8 +73,10 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataHistory.setDateTime(localDateTime);
 
+        // 动态生成表名
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.REALTIME_TB));
         // 防止数据重复插入
-        if (dataHistoryService.getOneData(dataHistory.getDeviceNo(), dataHistory.getDateTime()) != null) {
+        if (dataHistoryService.getOneData(dataHistory.getDeviceNo(), dataHistory.getDateTime()) == null) {
             // 数据封装
             for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
                 // 1表示通过名字上传数据，2表示通过编号上传数据
@@ -107,8 +109,6 @@ public class LampblackService {
                     stringRedisTemplate.boundHashOps(ConstUtil.ALARM_KEY).delete(dataHistory.getDeviceNo());
             }
 
-            // 动态生成表名
-            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.REALTIME_TB));
             // 插入数据
             dataHistoryService.insertRealtimeData(dataHistory);
         }
@@ -168,8 +168,10 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataMinute.setDateTime(localDateTime);
 
+        // 动态生成表名
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.MINUTE_TB));
         // 防止数据重复插入
-        if (dataMinuteService.getOneData(dataMinute.getDeviceNo(), dataMinute.getDateTime()) != null) {
+        if (dataMinuteService.getOneData(dataMinute.getDeviceNo(), dataMinute.getDateTime()) == null) {
             // 数据封装
             LampblackDataModel lampblackDataModel = new LampblackDataModel();
             for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
@@ -189,8 +191,6 @@ public class LampblackService {
             dataMinute.setFanFlag(ConstUtil.OPEN_STATUS);
             dataMinute.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-            // 动态生成表名
-            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.MINUTE_TB));
             // 插入数据
             dataMinuteService.insertMinuteData(dataMinute);
         }
@@ -214,8 +214,10 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataHour.setDateTime(localDateTime);
 
+        // 动态生成表名
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.HOUR_TB));
         // 防止数据重复插入
-        if (dataHourService.getOneData(dataHour.getDeviceNo(), dataHour.getDateTime()) != null) {
+        if (dataHourService.getOneData(dataHour.getDeviceNo(), dataHour.getDateTime()) == null) {
             // 数据封装
             LampblackDataModel lampblackDataModel = new LampblackDataModel();
             for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
@@ -235,8 +237,6 @@ public class LampblackService {
             dataHour.setFanFlag(ConstUtil.OPEN_STATUS);
             dataHour.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-            // 动态生成表名
-            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.HOUR_TB));
             // 插入数据
             dataHourService.insertHourData(dataHour);
         }
@@ -260,8 +260,10 @@ public class LampblackService {
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         dataDay.setDateTime(localDateTime);
 
+        // 动态生成表名
+        MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.DAY_TB));
         // 防止数据重复插入
-        if (dataDayService.getOneData(dataDay.getDeviceNo(), dataDay.getDateTime()) != null) {
+        if (dataDayService.getOneData(dataDay.getDeviceNo(), dataDay.getDateTime()) == null) {
             // 数据封装
             LampblackDataModel lampblackDataModel = new LampblackDataModel();
             for (LampblackSensorCode lampblackSensorCode : LampblackSensorCode.values()) {
@@ -281,8 +283,6 @@ public class LampblackService {
             dataDay.setFanFlag(ConstUtil.OPEN_STATUS);
             dataDay.setPurifierFlag(ConstUtil.OPEN_STATUS);
 
-            // 动态生成表名
-            MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(ConstUtil.DAY_TB));
             //插入数据
             dataDayService.insertDayData(dataDay);
         }

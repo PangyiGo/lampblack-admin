@@ -153,4 +153,14 @@ public class ColdChainHistoryServiceImpl extends ServiceImpl<ColdChainHistoryMap
         }
         return chainHistories;
     }
+
+    @Override
+    public ColdChainHistory getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<ColdChainHistory> wrapper = Wrappers.<ColdChainHistory>lambdaQuery().select(ColdChainHistory::getDeviceNo).eq(ColdChainHistory::getDeviceNo, deviceNo).eq(ColdChainHistory::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

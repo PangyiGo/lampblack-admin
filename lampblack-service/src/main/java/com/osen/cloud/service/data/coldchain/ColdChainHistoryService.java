@@ -81,4 +81,13 @@ public interface ColdChainHistoryService extends IService<ColdChainHistory> {
      * @return 信息
      */
     List<ColdChainHistory> getLocusToUser(LocalDateTime start, LocalDateTime end, String deviceNo);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    ColdChainHistory getOneData(String deviceNo, LocalDateTime dateTime);
 }

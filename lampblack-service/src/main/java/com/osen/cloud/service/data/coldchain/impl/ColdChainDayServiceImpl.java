@@ -77,4 +77,14 @@ public class ColdChainDayServiceImpl extends ServiceImpl<ColdChainDayMapper, Col
         }
         return chainDays;
     }
+
+    @Override
+    public ColdChainDay getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<ColdChainDay> wrapper = Wrappers.<ColdChainDay>lambdaQuery().select(ColdChainDay::getDeviceNo).eq(ColdChainDay::getDeviceNo, deviceNo).eq(ColdChainDay::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

@@ -37,4 +37,13 @@ public interface VocHourService extends IService<VocHour> {
      * @return 信息
      */
     List<VocHour> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    VocHour getOneData(String deviceNo, LocalDateTime dateTime);
 }

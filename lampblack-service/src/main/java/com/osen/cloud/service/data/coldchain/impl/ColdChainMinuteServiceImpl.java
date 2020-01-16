@@ -77,4 +77,14 @@ public class ColdChainMinuteServiceImpl extends ServiceImpl<ColdChainMinuteMappe
         }
         return chainMinutes;
     }
+
+    @Override
+    public ColdChainMinute getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<ColdChainMinute> wrapper = Wrappers.<ColdChainMinute>lambdaQuery().select(ColdChainMinute::getDeviceNo).eq(ColdChainMinute::getDeviceNo, deviceNo).eq(ColdChainMinute::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

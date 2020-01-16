@@ -73,41 +73,45 @@ public class VocService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         vocHistory.setDateTime(localDateTime);
-        // 数据封装
-        for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleDataMapperToRealtime(vocSensorCode, vocHistory, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
-            if (is_code_exist) {
-                handleDataMapperToRealtime(vocSensorCode, vocHistory, CPData, 2);
-            }
-        }
-
-        // 是否存在数值超标，数据报警处理
-        if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
-            VocAlarm vocAlarm = new VocAlarm();
-            // 数据复制
-            BeanUtil.copyProperties(vocHistory, vocAlarm);
-            // 保存报警记录
-            vocAlarmService.insertAlarm(vocAlarm);
-            stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).put(vocAlarm.getDeviceNo(), JSON.toJSONString(vocAlarm));
-            log.info("设备号：" + vocAlarm.getDeviceNo() + " 数据异常报警");
-        } else {
-            // 删除报警缓存记录
-            Boolean hasKey = stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).hasKey(vocHistory.getDeviceNo());
-            if (hasKey)
-                stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).delete(vocHistory.getDeviceNo());
-        }
 
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.VocHistory));
-        // 插入数据
-        vocHistoryService.insertHistory(vocHistory);
+        // 防止数据重复添加
+        if (vocHistoryService.getOneData(vocHistory.getDeviceNo(), vocHistory.getDateTime()) == null) {
+            // 数据封装
+            for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleDataMapperToRealtime(vocSensorCode, vocHistory, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
+                if (is_code_exist) {
+                    handleDataMapperToRealtime(vocSensorCode, vocHistory, CPData, 2);
+                }
+            }
+
+            // 是否存在数值超标，数据报警处理
+            if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
+                VocAlarm vocAlarm = new VocAlarm();
+                // 数据复制
+                BeanUtil.copyProperties(vocHistory, vocAlarm);
+                // 保存报警记录
+                vocAlarmService.insertAlarm(vocAlarm);
+                stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).put(vocAlarm.getDeviceNo(), JSON.toJSONString(vocAlarm));
+                log.info("设备号：" + vocAlarm.getDeviceNo() + " 数据异常报警");
+            } else {
+                // 删除报警缓存记录
+                Boolean hasKey = stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).hasKey(vocHistory.getDeviceNo());
+                if (hasKey)
+                    stringRedisTemplate.boundHashOps(TableUtil.Voc_Alarm).delete(vocHistory.getDeviceNo());
+            }
+
+            // 插入数据
+            vocHistoryService.insertHistory(vocHistory);
+        }
 
         // 设备在线状态
         stringRedisTemplate.boundHashOps(TableUtil.Voc_Conn).put(connectionID, vocHistory.getDeviceNo());
@@ -171,28 +175,32 @@ public class VocService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         vocMinute.setDateTime(localDateTime);
-        // 数据封装
-        VocDataModel vocDataModel = new VocDataModel();
-        // 数据封装
-        for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
-            if (is_code_exist) {
-                handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 2);
-            }
-        }
 
-        BeanUtil.copyProperties(vocDataModel, vocMinute);
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.VocMinute));
-        // 插入数据
-        vocMinuteService.insertMinute(vocMinute);
+        // 防止数据重复添加
+        if (vocMinuteService.getOneData(vocMinute.getDeviceNo(), vocMinute.getDateTime()) == null) {
+            // 数据封装
+            VocDataModel vocDataModel = new VocDataModel();
+            // 数据封装
+            for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
+                if (is_code_exist) {
+                    handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 2);
+                }
+            }
+
+            BeanUtil.copyProperties(vocDataModel, vocMinute);
+            // 插入数据
+            vocMinuteService.insertMinute(vocMinute);
+        }
     }
 
     /**
@@ -212,28 +220,32 @@ public class VocService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         vocHour.setDateTime(localDateTime);
-        // 数据封装
-        VocDataModel vocDataModel = new VocDataModel();
-        // 数据封装
-        for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
-            if (is_code_exist) {
-                handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 2);
-            }
-        }
 
-        BeanUtil.copyProperties(vocDataModel, vocHour);
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.VocHour));
-        // 插入数据
-        vocHourService.insertHour(vocHour);
+        // 防止数据重复添加
+        if (vocHourService.getOneData(vocHour.getDeviceNo(), vocHour.getDateTime()) == null) {
+            // 数据封装
+            VocDataModel vocDataModel = new VocDataModel();
+            // 数据封装
+            for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
+                if (is_code_exist) {
+                    handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 2);
+                }
+            }
+
+            BeanUtil.copyProperties(vocDataModel, vocHour);
+            // 插入数据
+            vocHourService.insertHour(vocHour);
+        }
     }
 
     /**
@@ -253,28 +265,32 @@ public class VocService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         vocDay.setDateTime(localDateTime);
-        // 数据封装
-        VocDataModel vocDataModel = new VocDataModel();
-        // 数据封装
-        for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 1);
-            }
-            // 参数编号
-            boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
-            if (is_code_exist) {
-                handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 2);
-            }
-        }
 
-        BeanUtil.copyProperties(vocDataModel, vocDay);
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.VocDay));
-        // 插入数据
-        vocDayService.insertDay(vocDay);
+        // 防止数据重复插入
+        if (vocDayService.getOneData(vocDay.getDeviceNo(), vocDay.getDateTime()) == null) {
+            // 数据封装
+            VocDataModel vocDataModel = new VocDataModel();
+            // 数据封装
+            for (VocSensorCode vocSensorCode : VocSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(vocSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 1);
+                }
+                // 参数编号
+                boolean is_code_exist = CPData.containsKey(vocSensorCode.getCode() + realTimeSensorFlag[0]);
+                if (is_code_exist) {
+                    handleMapperToInterval(vocSensorCode, vocDataModel, CPData, 2);
+                }
+            }
+
+            BeanUtil.copyProperties(vocDataModel, vocDay);
+            // 插入数据
+            vocDayService.insertDay(vocDay);
+        }
     }
 
     private void handleMapperToInterval(VocSensorCode vocSensorCode, VocDataModel vocDataModel, Map<String, Object> CPData, int type) {

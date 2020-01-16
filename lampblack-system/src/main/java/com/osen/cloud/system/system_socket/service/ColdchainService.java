@@ -73,36 +73,40 @@ public class ColdchainService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         coldChainHistory.setDateTime(localDateTime);
-        // 数据封装
-        for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleDataMapperToRealtime(coldChainSensorCode, coldChainHistory, CPData, 1);
-            }
-        }
-
-        // 是否存在数值超标，数据报警处理
-        if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
-            ColdChainAlarm coldChainAlarm = new ColdChainAlarm();
-            // 数据复制
-            BeanUtil.copyProperties(coldChainHistory, coldChainAlarm);
-            // 保存报警记录
-            coldChainAlarmService.insertAlarm(coldChainAlarm);
-            stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).put(coldChainAlarm.getDeviceNo(), JSON.toJSONString(coldChainAlarm));
-            log.info("设备号：" + coldChainAlarm.getDeviceNo() + " 数据异常报警");
-        } else {
-            // 删除报警缓存记录
-            Boolean hasKey = stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).hasKey(coldChainHistory.getDeviceNo());
-            if (hasKey)
-                stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).delete(coldChainHistory.getDeviceNo());
-        }
 
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.ColdHistory));
-        // 插入数据
-        coldChainHistoryService.insertHistory(coldChainHistory);
+        // 防止数据重复添加
+        if (coldChainHistoryService.getOneData(coldChainHistory.getDeviceNo(), coldChainHistory.getDateTime()) == null) {
+            // 数据封装
+            for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleDataMapperToRealtime(coldChainSensorCode, coldChainHistory, CPData, 1);
+                }
+            }
+
+            // 是否存在数值超标，数据报警处理
+            if (CPData.containsValue("F") || CPData.containsValue("D") || CPData.containsValue("T") || CPData.containsValue("B")) {
+                ColdChainAlarm coldChainAlarm = new ColdChainAlarm();
+                // 数据复制
+                BeanUtil.copyProperties(coldChainHistory, coldChainAlarm);
+                // 保存报警记录
+                coldChainAlarmService.insertAlarm(coldChainAlarm);
+                stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).put(coldChainAlarm.getDeviceNo(), JSON.toJSONString(coldChainAlarm));
+                log.info("设备号：" + coldChainAlarm.getDeviceNo() + " 数据异常报警");
+            } else {
+                // 删除报警缓存记录
+                Boolean hasKey = stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).hasKey(coldChainHistory.getDeviceNo());
+                if (hasKey)
+                    stringRedisTemplate.boundHashOps(TableUtil.Cold_Alarm).delete(coldChainHistory.getDeviceNo());
+            }
+
+            // 插入数据
+            coldChainHistoryService.insertHistory(coldChainHistory);
+        }
 
         // 设备在线状态
         stringRedisTemplate.boundHashOps(TableUtil.Cold_Conn).put(connectionID, coldChainHistory.getDeviceNo());
@@ -184,23 +188,27 @@ public class ColdchainService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         coldChainMinute.setDateTime(localDateTime);
-        // 数据封装
-        ColdChainDataModel coldChainDataModel = new ColdChainDataModel();
-        // 数据封装
-        for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(coldChainSensorCode, coldChainDataModel, CPData, 1);
-            }
-        }
 
-        BeanUtil.copyProperties(coldChainDataModel, coldChainMinute);
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.ColdMinute));
-        // 插入数据
-        coldChainMinuteService.insertMinute(coldChainMinute);
+        // 防止数据重复添加
+        if (coldChainMinuteService.getOneData(coldChainMinute.getDeviceNo(), coldChainMinute.getDateTime()) == null) {
+            // 数据封装
+            ColdChainDataModel coldChainDataModel = new ColdChainDataModel();
+            // 数据封装
+            for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(coldChainSensorCode, coldChainDataModel, CPData, 1);
+                }
+            }
+
+            BeanUtil.copyProperties(coldChainDataModel, coldChainMinute);
+            // 插入数据
+            coldChainMinuteService.insertMinute(coldChainMinute);
+        }
     }
 
     /**
@@ -220,23 +228,27 @@ public class ColdchainService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         coldChainHour.setDateTime(localDateTime);
-        // 数据封装
-        ColdChainDataModel coldChainDataModel = new ColdChainDataModel();
-        // 数据封装
-        for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(coldChainSensorCode, coldChainDataModel, CPData, 1);
-            }
-        }
 
-        BeanUtil.copyProperties(coldChainDataModel, coldChainHour);
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.ColdHour));
-        // 插入数据
-        coldChainHourService.insertHour(coldChainHour);
+        // 防止数据重复添加
+        if (coldChainHourService.getOneData(coldChainHour.getDeviceNo(), coldChainHour.getDateTime()) == null) {
+            // 数据封装
+            ColdChainDataModel coldChainDataModel = new ColdChainDataModel();
+            // 数据封装
+            for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(coldChainSensorCode, coldChainDataModel, CPData, 1);
+                }
+            }
+
+            BeanUtil.copyProperties(coldChainDataModel, coldChainHour);
+            // 插入数据
+            coldChainHourService.insertHour(coldChainHour);
+        }
     }
 
     /**
@@ -256,23 +268,27 @@ public class ColdchainService {
         // 上传时间
         LocalDateTime localDateTime = (LocalDateTime) CPData.get("DataTime");
         coldChainDay.setDateTime(localDateTime);
-        // 数据封装
-        ColdChainDataModel coldChainDataModel = new ColdChainDataModel();
-        // 数据封装
-        for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
-            // 1表示通过名字上传数据，2表示通过编号上传数据
-            // 参数名称
-            boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
-            if (is_name_exist) {
-                handleMapperToInterval(coldChainSensorCode, coldChainDataModel, CPData, 1);
-            }
-        }
 
-        BeanUtil.copyProperties(coldChainDataModel, coldChainDay);
         // 动态生成表名
         MybatisPlusConfig.TableName.set(ConstUtil.currentTableName(TableUtil.ColdDay));
-        // 插入数据
-        coldChainDayService.insertDay(coldChainDay);
+        // 防止数据重复添加
+        if (coldChainDayService.getOneData(coldChainDay.getDeviceNo(), coldChainDay.getDateTime()) == null) {
+            // 数据封装
+            ColdChainDataModel coldChainDataModel = new ColdChainDataModel();
+            // 数据封装
+            for (ColdChainSensorCode coldChainSensorCode : ColdChainSensorCode.values()) {
+                // 1表示通过名字上传数据，2表示通过编号上传数据
+                // 参数名称
+                boolean is_name_exist = CPData.containsKey(coldChainSensorCode.getName() + realTimeSensorFlag[0]);
+                if (is_name_exist) {
+                    handleMapperToInterval(coldChainSensorCode, coldChainDataModel, CPData, 1);
+                }
+            }
+
+            BeanUtil.copyProperties(coldChainDataModel, coldChainDay);
+            // 插入数据
+            coldChainDayService.insertDay(coldChainDay);
+        }
     }
 
     private void handleMapperToInterval(ColdChainSensorCode coldChainSensorCode, ColdChainDataModel coldChainDataModel, Map<String, Object> CPData, int type) {

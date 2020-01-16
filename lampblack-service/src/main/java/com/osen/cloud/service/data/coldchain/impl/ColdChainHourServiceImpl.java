@@ -77,4 +77,14 @@ public class ColdChainHourServiceImpl extends ServiceImpl<ColdChainHourMapper, C
         }
         return chainHours;
     }
+
+    @Override
+    public ColdChainHour getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<ColdChainHour> wrapper = Wrappers.<ColdChainHour>lambdaQuery().select(ColdChainHour::getDeviceNo).eq(ColdChainHour::getDeviceNo, deviceNo).eq(ColdChainHour::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

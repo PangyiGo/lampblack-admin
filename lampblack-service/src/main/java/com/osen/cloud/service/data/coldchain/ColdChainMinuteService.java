@@ -48,4 +48,13 @@ public interface ColdChainMinuteService extends IService<ColdChainMinute> {
      * @return 信息
      */
     List<ColdChainMinute> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo, String monitor);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    ColdChainMinute getOneData(String deviceNo, LocalDateTime dateTime);
 }

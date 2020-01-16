@@ -37,4 +37,13 @@ public interface VocDayService extends IService<VocDay> {
      * @return 信息
      */
     List<VocDay> queryHistoryByDate(LocalDateTime start, LocalDateTime end, String deviceNo);
+
+    /**
+     * 查询重复数据
+     *
+     * @param deviceNo 设备号
+     * @param dateTime 时间
+     * @return 信息
+     */
+    VocDay getOneData(String deviceNo, LocalDateTime dateTime);
 }

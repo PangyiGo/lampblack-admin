@@ -48,4 +48,14 @@ public class VocMinuteServiceImpl extends ServiceImpl<VocMinuteMapper, VocMinute
         }
         return vocMinutes;
     }
+
+    @Override
+    public VocMinute getOneData(String deviceNo, LocalDateTime dateTime) {
+        LambdaQueryWrapper<VocMinute> wrapper = Wrappers.<VocMinute>lambdaQuery().select(VocMinute::getDeviceNo).eq(VocMinute::getDeviceNo, deviceNo).eq(VocMinute::getDateTime, dateTime);
+        try {
+            return super.getOne(wrapper, true);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
