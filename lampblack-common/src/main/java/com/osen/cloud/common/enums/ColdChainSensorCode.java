@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public enum ColdChainSensorCode {
 
-    T01("a01001", "a01001", "监控点温度01"),
+    T01("a01001", "T01", "监控点温度01"),
 
-    H01("a01002", "a01002", "监控点湿度01"),
+    H01("a01002", "H01", "监控点湿度01"),
 
     T02("a01001", "T02", "监控点温度02"),
 

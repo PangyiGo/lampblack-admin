@@ -65,3 +65,37 @@
 2020-01-17 13:51:59.032 log message -> DatebookHikariCP - Shutdown initiated...
 2020-01-17 13:51:59.039 log message -> DatebookHikariCP - Shutdown completed.
 2020-01-17 13:51:59.047 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-02-15 16:10:09.105 log message -> Starting LampblackSystemApplication on YideMacBook-Pro.local with PID 7870 (/Users/pangyi/Documents/WorkProjects/lampblack-admin/lampblack-system/target/classes started by pangyi in /Users/pangyi/Documents/WorkProjects/lampblack-admin)
+2020-02-15 16:10:09.108 log message -> The following profiles are active: pro
+2020-02-15 16:10:09.173 log message -> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-15 16:10:09.173 log message -> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-15 16:10:10.218 log message -> Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-15 16:10:10.220 log message -> Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-02-15 16:10:10.248 log message -> Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2020-02-15 16:10:10.541 log message -> Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$2e55c85d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-15 16:10:10.548 log message -> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$95a80023] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-15 16:10:10.565 log message -> Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-15 16:10:10.567 log message -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7a014cb5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-15 16:10:10.570 log message -> Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$532a6b0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-15 16:10:10.575 log message -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-15 16:10:10.824 log message -> Initializing Spring embedded WebApplicationContext
+2020-02-15 16:10:10.824 log message -> Root WebApplicationContext: initialization completed in 1651 ms
+2020-02-15 16:10:12.932 log message -> system_socket service starting port: 8888
+2020-02-15 16:10:13.069 log message -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f7d1fee, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e00d816, org.springframework.security.web.header.HeaderWriterFilter@5731a58c, org.springframework.security.web.authentication.logout.LogoutFilter@613f0ed1, com.osen.cloud.system.web_security.config.JwtAuthenticationTokenFilter@25910bf8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1df238d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1282e727, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73590818, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fe674c6, org.springframework.security.web.session.SessionManagementFilter@3dd3ff8f, org.springframework.security.web.access.ExceptionTranslationFilter@59df3a97, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79f6eb1f]
+2020-02-15 16:10:13.179 log message -> Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-15 16:10:13.715 log message -> Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-15 16:10:13.781 log message -> Initializing ExecutorService 'taskScheduler'
+2020-02-15 16:10:13.868 log message -> LiveReload server is running on port 35729
+2020-02-15 16:10:13.963 log message -> XNIO version 3.3.8.Final
+2020-02-15 16:10:13.971 log message -> XNIO NIO Implementation Version 3.3.8.Final
+2020-02-15 16:10:14.026 log message -> Undertow started on port(s) 8080 (http) with context path ''
+2020-02-15 16:10:14.030 log message -> Started LampblackSystemApplication in 5.297 seconds (JVM running for 5.848)
+2020-02-15 16:10:14.381 log message -> DatebookHikariCP - Starting...
+2020-02-15 16:10:14.382 log message -> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-15 16:10:14.383 log message -> Initializing Servlet 'dispatcherServlet'
+2020-02-15 16:10:14.394 log message -> Completed initialization in 11 ms
+2020-02-15 16:10:15.792 log message -> Starting without optional epoll library
+2020-02-15 16:10:15.905 log message -> Starting with kqueue library
+2020-02-15 16:10:24.494 log message -> Shutting down ExecutorService 'taskScheduler'
+2020-02-15 16:10:24.496 log message -> Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-15 16:10:25.629 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'
