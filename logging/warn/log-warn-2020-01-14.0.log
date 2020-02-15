@@ -1,2 +1,0 @@
-2020-01-14 17:17:28.893 log message -> UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2020-01-14 17:17:35.539 log message -> DatebookHikariCP - idleTimeout is close to or more than maxLifetime, disabling it.
