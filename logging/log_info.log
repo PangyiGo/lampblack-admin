@@ -1,84 +1,40 @@
-2020-02-15 16:40:17.631 log message -> Starting LampblackSystemApplication on YideMacBook-Pro.local with PID 8666 (/Users/pangyi/Documents/WorkProjects/lampblack-admin/lampblack-system/target/classes started by pangyi in /Users/pangyi/Documents/WorkProjects/lampblack-admin)
-2020-02-15 16:40:17.634 log message -> The following profiles are active: dev
-2020-02-15 16:40:17.677 log message -> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-02-15 16:40:17.677 log message -> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-02-15 16:40:18.690 log message -> Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-02-15 16:40:18.691 log message -> Bootstrapping Spring Data repositories in DEFAULT mode.
-2020-02-15 16:40:18.724 log message -> Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces.
-2020-02-15 16:40:19.086 log message -> Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$45c41880] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:19.093 log message -> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ad165046] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:19.110 log message -> Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:19.111 log message -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@40ddaf8c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:19.114 log message -> Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6a98bb32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:19.118 log message -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:19.379 log message -> Initializing Spring embedded WebApplicationContext
-2020-02-15 16:40:19.379 log message -> Root WebApplicationContext: initialization completed in 1702 ms
-2020-02-15 16:40:21.366 log message -> system_socket service starting port: 8888
-2020-02-15 16:40:21.533 log message -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f3d072f, org.springframework.security.web.context.SecurityContextPersistenceFilter@41e3664, org.springframework.security.web.header.HeaderWriterFilter@1a1ce92c, org.springframework.security.web.authentication.logout.LogoutFilter@608924e0, com.osen.cloud.system.web_security.config.JwtAuthenticationTokenFilter@3b7f2c03, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@222f654b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63df952b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20378ddf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d7d1b59, org.springframework.security.web.session.SessionManagementFilter@686fee8a, org.springframework.security.web.access.ExceptionTranslationFilter@4ecdcab5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@337e7651]
-2020-02-15 16:40:21.662 log message -> Initializing ExecutorService 'applicationTaskExecutor'
-2020-02-15 16:40:51.273 log message -> Starting LampblackSystemApplication on YideMacBook-Pro.local with PID 8675 (/Users/pangyi/Documents/WorkProjects/lampblack-admin/lampblack-system/target/classes started by pangyi in /Users/pangyi/Documents/WorkProjects/lampblack-admin)
-2020-02-15 16:40:51.275 log message -> The following profiles are active: pro
-2020-02-15 16:40:51.320 log message -> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-02-15 16:40:51.321 log message -> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-02-15 16:40:52.405 log message -> Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-02-15 16:40:52.407 log message -> Bootstrapping Spring Data repositories in DEFAULT mode.
-2020-02-15 16:40:52.440 log message -> Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
-2020-02-15 16:40:52.819 log message -> Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$74ea7bfd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:52.827 log message -> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dc3cb3c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:52.846 log message -> Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:52.848 log message -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3db9d2c1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:52.849 log message -> Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$99bf1eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:52.853 log message -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:40:53.120 log message -> Initializing Spring embedded WebApplicationContext
-2020-02-15 16:40:53.120 log message -> Root WebApplicationContext: initialization completed in 1799 ms
-2020-02-15 16:40:54.960 log message -> system_socket service starting port: 8888
-2020-02-15 16:40:55.106 log message -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@683d7df5, org.springframework.security.web.context.SecurityContextPersistenceFilter@72f4a900, org.springframework.security.web.header.HeaderWriterFilter@3df842e3, org.springframework.security.web.authentication.logout.LogoutFilter@159bf2cc, com.osen.cloud.system.web_security.config.JwtAuthenticationTokenFilter@4fb301e2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@657f2ad9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55f293f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6101ebfa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@527fe6ab, org.springframework.security.web.session.SessionManagementFilter@1dc15eb1, org.springframework.security.web.access.ExceptionTranslationFilter@6b938dcd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2fd1ca3e]
-2020-02-15 16:40:55.242 log message -> Initializing ExecutorService 'applicationTaskExecutor'
-2020-02-15 16:40:55.736 log message -> Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-02-15 16:40:55.793 log message -> Initializing ExecutorService 'taskScheduler'
-2020-02-15 16:40:55.853 log message -> LiveReload server is running on port 35729
-2020-02-15 16:40:55.923 log message -> XNIO version 3.3.8.Final
-2020-02-15 16:40:55.930 log message -> XNIO NIO Implementation Version 3.3.8.Final
-2020-02-15 16:40:55.980 log message -> Undertow started on port(s) 8080 (http) with context path ''
-2020-02-15 16:40:55.984 log message -> Started LampblackSystemApplication in 5.334 seconds (JVM running for 5.96)
-2020-02-15 16:40:56.308 log message -> DatebookHikariCP - Starting...
-2020-02-15 16:40:56.308 log message -> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-02-15 16:40:56.308 log message -> Initializing Servlet 'dispatcherServlet'
-2020-02-15 16:40:56.319 log message -> Completed initialization in 11 ms
-2020-02-15 16:40:57.651 log message -> Starting without optional epoll library
-2020-02-15 16:40:58.179 log message -> Starting with kqueue library
-2020-02-15 16:40:59.693 log message -> Shutting down ExecutorService 'taskScheduler'
-2020-02-15 16:40:59.695 log message -> Shutting down ExecutorService 'applicationTaskExecutor'
-2020-02-15 16:41:00.829 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'
-2020-02-15 16:47:35.739 log message -> Starting LampblackSystemApplication on YideMacBook-Pro.local with PID 8760 (/Users/pangyi/Documents/WorkProjects/lampblack-admin/lampblack-system/target/classes started by pangyi in /Users/pangyi/Documents/WorkProjects/lampblack-admin)
-2020-02-15 16:47:35.771 log message -> The following profiles are active: dev
-2020-02-15 16:47:35.808 log message -> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-02-15 16:47:35.808 log message -> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-02-15 16:47:36.879 log message -> Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-02-15 16:47:36.880 log message -> Bootstrapping Spring Data repositories in DEFAULT mode.
-2020-02-15 16:47:36.905 log message -> Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
-2020-02-15 16:47:37.303 log message -> Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c472c384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:47:37.316 log message -> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2bc4fb4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:47:37.350 log message -> Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:47:37.355 log message -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@62c92df2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:47:37.360 log message -> Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$e9476636] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:47:37.369 log message -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-15 16:47:37.685 log message -> Initializing Spring embedded WebApplicationContext
-2020-02-15 16:47:37.685 log message -> Root WebApplicationContext: initialization completed in 1877 ms
-2020-02-15 16:47:39.555 log message -> system_socket service starting port: 8888
-2020-02-15 16:47:39.706 log message -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24ed2a05, org.springframework.security.web.context.SecurityContextPersistenceFilter@89a0f3f, org.springframework.security.web.header.HeaderWriterFilter@7d5f651e, org.springframework.security.web.authentication.logout.LogoutFilter@372b0c68, com.osen.cloud.system.web_security.config.JwtAuthenticationTokenFilter@54da74b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@64762197, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69697ede, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c350873, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6242deae, org.springframework.security.web.session.SessionManagementFilter@7efedc50, org.springframework.security.web.access.ExceptionTranslationFilter@7f44a737, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7191c100]
-2020-02-15 16:47:39.823 log message -> Initializing ExecutorService 'applicationTaskExecutor'
-2020-02-15 16:47:40.271 log message -> Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-02-15 16:47:40.313 log message -> Initializing ExecutorService 'taskScheduler'
-2020-02-15 16:47:40.368 log message -> LiveReload server is running on port 35729
-2020-02-15 16:47:40.457 log message -> XNIO version 3.3.8.Final
-2020-02-15 16:47:40.466 log message -> XNIO NIO Implementation Version 3.3.8.Final
-2020-02-15 16:47:40.520 log message -> Undertow started on port(s) 8081 (http) with context path ''
-2020-02-15 16:47:40.524 log message -> Started LampblackSystemApplication in 5.543 seconds (JVM running for 6.364)
-2020-02-15 16:47:40.869 log message -> DatebookHikariCP - Starting...
-2020-02-15 16:47:40.871 log message -> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-02-15 16:47:40.871 log message -> Initializing Servlet 'dispatcherServlet'
-2020-02-15 16:47:40.880 log message -> Completed initialization in 9 ms
-2020-02-15 16:47:41.942 log message -> Shutting down ExecutorService 'taskScheduler'
-2020-02-15 16:47:41.944 log message -> Shutting down ExecutorService 'applicationTaskExecutor'
-2020-02-15 16:47:41.963 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-02-17 11:09:21.690 log message -> Starting LampblackSystemApplication on YideMacBook-Pro.local with PID 12641 (/Users/pangyi/Documents/WorkProjects/lampblack-admin/lampblack-system/target/classes started by pangyi in /Users/pangyi/Documents/WorkProjects/lampblack-admin)
+2020-02-17 11:09:21.704 log message -> The following profiles are active: dev
+2020-02-17 11:09:21.794 log message -> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-17 11:09:21.794 log message -> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-17 11:09:23.091 log message -> Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-17 11:09:23.094 log message -> Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-02-17 11:09:23.143 log message -> Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2020-02-17 11:09:23.594 log message -> Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$cf3d3019] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 11:09:23.604 log message -> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$368f67df] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 11:09:23.626 log message -> Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 11:09:23.628 log message -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7b276925' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 11:09:23.631 log message -> Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$f411d2cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 11:09:23.637 log message -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-17 11:09:24.144 log message -> Initializing Spring embedded WebApplicationContext
+2020-02-17 11:09:24.144 log message -> Root WebApplicationContext: initialization completed in 2350 ms
+2020-02-17 11:09:26.696 log message -> system_socket service starting port: 8888
+2020-02-17 11:09:26.914 log message -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fdb93e, org.springframework.security.web.context.SecurityContextPersistenceFilter@789da154, org.springframework.security.web.header.HeaderWriterFilter@5b55e95e, org.springframework.security.web.authentication.logout.LogoutFilter@11f5955e, com.osen.cloud.system.web_security.config.JwtAuthenticationTokenFilter@46da3433, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@382a8d92, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@643d977a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2daeada0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@442151f6, org.springframework.security.web.session.SessionManagementFilter@2dca9d0b, org.springframework.security.web.access.ExceptionTranslationFilter@1cb835a2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12e7ac7b]
+2020-02-17 11:09:27.049 log message -> Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-17 11:09:27.633 log message -> Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-17 11:09:27.717 log message -> Initializing ExecutorService 'taskScheduler'
+2020-02-17 11:09:27.808 log message -> LiveReload server is running on port 35729
+2020-02-17 11:09:27.913 log message -> XNIO version 3.3.8.Final
+2020-02-17 11:09:27.924 log message -> XNIO NIO Implementation Version 3.3.8.Final
+2020-02-17 11:09:27.994 log message -> Undertow started on port(s) 8081 (http) with context path ''
+2020-02-17 11:09:27.998 log message -> Started LampblackSystemApplication in 6.852 seconds (JVM running for 8.402)
+2020-02-17 11:09:28.563 log message -> DatebookHikariCP - Starting...
+2020-02-17 11:09:28.564 log message -> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-17 11:09:28.564 log message -> Initializing Servlet 'dispatcherServlet'
+2020-02-17 11:09:28.577 log message -> Completed initialization in 13 ms
+2020-02-17 11:09:39.033 log message -> DatebookHikariCP - Start completed.
+2020-02-17 11:09:39.198 log message -> Starting without optional epoll library
+2020-02-17 11:09:39.311 log message -> Starting with kqueue library
+2020-02-17 11:11:38.128 log message -> 用户登录成功
+2020-02-17 11:11:56.361 log message -> 用户登录成功
+2020-02-17 11:12:19.040 log message -> 用户登录失败
+2020-02-17 11:14:37.349 log message -> Shutting down ExecutorService 'taskScheduler'
+2020-02-17 11:14:37.351 log message -> Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-17 11:14:38.494 log message -> DatebookHikariCP - Shutdown initiated...
+2020-02-17 11:14:38.512 log message -> DatebookHikariCP - Shutdown completed.
+2020-02-17 11:14:38.515 log message -> Destroying Spring FrameworkServlet 'dispatcherServlet'

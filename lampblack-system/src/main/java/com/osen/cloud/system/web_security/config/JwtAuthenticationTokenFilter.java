@@ -61,25 +61,27 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         if (StringUtils.isNotEmpty(username) && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            //            JwtUser userDetails = (JwtUser) this.userDetailsService.loadUserByUsername(username);
+            // 从数据库获取用户信息
+            JwtUser userDetails = (JwtUser) this.userDetailsService.loadUserByUsername(username);
 
-            if (stringRedisTemplate.hasKey(JwtTokenUtil.KEYS + authToken)) {
-                // 从 redis 缓存中获取认证主体
-                String json = stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + authToken).get();
+            // if (stringRedisTemplate.hasKey(JwtTokenUtil.KEYS + authToken)) {
+            //     // 从 redis 缓存中获取认证主体
+            //     String json = stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + authToken).get();
+            //
+            //     TransferUserToJwt transferUserToJwt = JSON.parseObject(json, TransferUserToJwt.class);
+            //
+            //     JwtUser userDetails = JwtTokenUtil.toJwt(transferUserToJwt);
 
-                TransferUserToJwt transferUserToJwt = JSON.parseObject(json, TransferUserToJwt.class);
-
-                JwtUser userDetails = JwtTokenUtil.toJwt(transferUserToJwt);
-
-                if (userDetails != null) {
-                    // 验证token是否有效
-                    if (jwtTokenUtil.validateToken(authToken, userDetails)) {
-                        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                        authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                        SecurityContextHolder.getContext().setAuthentication(authentication);
-                    }
+            if (userDetails != null) {
+                // 验证token是否有效
+                if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                    authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             }
+
+            // }
         }
 
         filterChain.doFilter(request, response);

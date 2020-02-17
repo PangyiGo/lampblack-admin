@@ -50,14 +50,14 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
         //生成token
         String token = jwtTokenUtil.generateToken(jwtUser);
 
-        TransferUserToJwt transferUserToJwt = JwtTokenUtil.toUser(jwtUser);
+        // TransferUserToJwt transferUserToJwt = JwtTokenUtil.toUser(jwtUser);
 
         // 保存用户登录操作信息
-        operationLogsUtil.handlerOperation(request, "用户登录成功", transferUserToJwt.getUsername());
+        operationLogsUtil.handlerOperation(request, "用户登录成功", jwtUser.getUsername());
 
         //保存redis
-        String jsonString = JSON.toJSONString(transferUserToJwt);
-        stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + token).set(jsonString, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
+        // String jsonString = JSON.toJSONString(transferUserToJwt);
+        // stringRedisTemplate.boundValueOps(JwtTokenUtil.KEYS + token).set(jsonString, JwtTokenUtil.EXPIRATION, TimeUnit.MILLISECONDS);
 
         response.setContentType("application/json;charset=utf-8");
 
